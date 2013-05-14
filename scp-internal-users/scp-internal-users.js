@@ -1,28 +1,70 @@
 function Widget_scp_internal_users() {
 
 	var _this = this;
+	var channelGroupAdded = 'scp-group-add';
 
 	this.onReadyExtend = function() {
+		pw.addListenerToChannel(this, channelGroupAdded);
+
 		_this.$groupSelect = $('.usergroups', _this.$widgetDiv);
 
 		_this.$groupSelect.change(function() {
-			displaySelectedGroup();
+			handleGroupSelection();
 		});
 
-		populateGroups();
+		loadGroups();
 		loadUsers();
 	};
 
-	function populateGroups() {
+	this.handleEvent = function(channel, event) {
+		if (channel === channelGroupAdded) {
+			if (event.success) {
+				var selectedRoleId = event.role.id;
+				addRoleToInternalList(event.role);
+				populateGroups();
+				_this.currentSelectedRoleId = selectedRoleId;
+			}
+			_this.$groupSelect.val(_this.currentSelectedRoleId);
+			handleGroupSelection();
+		}
+	};
+
+	function loadGroups() {
 		$.get('proxy/security/role/all').done(function(rolesArray) {
 			_this.roles = rolesArray;
-			_this.$groupSelect.empty();
-			for (var i = 0; i < rolesArray.length; i++) {
-				var $option = $('<option></option>').text(rolesArray[i].name).attr('value', rolesArray[i].id);
-				_this.$groupSelect.append($option);
-			}
-			displaySelectedGroup();
+			populateGroups()
 		});
+	}
+
+	function populateGroups() {
+		_this.$groupSelect.empty();
+		for (var i = 0; i < _this.roles.length; i++) {
+			var $option = $('<option></option>').text(_this.roles[i].name).val(_this.roles[i].id);
+			_this.$groupSelect.append($option);
+		}
+		_this.$groupSelect.append('<option class="action">Add new group...</option>');
+		handleGroupSelection();
+	}
+
+	function addRoleToInternalList(role) {
+		_this.roles.push(role);
+		_this.roles.sort(function(a,b) {
+			return a.name.localeCompare(b.name);
+		});
+	}
+
+	function handleGroupSelection() {
+		var $selectedOption = $('option:selected', _this.$widgetDiv);
+		if ($selectedOption.hasClass('action')) {
+			$("#modalPopupContent").html("<div class='widget' name='scp-group-add-dialog'></div>");
+			pw.mount($("#modalPopupContent .widget:first"));
+			$("#modalPopupContainer").show();
+		} else {
+			var selectedRoleId = $selectedOption.val();
+			console.debug('selectedRoleId=' + selectedRoleId);
+			pw.notifyChannelOfEvent('scp-internal-users.group-selected', {role:getRole(selectedRoleId)});
+			_this.currentSelectedRoleId = selectedRoleId;
+		}
 	}
 
 	function loadUsers() {
@@ -30,12 +72,6 @@ function Widget_scp_internal_users() {
 			_this.users = usersArray;
 			pw.notifyChannelOfEvent('scp-internal-users.users-loaded', {users:usersArray});
 		});
-	}
-
-	function displaySelectedGroup() {
-		var selectedRoleId = $('option:selected', _this.$widgetDiv).attr('value');
-		console.debug('selectedRoleId=' + selectedRoleId);
-		pw.notifyChannelOfEvent('scp-internal-users.group-selected', {role:getRole(selectedRoleId)});
 	}
 
 	function getRole(roleId) {
