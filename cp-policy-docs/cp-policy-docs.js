@@ -1,9 +1,17 @@
 function Widget_cp_policy_docs() {
+
+	this.initExtend = function() {
+        pw.addListenerToChannel(this, "cp_policy_docs");
+    }
 	
+	this.handleEvent = function(channel, event) {
+        this.loadHTML();
+    }
 
 	this.onReadyExtend = function() {
 
 			var url = document.URL;
+			var application = $(":header a").html();
      		var policyId = url.substring(url.lastIndexOf("/") + 1);
      		policyId = policyId.substring(policyId.lastIndexOf("#") + 1);
 			var url = 'proxy/mailmerger/jobs/search/' + encodeURIComponent('%'+ policyId +'%');
@@ -12,14 +20,16 @@ function Widget_cp_policy_docs() {
 
 				$('.mm-documents').html('<ul name="docSearchResultsLists"></ul>');
 
-				for (var i = 0; i < searchResultsArray.length; i++) {
+				for (var i = 0; i < searchResultsArray.length; i++) {	
+					var descArray = (searchResultsArray[i].description).split('|');
+					var template = (searchResultsArray[i].template  === undefined) ? "" : searchResultsArray[i].template + " - ";
+					var userDesc = (descArray[2] == "Not supplied" || descArray[2] === undefined) ? "" : descArray[2] + " ";
 					var $searchItemHtml = $('<a class="pdf" target="_blank" href=' + 'proxy/mailmerger/output/document/'+searchResultsArray[i].id+'/0' + '>'
-							+ searchResultsArray[i].template + searchResultsArray[i].description +  moment(new Date(searchResultsArray[i].date)).format("DD/MM/YYYY") + '</a>');
+							+ template + descArray[0] + " - " + userDesc + moment(new Date(searchResultsArray[i].date)).format("DD/MM/YYYY") + '</a>');
 					$('.mm-documents').append($searchItemHtml);
 				}
 			});
-			
+	 
 	};
 
 }
-
