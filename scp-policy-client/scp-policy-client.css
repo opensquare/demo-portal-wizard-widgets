@@ -11,6 +11,11 @@
 	border-bottom: thin solid;
 	font-weight: normal;
 }
+
+.upload {
+	background: url('file_transfer.png') no-repeat center left;;
+}
+
 .mm-documents .pdf {
 	display: inline-block;
 	margin: 0px 10px 15px 10px;
