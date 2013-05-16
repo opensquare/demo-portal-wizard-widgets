@@ -8,6 +8,22 @@ function Widget_scp_internal_users_users() {
 		_this.$ul = $('ul', _this.$widgetDiv);
 		pw.addListenerToChannel(this, channelUsersLoaded);
 		pw.addListenerToChannel(this, channelGroupSelected);
+
+		$(_this.$ul).on('click','button.scp-group-remove-user',function() {
+			var userId = $(this).closest('li').data('user-id');
+			var user = getUser(userId);
+			removeRoleFromUser(user, _this.role);
+			if (confirm('Are you sure you want to remove "' + user.displayName + '" from the ' + _this.role.name + ' group?')) {
+				$.ajax({
+					type:"POST",
+					url:"proxy/security/user/update",
+					data:JSON.stringify(user),
+					dataType:"json",
+					contentType:"application/json"}).done(function() {
+						pw.notifyChannelOfEvent('scp-internal-users.users-loaded', {users:_this.users});
+					});
+			}
+		});
 	};
 
 	this.handleEvent = function(channel, event) {
@@ -21,12 +37,13 @@ function Widget_scp_internal_users_users() {
 	};
 
 	function refreshDisplayedUsers() {
-		if (_this.role !== undefined && _this.users !== undefined) {
+		if (typeof _this.role !== 'undefined' && typeof _this.users !== 'undefined') {
 			_this.$ul.empty();
 			for (var i = 0; i < _this.users.length; i++) {
 				var user = _this.users[i];
 				if (doesUserHaveRole(user, _this.role)) {
-					var $li = $('<li>' + user.displayName + '</li>');
+					var $li = $('<li>' + user.displayName + '<button class="scp-group-remove-user">Remove</button></li>');
+					$li.data('user-id', user.id);
 					_this.$ul.append($li);
 				}
 			}
@@ -40,5 +57,25 @@ function Widget_scp_internal_users_users() {
 			}
 		}
 		return false;
+	}
+
+	function getUser(userId) {
+		for (var i = 0; i < _this.users.length; i++) {
+			if (_this.users[i].id == userId) {
+				return _this.users[i];
+			}
+		}
+		return null;
+	}
+
+	function removeRoleFromUser(user, roleToRemove) {
+		var roleToRemoveIndex = 0;
+		for (var i = 0; i < user.roles.length; i++) {
+			if (user.roles[i].id == roleToRemove.id) {
+				roleToRemoveIndex = i;
+				break;
+			}
+		}
+		user.roles.splice(roleToRemoveIndex, 1);
 	}
 }
