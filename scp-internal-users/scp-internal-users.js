@@ -12,6 +12,16 @@ function Widget_scp_internal_users() {
 			handleGroupSelection();
 		});
 
+		$('button', _this.$widgetDiv).click(function() {
+			var result = confirm('Are you sure you want to delete "' + _this.currentSelectedRole.name + '"?');
+			if (result) {
+				var url = "proxy/security/role/delete/" + _this.currentSelectedRole.id;
+				$.ajax({type:"DELETE",url:url}).done(function() {
+					loadGroups();
+				});
+			}
+		});
+
 		loadGroups();
 		loadUsers();
 	};
@@ -19,12 +29,11 @@ function Widget_scp_internal_users() {
 	this.handleEvent = function(channel, event) {
 		if (channel === channelGroupAdded) {
 			if (event.success) {
-				var selectedRoleId = event.role.id;
 				addRoleToInternalList(event.role);
 				populateGroups();
-				_this.currentSelectedRoleId = selectedRoleId;
+				_this.currentSelectedRole = event.role;
 			}
-			_this.$groupSelect.val(_this.currentSelectedRoleId);
+			_this.$groupSelect.val(_this.currentSelectedRole.id);
 			handleGroupSelection();
 		}
 	};
@@ -62,8 +71,9 @@ function Widget_scp_internal_users() {
 		} else {
 			var selectedRoleId = $selectedOption.val();
 			console.debug('selectedRoleId=' + selectedRoleId);
-			pw.notifyChannelOfEvent('scp-internal-users.group-selected', {role:getRole(selectedRoleId)});
-			_this.currentSelectedRoleId = selectedRoleId;
+			var role = getRole(selectedRoleId);
+			pw.notifyChannelOfEvent('scp-internal-users.group-selected', {role: role});
+			_this.currentSelectedRole = role;
 		}
 	}
 
