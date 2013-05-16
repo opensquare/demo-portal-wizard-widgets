@@ -11,23 +11,15 @@
    </xsl:template>
 	<xsl:template match="/pactresponse/entity/TimeSpanEntity">
 
-	<xsl:if test="TimeSpanEntityVersion/Status != '0'"> 
+	<xsl:if test="identifier/relationship = 'claimSummary'"> 
 
-		<xsl:variable name="createTime"><xsl:value-of select="TimeSpanEntityVersion/Properties/DateTime[@name='creationTime']"/></xsl:variable>
-		<xsl:variable name="createDate"><xsl:value-of select="TimeSpanEntityVersion/Properties/DateTime[@name='creationDate']"/></xsl:variable>
+		<xsl:variable name="createTime"><xsl:value-of select="TimeSpanEntityVersion/TimeSpan/PhysicalStartTime"/></xsl:variable>
 		
 		<p id="cp-policy-details-claim" class="pane">
-			<xsl:attribute name="title"><xsl:value-of select="TimeSpanEntityVersion/Properties/Property[@name='claimNumber']"/>: <xsl:value-of select="identifier/relationship"/></xsl:attribute>
+			<xsl:attribute name="title"><xsl:value-of select="TimeSpanEntityVersion/Properties/Property[@name='claimNumber']"/></xsl:attribute>
 			<span class="title"><xsl:value-of select="TimeSpanEntityVersion/Status"/></span>
 			<a class="claim">
-				<xsl:choose>
-			    	<xsl:when test="TimeSpanEntityVersion/Properties/DateTime[@name='creationTime']">
-			    		<xsl:value-of select="concat(substring-before($createTime, ' '),' ',substring-before(substring-after($createTime, ' '),' '),' ',substring(substring-after(substring-after($createTime, ' '),' '), 1, 4))"/>
-			    	</xsl:when>
-			    	<xsl:otherwise>
-			   			<xsl:value-of select="concat(substring-before($createDate, ' '),' ',substring-before(substring-after($createDate, ' '),' '),' ',substring(substring-after(substring-after($createDate, ' '),' '), 1, 4))"/>
-			   		</xsl:otherwise>
-			 	</xsl:choose>
+				<xsl:value-of select="concat(substring-before($createTime, ' '),' ',substring-before(substring-after($createTime, ' '),' '),' ',substring(substring-after(substring-after($createTime, ' '),' '), 1, 4))"/>
 			</a>	
 		</p>
 		
