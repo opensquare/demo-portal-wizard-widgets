@@ -22,6 +22,17 @@ function Widget_scp_internal_users() {
 			}
 		});
 
+		$('#myonoffswitch', _this.$widgetDiv).change(function() {
+			var isGroups = $(this).prop('checked');
+			if (isGroups) {
+				$('.users-groups').show();
+				$('.users-users').hide();
+			} else {
+				$('.users-groups').hide();
+				$('.users-users').show();
+			}
+		});
+
 		loadGroups();
 		loadUsers();
 	};
