@@ -10,7 +10,7 @@ function Widget_scp_internal_users_list() {
 		$('.usersList', _this.$widgetDiv).on('change', 'input[type=radio]', function() {
 			var userId = $(this).closest('li').data('user-id');
 			var selectedUser = getUser(userId);
-			pw.notifyChannelOfEvent('scp-internal-users-profile.user-selected', {user: user});
+			pw.notifyChannelOfEvent('scp-internal-users-profile.user-selected', {user: selectedUser});
 		});
 	};
 
@@ -28,6 +28,7 @@ function Widget_scp_internal_users_list() {
 			$li.data('user-id', users[i].id);
 			_this.$ul.append($li);
 		}
+		$('input:radio:first', _this.$widgetDiv).click();
 	}
 
 	function getUser(userId) {
