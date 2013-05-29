@@ -1,4 +1,5 @@
 <script type='text/javascript' src='widgets/quote-forms/js/vehicle-lookup.js' ></script>
+<script type='text/javascript' src='widgets/quote-forms/js/manual-vehicle-lookup.js'></script>
 <script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script>
 
 <script>
@@ -25,6 +26,7 @@
 	$("#disabledSectionOne").hide();	 
     $("#sectionTwo").hide();
     $("#navigation").hide();
+    $("#foundVehicle").hide();
 
 	function editDetails(){
 	        $('#carDetails input, select').removeAttr('disabled');
@@ -41,6 +43,21 @@
 	$('form select').change( function(){
 		$(this).addClass('changed');
 	})
+
+	$('form select').change( function(){
+		$(this).addClass('changed');
+	})
+
+	var flowId = $('[name=\'rf.flowId\']').val();
+	var lists = new ListResources(flowId);
+
+	function manualLookUpToggle() {
+		$(".manualLookUp").hide();
+		$(".carFound").show();
+		$('span[name="vehDescReg"]').text($("#input_desc option:selected").text());
+		$('span[name="reg"]').text("Not provided");
+	}
+
 </script>
 
  <ul id="crumbTrail">
@@ -77,54 +94,73 @@
 				<div id="flag"></div>
 				<input  id="input_reg" type="text" name="reg" rf.validation="required" rf.source="{{$vehicle-lookup}}"/>
 			</div>
-			<input type="hidden" name="vehKey" rf.validation="required"/>
 			<input type="button" value="Find" id="findReg"/>
-			<input type="hidden" name="vehDesc" />
 			<input type="hidden" name="make" />
 			<input type="hidden" name="model" />
 			<input type="hidden" name="fuel" />
-			<input type="hidden" name="yom" />
-			<input type="hidden" name="vehicleAge" rf.calculated="{ if (fields.yom.value) { new Date().getFullYear() - fields.yom.value } }"/>
 			<input type="hidden" name="engineCapacity" />
-			<input type="hidden" name="transmission" />
 			<input type="hidden" name="multiple" />
+			<input type="hidden" name="vehKeyReg" />
+			<input type="hidden" name="transmissionReg" />
+			<input type="hidden" name="vehDescReg" />
+			<input type="hidden" name="yomReg" />
 			<div class="hint">We need your registration so we can find your exact car and help you get a more accurate quote.</div>
 		</div>
+		
+		<!-- Hidden vehicle details for Napier Calc -->
+		<input type="hidden" name="yom" rf.calculated="if (fields.knowReg.value == 'no') { fields.yomNoReg.value }else{ fields.yomReg.value}"/>
+		<input type="hidden" name="vehKey" rf.calculated="if (fields.knowReg.value == 'no') { fields.vehKeyNoReg.value }else{ fields.vehKeyReg.value}"/>
+		<input type="hidden" name="transmission" rf.calculated="if (fields.knowReg.value == 'no') { fields.transmissionNoReg.value }else{ fields.transmissionReg.value}" />
+		<input type="hidden" name="vehDesc" rf.calculated="if (fields.knowReg.value == 'no') { fields.vehDescNoReg.value }else{ fields.vehDescReg.value}" /> 
+		<input type="hidden" name="vehicleAge" rf.calculated="{if (fields.yom.value) { new Date().getFullYear() - fields.yom.value } }"/>
+		
 
-		<div class="field" rf.includeIf="{ fields.knowReg.value == 'no' }">
+		<div class="field manualLookUp" rf.includeIf="{ fields.knowReg.value == 'no' }">
 			<div><label>Vehicle Search</label></div>
 			<div class="vehicle_search">
 				
 				<div id="makeModel">
-					<label for="input_make">Make/Model</label>
-					<input id="input_mm" type="text" name="vehicle" placeholder="Ford Capri" rf.validation="required fromSource" rf.customType="auto-complete-select({ codeFieldName: 'vehicle' })" rf.source="http://integration.osldev.net/resource-manager/REST/files/osl-resources/lists/_itbVehicleLists-ModelsSheet.xml?transformer=xslt&xslt=/osl-resources/lists/makeModelLookupTransformJSON.xsl&contentType=application%2Fjson&vehicle=[value]"/>
+					<div id="makeModel">
+					<label for="input_mm">Make/Model</label>
+					<input id="input_mm" type="text" name="vehicle" placeholder="Start typing your vehicle name" rf.customType="auto-complete-select({ jsonTargetElement: '0', context: 'vehicle' })" rf.source="http://integration.osldev.net/resource-manager/REST/files/osl-resources/lists/_itbVehicleLists-ModelsSheet.xml?transformer=xslt&xslt=/osl-resources/lists/makeModelLookupTransformJSON.xsl&contentType=application%2Fjson&vehicle=[value]" />
+				</div>
 				</div>
 				<div id="modelDetail" rf.includeIf="{ fields.vehicle.value }">
-					<label for="input_model">Year of registration</label>
-					<select id="input_model" type="select" name="fuel" rf.validation="required" >
-						<option disabled selected></option>
-					</select>
-					<label for="input_model">Transmission</label>
-					<select id="input_model" type="select" name="transmission" rf.validation="required" >
-						<option disabled selected></option>
-					</select>
-					<label for="input_model">Fuel Type</label>
-					<select id="input_model" type="select" name="fuel" rf.validation="required" >
-						<option disabled selected></option>
-					</select>
-					<label for="input_model">Model Specification</label>
-					<select id="input_model" type="select" name="fuel" rf.validation="required" >
-						<option disabled selected></option>
-					</select>
+					<label for="input_yom">Year of registration</label>
+					<select id="input_yom" type="select" style="width: 42%;" name="yomNoReg"/>
+					<input id="input_yomProxy" type="hidden" name="yomProxy"
+			   			rf.source="http://integration.osldev.net/resource-manager/REST/files/osl-resources/lists/_itbVehicleLists-ABIDetails.xml?transformer=xslt&xslt=/osl-resources/lists/makeModelYOMTransform.xsl&contentType=application%2Fjson&vehicle=[value]"/>
+					
+
+					<label for="input_body">Body Type</label>
+					<select id="input_body" type="select" style="width: 42%;" name="bodyType" disabled/>
+					<input id="input_bodyProxy" type="hidden" test="test" name="bodyTypeProxy"
+			   			rf.source="http://integration.osldev.net/resource-manager/REST/files/osl-resources/lists/_itbVehicleLists-ABIDetails.xml?transformer=xslt&xslt=/osl-resources/lists/makeModelBodyTypeTransform.xsl&contentType=application%2Fjson&vehicle=[value]"/>
+
+
+					<label for="input_transmission">Transmission</label>
+					<select id="input_transmission" type="select" style="width: 42%;" name="transmissionNoReg" disabled/>
+						<input id="input_transmissionProxy" type="hidden" name="transmissionProxy"
+			   			rf.source="http://integration.osldev.net/resource-manager/REST/files/osl-resources/lists/_itbVehicleLists-ABIDetails.xml?transformer=xslt&xslt=/osl-resources/lists/makeModelTransmissionTransform.xsl&contentType=application%2Fjson&vehicle=[value]"/>
+					
+					<div id="modelDetail" rf.includeIf="{ fields.transmission.text }">
+						<input type="hidden" id="vehDescNoReg" name="vehDescNoReg" />
+						<select id="input_desc" type="select" name="vehKeyNoReg" style="width: 90%; margin: 5%;" disabled/>
+						<input id="input_descProxy" type="hidden" name="vehDescProxy"
+			   			rf.source="http://integration.osldev.net/resource-manager/REST/files/osl-resources/lists/_itbVehicleLists-ABIDetails.xml?transformer=xslt&xslt=/osl-resources/lists/makeModelVariantABITransform.xsl&contentType=application%2Fjson&vehicle=[value]"/>
+			   		</div>
 				</div>
 			</div>	
+			<div id="foundVehicle" class="navigation">
+				<input type="button" onclick="manualLookUpToggle();" value="Next"/>
+			</div>
 		</div>
 
 		<div class="field carFound" style="display: none;">
 				<label>Registration number</label>
 				<span name="reg" class="carDetails">{{reg}}</span><br/>
 				<label>Your vehicle</label>
-				<span name="vehDesc" class="carDetails">{{vehDesc}}</span>
+				<span name="vehDescReg" class="carDetails">{{vehDescReg}}</span>
 				<a href="" onclick="return false" value="Change vehicle" class="changeVehicleButton">Change vehicle</a>
 		</div>
 		
@@ -177,7 +213,7 @@
 
 		<h1>2. Find Vehicle</h1>
 		<label>Your vehicle</label>
-		<span name="vehDesc" class="disabledSummary">{{vehDesc}}</span>
+		<span name="vehDescReg" class="disabledSummary">{{vehDescReg}}</span>
 		<a href="" onclick="toggleSections();return false;">Edit</a>
 	</div>
 

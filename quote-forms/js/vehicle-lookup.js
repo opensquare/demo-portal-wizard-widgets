@@ -1,7 +1,7 @@
 function VehicleLookup(lookupUrl, abiUrl, formFlowId) {
 	
 	this.init = function() {
-		if ($("[name='vehKey']").val()) {
+		if ($("[name='vehKeyReg']").val()) {
 			$(".findCar").hide();
 			$(".carFound").show();
 		}
@@ -32,7 +32,7 @@ function VehicleLookup(lookupUrl, abiUrl, formFlowId) {
 	}
 
 	function vehicleNotFound() {
-		setInputValue('vehDesc','Vehicle Not Found');
+		setInputValue('vehDescReg','Vehicle Not Found');
 		setInputValue('multiple','');
 	}
 	
@@ -69,8 +69,8 @@ function VehicleLookup(lookupUrl, abiUrl, formFlowId) {
 	}
 	
 	function populateVehicle(vehicleDetails, skipModelLookup) {
-		var yom = vehicleDetails.MANUF_DATE;
-		yom = yom.substring(7);
+		var yomReg = vehicleDetails.MANUF_DATE;
+		yomReg = yomReg.substring(7);
 		var make = vehicleDetails.MAKE;
 		make = titleCase(make);
 	
@@ -81,11 +81,11 @@ function VehicleLookup(lookupUrl, abiUrl, formFlowId) {
 		
 		var fuel = vehicleDetails.FUEL;
 		fuel = titleCase(fuel);
-		var transmission = vehicleDetails.TRANSMISSION;
-		transmission = titleCase(transmission);
+		var transmissionReg = vehicleDetails.TRANSMISSION;
+		transmissionReg = titleCase(transmissionReg);
 		engineCapacity = vehicleDetails.CC;
 		vehicleKey = vehicleDetails.ABIBROKERNETCODE;
-		var descriptionDetails = {make: make, yom: yom, fuel: fuel, mvris: mvris};
+		var descriptionDetails = {make: make, yomReg: yomReg, fuel: fuel, mvris: mvris};
 		var multiple = null;
 		if (typeof vehicleDetails.MODEL != "string"){
 			multiple = true;
@@ -111,7 +111,7 @@ function VehicleLookup(lookupUrl, abiUrl, formFlowId) {
 			}
 		} else {
 			multiple = false;
-			setInputValue('vehKey', vehicleKey);
+			setInputValue('vehKeyReg', vehicleKey);
 			var model = titleCase(vehicleDetails.MODEL);
 			descriptionDetails.model = model;
 			lookupModelByABI(vehicleKey, descriptionDetails, setSingleModel);
@@ -119,63 +119,63 @@ function VehicleLookup(lookupUrl, abiUrl, formFlowId) {
 		setInputValue("reg", vehicleDetails.REG);
 		setInputValue("make", make);
 		setInputValue("fuel", fuel);
-		setInputValueChange("yom", yom);
+		setInputValueChange("yomReg", yomReg);
 		setInputValue("engineCapacity", engineCapacity);
-		setInputValue("transmission", transmission);
+		setInputValue("transmissionReg", transmissionReg);
 		setInputValue("multiple", multiple);
 	}
-	function setSelectedModel(yom, make, model, fuel, vehicleKey){
-		setInputValue("vehKey", vehicleKey);
-		var vehDesc = yom + " " + make + " " + model + " (" + fuel + ")";
-		setInputValue("vehDesc", vehDesc);
+	function setSelectedModel(yomReg, make, model, fuel, vehicleKey){
+		setInputValue("vehKeyReg", vehicleKey);
+		var vehDescReg = yomReg + " " + make + " " + model + " (" + fuel + ")";
+		setInputValue("vehDescReg", vehDescReg);
 		setInputValue("model", model);
 	}
 	function setSingleModel(descriptionDetails){
 		var model = titleCase(descriptionDetails.model);
 		setInputValue("model", model);
-		var vehDesc = descriptionDetails.yom + " " + descriptionDetails.make + " " + model + " (" + descriptionDetails.fuel + ")";
-		setInputValue('vehDesc', vehDesc);
+		var vehDescReg = descriptionDetails.yomReg + " " + descriptionDetails.make + " " + model + " (" + descriptionDetails.fuel + ")";
+		setInputValue('vehDescReg', vehDescReg);
 		$(".findCar").hide();
 		$(".carFound").show();
 	}
 	function clearAll() {
 		setInputValue("reg", "");
-		setInputValue("vehKey", "");
-		setInputValue("vehDesc", "");
+		setInputValue("vehKeyReg", "");
+		setInputValue("vehDescReg", "");
 		setInputValue("make", "");
 		setInputValue("model", "");
 		setInputValue("fuel", "");
-		setInputValueChange("yom", "");
+		setInputValueChange("yomReg", "");
 		setInputValue("engineCapacity", "");
-		setInputValue("transmission", "");
+		setInputValue("transmissionReg", "");
 		setInputValue("multiple", "");
 	}
 	function addModelToList(descriptionDetails){
 		addEntryToDropDown(document.getElementById("multipleMatches"), titleCase(descriptionDetails.model), descriptionDetails.code);
 		if (descriptionDetails.number + 1 == document.getElementById("multipleMatches").options.length) {
 			document.getElementById("multipleMatches").options[0].text = "----SELECT----";
-			jQuery("#vehDesc").html("No vehicle selected");
+			jQuery("#vehDescReg").html("No vehicle selected");
 			jQuery("#descLoad").css("display","none");
 		};
 	}
 	function setSelectedMultiple(){
-		var yom = document.getElementById('yearOfMake').value;
+		var yomReg = document.getElementById('yearOfMake').value;
 		var make = document.getElementById('make-in').value;
 		var fuel = document.getElementById('fuel-in').value;
 		var vehicleKey = document.getElementById('multipleMatches').value;
 		var model = document.getElementById('multipleMatches').options[document.getElementById('multipleMatches').selectedIndex].text;
-		setInputValue('vehKey', vehicleKey);
-		var vehDesc = yom + " " + make + " " + model + " (" + fuel + ")";
-		setInputValue('vehDesc', vehDesc);
+		setInputValue('vehKeyReg 	', vehicleKey);
+		var vehDescReg = yomReg + " " + make + " " + model + " (" + fuel + ")";
+		setInputValue('vehDescReg', vehDescReg);
 		setInputValue("model", model);
 	}
 	
 	function resetVehicleForm(message) {
 		resetMultipleDropDown();
 		if (defined(message)){
-			jQuery("#vehDesc").html(message);
+			jQuery("#vehDescReg").html(message);
 		} else {
-			jQuery("#vehDesc").html("No vehicle selected");
+			jQuery("#vehDescReg").html("No vehicle selected");
 		}
 	}
 	
@@ -364,9 +364,9 @@ function VehicleLookup(lookupUrl, abiUrl, formFlowId) {
 				fuel = "DIESEL";
 			}
 		}
-		var transmission;
+		var transmissionReg;
 		if (xml.getElementsByTagName("MVRIS").length > 0){
-			transmission = xml.getElementsByTagName("MVRIS")[0].getElementsByTagName("GEARBOX_TYPE")[0].childNodes[0].nodeValue;
+			transmissionReg = xml.getElementsByTagName("MVRIS")[0].getElementsByTagName("GEARBOX_TYPE")[0].childNodes[0].nodeValue;
 		}
 		if (checkForMultiple(xml.getElementsByTagName("ABI")[0])){
 			vehicleMap["MODEL"] = new Array();
@@ -377,7 +377,7 @@ function VehicleLookup(lookupUrl, abiUrl, formFlowId) {
 		}
 
 		var abicode = xml.getElementsByTagName("ABI")[0].getElementsByTagName("ABI_CODE")[0].getElementsByTagName("CODE")[0].childNodes[0].nodeValue;
-		vehicleMap["TRANSMISSION"] = transmission;
+		vehicleMap["TRANSMISSION"] = transmissionReg;
 		vehicleMap["ABIBROKERNETCODE"] = abicode;
 		return vehicleMap;
 	}
