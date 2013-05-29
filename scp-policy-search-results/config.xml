@@ -32,4 +32,12 @@
 		<js>scp-policy-search-results.js</js>
 		<delayLoad>true</delayLoad>
 	</attributes>
+	<filters>
+		<filter>
+			<attributes>
+				<name>valueInjector</name>
+				<htmlTemplate>scp-policy-search-results.html</htmlTemplate>
+			</attributes>
+		</filter>
+	</filters>
 </widget>

@@ -2,29 +2,24 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
     <xsl:output method="xml"/>
     <xsl:template match="/">
-        <ul>
+        <Entities>
             <xsl:choose>
                 <xsl:when test="/pactresponse/entity/IdentifiedEntity">
                     <xsl:apply-templates select="/pactresponse/entity/IdentifiedEntity"/>
                 </xsl:when>
-                <xsl:otherwise>
-                    <li>No records found</li>
-                </xsl:otherwise>
+                <xsl:otherwise>No records found</xsl:otherwise>
             </xsl:choose>
-        </ul>
+        </Entities>
     </xsl:template>
     <xsl:template match="IdentifiedEntity">
         <xsl:variable name="descriptionParts" select="tokenize(description, '\|')"/>
         <xsl:variable name="entityType">
             <xsl:value-of select="$descriptionParts[2]"/>
         </xsl:variable>
-        <li>
-            <xsl:attribute name="class">
-                <xsl:value-of select="concat($entityType, ' ', $descriptionParts[3])"/>
-            </xsl:attribute>
-            <span>
-                <xsl:value-of select="$descriptionParts[1]"/>
-            </span>
+        <IdentifiedEntity>
+            <entityType><xsl:value-of select="$entityType"/></entityType>
+            <state><xsl:value-of select="$descriptionParts[3]"/></state>
+            <name><xsl:value-of select="$descriptionParts[1]"/></name>
             <xsl:variable name="widget">
                 <xsl:choose>
                     <xsl:when test="$entityType='policy'">show</xsl:when>
@@ -32,11 +27,8 @@
                     <xsl:otherwise>entity</xsl:otherwise>
                 </xsl:choose>
             </xsl:variable>
-            <a class="button">
-                <xsl:attribute name="href">#policy/<xsl:value-of select="$widget"/>/<xsl:value-of select="identifier/uid"/>
-                </xsl:attribute>
-				show
-            </a>
-        </li>
+            <widget><xsl:value-of select="$widget"/></widget>
+            <uid><xsl:value-of select="identifier/uid"/></uid>
+        </IdentifiedEntity>
     </xsl:template>
 </xsl:stylesheet>
