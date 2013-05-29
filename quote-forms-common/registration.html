@@ -1,9 +1,23 @@
 <h1>Apply</h1>
+
+<p> 
+	In order to register your insurance policy we now require the full registration of the vehicle in question.
+</p>
+
+<div class="field" rf.includeIf="{'{{//quote/vehicle/reg}}' == '' }">
+	<label for="manual_reg">Registration number</label>
+	<div id="uk_reg_plate">
+			<div id="flag"></div>
+			<input  id="manual_reg" type="text" name="reg" rf.validation="required"/>
+	</div>
+</div>
+
 <p>
-	We just need a few contact details before you can purchase your insurance policy. The email and
+	Also, we just need a few contact details before you can purchase your insurance policy. The email and
 	password you supply will enable you to access your own Customer Portal, where you can view
 	information about your policy, access your policy documents and more.
 </p>
+
 <div id="loginDetails">
 	<div class="field">
 		<label for="input_email">Email Address</label>
