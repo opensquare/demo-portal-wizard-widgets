@@ -8,7 +8,7 @@ h1 {
 	font-size: 230%; font-weight: normal;
 }
 div.widget[name='quote-forms'] input[type='date'] {
-	border: thin solid #0090C0;
+	border: thin solid #0090C0; width: 15%;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 1.3em; 
 }
 div.widget[name='quote-forms'] input[type="button"] {
@@ -654,5 +654,5 @@ div.widget[name='quote-forms'] #input_sort_code {
 	width: 10%;
 }
 div.widget[name='quote-forms'] #input_code {
-	width: 5%;
+	width: 10%;
 }
