@@ -1,9 +1,13 @@
+	<script>
+		$('#input_licenceType').change(function(){$('input[name="licenceType"]').attr('value', $("#input_licenceType option:selected").html());})
+	</script>
 
 	<div class="field">
 		<label for="input_licenceType">Driving licence type:</label>
 		<select id="input_licenceType" name="licenceTypeCode" rf.validation="required" rf.source="resources/licenceType.csv" rf.preselectFirstOption="true">
 			<option disabled selected/>
 		</select>
+		<input type="hidden" name="licenceType" value=""/>
 	</div>
 	
 	<div class="field">
