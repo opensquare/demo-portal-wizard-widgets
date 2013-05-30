@@ -108,6 +108,13 @@ article[type="internal"] .new-square[type='internal'][subtype='batch'] {
 	right: 0;
 }
 
+#content article[type='internal'] .users-groups {
+	display: inline-block;
+	vertical-align: top;
+}
+#content article[type='internal'] .users-groups button{
+	background-color: #a44;
+}
 #content article[type='internal'] .usergroups {
 	width:85%;
 	margin-bottom: 1em;
@@ -118,8 +125,8 @@ article[type="internal"] .new-square[type='internal'][subtype='batch'] {
 	border-radius: 0.25em;
 }
 #content article[type='internal'] .usergroups .action {
-	background: #777;
-	color: #fff;
+	background: #DDD;
+	color: #000;
 }
 #content article[type='internal'] .scp-internal-users div.widget {
 	display: inline-block;
