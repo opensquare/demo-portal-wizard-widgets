@@ -14,4 +14,6 @@
   			$(this).siblings('.invalid-message').remove();
   		});
 
+		/* Default HTML date tag */
+		$('#input_date').attr("value", moment().format("YYYY-MM-DD"));
  
