@@ -1,0 +1,124 @@
+#cp-policy-driving ul{
+	padding: 0;
+}
+#cp-policy-driving li{
+	display: inline-block;
+	min-width: 3em;
+	padding: 0.1em 1em;
+	border: medium solid #555;
+	border-radius: 0.25em;
+	text-align: center;
+	cursor: pointer;
+}
+#cp-policy-driving li:nth-child(odd){
+	background-color: #555;
+	color: #FFF;
+}
+#cp-policy-driving li.on{
+	background-color: #92CE56;
+	color: #FFF;
+	border-color: #72AE36;
+}
+#cp-policy-driving-journies{
+	display: inline-block;
+	//height: 6em;
+	overflow: hidden;
+	vertical-align: top;
+	text-align: center;
+	border: medium solid #555;
+	border-radius: 0.5em;
+	margin-right: 1.5em;
+	float: right;
+}
+#cp-policy-driving-journies .title{
+	display: block;
+	margin-bottom: 0.25em;
+	padding: 0 1em;
+	background-color: #555;
+	color: #fff;
+}
+#cp-policy-driving-journies .journies{
+	display: block;
+	font-size: 2em;
+}
+.loading{
+	width: 100%;
+	height: 100px;
+	background: url('loading.gif') no-repeat center center;
+}
+/* Telematics styles */
+a.buttontext 
+{
+    color: #4B3E38;
+    text-decoration: none;    
+}
+a:hover {
+    text-decoration: none;
+}
+a:visited{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.journeyWindow {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    pointer-events: none;
+}
+
+.journeyWindow:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+.journeyWindow > div {
+    width: 70%;
+    position: relative;
+    margin: 10% auto 1% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #00d9ff; }
+
+#summaryFrame {
+    height: 687px;
+    width: 900px;
+    margin-left: -80px;
+    margin-top: -50px;
+    margin-bottom: -110px;
+}
+
+#telematicsWindow {
+    height: 450px;
+    width: 100%;
+}

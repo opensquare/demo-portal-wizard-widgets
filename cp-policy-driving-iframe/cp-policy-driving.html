@@ -1,0 +1,69 @@
+  <script>
+    var telematicsSummaryUrl = 'http://37.205.61.153/telematicmodules/vehicleprofile.html';
+
+    $(document).ready(function() {
+  
+      $('#recentMonths').children().each(function(){
+          var monthOffset = $(this).val();
+          if(monthOffset != 0 ){
+            $(this).text(moment().subtract('months', monthOffset).format("MMM YY"));
+          }
+      });
+      //Default to this month
+       var sd = moment().startOf('month').format("DD/MM/YYYY");
+       var ed = moment().format("DD/MM/YYYY");
+      //Quindell: sd and ed cannot be equal!
+      if(sd == ed){
+        sd = moment().subtract('days', 1).format("DD/MM/YYYY");
+      }
+     
+      var dates = '?sVehicleRegNo=DY55%20NKC&sStartDate=' + sd + '&sEndDate=' + ed
+      document.getElementById('summaryFrame').src = telematicsSummaryUrl+dates;
+      document.getElementById('telematicsWindow').src = 'http://37.205.61.153/telematicmodules/journeys.html?sCarReg=RJ57%20HWD&sTravelDate=11/05/2013';
+
+      $('#telematicJourney > div > a').attr('href', window.location.hash);
+    });
+
+    $('li').click(function() {    
+      $(this).addClass("on");
+       $(this).siblings().removeClass("on");
+
+      var offset = $(this).val();
+      var sd = moment().subtract('months', offset).startOf('month').format("DD/MM/YYYY");
+      var ed = moment().subtract('months', offset).endOf('month').format("DD/MM/YYYY");
+
+      if(offset == 0){
+        ed = moment().format("DD/MM/YYYY");
+        if(sd == ed){sd = moment().subtract('days', 1).format("DD/MM/YYYY");}
+      }
+      var dates = '?sVehicleRegNo=DY55%20NKC&sStartDate=' + sd + '&sEndDate=' + ed
+      document.getElementById('summaryFrame').src = telematicsSummaryUrl+dates;
+    });
+  </script>
+
+  <div id="telematics">
+    <h2>Telematics Driving Dashboard</h2>
+
+    <div id="cp-policy-driving-journies">
+      <span class="title">Recent journies:</span>
+      <span id="journeyNumber" class="journies"></span><a href="#telematicJourney">View details ►</a>
+    </div>
+    
+    <ul id="recentMonths">
+      <li value="4"></li>
+      <li value="3"></li>
+      <li value="2"></li>
+      <li value="1"></li>
+      <li value="0" class="on">Current Month</li>
+    </ul>
+    <div id='telematicsProxy'/>
+  </div>  
+
+  <iframe id="summaryFrame" src="" style="-webkit-transform:scale(0.8);-moz-transform-scale(0.8);"></iframe>
+
+  <div id="telematicJourney" class="journeyWindow">
+    <div>
+      <a title="Close" class="close">X</a>
+      <iframe id="telematicsWindow" src="" scrolling="no"></iframe>
+    </div>
+  </div>
