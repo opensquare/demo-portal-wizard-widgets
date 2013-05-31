@@ -47,6 +47,9 @@
 	background: url('loading.gif') no-repeat center center;
 }
 /* Telematics styles */
+a {
+    color: #333;
+}
 a.buttontext 
 {
     color: #4B3E38;
