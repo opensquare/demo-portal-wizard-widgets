@@ -34,10 +34,11 @@
 						<%if (user.isPermitted("finance-accounts")) {%>
 						<div class="new-square-group">
 							<h3>Finance</h3>
-							<a class="new-square" href="#finance/life" type="finance" subtype="life">Life accounts</a>
+							<a class="new-square" href="#finance/accounts" type="finance" subtype="accounts">Company accounts</a>
+							<!--a class="new-square" href="#finance/life" type="finance" subtype="life">Life accounts</a>
 							<a class="new-square" href="#finance/nonlife" type="finance" subtype="nonlife">Non-life accounts</a>
 							<a class="new-square" href="#finance/lifereserves" type="finance" subtype="lifereserves">Life reserving accounts</a>
-							<a class="new-square" href="#finance/nonlifereserves" type="finance" subtype="nonlifereserves">Non-life reserving accounts</a>
+							<a class="new-square" href="#finance/nonlifereserves" type="finance" subtype="nonlifereserves">Non-life reserving accounts</a-->
 						</div>
 						<%}%>
 						<%if (user.isPermitted("claims-search") || user.isPermitted("claims-claim")) {%>
