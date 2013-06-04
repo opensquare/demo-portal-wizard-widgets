@@ -1,0 +1,35 @@
+<widget>
+	<type>pactResponseLayout</type>
+	<parameters>
+		<pactrequest>
+			<![CDATA[<pactrequest>
+				<target><uid>{agreementUid}</uid></target>
+				<context>
+					<locale>
+						<language>en</language>
+						<country>GB</country>
+					</locale>
+					<actor><actorUid>123</actorUid></actor>
+			        <party><partyUid>123</partyUid></party>
+					<process/>
+					<evType/>
+					<evSubType/>
+					<sessionId>{sessionId}</sessionId>
+					<dateFormat>dd/MM/yyyy kk:mm:ss</dateFormat>
+					<timeWarning>2000</timeWarning>
+				</context>
+				<timepoint>
+					<effectivetime>now</effectivetime>
+					<physicaltime>now</physicaltime>
+				</timepoint>
+				<return>
+					<name>asTimeSpanEntityVersion</name>
+					<params><useCache>true</useCache><depth>1</depth></params>
+				</return>
+			</pactrequest>]]>
+		</pactrequest>
+	</parameters>
+	<attributes>
+		<css>scp-policy-client-display.css</css>
+	</attributes>
+</widget>
