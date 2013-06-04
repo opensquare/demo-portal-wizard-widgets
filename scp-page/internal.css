@@ -167,7 +167,7 @@ article[type="internal"] .new-square[type='internal'][subtype='batch'] {
 .scp-internal-users .button {
 	float: right;
 	font-size: large;
-	background-color: #777;
+	background-color: #695!important;
 }
 
 /*Popup styling*/
