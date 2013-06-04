@@ -31,5 +31,6 @@
 	</parameters>
 	<attributes>
 		<css>scp-policy-client-display.css</css>
+		<js>scp-policy-client-display.js</js>
 	</attributes>
 </widget>
