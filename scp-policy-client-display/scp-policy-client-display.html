@@ -4,76 +4,76 @@
 	</div>
 	<div class="side2">
 		<div class="property-group name">
-			<span class="property-value clientIndDetails-title auto" title="Title">{{title}}</span>
-			<span class="property-value clientIndDetails-firstName auto" title="First name">Michael</span>
-			<span class="property-value clientIndDetails-middleName auto" title="Middle name"></span>
-			<span class="property-value clientIndDetails-surname auto" title="Surname">Jordan</span>
+			<span class="property-value clientIndDetails-title auto" title="Title">{{//@title}}</span>
+			<span class="property-value clientIndDetails-firstName auto" title="First name">{{//@firstName}}</span>
+			<span class="property-value clientIndDetails-middleName auto" title="Middle name">{{//@middleName}}</span>
+			<span class="property-value clientIndDetails-surname auto" title="Surname">{{//@surname}}</span>
 		</div>
 		<div class="property-group genderage">
 			<span class="property-label">Gender</span>
-			<span class="property-value auto">Male</span>
+			<span class="property-value auto">{{//@gender}}</span>
 			<span class="property-label">Date of birth</span>
-			<span class="property-value auto">10 February 1973 (40 yrs)</span>
+			<span class="property-value auto">{{//@dob}}</span>
 			<button title="Click to change these details">Edit</button>
 		</div>
 		<div class="property-group occupation">
 			<span class="property-label">Occupation</span>
-			<span class="property-value medium">Headteacher</span>
+			<span class="property-value medium">{{//@occupation}}</span>
 			<span class="property-label">Code</span>
-			<span class="property-value auto">10</span>
+			<span class="property-value auto">{{//@occupationCode}}</span>
 		</div>
 		<details class="contact-details" open>
 			<summary>Contact details</summary>
 			<div class="map">
-				<a href="https://maps.google.com/maps?q=NG17+7LA" target="_new" title="Open a detailed map in a new window">
+				<a href="https://maps.google.com/maps?q={{//@postalCode}}" target="_new" title="Open a detailed map in a new window">
 					<!--img src="http://maps.googleapis.com/maps/api/staticmap?size=100x100&zoom=4&markers=color:white%7Csize:small%7CNG177LA&style=saturation:-100%7Cgamma:0.3&sensor=false"/-->
-					<img src="http://maps.googleapis.com/maps/api/staticmap?size=100x100&zoom=4&markers=color:white%7Csize:small%7CNG177LA&sensor=false"/>
+					<img src="http://maps.googleapis.com/maps/api/staticmap?size=100x100&zoom=4&markers=color:white%7Csize:small%7C{{//@postalCode}}&sensor=false"/>
 				</a>
 			</div>
 			<div class="address">
 				<div class="property-group">
 					<span class="property-label">Address</span>
-					<span class="property-value long">A S D Fabrications, Byron Avenue</span>
+					<span class="property-value long">{{//@addressLine1}}</span>
 				</div>
 				<div class="property-group">
 					<span class="property-label"></span>
-					<span class="property-value long">Lowmoor Business Park</span>
+					<span class="property-value long">{{//@addressLine2}}</span>
 				</div>
 				<div class="property-group">
 					<span class="property-label"></span>
-					<span class="property-value long">Nottingham</span>
+					<span class="property-value long">{{//@addressLine3}}</span>
 				</div>
 				<div class="property-group">
 					<span class="property-label"></span>
-					<span class="property-value long">Nottinghamshire</span>
+					<span class="property-value long">{{//@addressLine4}}</span>
 				</div>
 				<div class="property-group">
 					<span class="property-label">Postcode</span>
-					<span class="property-value address-postalCode-value short">NG17 7LA</span>
+					<span class="property-value address-postalCode-value short">{{//@postalCode}}</span>
 				</div>
 				<div class="property-group">
 					<span class="property-label"></span>
-					<span class="property-value short">UK</span>
+					<span class="property-value short">{{//@country}}</span>
 				</div>
 			</div>
 			<div class="property-group email">
 				<span class="property-label">Email</span>
-				<span class="property-value long">test123@opensquare.co.uk</span>
-				<a class="action send" href="mailto:test123@opensquare.co.uk" title="Send an email to this address"></a>
+				<span class="property-value long">{{//@email}}</span>
+				<a class="action send" href="mailto:{{//@email}}" title="Send an email to this address"></a>
 			</div>
 			<div class="property-group phone">
-				<span class="property-label">Phone</span>
-				<span class="property-value medium">0232 213 21321</span>
-				<a class="action call" href="callto:+4423221321321" title="Call this number"></a>
+				<span class="property-label">Home phone</span>
+				<span class="property-value medium">{{//@homePhone}}</span>
+				<a class="action call" href="callto:{{//@homePhone}}" title="Call this number"></a>
 			</div>
 		</details>
 		<details class="motoring-details">
 			<summary>Motoring details</summary>
 			<div class="property-group licence">
 				<span class="property-label">Licence type</span>
-				<span class="property-value short">1</span>
+				<span class="property-value short">{{//@licenceTypeCode}}</span>
 				<span class="property-label">Licence held</span>
-				<span class="property-value short">10</span>
+				<span class="property-value short">{{//@licenceHeldYears}}</span>
 			</div>
 		</details>
 		<details>
