@@ -23,8 +23,8 @@
 					<physicaltime>now</physicaltime>
 				</timepoint>
 				<return>
-					<name>asTimeSpanEntityVersion</name>
-					<params><useCache>true</useCache><depth>1</depth></params>
+					<name>asTimeSpanEntityVersionSnapshot</name>
+					<params><useCache>true</useCache><depth>2</depth></params>
 				</return>
 			</pactrequest>]]>
 		</pactrequest>
