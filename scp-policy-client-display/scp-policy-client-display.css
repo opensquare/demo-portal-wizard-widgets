@@ -51,10 +51,10 @@ button {
 	background: url('person-dark-large.png') no-repeat center;
 	background-size: contain;
 }
-.scp-policy-client-display .picture.male {
+.scp-policy-client-display .picture.Male {
 	background-image: url('person-man-dark-large.png');
 }
-.scp-policy-client-display .picture.female {
+.scp-policy-client-display .picture.Female {
 	background-image: url('person-woman-dark-large.png');
 }
 .scp-policy-client-display .status {
@@ -77,13 +77,13 @@ button {
 	width: 10%;
 	min-width: 6em;
 	padding: 0.1em 0 0.1em 0;
-	color: #999;
+	color: #9BBB59;
 }
 .scp-policy-client-display .property-value {
 	display: inline-block;
 	padding: 0.1em 1em 0.1em 0.25em;
 	color: #000;
-	background-color: #EEE;
+	border-bottom: thin dashed #ccc;
 }
 .scp-policy-client-display .property-value:empty:before {
 	content: '\00a0'; /* fix missing content height problem */
@@ -97,6 +97,7 @@ button {
 }
 .scp-policy-client-display .name .property-value {
 	font-size: 1.5em;
+	border-bottom: none;
 }
 .scp-policy-client-display .genderage :nth-child(2) {
 	margin-right: 3em;
