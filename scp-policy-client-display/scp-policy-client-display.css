@@ -25,17 +25,22 @@ button {
 .scp-policy-client-display .side1 {
 	display: inline-block;
 	width: 15%;
+	margin-top: 1em;
 	vertical-align: top;
 }
 .scp-policy-client-display .side2 {
 	display: inline-block;
-	width: 80%;
+	width: 84%;
+	margin-top: 1em;
+}
+.scp-policy-client-display details {
+	padding-top: 1em;
 }
 .scp-policy-client-display summary {
 	margin-bottom: 1em;
 	font-size: 1.25em;
 	font-weight: normal;
-	color: #999;
+	color: #777;
 	border-bottom: thin solid;
 	cursor: pointer;
 }
@@ -143,7 +148,7 @@ button {
 	border-radius: 0.25em;
 	vertical-align: top;
 }
-.scp-policy-client-display .details:hover .action {
+.scp-policy-client-display details:hover .action {
 	background-color: #0DB4F2;
 }
 .scp-policy-client-display .property-group.email .send {

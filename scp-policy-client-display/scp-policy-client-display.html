@@ -1,6 +1,6 @@
 	<div class="side1">
 		<div class="picture {{//*[@name='gender']}}"></div>
-		<div class="status">{{//pactresponse/entity/timespanentity/timespanentityversion/status}}</div>
+		<div class="status">{{/pactresponse.entity.timespanentity.timespanentityversion.status}}</div>
 	</div>
 	<div class="side2">
 		<div class="property-group name">
@@ -47,16 +47,16 @@
 				</div>
 				<div class="property-group">
 					<span class="property-label">Postcode</span>
-					<span class="property-value address-postalCode-value short">{{//*[@name='postalCode']}}</span>
+					<span class="property-value address-postalCode-value medium">{{//*[@name='postalCode']}}</span>
 				</div>
 				<div class="property-group">
 					<span class="property-label"></span>
-					<span class="property-value short">{{//*[@name='country']}}</span>
+					<span class="property-value medium">{{//*[@name='country']}}</span>
 				</div>
 			</div>
 			<div class="property-group email">
 				<span class="property-label">Email</span>
-				<span class="property-value long">{{//*[@name='email']}}</span>
+				<span class="property-value medium">{{//*[@name='email']}}</span>
 				<a class="action send" href="mailto:{{//*[@name='email']}}" title="Send an email to this address"></a>
 			</div>
 			<div class="property-group phone">
