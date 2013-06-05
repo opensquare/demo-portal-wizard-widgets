@@ -104,7 +104,7 @@ button {
 	float: right;
 	-webkit-filter: grayscale(100%) brightness(60%) contrast(200%);
 }
-.scp-policy-client-display .map:hover {
+.scp-policy-client-display .contact-details:hover .map {
 	-webkit-filter: none;
 }
 .scp-policy-client-display .address .property-group {
@@ -137,7 +137,7 @@ button {
 	border-radius: 0.25em;
 	vertical-align: top;
 }
-.scp-policy-client-display .action:hover {
+.scp-policy-client-display .details:hover .action {
 	background-color: #0DB4F2;
 }
 .scp-policy-client-display .property-group.email .send {
