@@ -1,8 +1,13 @@
-.scp-policy-client .widget-content>.displayAgreement>div>.agreement>h1 {
-	background-image: url('id-dark.png');
+.scp-policy-client details {
+	margin-left: 15%;
 }
-.scp-policy-client .scp-associated-agreements .clientRelationship {
-	display: none;
+.scp-policy-client summary {
+	margin-bottom: 1em;
+	font-size: 1.25em;
+	font-weight: normal;
+	color: #777;
+	border-bottom: thin solid;
+	cursor: pointer;
 }
 .documents {
 	padding: 10px 0 10px 30px;
