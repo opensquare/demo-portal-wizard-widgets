@@ -9,13 +9,12 @@ function Widget_common_docs_list() {
     }
 
 	this.onReadyExtend = function() {
-
 			var url = document.URL;
 			var application = $(":header a").html();
      		var policyId = url.substring(url.lastIndexOf("/") + 1);
      		policyId = policyId.substring(policyId.lastIndexOf("#") + 1);
 			var getUrl = 'proxy/mailmerger/jobs/search/' + encodeURIComponent('%'+ policyId +'%');
-			var noDocMsg = "No documents found."
+			var noDocMsg = "No documents found.";
 		
 			$.ajax(getUrl).done(function(searchResultsArray) {
 
