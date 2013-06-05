@@ -1,5 +1,5 @@
 	<div class="side1">
-		<div class="picture" style="background-image:url('person-man-dark-large.png')"></div>
+		<div class="picture {{//*[@name='gender']}}"></div>
 		<div class="status">{{//pactresponse/entity/timespanentity/timespanentityversion/status}}</div>
 	</div>
 	<div class="side2">
@@ -25,7 +25,7 @@
 			<summary>Contact details</summary>
 			<div class="map">
 				<a href="https://maps.google.com/maps?q={{//*[@name='postalCode']}}" target="_new" title="Open a detailed map in a new window">
-					<img src="http://maps.googleapis.com/maps/api/staticmap?size=100x100&zoom=4&markers=color:white%7Csize:small%7C{{//*[@name='postalCode']}}&sensor=false"/>
+					<img src="https://maps.googleapis.com/maps/api/staticmap?size=100x100&zoom=4&markers=color:white%7Csize:small%7C{{//*[@name='postalCode']}}&sensor=false"/>
 				</a>
 			</div>
 			<div class="address">

@@ -46,6 +46,12 @@ button {
 	background: url('person-dark-large.png') no-repeat center;
 	background-size: contain;
 }
+.scp-policy-client-display .picture.male {
+	background-image: url('person-man-dark-large.png');
+}
+.scp-policy-client-display .picture.female {
+	background-image: url('person-woman-dark-large.png');
+}
 .scp-policy-client-display .status {
 	text-align: center;
 	font-size: small;
