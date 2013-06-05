@@ -100,6 +100,9 @@
 .scp-policy-client-display .contact-details:hover .map {
 	-webkit-filter: none;
 }
+.scp-policy-client-display .map img {
+	border-radius: 0.35em;
+}
 .scp-policy-client-display .address .property-group {
 	display: block;
 	margin: 0
