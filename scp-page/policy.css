@@ -50,10 +50,10 @@ article[type="internal"] .new-square[type='policy'][subtype='renewals'] {
 	background-image: url('images/symbol-refresh-light.png');
 }
 #content aside[type='policy'][subtype='client']{
-	background-image: url('images/person-dark.png');
+	background-image: url('images/id-dark.png');
 }
 #content aside[type='policy'][subtype='client'].on{
-	background-image: url('images/person-light.png');
+	background-image: url('images/id-light.png');
 }
 
 /* Article (pages) styling */
