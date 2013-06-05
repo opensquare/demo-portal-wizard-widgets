@@ -83,7 +83,7 @@ button {
 	display: inline-block;
 	padding: 0.1em 1em 0.1em 0.25em;
 	color: #000;
-	border-bottom: thin dashed #ccc;
+	border-bottom: thin dashed #CCC;
 }
 .scp-policy-client-display .property-value:empty:before {
 	content: '\00a0'; /* fix missing content height problem */
@@ -92,11 +92,12 @@ button {
 	float: left;
 }
 .scp-policy-client-display .name {
-	padding-bottom: 1em;
-	border-bottom: thick solid #999;
+	padding-bottom: 0.5em;
+	border-bottom: thick solid #777;
 }
 .scp-policy-client-display .name .property-value {
-	font-size: 1.5em;
+	padding: 0 0.25em 0 0!important;
+	font-size: 1.6em;
 	border-bottom: none;
 }
 .scp-policy-client-display .genderage :nth-child(2) {

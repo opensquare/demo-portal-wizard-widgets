@@ -49,6 +49,12 @@ article[type="internal"] .new-square[type='policy'][subtype='renewals'] {
 #content aside[type='policy'][subtype='renewals'].on{
 	background-image: url('images/symbol-refresh-light.png');
 }
+#content aside[type='policy'][subtype='client']{
+	background-image: url('images/person-dark.png');
+}
+#content aside[type='policy'][subtype='client'].on{
+	background-image: url('images/person-light.png');
+}
 
 /* Article (pages) styling */
 #content article[type='policy'], #content article[type='policy'] .content-helper, #content article[type='policy'] .content-body{

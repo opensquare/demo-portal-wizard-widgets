@@ -1,0 +1,10 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>common-docs-list.html</url>
+	</parameters>
+	<attributes>
+		<displayheader>false</displayheader>
+		<js>common-docs-list.js</js>
+	</attributes>
+</widget>
