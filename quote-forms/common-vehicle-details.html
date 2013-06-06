@@ -1,0 +1,254 @@
+<script type='text/javascript' src='widgets/quote-forms/js/vehicle-lookup.js' ></script>
+<script type='text/javascript' src='widgets/quote-forms/js/manual-vehicle-lookup.js'></script>
+<script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script>
+<script>
+	rf.onFormLoad(function() {
+		var regInput = $('#input_reg');
+		var cdlUrl = regInput.attr('rf.source');
+		var abiUrl = $('#abiLookupProxy').attr('rf.source');
+		var flowId = $('[name=\'rf.flowId\']').val();
+		
+		var vehicleLookup = new VehicleLookup(cdlUrl, abiUrl, flowId, regInput);
+		vehicleLookup.init();
+		
+		$(".findCar [type='button']").click(function() {
+			vehicleLookup.lookupVehicle(regInput.val().toUpperCase());
+		})	
+		
+	})
+
+	/* Restrict and default HTML date tag */
+	$('#input_coverStartDate').attr("value", moment().format("YYYY-MM-DD"));
+	$('#input_coverStartDate').attr("max", moment().add('days', 29).format("YYYY-MM-DD"));
+	$('#input_coverStartDate').attr("min", moment().format("YYYY-MM-DD"));
+
+	/* Default section context */
+	$("#disabledSectionOne").hide();	 
+    $("#sectionTwo").hide();
+    $("#navigation").hide();
+    $("#foundVehicle").hide();
+
+	function editDetails(){
+	        $('#carDetails input, select').removeAttr('disabled');
+	        $('#carDetails a').remove();
+    }
+
+	function toggleSections(){
+		$('#sectionOne, #disabledSectionOne, #navigation, #disabledNavigation').slideToggle(800);
+		$('#sectionTwo, #disabledSectionTwo').delay(1200).slideToggle(800);
+		var startDate = document.getElementById('input_coverStartDate').value;
+		document.getElementById("startDate").innerHTML = moment(startDate, "YYYY-MM-DD").format("DD/MM/YYYY")
+	}
+
+	$('form select').change( function(){
+		$(this).addClass('changed');
+	})
+
+	$('form select').change( function(){
+		$(this).addClass('changed');
+	})
+
+	var flowId = $('[name=\'rf.flowId\']').val();
+	var lists = new ListResources(flowId);
+
+	function manualLookUpToggle() {
+		$(".manualLookUp").hide();
+		$(".carFound").show();
+		$('span[name="vehDescReg"]').text($("#input_desc option:selected").text());
+		$('span[name="reg"]').text("Not provided");
+	}
+</script>
+
+	<div id="sectionOne">
+		<h1>1. Find Vehicle</h1>
+		<div class="field knowReg">
+			<label>Do you know the vehicle registration number?</label>
+				<input id="input_knowReg_yes" type="radio" name="knowReg" value="yes" rf.validation="required" checked/>
+				<label for="input_knowReg_yes" class="forRadio">Yes</label>
+				<input id="input_knowReg_no" type="radio" name="knowReg" value="no"/>
+				<label for="input_knowReg_no" class="forRadio">No</label>
+			<div class="hint">Don't worry if you don't know the vehicle registration number. We can help!</div>
+		</div>
+
+		<div class="field findCar" rf.includeIf="{ fields.knowReg.value == 'yes' }">
+			<label for="input_reg">Registration number</label>
+			<input id="abiLookupProxy" type="hidden" style="display:none" rf.source="{{$vehicle-model-lookup}}" />
+			<div id="uk_reg_plate">
+				<div id="flag"></div>
+				<input  id="input_reg" type="text" name="reg" rf.validation="required" rf.source="{{$vehicle-lookup}}"/>
+			</div>
+			<input type="button" value="Find" id="findReg"/>
+			<input type="hidden" name="make" />
+			<input type="hidden" name="model" />
+			<input type="hidden" name="fuel" />
+			<input type="hidden" name="engineCapacity" />
+			<input type="hidden" name="multiple" />
+			<input type="hidden" name="vehKeyReg" />
+			<input type="hidden" name="transmissionReg" />
+			<input type="hidden" name="vehDescReg" />
+			<input type="hidden" name="yomReg" />
+			<div class="hint">We need your registration so we can find your exact car and help you get a more accurate quote.</div>
+		</div>
+		
+		<!-- Hidden vehicle details for Napier Calc -->
+		<input type="hidden" name="yom" rf.calculated="if (fields.knowReg.value == 'no') { fields.yomNoReg.value }else{ fields.yomReg.value}"/>
+		<input type="hidden" name="vehKey" rf.calculated="if (fields.knowReg.value == 'no') { fields.vehKeyNoReg.value }else{ fields.vehKeyReg.value}"/>
+		<input type="hidden" name="transmission" rf.calculated="if (fields.knowReg.value == 'no') { fields.transmissionNoReg.value }else{ fields.transmissionReg.value}" />
+		<input type="hidden" name="vehDesc" rf.calculated="if (fields.knowReg.value == 'no') { fields.vehDescNoReg.value }else{ fields.vehDescReg.value}" /> 
+		<input type="hidden" name="vehicleAge" rf.calculated="{if (fields.yom.value) { new Date().getFullYear() - fields.yom.value } }"/>
+		
+
+		<div class="field manualLookUp" rf.includeIf="{ fields.knowReg.value == 'no' }">
+			<div><label>Vehicle Search</label></div>
+			<div class="vehicle_search">
+				
+				<div id="makeModel">
+					<div id="makeModel">
+					<label for="input_mm">Make/Model</label>
+					<input id="input_mm" type="text" name="vehicleMM" placeholder="Start typing your vehicle name" rf.customType="auto-complete-select({ jsonTargetElement: '0', context: 'vehicle' })" rf.source="http://integration.osldev.net/resource-manager/REST/files/osl-resources/lists/_itbVehicleLists-ModelsSheet.xml?transformer=xslt&xslt=/osl-resources/lists/makeModelLookupTransformJSON.xsl&contentType=application%2Fjson&vehicle=[value]" />
+				</div>
+				</div>
+				<div id="modelDetail" rf.includeIf="{ fields.vehicleMM.value }">
+					<label for="input_yom">Year of registration</label>
+					<select id="input_yom" type="select" style="width: 42%;" name="yomNoReg"/>
+					<input id="input_yomProxy" type="hidden" name="yomProxy"
+			   			rf.source="http://integration.osldev.net/resource-manager/REST/files/osl-resources/lists/_itbVehicleLists-ABIDetails.xml?transformer=xslt&xslt=/osl-resources/lists/makeModelYOMTransform.xsl&contentType=application%2Fjson&vehicle=[value]"/>
+					
+
+					<label for="input_body">Body Type</label>
+					<select id="input_body" type="select" style="width: 42%;" name="bodyType" disabled/>
+					<input id="input_bodyProxy" type="hidden" test="test" name="bodyTypeProxy"
+			   			rf.source="http://integration.osldev.net/resource-manager/REST/files/osl-resources/lists/_itbVehicleLists-ABIDetails.xml?transformer=xslt&xslt=/osl-resources/lists/makeModelBodyTypeTransform.xsl&contentType=application%2Fjson&vehicle=[value]"/>
+
+
+					<label for="input_transmission">Transmission</label>
+					<select id="input_transmission" type="select" style="width: 42%;" name="transmissionNoReg" disabled/>
+						<input id="input_transmissionProxy" type="hidden" name="transmissionProxy"
+			   			rf.source="http://integration.osldev.net/resource-manager/REST/files/osl-resources/lists/_itbVehicleLists-ABIDetails.xml?transformer=xslt&xslt=/osl-resources/lists/makeModelTransmissionTransform.xsl&contentType=application%2Fjson&vehicle=[value]"/>
+					
+					<div id="modelDetail" rf.includeIf="{ fields.transmission.text }">
+						<input type="hidden" id="vehDescNoReg" name="vehDescNoReg" />
+						<select id="input_desc" type="select" name="vehKeyNoReg" style="width: 90%; margin: 5%;" disabled/>
+						<input id="input_descProxy" type="hidden" name="vehDescProxy"
+			   			rf.source="http://integration.osldev.net/resource-manager/REST/files/osl-resources/lists/_itbVehicleLists-ABIDetails.xml?transformer=xslt&xslt=/osl-resources/lists/makeModelVariantABITransform.xsl&contentType=application%2Fjson&vehicle=[value]"/>
+			   		</div>
+				</div>
+			</div>	
+			<div id="foundVehicle" class="navigation">
+				<input type="button" onclick="manualLookUpToggle();" value="Next"/>
+			</div>
+		</div>
+
+		<div class="field carFound" style="display: none;">
+				<label>Registration number</label>
+				<span name="reg" class="carDetails">{{reg}}</span><br/>
+				<label>Your vehicle</label>
+				<span name="vehDescReg" class="carDetails">{{vehDescReg}}</span>
+				<a href="" onclick="return false" value="Change vehicle" class="changeVehicleButton">Change vehicle</a>
+		</div>
+		
+		<div class="field carFound" style="display: none;">
+			<h3>Based on the information provided, we believe your car:</h3>
+
+			<div id="carDetails">
+
+				<label for="input_drivingPosition">Has the following driving position</label>
+				<select id="input_drivingPosition" class="changed" name="drivingPosition" rf.validation="required" rf.preselectFirstOption="true" disabled>
+					<option disabled></option>
+					<option selected value="2">Right-hand drive</option>
+					<option value="1">Left-hand drive</option>
+				</select>
+
+				<label for="input_securityDevices">Has the following security</label>
+				<select id="input_securityDevices" class="changed" name="securityDevicesCode" rf.validation="required" rf.source="resources/securityDevices.csv" rf.preselectFirstOption="true" disabled>
+				</select>
+
+				<label>Has an active security tracker</label>
+				<input id="input_activeTracker_yes" type="radio" name="activeTracker" value="yes" rf.validation="required" disabled/>
+				<label for="input_activeTracker_yes" class="forRadio">Yes</label>
+				<input id="input_activeTracker_no" type="radio" name="activeTracker" value="no" checked disabled/>
+				<label for="input_activeTracker_no" class="forRadio">No</label>
+
+				<label>Has been modified or altered in any way</label>
+				<input id="input_modified_yes" type="radio" name="modified" value="yes" rf.validation="required" disabled/>
+				<label for="input_modified_yes" class="forRadio">Yes</label>
+				<input id="input_modified_no" type="radio" name="modified" value="no" checked disabled/>
+				<label for="input_modified_no" class="forRadio">No</label>
+
+				<label class="currency" for="input_marketValue">Has a current market value of</label>
+				<input id="input_marketValue" type="text" name="marketValue" rf.validation="required" value="999" disabled/>
+
+				<a href="" onclick="editDetails();return false">Change vehicle details</a>
+				
+			</div>
+
+			<div id="disabledNavigation" class="navigation">
+				<input type="button" onclick="editDetails();toggleSections();" value="Next"/>
+			</div>
+		</div>
+	</div>
+
+	<div id="disabledSectionOne" class="disabled">
+
+		<h1>1. Find Vehicle</h1>
+		<label>Your vehicle</label>
+		<span name="vehDescReg" class="disabledSummary">{{vehDescReg}}</span>
+		<a href="" onclick="toggleSections();return false;">Edit</a>
+	</div>
+
+	<div id="sectionTwo">
+		<h1>3. Vehicle Details</h1>
+
+		<div class="field">	
+			<div>
+				<label for="input_purchaseDate">When did you buy the car?</label>
+
+				<select id="input_purchaseDateMonth" name="purchaseDateMonth" class="dateSel" rf.source="resources/months.csv" rf.preselectFirstOption="true">
+					<option disabled selected></option>
+				</select>
+				<select id="input_purchaseDateYear" name="purchaseDateYear" class="dateSel" rf.rangeStart="new Date().getFullYear()" rf.rangeEnd="new Date().getFullYear() - 15" rf.preselectFirstOption="true" value="">
+					<option disabled selected></option>
+				</select>
+				
+				<input id="input_noPurchaseDate" type="checkbox" name="noPurchaseDate" onclick="$('#input_purchaseDateMonth, #input_purchaseDateYear').attr('disabled', this.checked);"></select>
+				<label for="input_noPurchaseDate" class="checkboxLabel">I don't own the car yet</label>
+
+				<input type="hidden" name="monthsOwned" rf.calculated="{ if (fields.purchaseDateMonth.value ) { utils.monthsBetween(moment('01/' + fields.purchaseDateMonth.value + '/' + fields.purchaseDateYear.value, 'DD/MM/YYYY'), new Date()); }else{0}}" />
+			</div>
+
+			<div class="hint">We need your purchase date so we can find your exact car and help you get a more accurate quote.</div>
+		</div>
+		
+		<div class="field">
+			<label for="input_dayParking">Where do you park most days?</label>
+			<select id="input_dayParking" name="dayParkingCode" rf.validation="required" rf.source="resources/dayParking.csv" rf.preselectFirstOption="true">
+				<option disabled selected/>
+			</select>
+		</div>
+		
+		<div class="field">
+			<label for="input_nightParking">Where do you park most nights?</label>
+			<select id="input_nightParking" name="nightParkingCode" rf.validation="required" rf.source="resources/nightParking.csv" rf.preselectFirstOption="true">
+				<option disabled selected/>
+			</select>
+		</div>
+		
+		<div class="field">
+			<label for="input_noClaimsYears">How many years No Claims Discount do you have?</label>
+			<select id="input_noClaimsYears" name="noClaimsYears" rf.validation="required" rf.source="resources/noClaimsYears.csv" rf.preselectFirstOption="true"></select>
+		</div>
+
+		<div class="field" rf.includeIf="{ utils.isGreaterThan(fields.noClaimsYears.value, 0) }">
+			<label for="input_protectNoClaims">Do you want to protect your No Claims Discount?</label>
+			<input id="input_protectNoClaims" type="checkbox" name="protectNoClaims" rf.includeIf="{ utils.isGreaterThan(fields.noClaimsYears.value, 0) }"></input>
+		</div>
+
+	</div>
+
+	<div id="disabledSectionTwo" class="disabled">
+		<h1>3. Vehicle Details</h1>
+	</div>
+
+	<div class="navigation" id="navigation">
+		<input type="submit" rf.action="next" value="Next"/>
+	</div>
