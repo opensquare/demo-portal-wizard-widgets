@@ -35,10 +35,11 @@
 					"next"
 				]
 			},
-			{ id: "drivers", url: "5-drivers.html", 
+			{ id: "drivers", docBase: "/quote/vehicleDrivers", url: "5-multi-vehicle-drivers.html", 
 				actions: [
 					"back", 
 
+					"addAdditionalVehicle:additionalVehicle.editAdditionalVehicle(index=next)",
 					"addAdditionalDriver:additionalDriver.editAdditionalDriver(index=next)",
 					"editAdditionalDriver:additionalDriver.editAdditionalDriver(index=?)",
 					"deleteAdditionalDriver:delete(xpath=additionalDrivers/driver[index], index=?)",
@@ -92,6 +93,15 @@
 					"editClaim:claim.editClaim(index=?)",
 					"deleteClaim:delete(xpath=claims/claim[index], index=?)",
 					
+					"next:main.drivers"
+				]
+			},
+		],
+		additionalVehicle: [
+			{ id: "editAdditionalVehicle", docBase: "/quote/additionalVehicles/vehicle[index]", url: "6-edit-additional-vehicle.html", 
+				actions: [
+				    "cancel",
+					"back",
 					"next"
 				]
 			},

@@ -1,78 +1,5 @@
 <script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script>
-<script>
-	rf.onFormLoad(function() {
 
-		var x = ($(".gridVehicle").length)-1;
-		console.log("gridVehicle = " + x)
-		var drivers = [];
-
-		$('div[type="driver"]').each(function () {
-			drivers.push($(this).attr("id"));
-		});
-		
-		jQuery.each(drivers, function(a, val) {
-
-			console.log(a + " " + val)
-		    for(var i=1; i<x; i++){
-			    console.log(a + " " + val + " " + i)
-
-			    var item = $("#"+ val).clone();
-			    var insert = $("#" + val).parent();
-
-			   // console.log(insert)
-				var itemId = item.attr("id");
-				itemId = itemId + '#'+i;
-				item.attr("id", itemId);
-				insert.append(item);
-			}
-
-		});		
-
-		//$("input[type='submit']").click(function(){
-			$("#test").click(function(){
-
-			var abi;
-			var permission;
-			var driver;
-
-			// Parse main drivers
-			$(".main").each(function(){
-				abi = $(this).attr("abi");
-				driver = $(this).find('div').attr("id")
-
-				if (typeof driver != 'undefined'){
-					driver = driver.split("#");
-					driver = driver[0];
-
-					var checkName = "'main-" + abi + "-" + driver + "']";
-					$("input[name=" + checkName + '"').prop('checked', true);
-				}
-			}) 
-
-			// Parse named drivers
-			$(".named").each(function(){
-				abi = $(this).attr("abi");
-				var $namedDrivers = $(this).children();
-
-      			$namedDrivers.each(function(){
-      				driver = $(this).attr("id");
-
-      				if (typeof driver != 'undefined'){
-						driver = driver.split("#");
-						driver = driver[0];
-
-						var checkName = "'named-" + abi + "-" + driver + "']" ;
-						$("input[name=" + checkName + '"').prop('checked', true);
-					}
-
-      			})
-				
-			})
-
-		});
-		
-	});
-</script>
  <ul id="crumbTrail">
   <li class="car">Your car</li>
   <li class="policy">Your policy</li>
@@ -81,81 +8,26 @@
  </ul>
 
 <form rhinoforms="true">
-
-	<input type="button" id="test" value="Parse grid"/>
-
-	<h1>6. Drivers and Vehicles</h1>
-	<p>Here you can tell us who will be driving what vehicle. Simply drag the driver to the cell representing their driving permission. You can add as many vehicles and drivers as you like!!!!</p>
 	
-	<div id="multiGrid">
+	<h1>6. Main Driver</h1>
 
-		<rf.forEach select="//quote//vehicle" as="v">			
-			 <input type="checkbox" name="main-{{v.vehKey}}-DanHarris" style="display:none;"></input>
-			 <input type="checkbox" name="named-{{v.vehKey}}-DanHarris" style="display:none;"></input>
-			<input type="checkbox" name="main-{{v.vehKey}}-TimTribe" style="display:none;"></input>
-			 <input type="checkbox" name="named-{{v.vehKey}}-TimTribe" style="display:none;"></input>
-		</rf.forEach>
+	<div class="field">
+		<span class="{{customer.gender}}"></span>{{customer.firstName}} {{customer.surname}}
+		<a href="#" rf.action="back">Edit</a>
+	</div>
 
-		<!-- Grid Labels -->
-		<div>
-		  <div class="grid label"></div>
-		  <div class="grid label">Main Driver</div>
-		  <div class="grid label">Named Drivers</div>
+	<h1>7. Additional Drivers</h1>
+	<rf.forEach select="additionalDrivers/driver" as="d">
+		<div class="field">
+			<span class="{{d.gender}}"></span>{{d.firstName}} {{d.surname}}
+			<a href="#" rf.action="editAdditionalDriver?index={{d.index}}">Edit</a>
+			<a href="#" rf.action="deleteAdditionalDriver?index={{d.index}}">Delete</a>
 		</div>
-		<!-- Existing vehicles -->
-		<rf.forEach select="//quote//vehicle" as="v">
-			<div class="gridVehicle">
-			  <div class="grid title">
-			  	<span class="transport"></span>
-			  	<span class="driver" rf.includeIf="'{{v.make}}' != ''">
-			  		{{v.make}} {{v.model}}
-			  	</span>
-			  	<span class="driver" rf.includeIf="'{{v.make}}' == ''">
-			  		{{v.vehicleMM}}
-			  	</span>
-			  </div>
-			  <div class="grid main" num="1" ondrop="drop(event)" ondragover="allowDrop(event)" abi="{{v.vehKey}}" permission="main"></div>
-			  <div class="grid named" ondrop="drop(event)" ondragover="allowDrop(event)" abi="{{v.vehKey}}" permission="named"></div>
-			</div>
-		</rf.forEach>
-		<!-- Add vehicle row -->
-		<div class="gridVehicle">
-			  <div class="grid newRow">
-			  	<input type="button" rf.action="addAdditionalVehicle" class="add"/>	
-			  </div>
-			  <div class="grid newRow"></div>
-			  <div class="grid named newRow"></div>
-		</div>
-	</div>
+	</rf.forEach>
 
-	<div id="driverBucket" ondrop="drop(event)" ondragover="allowDrop(event)">
-		<!-- Customer -->
-		<div id="customer" style="display: inline-block">
-			<rf.forEach select="//quote/customer" as="c">
-					<div id="{{c.firstName}}{{c.surname}}" class="inner" draggable="true" ondragstart="drag(event)" type="driver">
-						<span class="{{c.gender}}"></span><span class="driver">{{c.firstName}} {{c.surname}}</span>
-					</div>
-			</rf.forEach>
-		</div>	
-	
-		<!-- Named Drivers -->
-		<rf.forEach select="//quote/additionalDrivers/driver" as="d">
-			<div style="display: inline-block">
-					<div id="{{d.firstName}}{{d.surname}}" class="inner" draggable="true" ondragstart="drag(event)" type="driver">
-						<span class="{{d.gender}}"></span><span class="driver">{{d.firstName}} {{d.surname}}</span>
-					</div>
-			</div>
-		</rf.forEach>	
-		
-	</div>
-
-	<!-- Add driver cell -->
-	<div id="addDriverButton">
-		<input type="button" rf.action="addAdditionalDriver" class="add"/>	
-	</div>
+	<input type="button" rf.action="addAdditionalDriver" value="Add Driver" style="margin:0.5em;"/>
 	
 	<div class="navigation">
-		<div id="errorMsgs"></div>
 		<input type="button" rf.action="back" value="Back"/>
 		<input type="submit" rf.action="next" value="Next"/>
 	</div>
