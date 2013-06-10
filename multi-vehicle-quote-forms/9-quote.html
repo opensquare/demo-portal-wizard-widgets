@@ -1,0 +1,79 @@
+<!--script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script-->
+ <ul id="crumbTrail">
+  <li class="car">Your car</li>
+  <li class="policy">Your policy</li>
+  <li class="drivers">Your drivers</li>
+  <li class="quote on">Your quote</li>
+ </ul>
+
+<form id="landingPage" rhinoforms="true">
+	<h1>Your quote</h1>
+
+	<div id="singlePayment" class="pane">
+		<h2>Single Payment</h2>
+		<p>Total premium: <span class="amount">{{//calcResult/calcElement/annualPremium}}</span></p>
+		<input type="button" rf.action="single" value="Buy"/>
+		<p class="smallprint">This amount includes Insurance Premium Tax of <span class="iptAmount">{{//calcResult/calcElement/totalTax}}</span>.  We can accept payment online using a debit or credit card.</p>
+	</div>
+	<div id="multiplePayment" class="pane">
+		<h2>Monthly Instalments</h2>
+		<p>Initial deposit: <span class="amount">{{//calcResult/calcElement/deposit}}</span></p>
+		<p>Then <span class="instalmentCount">{{//calcResult/calcElement/instalmentCount}}</span> equal payments of <span class="instalmentPremium">{{//calcResult/calcElement/instalmentPremium}}</span>.  Total APR for the credit is: <span class="apr">{{//calcResult/calcElement/apr}}%</span>.</p>
+		<input type="button" rf.action="multiple" value="Buy"/>
+		<p class="smallprint">Deposit is payable online using a debit or credit card.  Monthly instalments are taken by direct debit and will require the completion of bank details and a Direct Debit Mandate. Premium credit is provided by Model Insurer Credit Ltd.</p>
+	</div>
+
+	<p>Thank you for considering us for your insurance needs.  Here is our price to insure you, as per your stated requirements.</p>
+
+	<h2>Telematics device</h2>
+	<p>Please note that this is a <span>telematics</span> based policy.  A condition of the insurance is that you drive with our <span>Smart Box</span> fitted to your vehicle.  We will send this device to you in the post, at no extra cost, as soon as you purchase the insurance.  Full installation instructions are included, but it should be a simple 5 minute exercise to fit the device.  And, of course, we have help on hand if you should need it.</p>
+	<p>The Smart Box will keep us updated on your driving, allowing us to offer you the very best priced policy for your needs.  You will also gain access to the latest web-based state-of-the-art <span>Customer Portal</span>, which will show you all the data we gather.</p>
+	<p>In addition, and should your vehicle ever be stolen, our Smart Box will operate as a tracker helping us and the police to locate your vehicle quickly.</p>
+
+	<h2 id="details">Your details</h2>
+	<p>We have based this quotation on the details that you have provided, a summary of which is shown below.  If any of details are incorrect, you must go back and correct them before proceeding.</p>
+
+	<h3>Duration</h3>
+	<p class="details duration">This is an <span>annual</span> policy which would start on <span>{{//vehicle/coverStartDate}}</span>.</p>
+
+	<h3>Your vehicle</h3>
+	<p class="details vehicle">The insurance is for your vehicle <span>{{//vehicle/vehDesc}}</span>, registration number <span>{{//vehicle/reg}}</span>.</p>
+
+	<h3>The drivers</h3>
+	<p class="details drivers">The following drivers are insured to drive the vehicle under this policy: <span>{{//customer/firstName}} {{//customer/surname}}</span>
+		<rf.forEach select="additionalDrivers/driver" as="d">
+			, <span class="{{d.gender}}">{{d.firstName}} {{d.surname}}</span>
+		</rf.forEach>.
+	</p>
+
+	<!--p>This quote is valid for 30 days and includes Insurance Premium Tax.</p-->
+	
+	<!--div class="field">
+		<label id="input_voluntaryExcess">Voluntary Excess</label>
+		<select id="input_voluntaryExcess" name="voluntaryExcess" rf.rangeStart="0" rf.rangeEnd="1000" rf.rangeInterval="50" rf.labelPrefix="&pound;"rf.preselectFirstOption="true">
+			<option disabled selected/>
+		</select>
+	</div-->
+
+	<div class="navigation">
+		<input type="button" rf.action="back" value="Back"/>
+		<input type="button" value="Save" onclick="$('#save').toggle();"/>
+		<input type="button" rf.action="sorry" style="display:none"/>
+	</div>
+
+	<div id="save" style="display:none">
+		<p>To save your quote for later retrieval you will need to visit this url <span>http://demo.osl-cloud.com/quote?ref={{//calcResult/ref}}</span>.  We can help you remember this by:</p>
+		<ul>
+			<li><span>Bookmarking</span> it in this browser <a href="#">Go</a></li>
+			<li><span>Emailing</span> it to this email address: <input required/> <a href="#">Go</a></li>
+			<li><span>Texting</span> it to this mobile number: <input required/> <a href="#">Go</a></li>
+		</ul>
+	</div>
+</form>
+<script type="text/javascript">
+	rf.onFormLoad(function(){
+		if("{{//calcResult/ref}}"=="na"){
+			$("[rf\\.action=sorry]").click();
+		}
+	})
+</script>

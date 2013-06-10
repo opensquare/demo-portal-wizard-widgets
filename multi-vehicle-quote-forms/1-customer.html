@@ -1,0 +1,24 @@
+<script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script>
+
+ <ul id="crumbTrail">
+  <li class="car">Your car</li>
+  <li class="policy on">Your policy</li>
+  <li class="drivers">Your drivers</li>
+  <li class="quote">Your quote</li>
+ </ul>
+
+<form rhinoforms="true">
+
+	<h1>4. Customer Details</h1>
+
+	<rf.include src="common-personal-details.html" ></rf.include>
+	
+	<!--TODO: Remove passing referrer as hidden field? -->
+ 	<input id="input_referrer" name="referrer" rf.validation="required" type="hidden" value="Recommendation" rf.source="resources/referrer.txt" rf.preselectFirstOption="true"/>
+	
+	
+	<div class="navigation">
+		<input type="button" rf.action="back" value="Back"/>
+		<input type="submit" value="Next" rf.action="next"/>
+	</div>
+</form>

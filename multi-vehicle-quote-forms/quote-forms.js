@@ -44,4 +44,46 @@ function Widget_quote_forms() {
 	}	
 }
 
+function allowDrop(ev){
+	ev.preventDefault();
+}
+
+function drag(ev){
+	ev.dataTransfer.setData("Text",ev.target.id);
+}
+
+function drop(ev){
+
+	$("#errorMsgs").empty();
+	var $oneMainDriverError = $('<h4>You can only have one main driver!<h4>');
+
+	ev.preventDefault();
+	var data=ev.dataTransfer.getData("Text");
+
+	var abi;
+	var permission;
+	var driver;
+
+	abi = ev.toElement.getAttribute("abi");
+	permission = ev.toElement.getAttribute("permission");
+
+	if( ev.toElement.getAttribute('num') == '1' && ev.target.children.length != 0){
+
+		console.log(ev.toElement)
+		$("#errorMsgs").prepend($oneMainDriverError)
+
+	} else {
+
+		var x = $(ev.toElement.parentNode).html();
+		var z = data.split("#");
+		var y = 'id="' + z[0];
+		
+		//if driver not already present on vehicle
+		if(x.indexOf(y) == -1){
+			ev.target.appendChild(document.getElementById(data));
+		} else {
+			$("#errorMsgs").prepend("<h4>" +  z[0] + " is already present as a driver on this vehicle!!!<h4>")
+		}
+	}
 	
+}

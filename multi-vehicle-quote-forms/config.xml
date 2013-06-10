@@ -1,0 +1,11 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>quote-forms.html</url>
+		<secure>false</secure>
+	</parameters>
+	<attributes>
+		<css>quote-forms.css</css>
+		<js>quote-forms.js</js>
+	</attributes>
+</widget>

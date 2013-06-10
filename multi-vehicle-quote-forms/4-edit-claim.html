@@ -1,0 +1,29 @@
+<script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script>
+
+ <ul id="crumbTrail">
+  <li class="car">Your car</li>
+  <li class="policy">Your policy</li>
+  <li class="drivers on">Your drivers</li>
+  <li class="quote">Your quote</li>
+ </ul>
+
+<form rhinoforms="true">
+	<h1>Claim Details</h1>
+
+	<div class="field">
+		<label for="input_date">When did it happen?</label>
+		<input id="input_date" type="date" name="claimDate" rf.validation="required date({ format: 'YYYY-MM-DD' })"/>
+	</div>
+	
+	<div class="field">
+		<label for="input_whatHappened">What happened?</label>
+		<select id="input_whatHappened" name="claimType" rf.validation="required" rf.source="resources/claimWhatHappened.txt"rf.preselectFirstOption="true">
+			<option disabled selected/>
+		</select>
+	</div>
+	
+	<div class="navigation">
+		<input type="button" rf.action="cancel" value="Cancel"/>
+		<input type="submit" rf.action="next" value="Next"/>
+	</div>
+</form>		

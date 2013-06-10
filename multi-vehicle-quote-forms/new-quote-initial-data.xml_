@@ -1,0 +1,115 @@
+<quote>
+
+	<estAnnualMileage>6000</estAnnualMileage>
+	<businessMileage/>
+	<ncbProtected>F</ncbProtected>
+	<protectNoClaims>F</protectNoClaims>
+	<classOfUseCode>1</classOfUseCode>
+	<paymentType>single</paymentType>
+
+	<customer>
+		<terms>agree</terms>
+		<title>Mr</title>
+		<firstName>Joe</firstName>
+		<surname>Blogs</surname>
+		<dateOfBirth>01/12/1983</dateOfBirth>
+		<gender>Male</gender>
+		<occupation>Bricklayer</occupation>
+		<maritalStatusCode>2</maritalStatusCode>
+		<ukResidentMoreThan5Years>true</ukResidentMoreThan5Years>
+		<address>
+			<line1>10 Downing Street</line1>
+			<line2/>
+			<line3>London</line3>
+			<line4/>
+			<postcode>SW1A 2AA</postcode>
+		</address>
+		<ownHome>no</ownHome>
+		<referrer>Recommendation</referrer>
+		<licenceTypeCode>1</licenceTypeCode>
+		<passedTestMoreThan10YearsAgo>true</passedTestMoreThan10YearsAgo>
+		<accessToOtherVehicles>Yes</accessToOtherVehicles>
+		<medicalConditions>No</medicalConditions>
+		<anyConvictions>No</anyConvictions>
+		<anyClaims>No</anyClaims>
+		<insuranceStartDate>04/09/2012</insuranceStartDate>
+		<additionalDrivingQualifications>None</additionalDrivingQualifications>
+		<age>28</age>
+		<occupationCode>15.0</occupationCode>
+		<ukResidentYears>10</ukResidentYears>
+		<licenceHeldYears>10</licenceHeldYears>
+		<additionalDrivingQualificationsCode>3</additionalDrivingQualificationsCode>
+	</customer>
+	<additionalDrivers>
+		<driver>
+			<firstName>Susan</firstName>
+			<surname>Blogs</surname>
+			<dateOfBirth>01/01/1983</dateOfBirth>
+			<gender>Female</gender>
+			<occupation>Housewife</occupation>
+			<ukResidentMoreThan5Years>true</ukResidentMoreThan5Years>
+			<address>
+				<line1>10 Downing Street</line1>
+				<line2/>
+				<line3>London</line3>
+				<line4/>
+				<postcode>SW1A 2AA</postcode>
+			</address>
+			<ownHome>yes</ownHome>
+			<passedTestMoreThan10YearsAgo>true</passedTestMoreThan10YearsAgo>
+			<accessToOtherVehicles>Yes</accessToOtherVehicles>
+			<anyConvictions>No</anyConvictions>
+			<anyClaims>No</anyClaims>
+			<title>Mrs</title>
+			<maritalStatusCode>2</maritalStatusCode>
+			<relationshipToPolicyholder>Husband/Wife</relationshipToPolicyholder>
+			<licenceTypeCode>1</licenceTypeCode>
+			<additionalDrivingQualifications>None</additionalDrivingQualifications>
+			<medicalConditions>No</medicalConditions>
+			<age>29</age>
+			<occupationCode>9.0</occupationCode>
+			<ukResidentYears>10</ukResidentYears>
+			<licenceHeldYears>10</licenceHeldYears>
+			<additionalDrivingQualificationsCode>3</additionalDrivingQualificationsCode>
+		</driver>
+	</additionalDrivers>
+	<vehicle>
+		<drivingPosition>2</drivingPosition>
+		<reg>N939 GTP</reg>
+		<vehKey>39005601</vehKey>
+		<vehDesc>1996 Peugeot 106 Xn (Petrol)</vehDesc>
+		<make>Peugeot</make>
+		<model>106 Xn</model>
+		<fuel>Petrol</fuel>
+		<yom>1996</yom>
+		<vehicleAge>16</vehicleAge>
+		<engineCapacity>1124</engineCapacity>
+		<transmission>Manual</transmission>
+		<multiple>false</multiple>
+		<purchaseDate>01/2000</purchaseDate>
+		<monthsOwned>154</monthsOwned>
+		<activeTracker>no</activeTracker>
+		<marketValue>1000</marketValue>
+		<modified>no</modified>
+		<protectNoClaims>true</protectNoClaims>
+		<securityDevicesCode>8</securityDevicesCode>
+		<dayParkingCode>1</dayParkingCode>
+		<nightParkingCode>1</nightParkingCode>
+		<noClaimsYears>2</noClaimsYears>
+	</vehicle>
+</quote>
+<!--
+
+<quote>
+	<estAnnualMileage>6000</estAnnualMileage>
+	<businessMileage></businessMileage>
+	<ncbProtected>F</ncbProtected>
+	<protectNoClaims>F</protectNoClaims>
+	<classOfUseCode>1</classOfUseCode>
+	<paymentType>single</paymentType>
+	<vehicle>
+		<drivingPosition>2</drivingPosition>
+	</vehicle>
+</quote>
+ 
+ -->

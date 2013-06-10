@@ -1,0 +1,12 @@
+<script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script>
+<ul id="crumbTrail">
+	<li class="apply on">Apply</li>
+	<li class="pay">Pay</li>
+	<li class="welcome">Welcome</li>
+</ul>
+<form rhinoforms="true" id="registrationPage">
+	<input type="hidden" name="paymentType" rf.calculated="'multiple'"/>
+	<div>
+		<rf.include src="../quote-forms-common/registration.html"/>
+	</div>
+</form>

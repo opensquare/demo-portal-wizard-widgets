@@ -6,6 +6,7 @@ h1 {
 	margin-top: 1.5em; margin-bottom: 0.75em;
 	color: #333;
 	font-size: 230%; font-weight: normal;
+	clear: both;
 }
 div.widget[name='quote-forms'] input[type='date'] {
 	border: thin solid #0090C0; width: 15%;
@@ -96,12 +97,12 @@ div.widget[name='quote-forms'] select {
 	width: 20%;
 	margin-left: 0;
 	border: thin solid #0090C0;
-	font-size: 1.3em;
-	color: #AAA;
+	font-size: 1.3em;}
+	/*color: #AAA;
 }
 div.widget[name='quote-forms'] select.changed {
 	color: inherit;
-}
+}*/
 div.widget[name='quote-forms'] select:disabled {
 	background-color: rgb(235, 235, 228);
 }
@@ -129,9 +130,9 @@ div.widget[name='quote-forms'] div.field a {
 div.widget[name='quote-forms'] div.field a:hover {
 	color: #82BE46;
 }
-div.widget[name='quote-forms'] option:first-child {
+/*div.widget[name='quote-forms'] option:first-child {
 	color: #999;
-}
+}*/
 div.widget[name='quote-forms'] .hint {
 	display: none;
 	position: absolute; right: 7em;
@@ -656,3 +657,115 @@ div.widget[name='quote-forms'] #input_sort_code {
 div.widget[name='quote-forms'] #input_code {
 	width: 10%;
 }
+
+/* Multi drivers */
+
+#multiGrid {
+	margin: 50px;
+	float: left;
+}
+#multiGrid .Male, #driverBucket .Male {
+	display: block;
+	height: 50px;
+	padding: 12px 50px;
+	vertical-align: middle;
+	font-size: 1.3em;
+	background: url('person-man-dark.png') no-repeat center top;
+}
+#multiGrid .transport {
+	margin-top: 50px;
+	display: block;
+	height: 50px;
+	padding: 12px 50px;
+	vertical-align: middle;
+	font-size: 1.3em;
+	background: url('transport-car-dark.png') no-repeat center top;
+}
+#multiGrid .add{
+	width: 50px;
+	height: 50px;
+	margin-top: 20px;
+	margin-left: 75px;
+	background: url('symbol_add.png') no-repeat center center;
+}
+#multiGrid .inner {
+	position: relative;
+}
+
+div.widget[name='quote-forms'] .driver {
+	text-align: center;
+	display: block;
+	margin-top: -20px;
+}
+
+
+#driverBucket {
+		width: 250px;
+		height: 200px;
+		padding: 10px;
+		border: 1px solid #aaaaaa;
+		float: left;
+		margin-top: 75px;
+		margin-left: 115px;
+		border-top-left-radius: 15px;
+		border-bottom-left-radius: 15px;
+}
+#driverBucket >div {
+	margin: 55px;
+}
+#addDriverButton {
+	width: 50px;
+	height: 200px;
+	padding: 10px;
+	border: 1px solid #aaaaaa;
+	float: left;
+	margin-top: 75px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+#addDriverButton .add {
+	width: 50px;
+	height: 50px;
+	margin-top: 80px;
+	background: url('symbol_add.png') no-repeat center center;
+}
+#errorMsgs {
+	float: left;
+	margin-left: 130px;
+	padding-left: 2em;
+	padding-right: 2em;
+	color: #FFF;
+	background: #D44;
+	border-radius: 0.25em;
+	font-weight: bold;
+}
+
+.grid {
+	width: 200px;
+	border-top: solid 3px #AAA;
+	border-right: solid 3px #AAA;
+	height: 175px;
+	float: left;
+}
+.gridVehicle {
+	clear: both;
+}
+.label {
+	height: 20px;
+	border: none;
+	text-align: center;
+	font-weight: bold;
+}
+.named {
+	border-right: none;
+}
+.inner {
+  position: absolute;
+}
+.main > div {
+	margin-top: 50px;
+}
+.newRow {
+	height: 90px;
+}
+

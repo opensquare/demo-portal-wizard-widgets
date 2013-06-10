@@ -1,0 +1,101 @@
+	<script>
+		$('#input_licenceType').change(function(){$('input[name="licenceType"]').attr('value', $("#input_licenceType option:selected").html());})
+	</script>
+
+	<div class="field">
+		<label for="input_licenceType">Driving licence type:</label>
+		<select id="input_licenceType" name="licenceTypeCode" rf.validation="required" rf.source="resources/licenceType.csv" rf.preselectFirstOption="true">
+			<option disabled selected/>
+		</select>
+		<input type="hidden" name="licenceType" value=""/>
+	</div>
+	
+	<div class="field">
+		<label for="input_passedTest">When did you pass your test?</label>
+		<input id="input_passedTestMoreThan10YearsAgo" type="checkbox" name="passedTestMoreThan10YearsAgo"/>
+		<label class="forRadio" for="input_passedTestMoreThan10YearsAgo">More than 10 years ago</label>
+		<div rf.includeIf="{ fields.passedTestMoreThan10YearsAgo.value == false }">
+			<label for="input_passedTestMonth">Or since</label>
+			<select id="input_passedTestMonth" class="dateSel" name="passedTestMonth" rf.includeIf="{ fields.passedTestMoreThan10YearsAgo.value == false }" rf.source="resources/months.csv" rf.preselectFirstOption="true">
+				<option disabled selected/>
+			</select>
+			<select id="input_passedTestYear" class="dateSel" name="passedTestYear" rf.includeIf="{ fields.passedTestMoreThan10YearsAgo.value == false }" rf.rangeStart="new Date().getFullYear()" rf.rangeEnd="new Date().getFullYear() - 10"rf.preselectFirstOption="true">
+				<option disabled selected/>
+			</select>
+		</div>
+		<input type="hidden" name="licenceHeldSinceDate" rf.includeIf="{ fields.passedTestMoreThan10YearsAgo.value == false }" rf.calculated="{ if (fields.passedTestMoreThan10YearsAgo.value == false && fields.passedTestMonth.value && fields.passedTestYear.value) { '01/' + fields.passedTestMonth.value + '/' + fields.passedTestYear.value } }"/>
+		<input type="hidden" name="licenceHeldYears" rf.calculated="{ if (fields.passedTestMoreThan10YearsAgo.value == true) { '10' } else if (fields.licenceHeldSinceDate.value) { utils.yearsBetween(moment(fields.licenceHeldSinceDate.value, 'DD/MM/YYYY'), new Date()) } }"/>
+	</div>
+	
+	<div class="field">
+		<label>Do you have access to any other vehicles?</label>
+		<input id="input_accessToOtherVehicles_yes" type="radio" name="accessToOtherVehicles" value="Yes" rf.validation="required"/>
+		<label for="input_accessToOtherVehicles_yes" class="forRadio">Yes</label>
+		<input id="input_accessToOtherVehicles_no" type="radio" name="accessToOtherVehicles" value="No"/>
+		<label for="input_accessToOtherVehicles_no" class="forRadio">No</label>
+	</div>
+
+	<div class="field">
+		<label for="input_additionalDrivingQualifications">Additional driving qualifications</label>
+		<select id="input_additionalDrivingQualifications" name="additionalDrivingQualificationsCode" rf.validation="required" rf.source="resources/additionalDrivingQualifications.csv" rf.preselectFirstOption="true">
+			<option disabled selected/>
+		</select>
+	</div>
+	
+	<div class="field">
+		<label for="input_medicalConditions">Medical conditions affecting your driving</label>
+		<select id="input_medicalConditions" name="medicalConditions" rf.validation="required" rf.source="resources/medicalConditions.txt" rf.preselectFirstOption="true">
+			<option disabled selected/>
+		</select>
+	</div>
+	
+	<div class="field">
+		<label>Motoring convictions in the last 5 years</label>
+		<input id="input_anyConvictions_yes" type="radio" name="anyConvictions" value="Yes" rf.validation="required"/>
+		<label for="input_anyConvictions_yes" class="forRadio">Yes</label>
+		<input id="input_anyConvictions_no" type="radio" name="anyConvictions" value="No"/>
+		<label for="input_anyConvictions_no" class="forRadio">No</label>
+	</div>
+
+	<div class="field">
+		<label>Motoring claims in the last 5 years</label>
+		<input id="input_anyClaims_yes" type="radio" name="anyClaims" value="Yes" rf.validation="required"/>
+		<label for="input_anyClaims_yes" class="forRadio">Yes</label>
+		<input id="input_anyClaims_no" type="radio" name="anyClaims" value="No"/>
+		<label for="input_anyClaims_no" class="forRadio">No</label>
+	</div>
+	
+	<div class="convictions" rf.includeIf="{ fields.anyConvictions.value == 'Yes' }" >
+		<h2>Convictions</h2>
+		<p>Please enter details of any driving convictions this driver has received in the last 5 years.</p>
+		<div>
+			<rf.forEach select="convictions/conviction" as="con">
+			<div class="conviction">
+				<span>
+					Code: {{con.code}}, Date: {{con.date}}, Points: {{con.points}}, Months Disqualified: {{con.monthsDisqualified}}
+					<a href="#" rf.action="editConviction?index={{con.index}}">Edit</a>
+					<a href="#" rf.action="deleteConviction?index={{con.index}}">Delete</a>
+				</span>
+			</div>
+			</rf.forEach>
+		</div>
+		<input type="button" rf.action="addConviction" value="Add Conviction" />
+	</div>
+	
+	<div class="claims" rf.includeIf="{ fields.anyClaims.value == 'Yes' }" >
+		<h2>Claims</h2>
+		<p>Please enter details of any claims, accidents or losses this driver has made in the last 5 years.</p>
+		<div>
+			<rf.forEach select="claims/claim" as="cl">
+			<div class="claim">
+				<span>
+					Date: {{cl.date}}, What Happened: {{cl.whatHappened}}
+					<a href="#" rf.action="editClaim?index={{cl.index}}">Edit</a>
+					<a href="#" rf.action="deleteClaim?index={{cl.index}}">Delete</a>
+				</span>
+			</div>
+			</rf.forEach>
+		</div>
+		<input type="button" rf.action="addClaim" value="Add Claim" />
+	</div>
+	

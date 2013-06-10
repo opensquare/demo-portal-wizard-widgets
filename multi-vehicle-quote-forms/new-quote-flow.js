@@ -35,7 +35,7 @@
 					"next"
 				]
 			},
-			{ id: "drivers", docBase: "/quote/vehicleDrivers", url: "5-multi-vehicle-drivers.html", 
+			{ id: "drivers", docBase: "/quote/vehicleDrivers", url: "5-drivers.html", 
 				actions: [
 					"back", 
 
@@ -52,7 +52,7 @@
 					{
 						name: "next",
 						submission: {
-							preTransform: "xslt/toNapier.xsl", 
+							preTransform: "xslt/multiVehicleToNapier.xsl", 
 							url: "{{$esb-url}}/action/motor/quote/calc",
 							data: {
 								source: "motor-new-business",

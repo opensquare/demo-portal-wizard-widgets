@@ -1,0 +1,60 @@
+<div rf.includeIf="'{{//paymentType}}' === 'multiple'">
+	<h2>Direct Debit Details</h2>
+	<h3>You are paying by monthly instalments</h3>
+	<p>We will collect an initial deposit of <span class="amount">{{//calcResult/calcElement/deposit}}</span> by debit or credit card.</p>
+	<p>Then <span class="instalmentPremium">{{//calcResult/calcElement/instalmentPremium}}</span> will be collected in <span class="instalmentCount" rf.calculated="'{{//calcResult/calcElement/instalmentCount}}'.replace('.00','')"></span> monthly instalments.  Total APR for the credit is: <span class="apr">{{//calcResult/calcElement/apr}}%</span>.</p>
+	<p class="smallprint">Monthly instalments are taken by direct debit and will require the completion of bank details and a Direct Debit Mandate. Premium credit is provided by Model Insurer Credit Ltd.</p>
+	<h3>Direct Debit Instruction to your Bank or Building Society</h3>
+	<div class="field">
+		<label for="input_title">Account holder's name</label>
+		<select id="input_title" name="account.title" rf.source="resources/titles.txt" rf.preselectFirstOption="true" rf.initialValue="'{{//customer/title}}'">
+			<option disabled selected>Title</option>
+		</select>
+		<input id="input_firstName" type="text" name="account.firstName" placeholder="First Name" rf.initialValue="'{{//customer/firstName}}'"/>
+		<input id="input_surname" type="text" name="account.surname" rf.validation="required" placeholder="Surname" rf.initialValue="'{{//customer/surname}}'"/>
+	</div>
+	<div class="field findAccount">
+		<div>
+			<label for="input_account_number">Account Number</label>
+			<input id="input_account_number" type="text" name="account.number" rf.validation="required"/>
+		</div>
+		<div>
+			<label for="input_sort_code">Sort Code</label>
+			<input type="text" id="input_sort_code" maxlength="8" name="account.sortCode" rf.validation="required pattern({regex:'^[0-9]{2}\-[0-9]{2}\-[0-9]{2}$', errorMessage:'Invalid sort code'})" rf.validateOn="inputBlur"/>
+			<input type="button" id="validate_account" value="Validate"/>
+		</div>
+	</div>
+	<div class="field accountDetails" style="display:none">
+		<label>Account Information</label>
+		<span class="bankDetails">
+			<span class="detailsAcc">Account Number: <span name="account.number">{{account/number}}</span></span>
+			<span class="detailsAcc">Sort Code: <span name="account.sortCode">{{account/sortCode}}</span></span>
+			<span name="bank.name">{{bank/name}}</span>
+			<span name="bank.line1">{{bank/line1}}</span>
+			<span name="bank.line2">{{bank/line2}}</span>
+			<span name="bank.line3">{{bank/line3}}</span>
+			<span name="bank.postCode">{{bank/postCode}}</span>
+		</span>
+		<input type="hidden" name="bank.name" rf.validation="required"/>
+		<input type="hidden" name="bank.line1" rf.validation="required"/>
+		<input type="hidden" name="bank.line2"/>
+		<input type="hidden" name="bank.line3"/>
+		<input type="hidden" name="bank.postCode" rf.validation="required"/>
+		<a onclick="return false" class="changeAccount">Change Account</a>
+	</div>
+	<div class="field invalidAccount" style="display:none">
+		<label>Account details not found</label>
+		<a onclick="return false" class="reattemptValidation">Try Again</a>
+	</div>
+	<div class="field">
+		<p>Is this account in your name, and you can confirm it does not require more than one signature to authorise debits?</p>
+		<label> </label>
+		<input type="radio" name="ownAccount" id="input_own_account_y" checked value="true" rf.validation="required"/><label for="input_own_account_y" class="forRadio">Yes</label>
+		<input type="radio" name="ownAccount" id="input_own_account_n" value="false" rf.validation="required"/><label for="input_own_account_n" class="forRadio">No</label>
+	</div>
+</div>
+<div rf.includeIf="'{{//paymentType}}' === 'single'" class="field">
+	<label>Total premium</label>
+		<div class="amount premium">{{//calcResult/calcElement/annualPremium}}<br/></div>
+		<div class="premDetail">This amount includes Insurance Premium Tax of <span class="iptAmount">{{//calcResult/calcElement/totalTax}}</span></div>
+</div>
