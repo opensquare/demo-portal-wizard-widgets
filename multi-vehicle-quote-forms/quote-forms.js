@@ -1,4 +1,4 @@
-function Widget_quote_forms() {
+function Widget_multi_vehicle_quote_forms() {
 	
 	this.onReadyExtend = function() {
 		var calcref = this.$widgetDiv.attr('calcref');
@@ -26,7 +26,7 @@ function Widget_quote_forms() {
 		if (typeof cr != 'undefined') {
 			initialData = '<quote><calcref>' + cr + '</calcref></quote>';
 		}
-		rf.loadFlow('widgets/quote-forms/new-quote-flow.js', $('.rhinoforms-quote-formContainer', this.$widgetDiv), initialData);
+		rf.loadFlow('widgets/multi-vehicle-quote-forms/new-quote-flow.js', $('.rhinoforms-quote-formContainer', this.$widgetDiv), initialData);
 
 
 		var setLanguage = function() {
