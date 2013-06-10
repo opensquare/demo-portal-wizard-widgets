@@ -75,7 +75,9 @@
 							<%if (user.isPermitted("internal-products")) {%>
 							<a class="new-square" href="#internal/products" type="internal" subtype="products">Product management</a>
 							<%}%>
+							<%if (user.isPermitted("internal-user-management")) {%>
 							<a class="new-square" href="#internal/users" type="internal" subtype="users">User management</a>
+							<%}%>
 							<a class="new-square" href="#internal/profile?1234-5678-9012-3456" type="internal" subtype="profile">Personal profile</a>
 							<%if (user.isPermitted("internal-batch")) {%>
 							<a class="new-square" href="#internal/batch" type="internal" subtype="batch">Automated jobs</a>
