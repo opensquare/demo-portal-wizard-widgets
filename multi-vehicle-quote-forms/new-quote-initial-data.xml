@@ -1,7 +1,7 @@
 <quote>
     <product>
         <name>Motor Telematics Product</name>
-        <calc>/Products/Motor/Lookups,/Products/Motor/Precalculation,/Products/Motor/Risk Premium,/Products/Motor/Excess,/Products/Motor/Underwriting,/Products/Motor/Gross Premium</calc>
+        <calc>/Products/NAMotor/Class,/Products/NAMotor/Driving Record,/Products/NAMotor/Surcharges,/Products/NAMotor/Capped Discounts,/Products/NAMotor/Rating</calc>
         <financeProvider></financeProvider>
     </product>
     <actorUid></actorUid>
