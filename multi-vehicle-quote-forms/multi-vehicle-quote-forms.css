@@ -136,8 +136,8 @@ div.widget[name='multi-vehicle-quote-forms'] label {
 	width: 40%;
 }
 div.widget[name='multi-vehicle-quote-forms'] label.forRadio {
-	width: auto;
-	padding-left: 0.25em;
+	width: auto !important;
+	padding-left: 0.25em !important;
 }
 div.widget[name='multi-vehicle-quote-forms'] label.forPayment {
 	display: inline;
