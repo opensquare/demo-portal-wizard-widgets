@@ -26,30 +26,30 @@
 		<input type="hidden" name="licenceHeldSinceDate" rf.calculated="{ if (fields.licenceReachedMonth.value && fields.licenceReachedYear.value) { '01/' + fields.licenceReachedMonth.value + '/' + fields.licenceReachedYear.value } }"/>
 	</div>
 	
-	<div class="field">
+	<!--div class="field">
 		<label>Do you have access to any other vehicles?</label>
 		<input id="input_accessToOtherVehicles_yes" type="radio" name="accessToOtherVehicles" value="Yes" rf.validation="required"/>
 		<label for="input_accessToOtherVehicles_yes" class="forRadio">Yes</label>
 		<input id="input_accessToOtherVehicles_no" type="radio" name="accessToOtherVehicles" value="No"/>
 		<label for="input_accessToOtherVehicles_no" class="forRadio">No</label>
-	</div>
+	</div-->
 
-	<div class="field">
+	<!--div class="field">
 		<label for="input_additionalDrivingQualifications">Additional driving qualifications</label>
 		<select id="input_additionalDrivingQualifications" name="additionalDrivingQualificationsCode" rf.validation="required" rf.source="resources/additionalDrivingQualifications.csv" rf.preselectFirstOption="true">
 			<option disabled selected/>
 		</select>
-	</div>
+	</div-->
 	
-	<div class="field">
+	<!--div class="field">
 		<label for="input_medicalConditions">Medical conditions affecting your driving</label>
 		<select id="input_medicalConditions" name="medicalConditions" rf.validation="required" rf.source="resources/medicalConditions.txt" rf.preselectFirstOption="true">
 			<option disabled selected/>
 		</select>
-	</div>
+	</div-->
 	
 	<div class="field">
-		<label>Motoring convictions in the last 5 years</label>
+		<label>Have you incurred any driving convictions in the last 3 years?</label>
 		<input id="input_anyConvictions_yes" type="radio" name="anyConvictions" value="Yes" rf.validation="required"/>
 		<label for="input_anyConvictions_yes" class="forRadio">Yes</label>
 		<input id="input_anyConvictions_no" type="radio" name="anyConvictions" value="No"/>
@@ -57,7 +57,7 @@
 	</div>
 
 	<div class="field">
-		<label>Motoring claims in the last 5 years</label>
+		<label>Have you had any claims in the last 5 years?</label>
 		<input id="input_anyClaims_yes" type="radio" name="anyClaims" value="Yes" rf.validation="required"/>
 		<label for="input_anyClaims_yes" class="forRadio">Yes</label>
 		<input id="input_anyClaims_no" type="radio" name="anyClaims" value="No"/>
@@ -66,7 +66,7 @@
 	
 	<div class="convictions" rf.includeIf="{ fields.anyConvictions.value == 'Yes' }" >
 		<h2>Convictions</h2>
-		<p>Please enter details of any driving convictions this driver has received in the last 5 years.</p>
+		<p>Please enter details of any driving convictions this driver has received in the last 3 years.</p>
 		<div>
 			<rf.forEach select="convictions/conviction" as="con">
 			<div class="conviction">
