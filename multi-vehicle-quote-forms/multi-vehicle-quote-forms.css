@@ -745,7 +745,7 @@ div.widget[name='multi-vehicle-quote-forms'] #input_code {
 	font-size: 1.3em;
 	background: url('transport-car-dark.png') no-repeat center top;
 }
-#multiGrid .add{
+#multiGrid .add, #driverBucket .add{
 	margin-top: 20px;
 	padding-left: 28px;
 	background: #92CE56 url('symbol-add-light-small.png') no-repeat 2px center;
@@ -762,6 +762,15 @@ div.widget[name='multi-vehicle-quote-forms'] #input_code {
 	text-align: center;
 	font-size: 1.25em;
 }
+#multiGrid .grid.named:empty:before {
+	content: "Drag drivers here";
+	display: inline-block;
+	width: 100%;
+	padding-top: 35%;
+	color: #CCC;
+	text-align: center;
+	font-size: 1.25em;
+}
 div.widget[name='multi-vehicle-quote-forms'] .driver {
 	text-align: center;
 	display: block;
@@ -770,14 +779,14 @@ div.widget[name='multi-vehicle-quote-forms'] .driver {
 
 
 #driverBucket {
-		width: 20%;
-		height: 200px;
-		padding: 10px;
-		border: 1px solid #aaaaaa;
-		float: left;
-		margin-top: 75px;
-		border-top-left-radius: 15px;
-		border-bottom-left-radius: 15px;
+	width: 20%;
+	height: 200px;
+	padding: 10px;
+	border: 1px solid #aaaaaa;
+	float: left;
+	margin-top: 75px;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
 }
 #driverBucket >div {
 	margin: 55px;
@@ -792,7 +801,7 @@ div.widget[name='multi-vehicle-quote-forms'] .driver {
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 15px;
 }
-#addDriverButton .add {
+z#addDriverButton .add {
 	width: 50px;
 	height: 50px;
 	margin-top: 80px;
@@ -834,8 +843,10 @@ div.widget[name='multi-vehicle-quote-forms'] .driver {
 .main > div {
 	margin-top: 50px;
 }
-.newRow {
-	height: 90px;
+#multiGrid .newRow {
+	height: 4em;
 	text-align: center;
 }
-
+#multiGrid .newRow:nth-child(2) {
+	border-right: none;
+}
