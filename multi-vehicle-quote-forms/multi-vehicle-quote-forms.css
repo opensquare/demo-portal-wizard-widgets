@@ -746,11 +746,11 @@ div.widget[name='multi-vehicle-quote-forms'] #input_code {
 	background: url('transport-car-dark.png') no-repeat center top;
 }
 #multiGrid .add{
-	width: 50px;
-	height: 50px;
+	zwidth: 50px;
+	zheight: 50px;
 	margin-top: 20px;
-	margin-left: 75px;
-	background: url('symbol_add.png') no-repeat center center;
+	zmargin-left: 75px;
+	background: #92CE56 url('symbol-add-light-small.png') no-repeat;
 }
 #multiGrid .inner {
 	position: relative;
@@ -830,5 +830,6 @@ div.widget[name='multi-vehicle-quote-forms'] .driver {
 }
 .newRow {
 	height: 90px;
+	text-align: center;
 }
 
