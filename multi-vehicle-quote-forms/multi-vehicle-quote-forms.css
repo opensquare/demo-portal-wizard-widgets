@@ -446,7 +446,7 @@ div.widget[name='multi-vehicle-quote-forms'] #crumbTrail li.occupation {
 	background-image: url('briefcase-light-small.png');
 }
 div.widget[name='multi-vehicle-quote-forms'] #crumbTrail li.quote {
-	background-image: url('currency-sign-pound-light-small.png');
+	background-image: url('currency-sign-dollar-light-small.png');
 }
 div.widget[name='multi-vehicle-quote-forms'] #crumbTrail li.apply {
 	background-image: url('email-light-small.png');
@@ -476,7 +476,7 @@ div.widget[name='multi-vehicle-quote-forms'] #crumbTrail li.on.occupation:before
 	background-image: url('briefcase-light.png');
 }
 div.widget[name='multi-vehicle-quote-forms'] #crumbTrail li.on.quote:before {
-	background-image: url('currency-sign-pound-light.png');
+	background-image: url('currency-sign-dollar-light.png');
 }
 div.widget[name='multi-vehicle-quote-forms'] #crumbTrail li.apply.on:before {
 	background-image: url('email-light.png');
@@ -498,7 +498,7 @@ div.widget[name='multi-vehicle-quote-forms'] .loading {
 }
 
 /* Customer Details page specific styling */
-div.widget[name='multi-vehicle-quote-forms'] #customerDetails label, div.widget[name='multi-vehicle-quote-forms'] #paymentPage label {
+div.widget[name='multi-vehicle-quote-forms'] #aboutYou label, div.widget[name='multi-vehicle-quote-forms'] #customerDetails label, div.widget[name='multi-vehicle-quote-forms'] #paymentPage label {
 	display: inline-block;
 	padding: 0 1em 0 1em;
 	width: 30%;

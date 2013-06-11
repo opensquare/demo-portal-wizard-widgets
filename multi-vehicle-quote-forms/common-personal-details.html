@@ -74,17 +74,17 @@
 			<label for="input_occupation">Primary occupation</label>
 			<input type="hidden" name="occupationCode" />
 			<input id="input_occupation" type="text" name="occupation" rf.validation="required fromSource" rf.customType="auto-complete-select({ codeFieldName: 'occupationCode' })" rf.source="http://integration.osldev.net/resource-manager/REST/files/itb-resources-test2/lists/_itbLists-occupationSheet.xml?transformer=xslt&xslt=/itb-resources-test2/lists/occupationLookupTransformJSONmin.xsl&contentType=application%2Fjson&occupation=[value]" />
-			<div class="hint">We need your occupation so we can find your exact car and help you get a more accurate quote.</div>
+			<div class="hint">We need your occupation so we can help you get a more accurate quote.</div>
 		</div>
 
 		<div class="field">
-			<label for="input_maritalStatusCode">Marital status</label>
-			<select id="input_maritalStatusCode" name="maritalStatusCode" rf.validation="required" rf.source="resources/maritalStatus.csv" rf.preselectFirstOption="true">
-				<option disabled selected/>
-			</select>
-			<div class="hint">Factors such as marital status, occupation and driving record impact on your quotes.</div>
-		</div>
-		
+			<label>Do you drink alchohol?</label>
+			<input id="input_ownHome_yes" type="radio" name="alchohol" value="yes" rf.validation="required"/>
+			<label for="input_ownHome_yes" class="forRadio">Yes</label>
+			<input id="input_ownHome_no" type="radio" name="alchohol" value="no"/>
+			<label for="input_ownHome_no" class="forRadio">No</label>
+		</div-->
+
 	</div>
 		
 	<script>

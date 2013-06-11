@@ -7,29 +7,11 @@
 	<li class="quote">Your quote</li>
 </ul>
 
-<form rhinoforms="true">
+<form id="aboutYou" rhinoforms="true">
 
 	<h1>About you</h1>
 
 	<rf.include src="common-personal-details.html" ></rf.include>
-
-	<!--div class="field">
-		<label for="input_ukResident">UK residency</label>
-		<input id="input_ukResidentMoreThan5Years" type="checkbox" name="ukResidentMoreThan5Years"/>
-		<label class="forRadio" for="input_ukResidentMoreThan5Years">More than 5 years</label>
-		
-		<div rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }">
-			<label for="input_ukResidentSinceMonthCode">Or since</label>
-			<select id="input_ukResidentSinceMonthCode" class="dateSel" name="ukResidentSinceMonthCode" rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }" rf.source="resources/months.csv" rf.preselectFirstOption="true">
-				<option disabled selected/>
-			</select>
-			<select id="input_ukResidentSinceYear" class="dateSel" name="ukResidentSinceYear" rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }" rf.rangeStart="new Date().getFullYear()" rf.rangeEnd="new Date().getFullYear() - 5" rf.preselectFirstOption="true">
-				<option disabled selected/>
-			</select>
-		</div>
-		
-		<input type="hidden" name="ukResidentYears" rf.calculated="{ if (fields.ukResidentMoreThan5Years.value == true) { 10; } else if (fields.ukResidentSinceMonthCode.value && fields.ukResidentSinceYear.value) { new Date(new Date() - moment('01/' + fields.ukResidentSinceMonthCode.value + '/' + fields.ukResidentSinceYear.value, 'DD/MM/YYYY')).getFullYear() - 1970 } }"/>
-	</div -->
 
 	<div class="field findAddress">
 		<!--input id="findAddressProxy" type="proxy" style="display:none" rf.source="http://integration.osldev.net/itb-quotes/postcodeLookup" /-->
@@ -57,14 +39,6 @@
 		<a href="" onclick="return false" value="Change address" class="changeAddressButton">Change address</a>
 	</div>
 	
-	<!--div class="field">
-		<label>Do you own your own home</label>
-		<input id="input_ownHome_yes" type="radio" name="ownHome" value="yes" rf.validation="required"/>
-		<label for="input_ownHome_yes" class="forRadio">Yes</label>
-		<input id="input_ownHome_no" type="radio" name="ownHome" value="no"/>
-		<label for="input_ownHome_no" class="forRadio">No</label>
-	</div-->
-
 	<!--TODO: Remove passing referrer as hidden field? -->
  	<input id="input_referrer" name="referrer" rf.validation="required" type="hidden" value="Recommendation" rf.source="resources/referrer.txt" rf.preselectFirstOption="true"/>
 	
