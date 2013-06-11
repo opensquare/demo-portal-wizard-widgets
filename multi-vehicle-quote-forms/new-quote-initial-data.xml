@@ -14,8 +14,6 @@
     <protectNoClaims>F</protectNoClaims>
     <classOfUseCode>1</classOfUseCode>
     <paymentType>single</paymentType>
-    <vehicle>
-        <coverStartTime>00:00:00</coverStartTime>
-        <drivingPosition>2</drivingPosition>
-    </vehicle>
+    <coverStartTime>00:00:00</coverStartTime>
+    <drivingPosition>2</drivingPosition>
 </quote>
