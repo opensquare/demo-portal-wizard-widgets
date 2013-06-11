@@ -19,7 +19,7 @@
                     }
                 ]},
             { id: "customer", docBase: "/quote/drivers/driver", url: "1-customer.html", actions: [ "back", "next" ] },
-	       	{ id: "policy", docBase: "/quote/policy", url: "2-policy_builder.html",
+	       	{ id: "policy", docBase: "/quote/policyPermissions", url: "2-policy_builder.html",
 	       		actions: [
 	       		  "back", 
 
@@ -31,35 +31,7 @@
 					"next"
 	       		]
 	        },
-	        { id: "policyDetails", docBase: "/quote/preliminary", url: "3-policy_details.html", actions: [ "back","next"] },
-			/*{ id: "customer", docBase: "/quote/customer", url: "1-customer.html", actions: [ "back", "next" ] },
-			  { id: "driver", docBase: "/quote/customer", url: "2-driver.html",
-				actions: [
-					"back",
-					
-					"addConviction:conviction.editConviction(index=next)",
-					"editConviction:conviction.editConviction(index=?)",
-					"deleteConviction:delete(xpath=convictions/conviction[index], index=?)",
-					
-					"addClaim:claim.editClaim(index=next)",
-					"editClaim:claim.editClaim(index=?)",
-					"deleteClaim:delete(xpath=claims/claim[index], index=?)",
-					
-					"next"
-				]
-			},
-			{ id: "drivers", docBase: "/quote/vehicleDrivers", url: "5-drivers.html", 
-				actions: [
-					"back", 
-
-					"addAdditionalVehicle:additionalVehicle.editAdditionalVehicle(index=next)",
-					"addAdditionalDriver:additionalDriver.editAdditionalDriver(index=next)",
-					"editAdditionalDriver:additionalDriver.editAdditionalDriver(index=?)",
-					"deleteAdditionalDriver:delete(xpath=additionalDrivers/driver[index], index=?)",
-
-					"next"
-				]
-			},*/
+	        { id: "policyDetails", docBase: "/quote/policyOptions", url: "3-policy_details.html", actions: [ "back","next"] },
 			{ id: "calculating", url: "8-calculating.html", 
 				actions: [
 					{
