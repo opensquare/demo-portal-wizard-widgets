@@ -218,30 +218,6 @@
 
 			<div class="hint">We need your purchase date so we can find your exact car and help you get a more accurate quote.</div>
 		</div>
-		
-		<!--div class="field">
-			<label for="input_dayParking">Where do you park most days?</label>
-			<select id="input_dayParking" name="dayParkingCode" rf.validation="required" rf.source="resources/dayParking.csv" rf.preselectFirstOption="true">
-				<option disabled selected/>
-			</select>
-		</div-->
-		
-		<!--div class="field">
-			<label for="input_nightParking">Where do you park most nights?</label>
-			<select id="input_nightParking" name="nightParkingCode" rf.validation="required" rf.source="resources/nightParking.csv" rf.preselectFirstOption="true">
-				<option disabled selected/>
-			</select>
-		</div-->
-		
-		<!--div class="field">
-			<label for="input_noClaimsYears">How many years No Claims Discount do you have?</label>
-			<select id="input_noClaimsYears" name="noClaimsYears" rf.validation="required" rf.source="resources/noClaimsYears.csv" rf.preselectFirstOption="true"></select>
-		</div>
-
-		<div class="field" rf.includeIf="{ utils.isGreaterThan(fields.noClaimsYears.value, 0) }">
-			<label for="input_protectNoClaims">Do you want to protect your No Claims Discount?</label>
-			<input id="input_protectNoClaims" type="checkbox" name="protectNoClaims" rf.includeIf="{ utils.isGreaterThan(fields.noClaimsYears.value, 0) }"></input>
-		</div-->
 
 	</div>
 
