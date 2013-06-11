@@ -1,5 +1,5 @@
- <script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script>
- <script>
+<script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script>
+<script>
 	/* Default section context */
 	$("#disabledSectionOne").hide();	 
     $("#sectionTwo").hide();
@@ -11,14 +11,15 @@
 		var addDriver = document.getElementById('input_title').value + " " + document.getElementById('input_firstName').value + " " + document.getElementById('input_surname').value ;
 		document.getElementById("addDriver").innerHTML = addDriver;
 	}	
- </script>
+</script>
 
- <ul id="crumbTrail">
-  <li class="car">Your car</li>
-  <li class="policy">Your policy</li>
-  <li class="drivers on">Your drivers</li>
-  <li class="quote">Your quote</li>
- </ul>
+<ul id="crumbTrail">
+	<li class="about">About you</li>
+	<li class="car on">Your cars &amp; drivers</li>
+	<li class="policy">Policy options</li>
+	<li class="quote">Your quote</li>
+</ul>
+
 <form rhinoforms="true">
 
 	<div id="sectionOne">
@@ -26,12 +27,12 @@
 
 		<rf.include src="common-personal-details.html" ></rf.include>
 
-		<div class="field">
+		<!--div class="field">
 			<label for="input_relationshipToPolicyholder" style="width: 30%;">Relationship to the Policyholder?</label>
 			<select id="input_relationshipToPolicyholder" name="relationshipToPolicyholder" rf.validation="required" rf.source="resources/relationshipToPolicyholder.txt"  rf.preselectFirstOption="true">
 				<option disabled selected></option>
 			</select>
-		</div>
+		</div-->
 
 		<div id="disabledNavigation" class="navigation">
 			<input type="button" rf.action="cancel" value="Cancel" rf.includeIf="{ ({{count(convictions/conviction)}} == 0 && {{count(claims/claim)}} == 0) }"/>
