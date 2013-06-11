@@ -6,12 +6,12 @@
             <policyCommencement>01 Feb 2013</policyCommencement>
             <part partname="quote">
                 <beforeAfter>before</beforeAfter>
-                <xsl:apply-templates select="vehicle"/>
+                <xsl:apply-templates select="/quote/vehicles/vehicle"/>
             </part>
         </calcData>
     </xsl:template>
     <xsl:template match="vehicle">
-        <part partname = "driverForVehicle">
+        <part partname="driverForVehicle">
             <primaryVehicleUse>Farming</primaryVehicleUse>
             <dailyCommute>12</dailyCommute>
             <annualDistance>4000</annualDistance>
@@ -30,7 +30,17 @@
             <driverProfileID>D0565601</driverProfileID>   
             <liabilityLimit>1750000</liabilityLimit>
             <xsl:apply-templates select="cover"/>
-            <xsl:apply-templates select="operator"/>
+            <xsl:variable name="vehicleID"><xsl:value-of select="vehKey"/></xsl:variable>
+            <xsl:variable name="mainDriverID"><xsl:value-of select="substring-after(substring-after(name(/quote/policyPermissions/*[starts-with(name(), concat('main-', $vehicleID)) and text() = 'True']), '-'), '-')"/></xsl:variable>
+            <xsl:apply-templates select="/quote/drivers/driver[driverID = $mainDriverID]">
+                <xsl:with-param name="principal">true</xsl:with-param>
+            </xsl:apply-templates>
+            <xsl:for-each select="/quote/policyPermissions/*[starts-with(name(), concat('named-', $vehicleID)) and text() = 'True']">
+                <xsl:variable name="namedDriverID"><xsl:value-of select="substring-after(substring-after(name(), '-'), '-')"/></xsl:variable>
+                <xsl:apply-templates select="/quote/drivers/driver[driverID = $namedDriverID]">
+                <xsl:with-param name="principal">false</xsl:with-param>
+            </xsl:apply-templates>
+            </xsl:for-each>
         </part>
     </xsl:template>
     <xsl:template match="cover">
@@ -40,9 +50,10 @@
             <groupDiscount>-0.01</groupDiscount>
         </part>
     </xsl:template>
-    <xsl:template match="operator">
+    <xsl:template match="driver">
+        <xsl:param name="principal"/>
         <part partname ="operator">
-            <principal>true</principal>
+            <principal><xsl:value-of select="$principal"/></principal>
             <gender>M</gender>
             <age>45</age>
             <yearsLicenceHeld>10</yearsLicenceHeld>
