@@ -51,10 +51,15 @@
 
 			<a href="" onclick="return false" value="Change address" class="changeAddressButton">Change address</a>
 		</div>
+
+		<div id="disabledNavigation" class="navigation">
+			<input type="button" rf.action="cancel" value="Cancel" rf.includeIf="{ ({{count(convictions/conviction)}} == 0 && {{count(claims/claim)}} == 0) }"/>
+			<input type="button" onclick="toggleSections();" value="Next"/>
+		</div>
 	</div>
 
 	<div id="disabledSectionOne" class="disabled">
-		<h1>1. Additional Driver - Personal Details</h1>
+		<h1>About you</h1>
 		<label>Driver</label>
 		<span id="addDriver" class="disabledSummary"></span>
 		<a href="" onclick="toggleSections();return false;">Edit</a>	
@@ -66,7 +71,7 @@
 	</div>
 
 	<div id="disabledSectionTwo" class="disabled">
-		<h1>2. Driving Details</h1>
+		<h1>Your driving details</h1>
 	</div>
 
 	<!--TODO: Remove passing referrer as hidden field? -->
