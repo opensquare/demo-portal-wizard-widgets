@@ -1,4 +1,17 @@
 <script type='text/javascript' src='widgets/multi-vehicle-quote-forms/js/form-hints.js' ></script>
+<script>
+	/* Default section context */
+	$("#disabledSectionOne").hide();	 
+	$("#sectionTwo").hide();
+	$("#navigation").hide();
+
+	function toggleSections(){
+		$('#sectionOne, #disabledSectionOne, #navigation, #disabledNavigation').slideToggle(800);
+		$('#sectionTwo, #disabledSectionTwo').delay(1200).slideToggle(800);
+		/* var addDriver = document.getElementById('input_title').value + " " + document.getElementById('input_firstName').value + " " + document.getElementById('input_surname').value ;
+		document.getElementById("addDriver").innerHTML = addDriver; */
+	}
+</script>
 
 <ul id="crumbTrail">
 	<li class="about on">About you</li>
@@ -9,37 +22,52 @@
 
 <form id="aboutYou" rhinoforms="true">
 
-	<h1>About you</h1>
-	<rf.include src="common-personal-details.html" ></rf.include>
+	<div id="sectionOne">
+		<h1>About you</h1>
+		<rf.include src="common-personal-details.html" ></rf.include>
 
-	<div class="field findAddress">
-		<!--input id="findAddressProxy" type="proxy" style="display:none" rf.source="http://integration.osldev.net/itb-quotes/postcodeLookup" /-->
-		<!--div class="labelWrapper"-->
-			<label for="input_address">Address</label>
-		<!--/div-->
-		<div class="tableWrapper">
-			<input class="addressLookup" id="input_address" type="text" placeholder="Start typing your address or zipcode"/>
+		<div class="field findAddress">
+			<!--input id="findAddressProxy" type="proxy" style="display:none" rf.source="http://integration.osldev.net/itb-quotes/postcodeLookup" /-->
+			<!--div class="labelWrapper"-->
+				<label for="input_address">Address</label>
+			<!--/div-->
+			<div class="tableWrapper">
+				<input class="addressLookup" id="input_address" type="text" placeholder="Start typing your address or zipcode"/>
+			</div>
+		</div>
+		<div class="field addressFound" style="display:none">
+			<label>Your address</label>
+			<span id="addressLabel"></span>
+			<span name="address.line1">{{address.line1}}</span>
+			<span name="address.line2">{{address.line2}}</span>
+			<span name="address.line3">{{address.line3}}</span>
+			<span name="address.line4">{{address.line4}}</span>
+			<span name="address.postcode">{{address.postcode}}</span>
+			<input type="hidden" name="address.line1"/>
+			<input type="hidden" name="address.line2"/>
+			<input type="hidden" name="address.line3"/>
+			<input type="hidden" name="address.line4"/>
+			<input type="hidden" name="address.postcode"/>
+
+			<a href="" onclick="return false" value="Change address" class="changeAddressButton">Change address</a>
 		</div>
 	</div>
-	<div class="field addressFound" style="display:none">
-		<label>Your address</label>
-		<span id="addressLabel"></span>
-		<span name="address.line1">{{address.line1}}</span>
-		<span name="address.line2">{{address.line2}}</span>
-		<span name="address.line3">{{address.line3}}</span>
-		<span name="address.line4">{{address.line4}}</span>
-		<span name="address.postcode">{{address.postcode}}</span>
-		<input type="hidden" name="address.line1"/>
-		<input type="hidden" name="address.line2"/>
-		<input type="hidden" name="address.line3"/>
-		<input type="hidden" name="address.line4"/>
-		<input type="hidden" name="address.postcode"/>
 
-		<a href="" onclick="return false" value="Change address" class="changeAddressButton">Change address</a>
+	<div id="disabledSectionOne" class="disabled">
+		<h1>1. Additional Driver - Personal Details</h1>
+		<label>Driver</label>
+		<span id="addDriver" class="disabledSummary"></span>
+		<a href="" onclick="toggleSections();return false;">Edit</a>	
 	</div>
-	
-	<h1>Your driving details</h1>
-	<rf.include src="common-driving-details.html" ></rf.include>
+
+	<div id="sectionTwo">
+		<h1>Your driving details</h1>
+		<rf.include src="common-driving-details.html" ></rf.include>
+	</div>
+
+	<div id="disabledSectionTwo" class="disabled">
+		<h1>2. Driving Details</h1>
+	</div>
 
 	<!--TODO: Remove passing referrer as hidden field? -->
  	<input id="input_referrer" name="referrer" rf.validation="required" type="hidden" value="Recommendation" rf.source="resources/referrer.txt" rf.preselectFirstOption="true"/>
