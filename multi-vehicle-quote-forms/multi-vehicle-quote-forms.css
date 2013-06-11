@@ -1,8 +1,8 @@
-form {
+div.widget[name='multi-vehicle-quote-forms'] form {
 	padding: 0.2em 2em 0 2em;
 	clear: both;
 }
-h1 {
+div.widget[name='multi-vehicle-quote-forms'] h1 {
 	margin-top: 1.5em; margin-bottom: 0.75em;
 	color: #333;
 	font-size: 230%; font-weight: normal;
@@ -55,14 +55,14 @@ h1 {
 			color:#92CE56;
 		}
 
-ol li ol li {
+div.widget[name='multi-vehicle-quote-forms'] ol li ol li {
   list-style-type: lower-roman;
 }
-ol li.field label {
+div.widget[name='multi-vehicle-quote-forms'] ol li.field label {
    width:auto;
     list-style-type: lower-roman;
 }
-ol li.field span {
+div.widget[name='multi-vehicle-quote-forms'] ol li.field span {
       width:80%;
 }
 
@@ -156,11 +156,11 @@ div.widget[name='multi-vehicle-quote-forms'] select {
 	margin-left: 0;
 	border: thin solid #0090C0;
 	font-size: 1.3em;}
-	/*color: #AAA;
+	color: #AAA;
 }
 div.widget[name='multi-vehicle-quote-forms'] select.changed {
 	color: inherit;
-}*/
+}
 div.widget[name='multi-vehicle-quote-forms'] select:disabled {
 	background-color: rgb(235, 235, 228);
 }
