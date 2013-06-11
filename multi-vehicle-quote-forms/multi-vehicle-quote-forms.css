@@ -306,7 +306,7 @@ div.widget[name='multi-vehicle-quote-forms'] .carFound span {
 }
 
 div.widget[name='multi-vehicle-quote-forms'] .currency:after {
-	content: '£';
+	content: '$';
 	float: right;
 	margin-right: -4%;
 }

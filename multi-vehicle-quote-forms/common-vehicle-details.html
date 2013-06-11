@@ -35,7 +35,7 @@
 
 	function toggleSections(){
 		$('#sectionOne, #disabledSectionOne, #navigation, #disabledNavigation').slideToggle(800);
-		$('#sectionTwo, #disabledSectionTwo').delay(1200).slideToggle(800);
+		$('#sectionTwo, #disabledSectionTwo').delay(800).slideToggle(400);
 		var startDate = document.getElementById('input_coverStartDate').value;
 		document.getElementById("startDate").innerHTML = moment(startDate, "YYYY-MM-DD").format("DD/MM/YYYY")
 	}
@@ -60,7 +60,7 @@
 </script>
 
 	<div id="sectionOne">
-		<h1>1. Find Vehicle</h1>
+		<h1>Find vehicle</h1>
 		<div class="field knowReg">
 			<label>Do you know the vehicle registration number?</label>
 				<input id="input_knowReg_yes" type="radio" name="knowReg" value="yes" rf.validation="required" checked/>
@@ -190,14 +190,14 @@
 
 	<div id="disabledSectionOne" class="disabled">
 
-		<h1>1. Find Vehicle</h1>
+		<h1>Find vehicle</h1>
 		<label>Your vehicle</label>
 		<span name="vehDescReg" class="disabledSummary">{{vehDescReg}}</span>
 		<a href="" onclick="toggleSections();return false;">Edit</a>
 	</div>
 
 	<div id="sectionTwo">
-		<h1>3. Vehicle Details</h1>
+		<h1>Vehicle details</h1>
 
 		<div class="field">	
 			<div>
@@ -219,21 +219,21 @@
 			<div class="hint">We need your purchase date so we can find your exact car and help you get a more accurate quote.</div>
 		</div>
 		
-		<div class="field">
+		<!--div class="field">
 			<label for="input_dayParking">Where do you park most days?</label>
 			<select id="input_dayParking" name="dayParkingCode" rf.validation="required" rf.source="resources/dayParking.csv" rf.preselectFirstOption="true">
 				<option disabled selected/>
 			</select>
-		</div>
+		</div-->
 		
-		<div class="field">
+		<!--div class="field">
 			<label for="input_nightParking">Where do you park most nights?</label>
 			<select id="input_nightParking" name="nightParkingCode" rf.validation="required" rf.source="resources/nightParking.csv" rf.preselectFirstOption="true">
 				<option disabled selected/>
 			</select>
-		</div>
+		</div-->
 		
-		<div class="field">
+		<!--div class="field">
 			<label for="input_noClaimsYears">How many years No Claims Discount do you have?</label>
 			<select id="input_noClaimsYears" name="noClaimsYears" rf.validation="required" rf.source="resources/noClaimsYears.csv" rf.preselectFirstOption="true"></select>
 		</div>
@@ -241,12 +241,12 @@
 		<div class="field" rf.includeIf="{ utils.isGreaterThan(fields.noClaimsYears.value, 0) }">
 			<label for="input_protectNoClaims">Do you want to protect your No Claims Discount?</label>
 			<input id="input_protectNoClaims" type="checkbox" name="protectNoClaims" rf.includeIf="{ utils.isGreaterThan(fields.noClaimsYears.value, 0) }"></input>
-		</div>
+		</div-->
 
 	</div>
 
 	<div id="disabledSectionTwo" class="disabled">
-		<h1>3. Vehicle Details</h1>
+		<h1>Vehicle details</h1>
 	</div>
 
 	<div class="navigation" id="navigation">

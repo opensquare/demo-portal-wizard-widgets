@@ -58,7 +58,7 @@
 		</div>
 	</div>
 
-	<div id="disabledSectionOne">
+	<div id="disabledSectionOne" class="disabled">
 		<h1>About you</h1>
 		<label>Name</label>
 		<span id="addDriver" class="disabledSummary"></span>
@@ -68,6 +68,10 @@
 	<div id="sectionTwo">
 		<h1>Your driving details</h1>
 		<rf.include src="common-driving-details.html" ></rf.include>
+
+		<div class="navigation">
+			<input type="submit" rf.action="next" value="Next"/>
+		</div>
 	</div>
 
 	<div id="disabledSectionTwo" class="disabled">
@@ -77,7 +81,4 @@
 	<!--TODO: Remove passing referrer as hidden field? -->
  	<input id="input_referrer" name="referrer" rf.validation="required" type="hidden" value="Recommendation" rf.source="resources/referrer.txt" rf.preselectFirstOption="true"/>
 	
-	<div class="navigation">
-		<input type="submit" rf.action="next" value="Next"/>
-	</div>
 </form>

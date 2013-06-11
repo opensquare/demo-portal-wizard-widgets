@@ -49,7 +49,7 @@
 	</div-->
 	
 	<div class="field">
-		<label>Have you incurred any driving convictions in the last 3 years?</label>
+		<label>Have you recieved any driving convictions in the last 3 years?</label>
 		<input id="input_anyConvictions_yes" type="radio" name="anyConvictions" value="Yes" rf.validation="required"/>
 		<label for="input_anyConvictions_yes" class="forRadio">Yes</label>
 		<input id="input_anyConvictions_no" type="radio" name="anyConvictions" value="No"/>
@@ -57,7 +57,7 @@
 	</div>
 
 	<div class="field">
-		<label>Have you had any claims in the last 5 years?</label>
+		<label>Have you had any claims or losses in the last 5 years?</label>
 		<input id="input_anyClaims_yes" type="radio" name="anyClaims" value="Yes" rf.validation="required"/>
 		<label for="input_anyClaims_yes" class="forRadio">Yes</label>
 		<input id="input_anyClaims_no" type="radio" name="anyClaims" value="No"/>
@@ -83,7 +83,7 @@
 	
 	<div class="claims" rf.includeIf="{ fields.anyClaims.value == 'Yes' }" >
 		<h2>Claims</h2>
-		<p>Please enter details of any claims, accidents or losses this driver has made in the last 5 years.</p>
+		<p>Please enter details of any claims, accidents or losses this driver has had in the last 5 years.</p>
 		<div>
 			<rf.forEach select="claims/claim" as="cl">
 			<div class="claim">
