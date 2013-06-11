@@ -1,0 +1,107 @@
+<script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script>
+
+<ul id="crumbTrail">
+  <li class="intro">Getting started</li>
+  <li class="car">Cars &amp; drivers</li>
+  <li class="options">Options</li>
+  <li class="quote">Quote</li>
+ </ul>
+
+<form rhinoforms="true" id="preliminary_questions">
+	<h1>Getting started</h1>
+	<p class="hintMsg">We need to ask some questions to check that you qualify for this product.  Please answer all the questions honestly and to the best of your knowledge. If you don't, your policy may be cancelled or your claim rejected or not paid in full.</p>
+	<ol id="preliminaryQuestions">
+
+		<li class="field">
+			<span>Is the vehicle owned by you, your parent, grandparent, husband/wife or civil partner</span>
+			<div class="radios">
+				<label for="vehicle_owned_by_you_yes">
+					<span>Yes</span>
+					<input type="radio" id="vehicle_owned_by_you_yes" name="vehicle_owned_by_you" value="yes" rf.validation="required" />
+				</label>
+				<label for="vehicle_owned_by_you_no">
+					<span>No</span>
+					<input type="radio" id="vehicle_owned_by_you_no" name="vehicle_owned_by_you" value="no" />
+				</label>
+			</div>
+		</li>
+
+		<li class="field">
+			<span>Have you or any other drivers of the car you want to insure:</span>
+			<ol>
+				<li class="field">
+					<span>Had any restrictions added to your/their driving licence by the DVLA due to any disability or medical condition</span>
+					<div class="radios">
+						<label for="any_restrictions_yes">
+							<span>Yes</span>
+							<input type="radio" id="any_restrictions_yes" name="any_restrictions" value="yes" />
+						</label>
+						<label for="any_restrictions_no">
+							<span>No</span>
+							<input type="radio" id="any_restrictions_no" name="any_restrictions" value="no" rf.validation="required" />
+						</label>
+					</div>
+				</li>
+				<li class="field">
+					<span>Been refused, had cancelled or had any special terms imposed on previous insurance policies</span>
+				<div class="radios">
+					<label for="been_refused_yes">
+						<span>Yes</span>
+						<input type="radio" id="been_refused_yes" name="been_refused" value="yes" />
+					</label>
+					<label for="been_refused_no">
+						<span>No</span>
+						<input type="radio" id="been_refused_no" name="been_refused" value="no" rf.validation="required" />
+					</label>
+				</div>
+				</li>
+				<li class="field">
+					<span>Had any non-motoring convictions that are not spent under the Rehabilitation of Offenders Act 1974 or any convictions for help</span>
+					<div class="radios">
+						<label for="convictions_yes">
+							<span>Yes</span>
+							<input type="radio" id="convictions_yes" name="convictions" value="yes" />
+						</label>
+						<label for="convictions_no">
+							<span>No</span>
+							<input type="radio" id="convictions_no" name="convictions" value="no" rf.validation="required" />
+						</label>
+					</div>
+				</li>							
+			</ol>
+		</li>
+
+		<li class="field">
+			<span>Has the car been changed from the manufacturer's standard specification?</span>
+			<div class="radios">
+				<label for="standard_spec_yes">
+					<span>Yes</span>
+					<input type="radio" id="standard_spec_yes" name="standard_spec" value="yes" />
+				</label>
+				<label for="standard_spec_no">
+					<span>No</span>
+					<input type="radio" id="standard_spec_no" name="standard_spec" value="no" rf.validation="required" />
+				</label>
+			</div>
+		</li>
+
+		<li class="field">
+			<span>Will the vehicle be used for any commercial purposes including private hire, driving tuition, rallies and anything to do with the motor trade</span>
+			<div class="radios">
+				<label for="commercial_purposes_yes">
+					<span>Yes</span>
+					<input type="radio" id="commercial_purposes_yes" name="commercial_purposes" value="yes" />
+				</label>
+				<label for="commercial_purposes_no">
+					<span>No</span>
+					<input type="radio" id="commercial_purposes_no" name="commercial_purposes" value="no" rf.validation="required" />
+				</label>
+			</div>
+		</li>
+
+	</ol>
+
+	<div class="navigation" id="navigation">
+		<input type="submit" rf.action="next" value="Next"/>
+	</div>
+</form>

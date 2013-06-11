@@ -1,37 +1,38 @@
- <script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script>
- <script>
+<script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script>
+<script>
 	/* Default section context */
 	$("#disabledSectionOne").hide();	 
-    $("#sectionTwo").hide();
-    $("#navigation").hide();
+	$("#sectionTwo").hide();
+	$("#navigation").hide();
 
 	function toggleSections(){
 		$('#sectionOne, #disabledSectionOne, #navigation, #disabledNavigation').slideToggle(800);
 		$('#sectionTwo, #disabledSectionTwo').delay(1200).slideToggle(800);
 		var addDriver = document.getElementById('input_title').value + " " + document.getElementById('input_firstName').value + " " + document.getElementById('input_surname').value ;
 		document.getElementById("addDriver").innerHTML = addDriver;
-	}	
- </script>
+	}
+</script>
 
- <ul id="crumbTrail">
-  <li class="car">Your car</li>
-  <li class="policy">Your policy</li>
-  <li class="drivers on">Your drivers</li>
-  <li class="quote">Your quote</li>
- </ul>
+<ul id="crumbTrail">
+	<li class="about">About you</li>
+	<li class="car on">Your cars &amp; drivers</li>
+	<li class="policy">Policy options</li>
+	<li class="quote">Your quote</li>
+</ul>
+
 <form rhinoforms="true">
 
 	<div id="sectionOne">
-		<h1>1. Additional Driver - Personal Details</h1>
+		<h1>Additional driver - personal details</h1>
 
 		<rf.include src="common-personal-details.html" ></rf.include>
 
-		<div class="field">
+		<!--div class="field">
 			<label for="input_relationshipToPolicyholder" style="width: 30%;">Relationship to the Policyholder?</label>
 			<select id="input_relationshipToPolicyholder" name="relationshipToPolicyholder" rf.validation="required" rf.source="resources/relationshipToPolicyholder.txt"  rf.preselectFirstOption="true">
 				<option disabled selected></option>
 			</select>
-		</div>
+		</div-->
 
 		<div id="disabledNavigation" class="navigation">
 			<input type="button" rf.action="cancel" value="Cancel" rf.includeIf="{ ({{count(convictions/conviction)}} == 0 && {{count(claims/claim)}} == 0) }"/>
@@ -40,19 +41,19 @@
 	</div>
 
 	<div id="disabledSectionOne" class="disabled">
-		<h1>1. Additional Driver - Personal Details</h1>
+		<h1>Additional driver - personal details</h1>
 		<label>Driver</label>
 		<span id="addDriver" class="disabledSummary"></span>
 		<a href="" onclick="toggleSections();return false;">Edit</a>	
 	</div>
 		
 	<div id="sectionTwo">
-		<h1>2. Driving Details</h1>
+		<h1>Additional driver - driving details</h1>
 		<rf.include src="common-driving-details.html" ></rf.include>
 	</div>
 
 	<div id="disabledSectionTwo" class="disabled">
-		<h1>2. Driving Details</h1>
+		<h1>Additional driver - driving details</h1>
 	</div>
 
 	<div id="navigation" class="navigation">

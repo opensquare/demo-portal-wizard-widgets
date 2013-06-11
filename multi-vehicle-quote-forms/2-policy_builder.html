@@ -1,0 +1,162 @@
+<script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script>
+<script>
+	rf.onFormLoad(function() {
+
+		// Reset backing checkboxes
+		$('input[type=checkbox]').each(function () {
+              $(this).prop('checked', false); 
+           
+		});
+
+		var x = ($(".gridVehicle").length)-1;
+		console.log("gridVehicle = " + x)
+		var drivers = [];
+
+		$('div[type="driver"]').each(function () {
+			drivers.push($(this).attr("id"));
+		});
+		
+		jQuery.each(drivers, function(a, val) {
+
+			console.log(a + " " + val)
+		    for(var i=1; i<x; i++){
+			    console.log(a + " " + val + " " + i)
+
+			    var item = $("#"+ val).clone();
+			    var insert = $("#" + val).parent();
+
+			   // console.log(insert)
+				var itemId = item.attr("id");
+				itemId = itemId + '#'+i;
+				item.attr("id", itemId);
+				insert.append(item);
+			}
+
+		});		
+
+		//ToDo: issues using click(). Fires after rf submission....
+		$("input[type='submit']").hover(function(){
+
+			console.log("Parsing permissions...")
+
+			var abi;
+			var permission;
+			var driver;
+
+			// Parse main drivers
+			$(".main").each(function(){
+				abi = $(this).attr("abi");
+				driver = $(this).find('div').attr("code")
+
+				if (typeof driver != 'undefined'){
+					//driver = driver.split("#");
+					//driver = driver[0];
+
+					var checkName = "'main-" + abi + "-" + driver + "']";
+					console.log("Checking box with name: " + checkName)
+					$("input[name=" + checkName + '"').prop('checked', true);
+				}
+			}) 
+
+			// Parse named drivers
+			$(".named").each(function(){
+				abi = $(this).attr("abi");
+				var $namedDrivers = $(this).children();
+
+      			$namedDrivers.each(function(){
+      				driver = $(this).attr("code");
+
+      				if (typeof driver != 'undefined'){
+
+						var checkName = "'named-" + abi + "-" + driver + "']";
+						console.log("Checking box with name: " + checkName)
+						$("input[name=" + checkName + '"').prop('checked', true);
+					}
+
+      			})
+				
+			})
+
+		});
+		
+	});
+</script>
+<ul id="crumbTrail">
+	<li class="about">About you</li>
+	<li class="car on">Your cars &amp; drivers</li>
+	<li class="policy">Policy options</li>
+	<li class="quote">Your quote</li>
+</ul>
+
+<form rhinoforms="true">
+
+	<h1>Vehicles and Drivers</h1>
+	<p>Build your policy here by adding vehicles and drivers. Simply drag a driver into the cell representing their driving permission.</p>
+	
+	<div id="multiGrid">
+
+		<!-- Backing checkboxes for drag drop component -->
+		<rf.forEach select="//quote//driver" as="d" >
+			<rf.forEach select="//quote//vehicle" as="v" >
+			  <input type="checkbox" name="main-{{v.vehKey}}-{{d.driverID}}" style="display:none;"/>
+			  <input type="checkbox" name="named-{{v.vehKey}}-{{d.driverID}}" style="display:none;"/>
+			</rf.forEach>
+		</rf.forEach>
+
+		<!-- Grid Labels -->
+		<div>
+		  <div class="grid label"></div>
+		  <div class="grid label">Main Driver</div>
+		  <div class="grid label">Named Drivers</div>
+		</div>
+		<!-- Vehicles -->
+		<rf.forEach select="//quote//vehicle" as="v">
+			<div class="gridVehicle">
+			  <div class="grid title">
+			  	<span class="transport"></span>
+			  	<span class="driver" rf.includeIf="'{{v.make}}' != ''">
+			  		{{v.make}} {{v.model}}
+			  	</span>
+			  	<span class="driver" rf.includeIf="'{{v.make}}' == ''">
+			  		{{v.vehicleMM}}
+			  	</span>
+			  </div>
+			  <div class="grid main" num="1" ondrop="drop(event)" ondragover="allowDrop(event)" abi="{{v.vehKey}}" permission="main"></div>
+			  <div class="grid named" ondrop="drop(event)" ondragover="allowDrop(event)" abi="{{v.vehKey}}" permission="named"></div>
+			</div>
+		</rf.forEach>
+		<!-- Add vehicle row -->
+		<div class="gridVehicle">
+			  <div class="grid newRow">
+			  	<input type="button" rf.action="addAdditionalVehicle" class="add"/>	
+			  </div>
+			  <div class="grid newRow"></div>
+			  <div class="grid named newRow"></div>
+		</div>
+	</div>
+
+	<div id="driverBucket" ondrop="drop(event)" ondragover="allowDrop(event)">
+	
+		<!-- Drivers -->
+		<rf.forEach select="//quote/drivers/driver" as="d">
+			<div style="display: inline-block">
+					<div id="{{d.firstName}}{{d.surname}}" code="{{d.driverID}}" class="inner" draggable="true" ondragstart="drag(event)" type="driver">
+						<span class="{{d.gender}}"></span>
+						<span class="driver">{{d.firstName}} {{d.surname}}</span>
+					</div>
+			</div>
+		</rf.forEach>	
+		
+	</div>
+
+	<!-- Add driver cell -->
+	<div id="addDriverButton">
+		<input type="button" rf.action="addAdditionalDriver" class="add"/>	
+	</div>
+	
+	<div class="navigation">
+		<div id="errorMsgs"></div>
+		<input type="button" rf.action="back" value="Back"/>
+		<input type="submit" rf.action="next" value="Next"/>
+	</div>
+</form>		
