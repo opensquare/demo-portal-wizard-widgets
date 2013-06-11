@@ -41,10 +41,6 @@
 							url: "{{$esb-url}}/action/motor/quote/calc",
 							data: {
 								source: "motor-new-business",
-                                quickSearch1: "xpath://customer/surname",
-                                quickSearch2: "xpath://customer/address/postcode",
-                                quickSearch3: "xpath://customer/email",
-                                quickSearch4: "xpath://vehicle/reg",
 								calcType: "xpath://product/calc",
 								calcData: "[dataDocument]"
 							},
