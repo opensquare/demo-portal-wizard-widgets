@@ -25,9 +25,16 @@
 		 $("#input_title").change(function(){
 		   completeGender($("#input_title option:selected").val());
 		 });
+
+		  $("input[name='driverID']").val(function() {
+				  return Math.floor((Math.random()*100)+1);
+			});
+
 	</script>
 
 	<div id="customerDetails">
+
+		<input type="hidden" name="driverID"/>
 
 		<div class="field">
 			<label for="input_title">Name</label>
@@ -95,7 +102,7 @@
 			<label for="input_ownHome_yes" class="forRadio">Yes</label>
 			<input id="input_ownHome_no" type="radio" name="alchohol" value="no"/>
 			<label for="input_ownHome_no" class="forRadio">No</label>
-		</div-->
+		</div>
 
 	</div>
 		
