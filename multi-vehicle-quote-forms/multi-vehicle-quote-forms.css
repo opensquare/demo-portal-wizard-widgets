@@ -535,11 +535,11 @@ div.widget[name='multi-vehicle-quote-forms'] .addressFound label,
 div.widget[name='multi-vehicle-quote-forms'] .accountDetails label {
 	vertical-align: top;
 }
-div.widget[name='multi-vehicle-quote-forms'] #addressLabel,
+div.widget[name='multi-vehicle-quote-forms'] .addressLabel,
 div.widget[name='multi-vehicle-quote-forms'] .bankDetails {
 	display: inline-block;
 }
-div.widget[name='multi-vehicle-quote-forms'] #addressLabel span,
+div.widget[name='multi-vehicle-quote-forms'] .addressLabel span,
 div.widget[name='multi-vehicle-quote-forms'] .bankDetails>span {
 	display: block;
 	font-size: 1.2em;
