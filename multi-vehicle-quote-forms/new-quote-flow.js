@@ -18,10 +18,22 @@
 						}
                     }
                 ]},
-            { id: "preliminary", docBase: "/quote/preliminary", url: "1-preliminary_questions.html", actions: [ "next"] },
-	       	{ id: "vehicle", docBase: "/quote/vehicle", url: "1-car.html", actions: [ "next"] },
-			{ id: "customer", docBase: "/quote/customer", url: "1-customer.html", actions: [ "back", "next" ] },
-			{ id: "driver", docBase: "/quote/customer", url: "2-driver.html",
+            { id: "customer", docBase: "/quote/customer", url: "1-customer.html", actions: [ "back", "next" ] },
+	       	{ id: "policy", docBase: "/quote/vehicle", url: "2-policy_builder.html",
+	       		actions: [
+	       		  "back", 
+
+					"addAdditionalVehicle:additionalVehicle.editAdditionalVehicle(index=next)",
+					"addAdditionalDriver:additionalDriver.editAdditionalDriver(index=next)",
+					"editAdditionalDriver:additionalDriver.editAdditionalDriver(index=?)",
+					"deleteAdditionalDriver:delete(xpath=additionalDrivers/driver[index], index=?)",
+
+					"next"
+	       		]
+	        },
+	        { id: "policyDetails", docBase: "/quote/preliminary", url: "3-policy_details.html", actions: [ "back","next"] },
+			/*{ id: "customer", docBase: "/quote/customer", url: "1-customer.html", actions: [ "back", "next" ] },
+			  { id: "driver", docBase: "/quote/customer", url: "2-driver.html",
 				actions: [
 					"back",
 					
@@ -47,7 +59,7 @@
 
 					"next"
 				]
-			},
+			},*/
 			{ id: "calculating", url: "8-calculating.html", 
 				actions: [
 					{

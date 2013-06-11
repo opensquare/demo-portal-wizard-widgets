@@ -4,27 +4,26 @@
 
 	<div class="field">
 		<label for="input_licenceType">Driving licence type:</label>
-		<select id="input_licenceType" name="licenceTypeCode" rf.validation="required" rf.source="resources/licenceType.csv" rf.preselectFirstOption="true">
+		<select id="input_licenceType" name="licenceTypeCode" rf.validation="required" rf.preselectFirstOption="true">
 			<option disabled selected/>
+			<option>G</option>
+			<option>G1</option>
+			<option>G2</option>			
 		</select>
 		<input type="hidden" name="licenceType" value=""/>
 	</div>
 	
 	<div class="field">
-		<label for="input_passedTest">When did you pass your test?</label>
-		<input id="input_passedTestMoreThan10YearsAgo" type="checkbox" name="passedTestMoreThan10YearsAgo"/>
-		<label class="forRadio" for="input_passedTestMoreThan10YearsAgo">More than 10 years ago</label>
-		<div rf.includeIf="{ fields.passedTestMoreThan10YearsAgo.value == false }">
-			<label for="input_passedTestMonth">Or since</label>
-			<select id="input_passedTestMonth" class="dateSel" name="passedTestMonth" rf.includeIf="{ fields.passedTestMoreThan10YearsAgo.value == false }" rf.source="resources/months.csv" rf.preselectFirstOption="true">
+		<div>
+			<label for="input_passedTest">When did you reach the licence level?</label>
+			<select id="input_licenceReachedMonth" class="dateSel" name="licenceReachedMonth" rf.source="resources/months.csv" rf.preselectFirstOption="true">
 				<option disabled selected/>
 			</select>
-			<select id="input_passedTestYear" class="dateSel" name="passedTestYear" rf.includeIf="{ fields.passedTestMoreThan10YearsAgo.value == false }" rf.rangeStart="new Date().getFullYear()" rf.rangeEnd="new Date().getFullYear() - 10"rf.preselectFirstOption="true">
+			<select id="input_licenceReachedYear" class="dateSel" name="licenceReachedYear" rf.rangeStart="new Date().getFullYear()" rf.rangeEnd="new Date().getFullYear() - 10"rf.preselectFirstOption="true">
 				<option disabled selected/>
 			</select>
 		</div>
-		<input type="hidden" name="licenceHeldSinceDate" rf.includeIf="{ fields.passedTestMoreThan10YearsAgo.value == false }" rf.calculated="{ if (fields.passedTestMoreThan10YearsAgo.value == false && fields.passedTestMonth.value && fields.passedTestYear.value) { '01/' + fields.passedTestMonth.value + '/' + fields.passedTestYear.value } }"/>
-		<input type="hidden" name="licenceHeldYears" rf.calculated="{ if (fields.passedTestMoreThan10YearsAgo.value == true) { '10' } else if (fields.licenceHeldSinceDate.value) { utils.yearsBetween(moment(fields.licenceHeldSinceDate.value, 'DD/MM/YYYY'), new Date()) } }"/>
+		<input type="hidden" name="licenceHeldSinceDate" rf.calculated="{ if (fields.licenceReachedMonth.value && fields.licenceReachedYear.value) { '01/' + fields.licenceReachedMonth.value + '/' + fields.licenceReachedYear.value } }"/>
 	</div>
 	
 	<div class="field">
