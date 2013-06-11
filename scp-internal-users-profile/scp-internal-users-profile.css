@@ -11,6 +11,7 @@
 	display: inline-block;
 	width: 30%;
 	font-weight: bold;
+	vertical-align: top;
 }
 .scp-internal-users-profile .property-value {
 	display: inline-block;
