@@ -2,15 +2,15 @@
 <script>
 	/* Default section context */
 	$("#disabledSectionOne").hide();	 
-    $("#sectionTwo").hide();
-    $("#navigation").hide();
+	$("#sectionTwo").hide();
+	$("#navigation").hide();
 
 	function toggleSections(){
 		$('#sectionOne, #disabledSectionOne, #navigation, #disabledNavigation').slideToggle(800);
 		$('#sectionTwo, #disabledSectionTwo').delay(1200).slideToggle(800);
 		var addDriver = document.getElementById('input_title').value + " " + document.getElementById('input_firstName').value + " " + document.getElementById('input_surname').value ;
 		document.getElementById("addDriver").innerHTML = addDriver;
-	}	
+	}
 </script>
 
 <ul id="crumbTrail">
@@ -23,7 +23,7 @@
 <form rhinoforms="true">
 
 	<div id="sectionOne">
-		<h1>1. Additional Driver - Personal Details</h1>
+		<h1>Additional driver - personal details</h1>
 
 		<rf.include src="common-personal-details.html" ></rf.include>
 
@@ -41,19 +41,19 @@
 	</div>
 
 	<div id="disabledSectionOne" class="disabled">
-		<h1>1. Additional Driver - Personal Details</h1>
+		<h1>Additional driver - personal details</h1>
 		<label>Driver</label>
 		<span id="addDriver" class="disabledSummary"></span>
 		<a href="" onclick="toggleSections();return false;">Edit</a>	
 	</div>
 		
 	<div id="sectionTwo">
-		<h1>2. Driving Details</h1>
+		<h1>Additional driver - driving details</h1>
 		<rf.include src="common-driving-details.html" ></rf.include>
 	</div>
 
 	<div id="disabledSectionTwo" class="disabled">
-		<h1>2. Driving Details</h1>
+		<h1>Additional driver - driving details</h1>
 	</div>
 
 	<div id="navigation" class="navigation">
