@@ -8,6 +8,64 @@ h1 {
 	font-size: 230%; font-weight: normal;
 	clear: both;
 }
+
+#preliminary_questions ol {
+	padding-left: 30px;
+}
+#preliminary_questions ol li.field {
+	font-size: 33px;
+	line-height: 20px;
+	font-weight: bold;
+	color:#92CE56;
+}
+	#preliminary_questions ol li.field span {
+		font-size: 16px;
+		line-height: 18px;
+		font-weight: normal;
+		color:#000000;
+	}
+	#preliminary_questions ol li.field label {
+		color:#92CE56;
+		font-size: 22px;
+		line-height: 20px;
+		font-weight: bold;
+		color:#92CE56;
+	}
+	#preliminary_questions ol li.field .radios {
+		width:110px;
+		float: right;
+	}
+		#preliminary_questions ol li.field .radios label {
+			padding: 0 4px;
+			text-align: center;
+		}
+			#preliminary_questions ol li.field .radios label input {
+				padding-left: 6px;
+				display: inline;
+			}
+
+			#preliminary_questions ol li.field .radios label .invalid-message {
+				position:relative;
+				z-index: 10;
+				left: 110px;
+				color:#ffffff;
+			}
+
+		#preliminary_questions ol li.field .radios label span {
+			color:#92CE56;
+		}
+
+ol li ol li {
+  list-style-type: lower-roman;
+}
+ol li.field label {
+   width:auto;
+    list-style-type: lower-roman;
+}
+ol li.field span {
+      width:80%;
+}
+
 div.widget[name='multi-vehicle-quote-forms'] input[type='date'] {
 	border: thin solid #0090C0; width: 15%;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 1.3em; 
@@ -107,7 +165,7 @@ div.widget[name='multi-vehicle-quote-forms'] select:disabled {
 	background-color: rgb(235, 235, 228);
 }
 
-div.widget[name='multi-vehicle-quote-forms'] div.field {
+div.widget[name='multi-vehicle-quote-forms'] div.field, ol li.field {
 	min-height: 2.2em;
 	padding: 1em 0;
 	border-bottom: thin solid rgba(0, 0, 0, 0.1);
@@ -133,6 +191,12 @@ div.widget[name='multi-vehicle-quote-forms'] div.field a:hover {
 /*div.widget[name='multi-vehicle-quote-forms'] option:first-child {
 	color: #999;
 }*/
+.hintMsg {
+  color: #FFF;
+  padding: 0.35em;
+  border-radius: 0.25em;
+  background-color: #92CE56;
+}
 div.widget[name='multi-vehicle-quote-forms'] .hint {
 	display: none;
 	position: absolute; right: 7em;

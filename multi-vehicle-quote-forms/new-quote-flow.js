@@ -18,6 +18,7 @@
 						}
                     }
                 ]},
+            { id: "preliminary", docBase: "/quote/preliminary", url: "1-preliminary_questions.html", actions: [ "next"] },
 	       	{ id: "vehicle", docBase: "/quote/vehicle", url: "1-car.html", actions: [ "next"] },
 			{ id: "customer", docBase: "/quote/customer", url: "1-customer.html", actions: [ "back", "next" ] },
 			{ id: "driver", docBase: "/quote/customer", url: "2-driver.html",
