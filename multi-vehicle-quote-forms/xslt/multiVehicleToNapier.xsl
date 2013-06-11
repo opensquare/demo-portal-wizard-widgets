@@ -31,11 +31,11 @@
             <liabilityLimit>1750000</liabilityLimit>
             <xsl:apply-templates select="cover"/>
             <xsl:variable name="vehicleID"><xsl:value-of select="vehKey"/></xsl:variable>
-            <xsl:variable name="mainDriverID"><xsl:value-of select="substring-after(substring-after(name(/quote/policyPermissions/*[starts-with(name(), concat('main-', $vehicleID)) and text() = 'True']), '-'), '-')"/></xsl:variable>
+            <xsl:variable name="mainDriverID"><xsl:value-of select="substring-after(substring-after(name(/quote/policyPermissions/*[starts-with(name(), concat('main-', $vehicleID)) and text() = 'true']), '-'), '-')"/></xsl:variable>
             <xsl:apply-templates select="/quote/drivers/driver[driverID = $mainDriverID]">
                 <xsl:with-param name="principal">true</xsl:with-param>
             </xsl:apply-templates>
-            <xsl:for-each select="/quote/policyPermissions/*[starts-with(name(), concat('named-', $vehicleID)) and text() = 'True']">
+            <xsl:for-each select="/quote/policyPermissions/*[starts-with(name(), concat('named-', $vehicleID)) and text() = 'true']">
                 <xsl:variable name="namedDriverID"><xsl:value-of select="substring-after(substring-after(name(), '-'), '-')"/></xsl:variable>
                 <xsl:apply-templates select="/quote/drivers/driver[driverID = $namedDriverID]">
                 <xsl:with-param name="principal">false</xsl:with-param>
