@@ -41,6 +41,9 @@
 		<div class="field">
 			<label for="input_dateOfBirth">Date of birth</label>
 
+			<select id="input_dateOfBirthMonth" name="dateOfBirthMonth" class="dateSel" rf.source="resources/months.csv" rf.preselectFirstOption="true">
+					<option disabled selected>Month</option>
+			</select>
 			<select id="input_dateOfBirthDay" name="dateOfBirthDay" class="dateSel" rf.preselectFirstOption="true">
 					<option disabled selected>Day</option>
 					<option>01</option><option>02</option><option>03</option><option>04</option><option>05</option>
@@ -50,9 +53,6 @@
 					<option>21</option><option>22</option><option>23</option><option>24</option><option>25</option>
 					<option>26</option><option>27</option><option>28</option><option>29</option><option>30</option>
 					<option>31</option>
-			</select>
-			<select id="input_dateOfBirthMonth" name="dateOfBirthMonth" class="dateSel" rf.source="resources/months.csv" rf.preselectFirstOption="true">
-					<option disabled selected>Month</option>
 			</select>
 			<select id="input_dateOfBirthYear" name="dateOfBirthYear" class="dateSel" rf.rangeStart="moment().subtract('years', 16).format('YYYY')" rf.rangeEnd="moment().subtract('years', 99).format('YYYY')" rf.preselectFirstOption="true" value="">
 					<option disabled selected>Year</option>
