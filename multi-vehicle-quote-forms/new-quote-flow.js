@@ -18,8 +18,8 @@
 						}
                     }
                 ]},
-            { id: "customer", docBase: "/quote/customer", url: "1-customer.html", actions: [ "back", "next" ] },
-	       	{ id: "policy", docBase: "/quote/vehicle", url: "2-policy_builder.html",
+            { id: "customer", docBase: "/quote/drivers/driver", url: "1-customer.html", actions: [ "back", "next" ] },
+	       	{ id: "policy", docBase: "/quote/policy", url: "2-policy_builder.html",
 	       		actions: [
 	       		  "back", 
 
@@ -93,7 +93,7 @@
 			{ id: "editClaim", docBase: "claims/claim[index]", url: "4-edit-claim.html", actions: [ "cancel", "next" ] }
 		],
 		additionalDriver: [
-			{ id: "editAdditionalDriver", docBase: "/quote/additionalDrivers/driver[index]", url: "6-edit-additional-driver.html", 
+			{ id: "editAdditionalDriver", docBase: "/quote/drivers/driver[index]", url: "6-edit-additional-driver.html", 
 				actions: [
 				    "cancel",
 					"back",
@@ -106,12 +106,12 @@
 					"editClaim:claim.editClaim(index=?)",
 					"deleteClaim:delete(xpath=claims/claim[index], index=?)",
 					
-					"next:main.drivers"
+					"next:main.policy"
 				]
 			},
 		],
 		additionalVehicle: [
-			{ id: "editAdditionalVehicle", docBase: "/quote/additionalVehicles/vehicle[index]", url: "6-edit-additional-vehicle.html", 
+			{ id: "editAdditionalVehicle", docBase: "/quote/vehicles/vehicle[index]", url: "6-edit-additional-vehicle.html", 
 				actions: [
 				    "cancel",
 					"back",

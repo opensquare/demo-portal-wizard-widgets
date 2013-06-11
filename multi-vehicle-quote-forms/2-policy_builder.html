@@ -89,11 +89,12 @@
 	
 	<div id="multiGrid">
 
-		<rf.forEach select="//quote//vehicle" as="v">			
-			 <input type="checkbox" name="main-{{v.vehKey}}-DanHarris" style="display:none;"></input>
-			 <input type="checkbox" name="named-{{v.vehKey}}-DanHarris" style="display:none;"></input>
-			<input type="checkbox" name="main-{{v.vehKey}}-TimTribe" style="display:none;"></input>
-			 <input type="checkbox" name="named-{{v.vehKey}}-TimTribe" style="display:none;"></input>
+		<!-- Backing checkboxes for drag drop component -->
+		<rf.forEach select="//quote//driver" as="d" >
+			<rf.forEach select="//quote//vehicle" as="v" >
+			  <input type="checkbox" name="main-{{v.vehKey}}-{{d.firstName}}" style="display:none;"/>
+			  <input type="checkbox" name="named-{{v.vehKey}}-{{d.firstName}}" style="display:none;"/>
+			</rf.forEach>
 		</rf.forEach>
 
 		<!-- Grid Labels -->
