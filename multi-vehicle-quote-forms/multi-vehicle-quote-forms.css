@@ -155,7 +155,7 @@ div.widget[name='multi-vehicle-quote-forms'] select {
 	width: 20%;
 	margin-left: 0;
 	border: thin solid #0090C0;
-	font-size: 1.3em;}
+	font-size: 1.3em;
 	color: #AAA;
 }
 div.widget[name='multi-vehicle-quote-forms'] select.changed {
