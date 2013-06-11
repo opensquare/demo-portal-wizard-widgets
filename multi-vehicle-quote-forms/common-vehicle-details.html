@@ -61,21 +61,21 @@
 
 	<div id="sectionOne">
 		<h1>Find vehicle</h1>
-		<div class="field knowReg">
+		<div class="field knowReg" style="display:none">
 			<label>Do you know the vehicle registration number?</label>
-				<input id="input_knowReg_yes" type="radio" name="knowReg" value="yes" rf.validation="required" checked/>
+				<input id="input_knowReg_yes" type="radio" name="knowReg" value="yes"/>
 				<label for="input_knowReg_yes" class="forRadio">Yes</label>
-				<input id="input_knowReg_no" type="radio" name="knowReg" value="no"/>
+				<input id="input_knowReg_no" type="radio" name="knowReg" value="no" checked/>
 				<label for="input_knowReg_no" class="forRadio">No</label>
 			<div class="hint">Don't worry if you don't know the vehicle registration number. We can help!</div>
 		</div>
 
-		<div class="field findCar" rf.includeIf="{ fields.knowReg.value == 'yes' }">
+		<div class="field findCar" rf.includeIf="false">
 			<label for="input_reg">Registration number</label>
 			<input id="abiLookupProxy" type="hidden" style="display:none" rf.source="{{$vehicle-model-lookup}}" />
 			<div id="uk_reg_plate">
 				<div id="flag"></div>
-				<input  id="input_reg" type="text" name="reg" rf.validation="required" rf.source="{{$vehicle-lookup}}"/>
+				<input  id="input_reg" type="text" name="reg" rf.source="{{$vehicle-lookup}}"/>
 			</div>
 			<input type="button" value="Find" id="findReg"/>
 			<input type="hidden" name="make" />
