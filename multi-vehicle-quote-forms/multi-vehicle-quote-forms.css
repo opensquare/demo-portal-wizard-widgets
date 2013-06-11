@@ -764,13 +764,12 @@ div.widget[name='multi-vehicle-quote-forms'] .driver {
 
 
 #driverBucket {
-		width: 250px;
+		width: 20%;
 		height: 200px;
 		padding: 10px;
 		border: 1px solid #aaaaaa;
 		float: left;
 		margin-top: 75px;
-		margin-left: 115px;
 		border-top-left-radius: 15px;
 		border-bottom-left-radius: 15px;
 }
@@ -778,7 +777,7 @@ div.widget[name='multi-vehicle-quote-forms'] .driver {
 	margin: 55px;
 }
 #addDriverButton {
-	width: 50px;
+	width: 5%;
 	height: 200px;
 	padding: 10px;
 	border: 1px solid #aaaaaa;
