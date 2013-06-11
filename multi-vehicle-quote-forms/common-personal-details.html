@@ -85,58 +85,6 @@
 			<div class="hint">Factors such as marital status, occupation and driving record impact on your quotes.</div>
 		</div>
 		
-		<div class="field">
-			<label for="input_ukResident">UK residency</label>
-			<input id="input_ukResidentMoreThan5Years" type="checkbox" name="ukResidentMoreThan5Years"/>
-			<label class="forRadio" for="input_ukResidentMoreThan5Years">More than 5 years</label>
-			
-			<div rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }">
-				<label for="input_ukResidentSinceMonthCode">Or since</label>
-				<select id="input_ukResidentSinceMonthCode" class="dateSel" name="ukResidentSinceMonthCode" rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }" rf.source="resources/months.csv" rf.preselectFirstOption="true">
-					<option disabled selected/>
-				</select>
-				<select id="input_ukResidentSinceYear" class="dateSel" name="ukResidentSinceYear" rf.includeIf="{ fields.ukResidentMoreThan5Years.value == false }" rf.rangeStart="new Date().getFullYear()" rf.rangeEnd="new Date().getFullYear() - 5" rf.preselectFirstOption="true">
-					<option disabled selected/>
-				</select>
-			</div>
-			
-			<input type="hidden" name="ukResidentYears" rf.calculated="{ if (fields.ukResidentMoreThan5Years.value == true) { 10; } else if (fields.ukResidentSinceMonthCode.value && fields.ukResidentSinceYear.value) { new Date(new Date() - moment('01/' + fields.ukResidentSinceMonthCode.value + '/' + fields.ukResidentSinceYear.value, 'DD/MM/YYYY')).getFullYear() - 1970 } }"/>
-		</div>
-
-		<div class="field findAddress">
-		<!--input id="findAddressProxy" type="proxy" style="display:none" rf.source="http://integration.osldev.net/itb-quotes/postcodeLookup" /-->
-		<div class="labelWrapper">
-			<label for="input_address">Address</label>
-			</div>
-		<div class="tableWrapper">
-			<input class="addressLookup" id="input_address" type="text" placeholder="Start typing your address or postcode"/>
-		</div>
-	</div>
-	<div class="field addressFound" style="display:none">
-			<label>Your address</label>
-		<span id="addressLabel">
-			<span name="address.line1">{{address.line1}}</span>
-			<span name="address.line2">{{address.line2}}</span>
-			<span name="address.line3">{{address.line3}}</span>
-			<span name="address.line4">{{address.line4}}</span>
-			<span name="address.postcode">{{address.postcode}}</span>
-		</span>
-		<input type="hidden" name="address.line1"/>
-		<input type="hidden" name="address.line2"/>
-		<input type="hidden" name="address.line3"/>
-		<input type="hidden" name="address.line4"/>
-		<input type="hidden" name="address.postcode"/>
-
-			<a href="" onclick="return false" value="Change address" class="changeAddressButton">Change address</a>
-		</div>
-		
-		<div class="field">
-			<label>Do you own your own home</label>
-			<input id="input_ownHome_yes" type="radio" name="ownHome" value="yes" rf.validation="required"/>
-			<label for="input_ownHome_yes" class="forRadio">Yes</label>
-			<input id="input_ownHome_no" type="radio" name="ownHome" value="no"/>
-			<label for="input_ownHome_no" class="forRadio">No</label>
-		</div>
 	</div>
 		
 	<script>
