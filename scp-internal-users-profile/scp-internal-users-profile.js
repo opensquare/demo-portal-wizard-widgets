@@ -5,6 +5,12 @@ function Widget_scp_internal_users_profile() {
 
 	this.onReadyExtend = function() {
 		pw.addListenerToChannel(this, channelUserSelected);
+
+		$('.change-password-button', _this.$widgetDiv).click(function() {
+			$("#modalPopupContent").html("<div class='widget' name='scp-internal-users-password-change'></div>");
+			pw.mount($("#modalPopupContent .widget:first"));
+			$("#modalPopupContainer").show();
+		});
 	};
 
 	this.handleEvent = function(channel, event) {
@@ -23,6 +29,9 @@ function Widget_scp_internal_users_profile() {
 				groups += ", ";
 			}
 			groups += user.roles[i].name;
+		}
+		if (groups.length === 0) {
+			groups = "-";
 		}
 		$('.groups', _this.$widgetDiv).html(groups);
 	}

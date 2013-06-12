@@ -6,7 +6,7 @@
 		main: [
             { id: "initialisation", url: "../quote-forms-common/initialisation.html",
                 actions: [
-                    "next",
+                    "next:main.customer(index=next)",
                     {
                         name: "calc",
                         target: "calculating",
@@ -18,10 +18,10 @@
 						}
                     }
                 ]},
-            { id: "customer", docBase: "/quote/drivers/driver", url: "1-customer.html", actions: [ "back", "next" ] },
+            { id: "customer", docBase: "/quote/drivers/driver[index]", url: "1-customer.html", actions: [ "back", "next" ] },
 	       	{ id: "policy", docBase: "/quote/policyPermissions", url: "2-policy_builder.html",
 	       		actions: [
-	       		  "back", 
+	       		  "back:main.customer(index=1)", 
 
 					"addAdditionalVehicle:additionalVehicle.editAdditionalVehicle(index=next)",
 					"addAdditionalDriver:additionalDriver.editAdditionalDriver(index=next)",
@@ -45,6 +45,7 @@
 								calcData: "[dataDocument]"
 							},
 							method: "post",
+							postTransform: "xslt/fromNapier.xsl",
 							resultInsertPoint: "/quote/calc"
 						}
 					}

@@ -18,6 +18,7 @@ function Widget_scp_internal_users() {
 				var url = "proxy/security/role/delete/" + _this.currentSelectedRole.id;
 				$.ajax({type:"DELETE",url:url}).done(function() {
 					loadGroups();
+					loadUsers();
 				});
 			}
 		});

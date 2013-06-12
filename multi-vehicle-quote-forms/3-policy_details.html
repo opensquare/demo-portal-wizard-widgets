@@ -1,4 +1,13 @@
 <script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script>
+<script>
+	rf.onFormLoad(function() {
+		/* Restrict and default HTML date tag */
+		$('#input_coverStartDate').attr("value", moment().format("YYYY-MM-DD"));
+		$('#input_coverStartDate').attr("max", moment().add('days', 29).format("YYYY-MM-DD"));
+		$('#input_coverStartDate').attr("min", moment().format("YYYY-MM-DD"));
+		
+	});
+</script>
 
 <ul id="crumbTrail">
 	<li class="about">About you</li>
@@ -42,23 +51,23 @@
 		</div>
 
 		<div class="field">
-			<label for="input_liability">Liability level</label>
+			<label for="input_liability" class="currency">Liability level</label>
 			<select id="input_liability" name="liability" rf.validation="required" rf.preselectFirstOption="true">
 				<option disabled selected/>
-				<option>0</option>
-				<option>1 mill</option>
-				<option>2 mill</option>			
+				<option value="0">0</option>
+				<option value="1000000">1 million</option>
+				<option value="2000000">2 million</option>			
 			</select>
 		</div>
 
 		<div class="field">
-			<label for="input_deductable">Deductable amount</label>
+			<label for="input_deductable" class="currency">Deductable amount</label>
 			<select id="input_deductable" name="deductable" rf.validation="required" rf.preselectFirstOption="true">
 				<option disabled selected/>
-				<option>0</option>
-				<option>300</option>
-				<option>500</option>			
-				<option>1000</option>			
+				<option value="0">0</option>
+				<option value="1">300</option>
+				<option value="2">500</option>			
+				<option value="3">1000</option>			
 			</select>
 		</div>
 

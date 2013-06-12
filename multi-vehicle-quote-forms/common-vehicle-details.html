@@ -155,8 +155,8 @@
 				<label for="input_drivingPosition">Has the following driving position</label>
 				<select id="input_drivingPosition" class="changed" name="drivingPosition" rf.validation="required" rf.preselectFirstOption="true" disabled>
 					<option disabled></option>
-					<option selected value="2">Right-hand drive</option>
-					<option value="1">Left-hand drive</option>
+					<option value="2">Right-hand drive</option>
+					<option selected value="1">Left-hand drive</option>
 				</select>
 
 				<label for="input_securityDevices">Has the following security</label>
@@ -176,7 +176,7 @@
 				<label for="input_modified_no" class="forRadio">No</label>
 
 				<label class="currency" for="input_marketValue">Has a current market value of</label>
-				<input id="input_marketValue" type="text" name="marketValue" rf.validation="required" value="999" disabled/>
+				<input id="input_marketValue" type="text" name="marketValue" rf.validation="required" value="10000" disabled/>
 
 				<a href="" onclick="editDetails();return false">Change vehicle details</a>
 				
@@ -215,6 +215,27 @@
 
 				<input type="hidden" name="monthsOwned" rf.calculated="{ if (fields.purchaseDateMonth.value ) { utils.monthsBetween(moment('01/' + fields.purchaseDateMonth.value + '/' + fields.purchaseDateYear.value, 'DD/MM/YYYY'), new Date()); }else{0}}" />
 			</div>
+		</div>
+
+		<div class="field">
+			<label for="input_primaryVehicleUse">Primary vehicle use:</label>
+			<select id="input_primaryVehicleUse" name="primaryVehicleUse" rf.validation="required" rf.preselectFirstOption="true">
+				<option disabled selected/>
+				<option>Pleasure Only</option>
+				<option>Pleasure or Commute</option>
+				<option>Business</option>			
+				<option>Farming</option>			
+			</select>
+		</div>
+
+		<div class="field">
+			<label for="input_dailyCommute" >Daily commute:</label>
+			<input id="input_dailyCommute" type="text" name="dailyCommute" class="distance" rf.validationFunction="if (/^[^0-9]+$/.test(this.value)) {error = {name: this.name, message: 'Number required'} } else { this.validate('required')}"/> KM
+		</div>
+
+		<div class="field">
+			<label for="input_annualDistance">Annual distance:</label>
+			<input id="input_annualDistance" type="text" name="annualDistance" rf.validation="required" class="distance" rf.validationFunction="if (/^[^0-9]+$/.test(this.value)) {error = {name: this.name, message: 'Number required'} } else { this.validate('required')}"/> KM
 		</div>
 
 	</div>

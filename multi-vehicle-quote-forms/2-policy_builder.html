@@ -131,7 +131,7 @@
 			  	<input type="button" rf.action="addAdditionalVehicle" class="add" value="Add vehicle"/>	
 			  </div>
 			  <div class="grid newRow"></div>
-			  <div class="grid named newRow"></div>
+			  <div class="grid newRow"></div>
 		</div>
 	</div>
 
@@ -139,21 +139,21 @@
 	
 		<!-- Drivers -->
 		<rf.forEach select="//quote/drivers/driver" as="d">
-			<div style="display: inline-block">
+			<div class="driverStack">
 					<div id="{{d.firstName}}{{d.surname}}" code="{{d.driverID}}" class="inner" draggable="true" ondragstart="drag(event)" type="driver">
 						<span class="{{d.gender}}"></span>
-						<span class="driver">{{d.firstName}} {{d.surname}}</span>
+						<span class="driver"><a href="#" rf.action="editAdditionalDriver?index={{d.index}}">{{d.firstName}} {{d.surname}}</a></span>
 					</div>
 			</div>
 		</rf.forEach>	
+
+		<!-- Add driver cell -->
+		<div id="addDriverButton">
+			<input type="button" rf.action="addAdditionalDriver" class="add" value="Add driver"/>	
+		</div>
 		
 	</div>
 
-	<!-- Add driver cell -->
-	<div id="addDriverButton">
-		<input type="button" rf.action="addAdditionalDriver" class="add" value="Add driver"/>	
-	</div>
-	
 	<div class="navigation">
 		<div id="errorMsgs"></div>
 		<input type="button" rf.action="back" value="Back"/>

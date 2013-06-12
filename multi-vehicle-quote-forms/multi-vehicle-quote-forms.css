@@ -119,6 +119,9 @@ div.widget[name='multi-vehicle-quote-forms'] input[type="text"],input[type="emai
 	border: thin solid #0090C0;
 	font-size: 1.3em;
 }
+div.widget[name='multi-vehicle-quote-forms'] input[type="text"]{
+	text-transform: capitalize;
+}
 div.widget[name='multi-vehicle-quote-forms'] input[type="submit"] {
 	margin:	1em 1em 1em 0; padding: 0.2em 1em;
 	border: none; border-radius: 0.25em;
@@ -342,51 +345,43 @@ div.widget[name='multi-vehicle-quote-forms'] #sectionOne a {
 	src: url('UKNumberPlate.ttf')
 }
 div.widget[name='multi-vehicle-quote-forms'] #input_reg {
-	width: 75%; height: 100%;
+	width: 100%; height: 50%;
 	margin: 0;
 	padding: 0;
 	border: 0;
 	text-align: center;
 	font-family: ukNumberPlate; font-size: 3em;
 	text-transform: uppercase;
+	color: #09D;
 }
 div.widget[name='multi-vehicle-quote-forms'] #uk_reg_plate:before {
-	content: "•";
+	content: "• ONTARIO •";
+	display: inline-block;
+	width: 100%;
 	padding: 3px;
-	font-size: 1.9em;
-	color: #DEDEDE;
+	font-size: 0.8em;
+	color: #BBB;
+	text-align: center;
 }
 div.widget[name='multi-vehicle-quote-forms'] #uk_reg_plate:after {
-	content: "•";
+	content: "• YOURS TO DISCOVER •";
+	display: inline-block;
+	width: 100%;
 	padding: 3px;
-	font-size: 1.9em;
-	color: #DEDEDE;
+	font-size: 0.8em;
+	color: #BBB;
+	text-align: center;
 }
 div.widget[name='multi-vehicle-quote-forms'] #uk_reg_plate {
-	float: left;
-	width: 263px; height: 50px;
-	margin-right: 5%; margin-left: 43.5%;
-	border: 4px solid #DEDEDE; border-radius: 5px;
+	display: inline-block;
+	width: 230px; height: 90px;
+	vertical-align: top;
+	border: 4px solid #888; border-radius: 5px;
 	background: white;
 }
 div.widget[name='multi-vehicle-quote-forms'] #flag {
-	float: left;
-	width: 10%; height: 100%;
-	border-radius: 2px;
-	color: #FFCC00; background: #1E488C;
+	display: none;
 }
-div.widget[name='multi-vehicle-quote-forms'] #flag:before {
-	content: "◌";
-	position: relative;
-	top: -10px;
-	font-size: 2.8em;
-}
-div.widget[name='multi-vehicle-quote-forms'] #flag:after {
-	content: "GB";
-	position: relative;
-	top: 4px; right: 23px;
-	font-size: 0.75em;
-}	
 div.widget[name='multi-vehicle-quote-forms'] #findReg {
 	margin-left: 70%
 }
@@ -625,14 +620,11 @@ div.widget[name='multi-vehicle-quote-forms'] #landingPage .amount:before, div.wi
 div.widget[name='multi-vehicle-quote-forms']  #landingPage .iptAmount:before, div.widget[name='multi-vehicle-quote-forms'] #paymentPage .amount:before,
 div.widget[name='multi-vehicle-quote-forms']  #paymentPage .instalmentPremium:before,
 div.widget[name='multi-vehicle-quote-forms']  #paymentPage .iptAmount:before {
-	content: '£';
+	content: '$';
 }
 div.widget[name='multi-vehicle-quote-forms'] #landingPage .pane p {
 	margin: 0;
 	padding: 0.5em;
-}
-div.widget[name='multi-vehicle-quote-forms'] #landingPage p>span {
-	font-weight: bold;
 }
 div.widget[name='multi-vehicle-quote-forms'] #landingPage .smallprint {
 	margin-bottom: 0;
@@ -650,14 +642,35 @@ div.widget[name='multi-vehicle-quote-forms'] #landingPage .details {
 	min-height: 50px;
 	padding-left: 60px;
 }
+div.widget[name='multi-vehicle-quote-forms'] #landingPage p.details {
+	margin-bottom: 0;
+}
+div.widget[name='multi-vehicle-quote-forms'] #landingPage ul.details {
+	margin: 0;
+}
+div.widget[name='multi-vehicle-quote-forms'] #landingPage .details span {
+	font-weight: bold;
+	color: #82BE46;
+}
+div.widget[name='multi-vehicle-quote-forms'] #landingPage .details li {
+	margin-left: 1.2em;
+	color: #82BE46;
+}
 div.widget[name='multi-vehicle-quote-forms'] #landingPage .duration {
+	padding-top: 0.8em;
 	background: url('calendar-year-dark.png') no-repeat; 
 }
 div.widget[name='multi-vehicle-quote-forms'] #landingPage .vehicle {
+	padding-top: 0.8em;
 	background: url('transport-car-dark.png') no-repeat; 
 }
 div.widget[name='multi-vehicle-quote-forms'] #landingPage .drivers {
+	padding-top: 0.8em;
 	background: url('person-user-dark.png') no-repeat; 
+}
+div.widget[name='multi-vehicle-quote-forms'] #landingPage .liability {
+	padding-top: 0.8em;
+	background: url('money-bill-dark.png') no-repeat; 
 }
 div.widget[name='multi-vehicle-quote-forms'] #save {
 	margin-bottom: 1em;
@@ -776,36 +789,42 @@ div.widget[name='multi-vehicle-quote-forms'] .driver {
 	display: block;
 	margin-top: -20px;
 }
+div.widget[name='multi-vehicle-quote-forms'] .driver > a {
+	color: #333;
+}
 
 
 #driverBucket {
+	position: relative;
 	width: 20%;
 	height: 200px;
 	padding: 10px;
 	border: 1px solid #aaaaaa;
 	float: left;
 	margin-top: 75px;
-	border-top-left-radius: 15px;
-	border-bottom-left-radius: 15px;
+	border-radius: 15px;
 }
-#driverBucket >div {
+/*#driverBucket >div {
 	margin: 55px;
+}*/
+#driverBucket .driverStack:nth-child(odd) {
+	display: inline-block;
+	margin-bottom: 95px;
+	margin-left: 25px;
+}
+
+#driverBucket .driverStack:nth-child(even) {
+	display: inline-block;
+	margin-left: 95px;
+	margin-right: 100px;
+	margin-bottom: 95px;
 }
 #addDriverButton {
-	width: 5%;
-	height: 200px;
-	padding: 10px;
-	border: 1px solid #aaaaaa;
-	float: left;
-	margin-top: 75px;
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
-}
-z#addDriverButton .add {
-	width: 50px;
-	height: 50px;
-	margin-top: 80px;
-	background: url('symbol_add.png') no-repeat center center;
+	position: absolute;
+	bottom: -50px;
+	clear: both;
+	text-align: center;
+	margin: 55px;
 }
 #errorMsgs {
 	float: left;
@@ -847,6 +866,6 @@ z#addDriverButton .add {
 	height: 4em;
 	text-align: center;
 }
-#multiGrid .newRow:nth-child(2) {
+#multiGrid .newRow:nth-child(3) {
 	border-right: none;
 }
