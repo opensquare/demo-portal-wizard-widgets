@@ -119,6 +119,9 @@ div.widget[name='multi-vehicle-quote-forms'] input[type="text"],input[type="emai
 	border: thin solid #0090C0;
 	font-size: 1.3em;
 }
+div.widget[name='multi-vehicle-quote-forms'] input[type="text"]{
+	text-transform: capitalize;
+}
 div.widget[name='multi-vehicle-quote-forms'] input[type="submit"] {
 	margin:	1em 1em 1em 0; padding: 0.2em 1em;
 	border: none; border-radius: 0.25em;
