@@ -856,7 +856,7 @@ div.widget[name='multi-vehicle-quote-forms'] .driver > a {
 	height: 4em;
 	text-align: center;
 }
-#multiGrid .newRow:nth-child(2) {
+#multiGrid .newRow {
 	height: 1em;
 }
 .inner > a{
