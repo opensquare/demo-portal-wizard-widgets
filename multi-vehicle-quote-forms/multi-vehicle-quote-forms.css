@@ -625,7 +625,7 @@ div.widget[name='multi-vehicle-quote-forms'] #landingPage .amount:before, div.wi
 div.widget[name='multi-vehicle-quote-forms']  #landingPage .iptAmount:before, div.widget[name='multi-vehicle-quote-forms'] #paymentPage .amount:before,
 div.widget[name='multi-vehicle-quote-forms']  #paymentPage .instalmentPremium:before,
 div.widget[name='multi-vehicle-quote-forms']  #paymentPage .iptAmount:before {
-	content: '£';
+	content: '$';
 }
 div.widget[name='multi-vehicle-quote-forms'] #landingPage .pane p {
 	margin: 0;
