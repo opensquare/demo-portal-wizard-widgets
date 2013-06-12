@@ -1,4 +1,13 @@
 <script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script>
+<script>
+	rf.onFormLoad(function() {
+		/* Restrict and default HTML date tag */
+		$('#input_coverStartDate').attr("value", moment().format("YYYY-MM-DD"));
+		$('#input_coverStartDate').attr("max", moment().add('days', 29).format("YYYY-MM-DD"));
+		$('#input_coverStartDate').attr("min", moment().format("YYYY-MM-DD"));
+		
+	});
+</script>
 
 <ul id="crumbTrail">
 	<li class="about">About you</li>
