@@ -647,6 +647,12 @@ div.widget[name='multi-vehicle-quote-forms'] #landingPage .details {
 	min-height: 50px;
 	padding-left: 60px;
 }
+div.widget[name='multi-vehicle-quote-forms'] #landingPage p.details {
+	margin-bottom: 0;
+}
+div.widget[name='multi-vehicle-quote-forms'] #landingPage ul.details {
+	margin: 0;
+}
 div.widget[name='multi-vehicle-quote-forms'] #landingPage .details span {
 	font-weight: bold;
 	color: #82BE46;
@@ -655,12 +661,15 @@ div.widget[name='multi-vehicle-quote-forms'] #landingPage .details li {
 	list-style: none;
 }
 div.widget[name='multi-vehicle-quote-forms'] #landingPage .duration {
+	padding-top: 0.8em;
 	background: url('calendar-year-dark.png') no-repeat; 
 }
 div.widget[name='multi-vehicle-quote-forms'] #landingPage .vehicle {
+	padding-top: 0.8em;
 	background: url('transport-car-dark.png') no-repeat; 
 }
 div.widget[name='multi-vehicle-quote-forms'] #landingPage .drivers {
+	padding-top: 0.8em;
 	background: url('person-user-dark.png') no-repeat; 
 }
 div.widget[name='multi-vehicle-quote-forms'] #save {

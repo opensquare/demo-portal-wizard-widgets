@@ -33,7 +33,7 @@
 
 	<h3>Your vehicles</h3>
 	<p class="details vehicle">The insurance is for your vehicles:</p>
-	<ul class="details vehicle">
+	<ul class="details">
 		<rf.forEach select="vehicles/vehicle" as="v">
 			<li><span>{{v.vehDesc}}</span></li>
 		</rf.forEach>
@@ -41,18 +41,14 @@
 
 	<h3>The drivers</h3>
 	<p class="details drivers">The following drivers are insured to drive the vehicles under this policy:</p>
-	<ul class="details drivers">
+	<ul class="details">
 		<rf.forEach select="drivers/driver" as="d">
 			<li><span>{{d.firstName}} {{d.surname}}</span>
 		</rf.forEach>
 	</ul>
 
-	<!--div class="field">
-		<label id="input_voluntaryExcess">Voluntary Excess</label>
-		<select id="input_voluntaryExcess" name="voluntaryExcess" rf.rangeStart="0" rf.rangeEnd="1000" rf.rangeInterval="50" rf.labelPrefix="&pound;"rf.preselectFirstOption="true">
-			<option disabled selected/>
-		</select>
-	</div-->
+	<h3>Liability</h3>
+	<p class="details liability">The total liability limit for this insurance is <span>{{//policyOptions/liability}}</span>.</p>
 
 	<div class="navigation">
 		<input type="button" rf.action="back" value="Back"/>
