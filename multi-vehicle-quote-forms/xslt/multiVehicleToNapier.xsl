@@ -3,7 +3,9 @@
     <xsl:output method="xml" encoding="ISO-8859-1"/>
     <xsl:template match="/">
         <calcData xmlns="">
-            <policyCommencement>01 Feb 2013</policyCommencement>
+            <policyCommencement>
+                <xsl:value-of select="/quote/policyOptions/coverStartDate"/>
+            </policyCommencement>
             <part partname="quote">
                 <beforeAfter>before</beforeAfter>
                 <xsl:apply-templates select="/quote/vehicles/vehicle"/>
@@ -12,25 +14,71 @@
     </xsl:template>
     <xsl:template match="vehicle">
         <part partname="driverForVehicle">
-            <effectiveStart>01 Feb 2013 00:00:00</effectiveStart>
-            <effectiveEnd>01 Feb 2014 00:00:00</effectiveEnd>
-            <primaryVehicleUse>Farming</primaryVehicleUse>
-            <dailyCommute>12</dailyCommute>
-            <annualDistance>4000</annualDistance>
-            <deductibleLevel>1</deductibleLevel>
-            <vehicleID>V0123401</vehicleID>                
+            <xsl:variable name="vehicleID">
+                <xsl:value-of select="vehKey"/>
+            </xsl:variable>
+            <xsl:variable name="mainDriverID">
+                <xsl:value-of select="substring-after(substring-after(name(/quote/policyPermissions/*[starts-with(name(), concat('main-', $vehicleID)) and text() = 'true']), '-'), '-')"/>
+            </xsl:variable>
+            <effectiveStart>
+                <xsl:value-of select="concat(/quote/policyOptions/coverStartDate, ' 00:00:00')"/>
+            </effectiveStart>
+            <effectiveEnd>
+                <xsl:value-of select="concat(/quote/policyOptions/coverEndDate, ' 00:00:00')"/>
+            </effectiveEnd>
+            <primaryVehicleUse><xsl:value-of select="primaryVehicleUse"/></primaryVehicleUse>
+            <dailyCommute><xsl:value-of select="dailyCommute"/></dailyCommute>
+            <annualDistance><xsl:value-of select="amountDistance"/></annualDistance>
+            <deductibleLevel>
+                <xsl:value-of select="/quote/policyOptions/deductable"/>
+            </deductibleLevel>
+            <vehicleID>
+                <xsl:value-of select="vehKey"/>
+            </vehicleID>                
             <viccCode>1013</viccCode>
-            <abstainDiscountApplies>Y</abstainDiscountApplies>
-            <multilineDiscountApplies>N</multilineDiscountApplies>
-            <mvDiscountApplies>Y</mvDiscountApplies>
-            <farmersDiscountApplies>Y</farmersDiscountApplies>
-            <universityDiscountApplies>Y</universityDiscountApplies>
+            <abstainDiscountApplies>
+                <xsl:choose>
+                    <xsl:when test="/quote/drivers/driver[driverID = $mainDriverID]/alcohol = 'No'">Y</xsl:when>
+                    <xsl:otherwise>N</xsl:otherwise>
+                </xsl:choose>
+            </abstainDiscountApplies>
+            <multilineDiscountApplies>
+                <xsl:choose>
+                    <xsl:when test="/quote/policyOptions/otherProducts = 'Yes'">Y</xsl:when>
+                    <xsl:otherwise>N</xsl:otherwise>
+                </xsl:choose>
+            </multilineDiscountApplies>
+            <mvDiscountApplies>
+                <xsl:choose>
+                    <xsl:when test="count(/quote/vehicles/vehicle) &gt; 1">Y</xsl:when>
+                    <xsl:otherwise>N</xsl:otherwise>
+                </xsl:choose>
+            </mvDiscountApplies>
+            <farmersDiscountApplies>
+                <xsl:choose>
+                    <xsl:when test="/quote/drivers/driver[driverID = $mainDriverID]/occupation = 'Farmer'">Y</xsl:when>
+                    <xsl:otherwise>N</xsl:otherwise>
+                </xsl:choose>
+            </farmersDiscountApplies>
+            <universityDiscountApplies>
+                <xsl:choose>
+                    <xsl:when test="/quote/drivers/driver[driverID = $mainDriverID]/occupation = 'University student'">Y</xsl:when>
+                    <xsl:otherwise>N</xsl:otherwise>
+                </xsl:choose>
+            </universityDiscountApplies>
             <graduatedDiscountApplies>Y</graduatedDiscountApplies>
-            <retireeDiscountApplies>Y</retireeDiscountApplies>
+            <retireeDiscountApplies>
+                <xsl:choose>
+                    <xsl:when test="/quote/drivers/driver[driverID = $mainDriverID]/occupation = 'Retiree'">Y</xsl:when>
+                    <xsl:otherwise>N</xsl:otherwise>
+                </xsl:choose>
+            </retireeDiscountApplies>
             <specialDiscount>-0.01</specialDiscount>
             <specialSurcharge>0.01</specialSurcharge>
             <driverProfileID>D0565601</driverProfileID>   
-            <liabilityLimit>1750000</liabilityLimit>
+            <liabilityLimit>
+                <xsl:value-of select="/quote/policyOptions/liability"/>
+            </liabilityLimit>
             <part partname = "cover">
                 <coverageCode>ABC</coverageCode>
                 <coverLimit>1750000</coverLimit>
@@ -42,12 +90,6 @@
                 <coverLimit>1250000</coverLimit>
                 <groupDiscount>-0.01</groupDiscount>
             </part>
-            <xsl:variable name="vehicleID">
-                <xsl:value-of select="vehKey"/>
-            </xsl:variable>
-            <xsl:variable name="mainDriverID">
-                <xsl:value-of select="substring-after(substring-after(name(/quote/policyPermissions/*[starts-with(name(), concat('main-', $vehicleID)) and text() = 'true']), '-'), '-')"/>
-            </xsl:variable>
             <xsl:apply-templates select="/quote/drivers/driver[driverID = $mainDriverID]">
                 <xsl:with-param name="principal">true</xsl:with-param>
             </xsl:apply-templates>
@@ -67,9 +109,15 @@
             <principal>
                 <xsl:value-of select="$principal"/>
             </principal>
-            <gender>M</gender>
-            <age>45</age>
-            <yearsLicenceHeld>10</yearsLicenceHeld>
+            <gender>
+                <xsl:value-of select="substring(gender, 1, 1)"/>
+            </gender>
+            <age>
+                <xsl:value-of select="age"/>
+            </age>
+            <yearsLicenceHeld>
+                <xsl:value-of select="yearsLicenceHeld"/>
+            </yearsLicenceHeld>
             <xsl:apply-templates select="claim"/>
             <xsl:apply-templates select="conviction"/>
         </part>
