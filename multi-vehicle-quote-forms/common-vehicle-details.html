@@ -217,6 +217,27 @@
 			</div>
 		</div>
 
+		<div class="field">
+			<label for="input_primaryVehicleUse">Primary vehicle use:</label>
+			<select id="input_primaryVehicleUse" name="primaryVehicleUse" rf.validation="required" rf.preselectFirstOption="true">
+				<option disabled selected/>
+				<option>Pleasure Only</option>
+				<option>Pleasure or Commute</option>
+				<option>Business</option>			
+				<option>Farming</option>			
+			</select>
+		</div>
+
+		<div class="field">
+			<label for="input_dailyCommute" >Daily commute:</label>
+			<input id="input_dailyCommute" type="text" name="dailyCommute" rf.validation="required" class="distance"/> KM
+		</div>
+
+		<div class="field">
+			<label for="input_annualDistance">Annual distance:</label>
+			<input id="input_annualDistanc" type="text" name="annualDistance" rf.validation="required" class="distance"/> KM
+		</div>
+
 	</div>
 
 	<div id="disabledSectionTwo" class="disabled">
