@@ -792,33 +792,36 @@ div.widget[name='multi-vehicle-quote-forms'] .driver {
 
 
 #driverBucket {
+	position: relative;
 	width: 20%;
 	height: 200px;
 	padding: 10px;
 	border: 1px solid #aaaaaa;
 	float: left;
 	margin-top: 75px;
-	border-top-left-radius: 15px;
-	border-bottom-left-radius: 15px;
+	border-radius: 15px;
 }
-#driverBucket >div {
+/*#driverBucket >div {
 	margin: 55px;
+}*/
+#driverBucket .driverStack:nth-child(odd) {
+	display: inline-block;
+	margin-bottom: 95px;
+	margin-left: 25px;
+}
+
+#driverBucket .driverStack:nth-child(even) {
+	display: inline-block;
+	margin-left: 95px;
+	margin-right: 100px;
+	margin-bottom: 95px;
 }
 #addDriverButton {
-	width: 5%;
-	height: 200px;
-	padding: 10px;
-	border: 1px solid #aaaaaa;
-	float: left;
-	margin-top: 75px;
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
-}
-z#addDriverButton .add {
-	width: 50px;
-	height: 50px;
-	margin-top: 80px;
-	background: url('symbol_add.png') no-repeat center center;
+	position: absolute;
+	bottom: -50px;
+	clear: both;
+	text-align: center;
+	margin: 55px;
 }
 #errorMsgs {
 	float: left;
@@ -860,6 +863,6 @@ z#addDriverButton .add {
 	height: 4em;
 	text-align: center;
 }
-#multiGrid .newRow:nth-child(2) {
+#multiGrid .newRow:nth-child(3) {
 	border-right: none;
 }
