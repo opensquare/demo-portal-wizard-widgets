@@ -30,6 +30,9 @@ function Widget_scp_internal_users_profile() {
 			}
 			groups += user.roles[i].name;
 		}
+		if (groups.length === 0) {
+			groups = "-";
+		}
 		$('.groups', _this.$widgetDiv).html(groups);
 	}
 }
