@@ -105,9 +105,9 @@
 
 		<!-- Grid Labels -->
 		<div>
-		  <div class="grid label"></div>
-		  <div class="grid label">Main Driver</div>
-		  <div class="grid label">Named Drivers</div>
+		  <div class="grid label">Vehicles</div>
+		  <div class="grid label">Main driver</div>
+		  <div class="grid label">Named drivers</div>
 		</div>
 		<!-- Vehicles -->
 		<rf.forEach select="//quote//vehicle" as="v">
@@ -128,7 +128,7 @@
 		<!-- Add vehicle row -->
 		<div class="gridVehicle">
 			  <div class="grid newRow">
-			  	<input type="button" rf.action="addAdditionalVehicle" class="add"/>	
+			  	<input type="button" rf.action="addAdditionalVehicle" class="add" value="Add vehicle"/>	
 			  </div>
 			  <div class="grid newRow"></div>
 			  <div class="grid named newRow"></div>

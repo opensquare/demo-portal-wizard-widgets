@@ -746,16 +746,22 @@ div.widget[name='multi-vehicle-quote-forms'] #input_code {
 	background: url('transport-car-dark.png') no-repeat center top;
 }
 #multiGrid .add{
-	width: 50px;
-	height: 50px;
 	margin-top: 20px;
-	margin-left: 75px;
-	background: url('symbol_add.png') no-repeat center center;
+	padding-left: 28px;
+	background: #92CE56 url('symbol-add-light-small.png') no-repeat 2px center;
 }
 #multiGrid .inner {
 	position: relative;
 }
-
+#multiGrid .grid.main:empty:before {
+	content: "Drag driver here";
+	display: inline-block;
+	width: 100%;
+	padding-top: 35%;
+	color: #CCC;
+	text-align: center;
+	font-size: 1.25em;
+}
 div.widget[name='multi-vehicle-quote-forms'] .driver {
 	text-align: center;
 	display: block;
@@ -830,5 +836,6 @@ div.widget[name='multi-vehicle-quote-forms'] .driver {
 }
 .newRow {
 	height: 90px;
+	text-align: center;
 }
 
