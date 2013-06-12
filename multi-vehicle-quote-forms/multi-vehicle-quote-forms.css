@@ -354,42 +354,27 @@ div.widget[name='multi-vehicle-quote-forms'] #input_reg {
 	text-transform: uppercase;
 }
 div.widget[name='multi-vehicle-quote-forms'] #uk_reg_plate:before {
-	content: "•";
+	content: "• ONTARIO •";
 	padding: 3px;
-	font-size: 1.9em;
-	color: #DEDEDE;
+	font-size: 0.8em;
+	color: #DDD;
 }
 div.widget[name='multi-vehicle-quote-forms'] #uk_reg_plate:after {
-	content: "•";
+	content: "• YOURS TO DISCOVER •";
 	padding: 3px;
-	font-size: 1.9em;
-	color: #DEDEDE;
+	font-size: 0.8em;
+	color: #DDD;
 }
 div.widget[name='multi-vehicle-quote-forms'] #uk_reg_plate {
-	float: left;
-	width: 263px; height: 50px;
-	margin-right: 5%; margin-left: 43.5%;
-	border: 4px solid #DEDEDE; border-radius: 5px;
+	display: inline-block;
+	width: 245px; height: 80px;
+	vertical-align: top;
+	border: 4px solid #DDD; border-radius: 5px;
 	background: white;
 }
 div.widget[name='multi-vehicle-quote-forms'] #flag {
-	float: left;
-	width: 10%; height: 100%;
-	border-radius: 2px;
-	color: #FFCC00; background: #1E488C;
+	display: none;
 }
-div.widget[name='multi-vehicle-quote-forms'] #flag:before {
-	content: "◌";
-	position: relative;
-	top: -10px;
-	font-size: 2.8em;
-}
-div.widget[name='multi-vehicle-quote-forms'] #flag:after {
-	content: "GB";
-	position: relative;
-	top: 4px; right: 23px;
-	font-size: 0.75em;
-}	
 div.widget[name='multi-vehicle-quote-forms'] #findReg {
 	margin-left: 70%
 }
