@@ -265,11 +265,12 @@ div.widget[name='multi-vehicle-quote-forms'] .invalid-message {
 }
 
 div.widget[name='multi-vehicle-quote-forms'] .vehicle_search {
-	margin-left: 30%;
+	display: inline-block;
 	padding: 0.5em;
 	width: 50%;
 	background-color: #FFF;
 	border: thin solid #0090C0; border-radius: 0.25em;
+	vertical-align: top;
 }
 
 div.widget[name='multi-vehicle-quote-forms'] #makeModel label {
@@ -790,27 +791,26 @@ div.widget[name='multi-vehicle-quote-forms'] .driver > a {
 	color: #333;
 }
 
-
 #driverBucket {
-	width: 20%;
-	height: 200px;
+	position: relative;
+	width: 23%;
+	overflow: auto;
+	margin: 5em 0 0 0;
 	padding: 10px;
 	border: medium solid #AAA;
-	float: left;
-	margin: 4em 0 0 3em;
 	border-radius: 15px;
 }
-#driverBucket .driverStack:nth-child(odd) {
+#driverBucket .driverStack {
+	position: relative;
 	display: inline-block;
 	margin-bottom: 95px;
+}
+#driverBucket .driverStack:nth-child(odd) {
 	margin-left: 25px;
 }
-
 #driverBucket .driverStack:nth-child(even) {
-	display: inline-block;
 	margin-left: 95px;
 	margin-right: 100px;
-	margin-bottom: 95px;
 }
 #addDriverButton {
 	margin: 2em 0 0 0;
@@ -856,8 +856,8 @@ div.widget[name='multi-vehicle-quote-forms'] .driver > a {
 	height: 4em;
 	text-align: center;
 }
-#multiGrid .newRow:nth-child(3) {
-	border-right: none;
+#multiGrid .newRow:nth-child(2) {
+	height: 1em;
 }
 .inner > a{
 	position: absolute;
