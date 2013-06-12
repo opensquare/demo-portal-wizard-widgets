@@ -18,56 +18,53 @@ div.widget[name='multi-vehicle-quote-forms'] h1 {
 	font-weight: bold;
 	color:#92CE56;
 }
-	#preliminary_questions ol li.field span {
-		font-size: 16px;
-		line-height: 18px;
-		font-weight: normal;
-		color:#000000;
-	}
-	#preliminary_questions ol li.field label {
-		color:#92CE56;
-		font-size: 22px;
-		line-height: 20px;
-		font-weight: bold;
-		color:#92CE56;
-	}
-	#preliminary_questions ol li.field .radios {
-		width:110px;
-		float: right;
-	}
-		#preliminary_questions ol li.field .radios label {
-			padding: 0 4px;
-			text-align: center;
-		}
-			#preliminary_questions ol li.field .radios label input {
-				padding-left: 6px;
-				display: inline;
-			}
-
-			#preliminary_questions ol li.field .radios label .invalid-message {
-				position:relative;
-				z-index: 10;
-				left: 110px;
-				color:#ffffff;
-			}
-
-		#preliminary_questions ol li.field .radios label span {
-			color:#92CE56;
-		}
+#preliminary_questions ol li.field span {
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: normal;
+	color:#000000;
+}
+#preliminary_questions ol li.field label {
+	color:#92CE56;
+	font-size: 22px;
+	line-height: 20px;
+	font-weight: bold;
+	color:#92CE56;
+}
+#preliminary_questions ol li.field .radios {
+	width:110px;
+	float: right;
+}
+#preliminary_questions ol li.field .radios label {
+	padding: 0 4px;
+	text-align: center;
+}
+#preliminary_questions ol li.field .radios label input {
+	padding-left: 6px;
+	display: inline;
+}
+#preliminary_questions ol li.field .radios label .invalid-message {
+	position:relative;
+	z-index: 10;
+	left: 110px;
+	color:#FFF;
+}
+#preliminary_questions ol li.field .radios label span {
+	color:#92CE56;
+}
 
 div.widget[name='multi-vehicle-quote-forms'] ol li ol li {
-  list-style-type: lower-roman;
+	list-style-type: lower-roman;
 }
 div.widget[name='multi-vehicle-quote-forms'] ol li.field label {
-   width:auto;
-    list-style-type: lower-roman;
+	width:auto;
+	list-style-type: lower-roman;
 }
 div.widget[name='multi-vehicle-quote-forms'] ol li.field span {
-      width:80%;
+	width:80%;
 }
 
 div.widget[name='multi-vehicle-quote-forms'] input[type='date'] {
-	border: thin solid #0090C0; width: 15%;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 1.3em; 
 }
 div.widget[name='multi-vehicle-quote-forms'] input[type="button"] {
@@ -795,13 +792,12 @@ div.widget[name='multi-vehicle-quote-forms'] .driver > a {
 
 
 #driverBucket {
-	position: relative;
 	width: 20%;
 	height: 200px;
 	padding: 10px;
-	border: 1px solid #aaaaaa;
+	border: medium solid #AAA;
 	float: left;
-	margin-top: 75px;
+	margin: 4em 0 0 3em;
 	border-radius: 15px;
 }
 #driverBucket .driverStack:nth-child(odd) {
@@ -817,11 +813,8 @@ div.widget[name='multi-vehicle-quote-forms'] .driver > a {
 	margin-bottom: 95px;
 }
 #addDriverButton {
-	position: absolute;
-	bottom: -50px;
-	clear: both;
+	margin: 2em 0 0 0;
 	text-align: center;
-	margin: 55px;
 }
 #errorMsgs {
 	float: left;
