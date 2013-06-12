@@ -18,7 +18,20 @@
 						}
                     }
                 ]},
-            { id: "customer", docBase: "/quote/drivers/driver[index]", url: "1-customer.html", actions: [ "back", "next" ] },
+            { id: "customer", docBase: "/quote/drivers/driver[index]", url: "1-customer.html",
+            	 actions: [ "back",
+
+            	 	"addConviction:conviction.editConviction(index=next)",
+					"editConviction:conviction.editConviction(index=?)",
+					"deleteConviction:delete(xpath=convictions/conviction[index], index=?)",
+					
+					"addClaim:claim.editClaim(index=next)",
+					"editClaim:claim.editClaim(index=?)",
+					"deleteClaim:delete(xpath=claims/claim[index], index=?)",
+
+            	 	"next" 
+            	 	] 
+            },
 	       	{ id: "policy", docBase: "/quote/policyPermissions", url: "2-policy_builder.html",
 	       		actions: [
 	       		  "back:main.customer(index=1)", 
