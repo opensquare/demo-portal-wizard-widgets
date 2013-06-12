@@ -26,7 +26,7 @@
 					"addAdditionalVehicle:additionalVehicle.editAdditionalVehicle(index=next)",
 					"addAdditionalDriver:additionalDriver.editAdditionalDriver(index=next)",
 					"editAdditionalDriver:additionalDriver.editAdditionalDriver(index=?)",
-					"deleteAdditionalDriver:delete(xpath=additionalDrivers/driver[index], index=?)",
+					"deleteAdditionalDriver:delete(xpath=/quote/drivers/driver[index], index=?)",
 
 					"next"
 	       		]

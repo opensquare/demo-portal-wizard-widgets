@@ -141,7 +141,7 @@
 		<rf.forEach select="//quote/drivers/driver" as="d">
 			<div class="driverStack">
 					<div id="{{d.firstName}}{{d.surname}}" code="{{d.driverID}}" class="inner" draggable="true" ondragstart="drag(event)" type="driver">
-						<span class="{{d.gender}}"></span>
+						<a href="#" rf.action="deleteAdditionalDriver?index={{d.index}}"></a><span class="{{d.gender}}"></span>
 						<span class="driver"><a href="#" rf.action="editAdditionalDriver?index={{d.index}}">{{d.firstName}} {{d.surname}}</a></span>
 					</div>
 			</div>

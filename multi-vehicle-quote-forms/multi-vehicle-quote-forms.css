@@ -869,3 +869,11 @@ div.widget[name='multi-vehicle-quote-forms'] .driver > a {
 #multiGrid .newRow:nth-child(3) {
 	border-right: none;
 }
+.inner > a{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	margin: 0 0 0 70px;
+	background: #D44 url('symbol-cross-light.png') no-repeat center center;
+	border-radius: 13em;
+}
