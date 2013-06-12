@@ -6,5 +6,6 @@
 	<attributes>
 		<displayHeader>false</displayHeader>
 		<js>scp-internal-users-list.js</js>
+		<css>scp-internal-users-list.css</css>
 	</attributes>
 </widget>
