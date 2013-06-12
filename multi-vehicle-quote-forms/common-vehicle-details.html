@@ -230,12 +230,12 @@
 
 		<div class="field">
 			<label for="input_dailyCommute" >Daily commute:</label>
-			<input id="input_dailyCommute" type="text" name="dailyCommute" rf.validation="required" class="distance"/> KM
+			<input id="input_dailyCommute" type="text" name="dailyCommute" class="distance" rf.validationFunction="if (/^[^0-9]+$/.test(this.value)) {error = {name: this.name, message: 'Number required'} } else { this.validate('required')}"/> KM
 		</div>
 
 		<div class="field">
 			<label for="input_annualDistance">Annual distance:</label>
-			<input id="input_annualDistanc" type="text" name="annualDistance" rf.validation="required" class="distance"/> KM
+			<input id="input_annualDistance" type="text" name="annualDistance" rf.validation="required" class="distance" rf.validationFunction="if (/^[^0-9]+$/.test(this.value)) {error = {name: this.name, message: 'Number required'} } else { this.validate('required')}"/> KM
 		</div>
 
 	</div>
