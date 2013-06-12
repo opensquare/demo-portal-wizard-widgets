@@ -846,8 +846,12 @@ div.widget[name='multi-vehicle-quote-forms'] .driver > a {
 .named {
 	border-right: none;
 }
-.inner {
+div.widget[name='multi-vehicle-quote-forms'] .inner {
   position: absolute;
+}
+div.widget[name='multi-vehicle-quote-forms'] .grid .inner {
+	position: relative;
+	display: inline-block;
 }
 .main > div {
 	margin-top: 50px;
