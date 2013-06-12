@@ -8,7 +8,7 @@
 	function toggleSections(){
 		$('#sectionOne, #disabledSectionOne, #navigation, #disabledNavigation').slideToggle(800);
 		$('#sectionTwo, #disabledSectionTwo').delay(800).slideToggle(400);
-		var addDriver = document.getElementById('input_title').value + " " + document.getElementById('input_firstName').value + " " + document.getElementById('input_surname').value ;
+		var addDriver = document.getElementById('input_firstName').value + " " + document.getElementById('input_surname').value ;
 		document.getElementById("addDriver").innerHTML = addDriver;
 	}
 </script>

@@ -65,8 +65,7 @@ header h2 span{
 	display: inline-block;
 	margin: 0;
 	padding: 0 0.5em 0 4em;
-	background: rgba(255,255,255,0.35);
-	color: rgba(0,0,0,0.9);
+	background: rgba(255,255,255,0.65);
 	font-weight: normal;
 	font-size: 2em;
 	border-radius: 0 0.15em 0.15em 0;
