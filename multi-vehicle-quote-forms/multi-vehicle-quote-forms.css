@@ -782,6 +782,9 @@ div.widget[name='multi-vehicle-quote-forms'] .driver {
 	display: block;
 	margin-top: -20px;
 }
+div.widget[name='multi-vehicle-quote-forms'] .driver > a {
+	color: #333;
+}
 
 
 #driverBucket {
