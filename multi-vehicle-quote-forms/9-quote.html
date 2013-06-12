@@ -32,22 +32,20 @@
 	<p class="details duration">This is an <span>annual</span> policy which would start on <span>{{//policyOptions/coverStartDate}}</span>.</p>
 
 	<h3>Your vehicles</h3>
-	<p class="details vehicle">The insurance is for your vehicles:
-		<ul>
-			<rf.forEach select="vehicles/vehicle" as="v">
-				<li><span>{{d.vehDesc}}</span></li>
-			</rf.forEach>
-		</ul>
-	</p>
+	<p class="details vehicle">The insurance is for your vehicles:</p>
+	<ul class="details vehicle">
+		<rf.forEach select="vehicles/vehicle" as="v">
+			<li><span>{{v.vehDesc}}</span></li>
+		</rf.forEach>
+	</ul>
 
 	<h3>The drivers</h3>
-	<p class="details drivers">The following drivers are insured to drive the vehicles under this policy:
-		<ul>
-			<rf.forEach select="drivers/driver" as="d">
-				<li><span class="{{d.gender}}">{{d.firstName}} {{d.surname}}</span>
-			</rf.forEach>
-		</ul>
-	</p>
+	<p class="details drivers">The following drivers are insured to drive the vehicles under this policy:</p>
+	<ul class="details drivers">
+		<rf.forEach select="drivers/driver" as="d">
+			<li><span class="{{d.gender}}">{{d.firstName}} {{d.surname}}</span>
+		</rf.forEach>
+	</ul>
 
 	<!--p>This quote is valid for 30 days and includes Insurance Premium Tax.</p-->
 	

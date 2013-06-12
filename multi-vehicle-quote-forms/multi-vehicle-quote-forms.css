@@ -650,6 +650,9 @@ div.widget[name='multi-vehicle-quote-forms'] #landingPage .details {
 	min-height: 50px;
 	padding-left: 60px;
 }
+div.widget[name='multi-vehicle-quote-forms'] #landingPage .details li {
+	list-style: none;
+}
 div.widget[name='multi-vehicle-quote-forms'] #landingPage .duration {
 	background: url('calendar-year-dark.png') no-repeat; 
 }
