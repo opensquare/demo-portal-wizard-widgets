@@ -631,9 +631,6 @@ div.widget[name='multi-vehicle-quote-forms'] #landingPage .pane p {
 	margin: 0;
 	padding: 0.5em;
 }
-div.widget[name='multi-vehicle-quote-forms'] #landingPage p>span {
-	font-weight: bold;
-}
 div.widget[name='multi-vehicle-quote-forms'] #landingPage .smallprint {
 	margin-bottom: 0;
 	padding: 0.25em;
@@ -649,6 +646,10 @@ div.widget[name='multi-vehicle-quote-forms'] #landingPage h3 {
 div.widget[name='multi-vehicle-quote-forms'] #landingPage .details {
 	min-height: 50px;
 	padding-left: 60px;
+}
+div.widget[name='multi-vehicle-quote-forms'] #landingPage .details span {
+	font-weight: bold;
+	color: #82BE46;
 }
 div.widget[name='multi-vehicle-quote-forms'] #landingPage .details li {
 	list-style: none;

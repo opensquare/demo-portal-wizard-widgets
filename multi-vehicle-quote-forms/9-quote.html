@@ -23,7 +23,7 @@
 		<p class="smallprint">Deposit is payable online using a debit or credit card.  Monthly instalments are taken by direct debit and will require the completion of bank details and a Direct Debit Mandate. Premium credit is provided by Model Insurer Credit Ltd.</p>
 	</div-->
 
-	<p>Thank you for considering us for your insurance needs.  Here is our price to insure you, as per your stated requirements.</p>
+	<p>Thank you for considering us for your insurance needs.  Here is our price to insure you, as per your stated requirements. This quote is valid for 30 days.</p>
 
 	<h2 id="details">Your details</h2>
 	<p>We have based this quotation on the details that you have provided, a summary of which is shown below.  If any of details are incorrect, you must go back and correct them before proceeding.</p>
@@ -43,12 +43,10 @@
 	<p class="details drivers">The following drivers are insured to drive the vehicles under this policy:</p>
 	<ul class="details drivers">
 		<rf.forEach select="drivers/driver" as="d">
-			<li><span class="{{d.gender}}">{{d.firstName}} {{d.surname}}</span>
+			<li><span>{{d.firstName}} {{d.surname}}</span>
 		</rf.forEach>
 	</ul>
 
-	<!--p>This quote is valid for 30 days and includes Insurance Premium Tax.</p-->
-	
 	<!--div class="field">
 		<label id="input_voluntaryExcess">Voluntary Excess</label>
 		<select id="input_voluntaryExcess" name="voluntaryExcess" rf.rangeStart="0" rf.rangeEnd="1000" rf.rangeInterval="50" rf.labelPrefix="&pound;"rf.preselectFirstOption="true">
