@@ -12,12 +12,14 @@
     </xsl:template>
     <xsl:template match="vehicle">
         <part partname="driverForVehicle">
+            <effectiveStart>01 Feb 2013 00:00:00</effectiveStart>
+            <effectiveEnd>01 Feb 2014 00:00:00</effectiveEnd>
             <primaryVehicleUse>Farming</primaryVehicleUse>
             <dailyCommute>12</dailyCommute>
             <annualDistance>4000</annualDistance>
             <deductibleLevel>1</deductibleLevel>
             <vehicleID>V0123401</vehicleID>                
-            <vehicleRateGroup>3</vehicleRateGroup>
+            <viccCode>1013</viccCode>
             <abstainDiscountApplies>Y</abstainDiscountApplies>
             <multilineDiscountApplies>N</multilineDiscountApplies>
             <mvDiscountApplies>Y</mvDiscountApplies>
@@ -29,31 +31,42 @@
             <specialSurcharge>0.01</specialSurcharge>
             <driverProfileID>D0565601</driverProfileID>   
             <liabilityLimit>1750000</liabilityLimit>
-            <xsl:apply-templates select="cover"/>
-            <xsl:variable name="vehicleID"><xsl:value-of select="vehKey"/></xsl:variable>
-            <xsl:variable name="mainDriverID"><xsl:value-of select="substring-after(substring-after(name(/quote/policyPermissions/*[starts-with(name(), concat('main-', $vehicleID)) and text() = 'true']), '-'), '-')"/></xsl:variable>
+            <part partname = "cover">
+                <coverageCode>ABC</coverageCode>
+                <coverLimit>1750000</coverLimit>
+                <groupDiscount>-0.05</groupDiscount>
+                <indexationApplies>Y</indexationApplies>
+            </part>
+            <part partname = "cover">
+                <coverageCode>XYZ</coverageCode>
+                <coverLimit>1250000</coverLimit>
+                <groupDiscount>-0.01</groupDiscount>
+            </part>
+            <xsl:variable name="vehicleID">
+                <xsl:value-of select="vehKey"/>
+            </xsl:variable>
+            <xsl:variable name="mainDriverID">
+                <xsl:value-of select="substring-after(substring-after(name(/quote/policyPermissions/*[starts-with(name(), concat('main-', $vehicleID)) and text() = 'true']), '-'), '-')"/>
+            </xsl:variable>
             <xsl:apply-templates select="/quote/drivers/driver[driverID = $mainDriverID]">
                 <xsl:with-param name="principal">true</xsl:with-param>
             </xsl:apply-templates>
             <xsl:for-each select="/quote/policyPermissions/*[starts-with(name(), concat('named-', $vehicleID)) and text() = 'true']">
-                <xsl:variable name="namedDriverID"><xsl:value-of select="substring-after(substring-after(name(), '-'), '-')"/></xsl:variable>
+                <xsl:variable name="namedDriverID">
+                    <xsl:value-of select="substring-after(substring-after(name(), '-'), '-')"/>
+                </xsl:variable>
                 <xsl:apply-templates select="/quote/drivers/driver[driverID = $namedDriverID]">
-                <xsl:with-param name="principal">false</xsl:with-param>
-            </xsl:apply-templates>
+                    <xsl:with-param name="principal">false</xsl:with-param>
+                </xsl:apply-templates>
             </xsl:for-each>
-        </part>
-    </xsl:template>
-    <xsl:template match="cover">
-        <part partname = "cover">
-            <coverageCode>XYZ</coverageCode>
-            <coverLimit>1250000</coverLimit>
-            <groupDiscount>-0.01</groupDiscount>
         </part>
     </xsl:template>
     <xsl:template match="driver">
         <xsl:param name="principal"/>
         <part partname ="operator">
-            <principal><xsl:value-of select="$principal"/></principal>
+            <principal>
+                <xsl:value-of select="$principal"/>
+            </principal>
             <gender>M</gender>
             <age>45</age>
             <yearsLicenceHeld>10</yearsLicenceHeld>

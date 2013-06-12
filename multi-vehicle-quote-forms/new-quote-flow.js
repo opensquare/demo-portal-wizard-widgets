@@ -45,7 +45,6 @@
 								calcData: "[dataDocument]"
 							},
 							method: "post",
-							postTransform: "xslt/fromNapier.xsl",
 							resultInsertPoint: "/quote/calc"
 						}
 					}
