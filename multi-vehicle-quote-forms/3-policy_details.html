@@ -15,6 +15,7 @@
 			<label for="input_coverStartDate">When do you want your insurance to start?</label>
 			<input id="input_coverStartDate" type="date" name="coverStartDate" rf.validation="required date({ format: 'YYYY-MM-DD' })" />
 			<div class="hint">This can be up to 30 days in the future. If you have a policy due for renewal please check the date that it will expire. This should be stated on the renewal notice from the insurer.</div>
+            <input type="hidden" name="coverEndDate" rf.calculated="{ if(fields.coverStartDate.value){moment(fields.coverStartDate.value, 'YYYY-MM-DD').add('y', 1).format('YYYY-MM-DD');}}"/>
 		</div>
 
 	</div>
