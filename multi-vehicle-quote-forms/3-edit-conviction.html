@@ -11,9 +11,12 @@
 	<h1>Conviction Details</h1>
 
 	<div class="field">
-		<label for="input_code">Conviction Code:</label>
-		<select id="input_code" name="convictionCode" rf.validation="required" rf.source="resources/convictionCode.txt" rf.preselectFirstOption="true">
+		<label for="input_code">Conviction type:</label>
+		<select id="input_code" name="convictionCode" rf.validation="required" rf.preselectFirstOption="true">
 			<option disabled selected/>
+			<option>Minor</option>
+			<option>Major</option>
+			<option>Serious</option>
 		</select>
 	</div>
 	
@@ -22,19 +25,7 @@
 		<input id="input_date" type="date" name="convictionDate" rf.validation="required date({ format: 'YYYY-MM-DD' })" />
 	</div>
 	
-	<div class="field">
-		<label for="input_points">Points:</label>
-		<select id="input_points" name="points" rf.validation="required" rf.rangeStart="0" rf.rangeEnd="11" rf.preselectFirstOption="true">
-			<option disabled selected/>
-		</select>
-	</div>
 	
-	<div class="field">
-		<label for="input_monthsDisqualified">Months Disqualified:</label>
-		<select id="input_monthsDisqualified" name="monthsDisqualified" rf.validation="required" rf.source="resources/convictionMonthsDisqualified.txt" rf.preselectFirstOption="true">
-			<option disabled selected/>
-		</select>
-	</div>
 	
 	<div class="navigation">
 		<input type="button" rf.action="cancel" value="Cancel"/>

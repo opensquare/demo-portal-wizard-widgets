@@ -50,7 +50,7 @@
 			<rf.forEach select="convictions/conviction" as="con">
 			<div class="conviction">
 				<span>
-					Code: {{con.code}}, Date: {{con.date}}, Points: {{con.points}}, Months Disqualified: {{con.monthsDisqualified}}
+					Code: {{con.convictionCode}}, Date: {{con.convictionDate}}
 					<a href="#" rf.action="editConviction?index={{con.index}}">Edit</a>
 					<a href="#" rf.action="deleteConviction?index={{con.index}}">Delete</a>
 				</span>
@@ -67,7 +67,7 @@
 			<rf.forEach select="claims/claim" as="cl">
 			<div class="claim">
 				<span>
-					Date: {{cl.date}}, What Happened: {{cl.whatHappened}}
+					Date: {{cl.claimDate}}, What Happened: {{cl.claimType}}
 					<a href="#" rf.action="editClaim?index={{cl.index}}">Edit</a>
 					<a href="#" rf.action="deleteClaim?index={{cl.index}}">Delete</a>
 				</span>

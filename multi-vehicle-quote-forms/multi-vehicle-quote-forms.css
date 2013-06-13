@@ -18,56 +18,53 @@ div.widget[name='multi-vehicle-quote-forms'] h1 {
 	font-weight: bold;
 	color:#92CE56;
 }
-	#preliminary_questions ol li.field span {
-		font-size: 16px;
-		line-height: 18px;
-		font-weight: normal;
-		color:#000000;
-	}
-	#preliminary_questions ol li.field label {
-		color:#92CE56;
-		font-size: 22px;
-		line-height: 20px;
-		font-weight: bold;
-		color:#92CE56;
-	}
-	#preliminary_questions ol li.field .radios {
-		width:110px;
-		float: right;
-	}
-		#preliminary_questions ol li.field .radios label {
-			padding: 0 4px;
-			text-align: center;
-		}
-			#preliminary_questions ol li.field .radios label input {
-				padding-left: 6px;
-				display: inline;
-			}
-
-			#preliminary_questions ol li.field .radios label .invalid-message {
-				position:relative;
-				z-index: 10;
-				left: 110px;
-				color:#ffffff;
-			}
-
-		#preliminary_questions ol li.field .radios label span {
-			color:#92CE56;
-		}
+#preliminary_questions ol li.field span {
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: normal;
+	color:#000000;
+}
+#preliminary_questions ol li.field label {
+	color:#92CE56;
+	font-size: 22px;
+	line-height: 20px;
+	font-weight: bold;
+	color:#92CE56;
+}
+#preliminary_questions ol li.field .radios {
+	width:110px;
+	float: right;
+}
+#preliminary_questions ol li.field .radios label {
+	padding: 0 4px;
+	text-align: center;
+}
+#preliminary_questions ol li.field .radios label input {
+	padding-left: 6px;
+	display: inline;
+}
+#preliminary_questions ol li.field .radios label .invalid-message {
+	position:relative;
+	z-index: 10;
+	left: 110px;
+	color:#FFF;
+}
+#preliminary_questions ol li.field .radios label span {
+	color:#92CE56;
+}
 
 div.widget[name='multi-vehicle-quote-forms'] ol li ol li {
-  list-style-type: lower-roman;
+	list-style-type: lower-roman;
 }
 div.widget[name='multi-vehicle-quote-forms'] ol li.field label {
-   width:auto;
-    list-style-type: lower-roman;
+	width:auto;
+	list-style-type: lower-roman;
 }
 div.widget[name='multi-vehicle-quote-forms'] ol li.field span {
-      width:80%;
+	width:80%;
 }
 
 div.widget[name='multi-vehicle-quote-forms'] input[type='date'] {
-	border: thin solid #0090C0; width: 15%;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 1.3em; 
 }
 div.widget[name='multi-vehicle-quote-forms'] input[type="button"] {
@@ -268,11 +265,12 @@ div.widget[name='multi-vehicle-quote-forms'] .invalid-message {
 }
 
 div.widget[name='multi-vehicle-quote-forms'] .vehicle_search {
-	margin-left: 30%;
+	display: inline-block;
 	padding: 0.5em;
 	width: 50%;
 	background-color: #FFF;
 	border: thin solid #0090C0; border-radius: 0.25em;
+	vertical-align: top;
 }
 
 div.widget[name='multi-vehicle-quote-forms'] #makeModel label {
@@ -793,35 +791,30 @@ div.widget[name='multi-vehicle-quote-forms'] .driver > a {
 	color: #333;
 }
 
-
 #driverBucket {
 	position: relative;
-	width: 20%;
-	height: 200px;
+	width: 23%;
+	overflow: auto;
+	margin: 5em 0 0 0;
 	padding: 10px;
-	border: 1px solid #aaaaaa;
-	float: left;
-	margin-top: 75px;
+	border: medium solid #AAA;
 	border-radius: 15px;
 }
-#driverBucket .driverStack:nth-child(odd) {
+#driverBucket .driverStack {
+	position: relative;
 	display: inline-block;
 	margin-bottom: 95px;
+}
+#driverBucket .driverStack:nth-child(odd) {
 	margin-left: 25px;
 }
-
 #driverBucket .driverStack:nth-child(even) {
-	display: inline-block;
 	margin-left: 95px;
 	margin-right: 100px;
-	margin-bottom: 95px;
 }
 #addDriverButton {
-	position: absolute;
-	bottom: -50px;
-	clear: both;
+	margin: 2em 0 0 0;
 	text-align: center;
-	margin: 55px;
 }
 #errorMsgs {
 	float: left;
@@ -853,8 +846,12 @@ div.widget[name='multi-vehicle-quote-forms'] .driver > a {
 .named {
 	border-right: none;
 }
-.inner {
+div.widget[name='multi-vehicle-quote-forms'] .inner {
   position: absolute;
+}
+div.widget[name='multi-vehicle-quote-forms'] .grid .inner {
+	position: relative;
+	display: inline-block;
 }
 .main > div {
 	margin-top: 50px;
@@ -863,8 +860,8 @@ div.widget[name='multi-vehicle-quote-forms'] .driver > a {
 	height: 4em;
 	text-align: center;
 }
-#multiGrid .newRow:nth-child(3) {
-	border-right: none;
+#multiGrid .newRow {
+	height: 1em;
 }
 .inner > a{
 	position: absolute;

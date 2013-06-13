@@ -99,7 +99,7 @@
 		
 
 		<div class="field manualLookUp" rf.includeIf="{ fields.knowReg.value == 'no' }">
-			<div><label>Vehicle Search</label></div>
+			<label>Vehicle Search</label>
 			<div class="vehicle_search">
 				
 				<div id="makeModel">
@@ -140,8 +140,8 @@
 		</div>
 
 		<div class="field carFound" style="display: none;">
-				<label>Registration number</label>
-				<span name="reg" class="carDetails">{{reg}}</span><br/>
+				<!--label>Registration number</label>
+				<span name="reg" class="carDetails">{{reg}}</span><br/-->
 				<label>Your vehicle</label>
 				<span name="vehDescReg" class="carDetails">{{vehDescReg}}</span>
 				<a href="" onclick="return false" value="Change vehicle" class="changeVehicleButton">Change vehicle</a>
@@ -230,12 +230,12 @@
 
 		<div class="field">
 			<label for="input_dailyCommute" >Daily commute:</label>
-			<input id="input_dailyCommute" type="text" name="dailyCommute" class="distance" rf.validationFunction="if (/^[^0-9]+$/.test(this.value)) {error = {name: this.name, message: 'Number required'} } else { this.validate('required')}"/> KM
+			<input id="input_dailyCommute" type="text" name="dailyCommute" class="distance" rf.validationFunction="if (/^[^0-9]+$/.test(this.value)) {error = {name: this.name, message: 'Number required'} } else { this.validate('required')}"/> km/day
 		</div>
 
 		<div class="field">
 			<label for="input_annualDistance">Annual distance:</label>
-			<input id="input_annualDistance" type="text" name="annualDistance" rf.validation="required" class="distance" rf.validationFunction="if (/^[^0-9]+$/.test(this.value)) {error = {name: this.name, message: 'Number required'} } else { this.validate('required')}"/> KM
+			<input id="input_annualDistance" type="text" name="annualDistance" rf.validation="required" class="distance" rf.validationFunction="if (/^[^0-9]+$/.test(this.value)) {error = {name: this.name, message: 'Number required'} } else { this.validate('required')}"/> km/yr
 		</div>
 
 	</div>
