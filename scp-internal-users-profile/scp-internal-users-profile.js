@@ -11,6 +11,12 @@ function Widget_scp_internal_users_profile() {
 			pw.mount($("#modalPopupContent .widget:first"));
 			$("#modalPopupContainer").show();
 		});
+
+		$('.edit-button', _this.$widgetDiv).click(function() {
+			$("#modalPopupContent").html("<div class='widget' name='scp-internal-users-edit'></div>");
+			pw.mount($("#modalPopupContent .widget:first"));
+			$("#modalPopupContainer").show();
+		});
 	};
 
 	this.handleEvent = function(channel, event) {
