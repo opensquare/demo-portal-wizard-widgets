@@ -7,5 +7,8 @@
 		<displayHeader>false</displayHeader>
 		<js>scp-internal-users-password-change.js</js>
 		<css>scp-internal-users-password-change.css</css>
+		<!--passwordRegex>^(?=.*[A-z])(?=.*[0-9])[A-z0-9]{6,}$</passwordRegex-->
+		<passwordRegex>{passwordRegex}</passwordRegex>
+		<scheduler>{scheduler}</scheduler>
 	</attributes>
 </widget>

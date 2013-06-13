@@ -8,10 +8,15 @@ function Widget_scp_internal_users_password_change() {
 		_this.$passwordConfirmField = $('.change-password-confirm', _this.$widgetDiv);
 		_this.$okButton = $('.ok-button', _this.$widgetDiv);
 
+		var passwordRegexAttr = _this.$widgetDiv.attr('passwordregex');
+		_this.passwordRegex = passwordRegexAttr === "{passwordRegex}" ? ".*" : passwordRegexAttr;
+
 		pw.addListenerToChannelReplayLast(_this, userSelectedChannel);
 
 		_this.$passwordField.keyup(function() {
-			checkPasswordFieldsMatch();
+			if (checkPasswordFormat()) {
+				checkPasswordFieldsMatch();
+			}
 		});
 
 		_this.$passwordConfirmField.keyup(function() {
@@ -50,6 +55,22 @@ function Widget_scp_internal_users_password_change() {
 		} else {
 			_this.$passwordConfirmField.addClass("error");
 			_this.$okButton.attr("disabled", "disabled")
+		}
+	}
+
+	function checkPasswordFormat() {
+		var password = _this.$passwordField.val();
+		var pattern = new RegExp(_this.passwordRegex,"g");
+		if (pattern.test(password)) {
+			console.log("regex match");
+			_this.$passwordField.removeClass("error");
+			_this.$okButton.removeAttr("disabled");
+			return true;
+		} else {
+			console.log("regex miss");
+			_this.$passwordField.addClass("error");
+			_this.$okButton.attr("disabled", "disabled")
+			return false;
 		}
 	}
 }
