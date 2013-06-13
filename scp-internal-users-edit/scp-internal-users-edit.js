@@ -42,7 +42,7 @@ function Widget_scp_internal_users_edit() {
 						}
 					}
 					pw.notifyChannelOfEvent(channelUsersLoaded, {users:_this.users});
-					pw.notifyChannelOfEvent(channelUserSelected, {user: _this.user});
+					//pw.notifyChannelOfEvent(channelUserSelected, {user: _this.user});
 				});
 		});
 	};
