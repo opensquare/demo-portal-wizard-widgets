@@ -20,6 +20,26 @@ function Widget_scp_internal_users_list() {
 			pw.mount($("#modalPopupContent .widget:first"));
 			$("#modalPopupContainer").show();
 		});
+
+		$('ul', _this.$widgetDiv).on('click', 'button', function() {
+			var $button = $(this);
+			var name = $button.siblings('.display-name').text();
+			var id = $button.data('id');
+			if (confirm('Are you sure you want to delete user "' + name + '"?')) {
+				$.ajax({
+					type:"DELETE",
+					url:"proxy/security/user/delete/" + id
+				}).done(function() {
+					for (var i = 0; i < _this.users.length; i++) {
+						if (_this.users[i].id == id) {
+							_this.users.splice(i, 1);
+							break;
+						}
+					}
+					pw.notifyChannelOfEvent(channelUsersLoaded, {users: _this.users});
+				});
+			}
+		});
 	};
 
 	this.handleEvent = function(channel, event) {
@@ -39,7 +59,7 @@ function Widget_scp_internal_users_list() {
 	function displayUsers(users) {
 		_this.$ul.empty();
 		for (var i = 0; i < users.length; i++) {
-			$li = $('<li><input type="radio" name="user">' + users[i].displayName + '</li>');
+			$li = $('<li><input type="radio" name="user"><span class="display-name">' + users[i].displayName + '</span><button class="delete-button" data-id="' + users[i].id + '">Delete</button></li>');
 			$li.data('user-id', users[i].id);
 			_this.$ul.append($li);
 		}
