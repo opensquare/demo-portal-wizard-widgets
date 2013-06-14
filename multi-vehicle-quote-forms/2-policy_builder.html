@@ -27,7 +27,7 @@
 	
 	<div class="multiGrid">
 
-		<input type="checkbox" name="validSelection" style="display:none;" rf.validation="required"/>
+		<input type="checkbox" name="validSelection" style="display:none;" rf.validationFunction="if (action == 'next') { this.validate('required'); }"/>
 
 		<!-- Backing checkboxes for drag drop component -->
 		<rf.forEach select="//quote//driver" as="d" >
