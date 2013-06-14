@@ -1,86 +1,15 @@
-<script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script>
+<script type='text/javascript' src='widgets/multi-vehicle-quote-forms/js/form-hints.js' ></script>
+<script type='text/javascript' src='widgets/multi-vehicle-quote-forms/js/multi-vehicle-grid.js' ></script>
 <script>
-	function removePermission(rp){
-		$("#errorMsgs").empty();
-		$("#infoMsgs").empty();
-		$("#infoMsgs").prepend("<h4> Driver permission removed <h4>")
-		returnToStack = $(rp).parent();
-		returnToStackId = returnToStack.attr("id");
-		returnToStackId = returnToStackId.split("#");
-		returnToStackId = returnToStackId[0];
-
-		console.log("class =" + $("div[id^='" + returnToStackId + "']").parent().attr("class"));
-		$(".driverStack[driver='" + returnToStackId + "']").append(returnToStack);
-	}
-
-	function createDriverStack(){
-
-		var x = ($(".gridVehicle").length)-1;
-		var drivers = []
-
-		$('div[type="driver"]').each(function () {
-			drivers.push($(this).attr("id"));
-		});
-		
-		jQuery.each(drivers, function(a, val) {
-		    for(var i=1; i<x; i++){
-			    var item = $("#"+ val).clone();
-			    var insert = $("#" + val).parent();
-				var itemId = item.attr("id");
-
-				itemId = itemId + '#'+i;
-				item.attr("id", itemId);
-				insert.append(item);
-			}
-		});	
-
-
-	}
-
 	rf.onFormLoad(function() {
-
-
-
 		// Reset backing checkboxes
 		$('input[type=checkbox]').each(function () {
-              $(this).prop('checked', false); 
-           
+              $(this).prop('checked', false);            
 		});
-
 		createDriverStack();
-			
-
 		//ToDo: issues using click(). Fires after rf submission....
 		$("input[type='submit']").hover(function(){
-			console.log("Parsing permissions...")
-			var abi;
-			var permission;
-			var driver;
-			// Parse main drivers
-			$(".main").each(function(){
-				abi = $(this).attr("abi");
-				driver = $(this).find('div').attr("code")
-
-				if (typeof driver != 'undefined'){
-					var checkName = "'main-" + abi + "-" + driver + "']";
-					console.log("Checking box with name: " + checkName)
-					$("input[name=" + checkName + '"').prop('checked', true);
-				}
-			}) 
-			// Parse named drivers
-			$(".named").each(function(){
-				abi = $(this).attr("abi");
-				var $namedDrivers = $(this).children();
-
-      			$namedDrivers.each(function(){
-      				driver = $(this).attr("code");
-      				if (typeof driver != 'undefined'){
-						var checkName = "'named-" + abi + "-" + driver + "']";
-						console.log("Checking box with name: " + checkName)
-						$("input[name=" + checkName + '"').prop('checked', true);
-					}
-      			})				
-			})
+			parsePermissions();
 		});
 	});
 </script>
@@ -97,6 +26,8 @@
 	<p>Build your policy here by adding vehicles and drivers. Drag a driver into a vehicle cell to give them driving permissions for that vehicle.</p>
 	
 	<div class="multiGrid">
+
+		<input type="checkbox" name="validSelection" style="display:none;" rf.validation="required"/>
 
 		<!-- Backing checkboxes for drag drop component -->
 		<rf.forEach select="//quote//driver" as="d" >
