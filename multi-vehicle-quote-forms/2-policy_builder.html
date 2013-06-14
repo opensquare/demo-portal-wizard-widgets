@@ -1,6 +1,45 @@
 <script type='text/javascript' src='widgets/quote-forms/js/form-hints.js' ></script>
 <script>
+	function removePermission(rp){
+		$("#errorMsgs").empty();
+		$("#infoMsgs").empty();
+		$("#infoMsgs").prepend("<h4> Driver permission removed <h4>")
+		returnToStack = $(rp).parent();
+		returnToStackId = returnToStack.attr("id");
+		returnToStackId = returnToStackId.split("#");
+		returnToStackId = returnToStackId[0];
+
+		console.log("class =" + $("div[id^='" + returnToStackId + "']").parent().attr("class"));
+		$(".driverStack[driver='" + returnToStackId + "']").append(returnToStack);
+	}
+
+	function createDriverStack(){
+
+		var x = ($(".gridVehicle").length)-1;
+		var drivers = []
+
+		$('div[type="driver"]').each(function () {
+			drivers.push($(this).attr("id"));
+		});
+		
+		jQuery.each(drivers, function(a, val) {
+		    for(var i=1; i<x; i++){
+			    var item = $("#"+ val).clone();
+			    var insert = $("#" + val).parent();
+				var itemId = item.attr("id");
+
+				itemId = itemId + '#'+i;
+				item.attr("id", itemId);
+				insert.append(item);
+			}
+		});	
+
+
+	}
+
 	rf.onFormLoad(function() {
+
+
 
 		// Reset backing checkboxes
 		$('input[type=checkbox]').each(function () {
@@ -8,56 +47,26 @@
            
 		});
 
-		var x = ($(".gridVehicle").length)-1;
-		console.log("gridVehicle = " + x)
-		var drivers = [];
-
-		$('div[type="driver"]').each(function () {
-			drivers.push($(this).attr("id"));
-		});
-		
-		jQuery.each(drivers, function(a, val) {
-
-			console.log(a + " " + val)
-		    for(var i=1; i<x; i++){
-			    console.log(a + " " + val + " " + i)
-
-			    var item = $("#"+ val).clone();
-			    var insert = $("#" + val).parent();
-
-			   // console.log(insert)
-				var itemId = item.attr("id");
-				itemId = itemId + '#'+i;
-				item.attr("id", itemId);
-				insert.append(item);
-			}
-
-		});		
+		createDriverStack();
+			
 
 		//ToDo: issues using click(). Fires after rf submission....
 		$("input[type='submit']").hover(function(){
-
 			console.log("Parsing permissions...")
-
 			var abi;
 			var permission;
 			var driver;
-
 			// Parse main drivers
 			$(".main").each(function(){
 				abi = $(this).attr("abi");
 				driver = $(this).find('div').attr("code")
 
 				if (typeof driver != 'undefined'){
-					//driver = driver.split("#");
-					//driver = driver[0];
-
 					var checkName = "'main-" + abi + "-" + driver + "']";
 					console.log("Checking box with name: " + checkName)
 					$("input[name=" + checkName + '"').prop('checked', true);
 				}
 			}) 
-
 			// Parse named drivers
 			$(".named").each(function(){
 				abi = $(this).attr("abi");
@@ -65,20 +74,14 @@
 
       			$namedDrivers.each(function(){
       				driver = $(this).attr("code");
-
       				if (typeof driver != 'undefined'){
-
 						var checkName = "'named-" + abi + "-" + driver + "']";
 						console.log("Checking box with name: " + checkName)
 						$("input[name=" + checkName + '"').prop('checked', true);
 					}
-
-      			})
-				
+      			})				
 			})
-
 		});
-		
 	});
 </script>
 <ul id="crumbTrail">
@@ -93,7 +96,7 @@
 	<h1>Vehicles and Drivers</h1>
 	<p>Build your policy here by adding vehicles and drivers. Drag a driver into a vehicle cell to give them driving permissions for that vehicle.</p>
 	
-	<div id="multiGrid">
+	<div class="multiGrid">
 
 		<!-- Backing checkboxes for drag drop component -->
 		<rf.forEach select="//quote//driver" as="d" >
@@ -135,13 +138,15 @@
 		</div>
 	</div>
 
-	<div id="driverBucket" ondrop="drop(event)" ondragover="allowDrop(event)">
+	<div id="driverBucket">
 	
 		<!-- Drivers -->
 		<rf.forEach select="//quote/drivers/driver" as="d">
-			<div class="driverStack">
+			<div class="driverStack" driver="{{d.firstName}}{{d.surname}}">
 					<div id="{{d.firstName}}{{d.surname}}" code="{{d.driverID}}" class="inner" draggable="true" ondragstart="drag(event)" type="driver">
-						<a href="#" rf.action="deleteAdditionalDriver?index={{d.index}}"></a><span class="{{d.gender}}"></span>
+						<a id="deleteDriver" href="#" rf.action="deleteAdditionalDriver?index={{d.index}}"></a>
+						<span id="deletePermission" onclick="removePermission(this)"></span>
+						<span class="{{d.gender}}"></span>
 						<span class="driver"><a href="#" rf.action="editAdditionalDriver?index={{d.index}}">{{d.firstName}} {{d.surname}}</a></span>
 					</div>
 			</div>
@@ -155,6 +160,7 @@
 	</div>
 
 	<div class="navigation">
+		<div id="infoMsgs"></div>
 		<div id="errorMsgs"></div>
 		<input type="button" rf.action="back" value="Back"/>
 		<input type="submit" rf.action="next" value="Next"/>

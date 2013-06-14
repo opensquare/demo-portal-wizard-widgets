@@ -49,6 +49,8 @@ function allowDrop(ev){
 }
 
 function drag(ev){
+	$("#errorMsgs").empty();
+	$("#infoMsgs").empty();
 	ev.dataTransfer.setData("Text",ev.target.id);
 }
 
@@ -82,7 +84,7 @@ function drop(ev){
 		if(x.indexOf(y) == -1){
 			ev.target.appendChild(document.getElementById(data));
 		} else {
-			$("#errorMsgs").prepend("<h4>" +  z[0] + " is already present as a driver on this vehicle!!!<h4>")
+			$("#errorMsgs").prepend("<h4>" +  z[0].replace(/([A-Z])/g, ' $1') + " is already present as a driver on this vehicle!!!<h4>")
 		}
 	}
 	

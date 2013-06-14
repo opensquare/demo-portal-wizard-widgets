@@ -735,19 +735,12 @@ div.widget[name='multi-vehicle-quote-forms'] #input_code {
 
 /* Multi drivers */
 
-#multiGrid {
+div.widget[name='multi-vehicle-quote-forms'] .multiGrid {
 	margin: 50px;
+	margin-top: 10px;
 	float: left;
 }
-/*#multiGrid .Male, #driverBucket .Male {
-	display: block;
-	height: 50px;
-	padding: 12px 50px;
-	vertical-align: middle;
-	font-size: 1.3em;
-	background: url('person-man-dark.png') no-repeat center top;
-}*/
-#multiGrid .transport {
+div.widget[name='multi-vehicle-quote-forms'] .multiGrid .transport {
 	margin-top: 50px;
 	display: block;
 	height: 50px;
@@ -756,15 +749,15 @@ div.widget[name='multi-vehicle-quote-forms'] #input_code {
 	font-size: 1.3em;
 	background: url('transport-car-dark.png') no-repeat center top;
 }
-#multiGrid .add, #driverBucket .add{
+div.widget[name='multi-vehicle-quote-forms'] .multiGrid .add, #driverBucket .add{
 	margin-top: 20px;
 	padding-left: 28px;
 	background: #92CE56 url('symbol-add-light-small.png') no-repeat 2px center;
 }
-#multiGrid .inner {
+div.widget[name='multi-vehicle-quote-forms'] .multiGrid .inner {
 	margin-left: 50px;
 }
-#multiGrid .grid.main:empty:before {
+div.widget[name='multi-vehicle-quote-forms'] .multiGrid .grid.main:empty:before {
 	content: "Drag driver here";
 	display: inline-block;
 	width: 100%;
@@ -773,7 +766,7 @@ div.widget[name='multi-vehicle-quote-forms'] #input_code {
 	text-align: center;
 	font-size: 1.25em;
 }
-#multiGrid .grid.named:empty:before {
+div.widget[name='multi-vehicle-quote-forms'] .multiGrid .grid.named:empty:before {
 	content: "Drag drivers here";
 	display: inline-block;
 	width: 100%;
@@ -793,7 +786,7 @@ div.widget[name='multi-vehicle-quote-forms'] .driver > a {
 
 #driverBucket {
 	position: relative;
-	width: 23%;
+	width: 200px;
 	overflow: auto;
 	margin: 5em 0 0 0;
 	padding: 10px;
@@ -806,17 +799,79 @@ div.widget[name='multi-vehicle-quote-forms'] .driver > a {
 	margin-bottom: 95px;
 }
 #driverBucket .driverStack:nth-child(odd) {
-	margin-left: 25px;
+	margin-left: 5px;
 }
 #driverBucket .driverStack:nth-child(even) {
-	margin-left: 95px;
+	margin-left: 85px;
 	margin-right: 100px;
 }
 #addDriverButton {
 	margin: 2em 0 0 0;
 	text-align: center;
 }
-#errorMsgs {
+
+div.widget[name='multi-vehicle-quote-forms'] .multiGrid .grid {
+	width: 200px;
+	border-top: solid 3px #AAA;
+	border-right: solid 3px #AAA;
+	height: 175px;
+	float: left;
+}
+div.widget[name='multi-vehicle-quote-forms'] .multiGrid .gridVehicle {
+	clear: both;
+}
+div.widget[name='multi-vehicle-quote-forms'] .multiGrid .label {
+	height: 20px;
+	border: none;
+	text-align: center;
+	font-weight: bold;
+}
+div.widget[name='multi-vehicle-quote-forms'] .multiGrid .named {
+	border-right: none;
+}
+div.widget[name='multi-vehicle-quote-forms'] .inner {
+  position: absolute;
+}
+div.widget[name='multi-vehicle-quote-forms'] .multiGrid .grid .inner {
+	position: relative;
+	display: inline-block;
+}
+div.widget[name='multi-vehicle-quote-forms'] .multiGrid .main > div {
+	margin-top: 50px;
+}
+div.widget[name='multi-vehicle-quote-forms'] .multiGrid .newRow {
+	height: 1em;
+	text-align: center;
+}
+div.widget[name='multi-vehicle-quote-forms'] .multiGrid .newRow:nth-child(3) {
+ 	border-right: none
+ }
+div.widget[name='multi-vehicle-quote-forms'] #driverBucket .inner > #deleteDriver{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	margin: 0 0 0 70px;
+	background: #D44 url('symbol-cross-light.png') no-repeat center center;
+	border-radius: 13em;
+}
+div.widget[name='multi-vehicle-quote-forms'] #driverBucket .inner > #deleteDriver{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	margin: 0 0 0 70px;
+	background: #D44 url('symbol-cross-light.png') no-repeat center center;
+	border-radius: 13em;
+}
+div.widget[name='multi-vehicle-quote-forms'] .multiGrid .inner > #deletePermission{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	margin: 0 0 0 70px;
+	background: #333 url('symbol-cross-light.png') no-repeat center center;
+	border-radius: 13em;
+}
+
+div.widget[name='multi-vehicle-quote-forms'] #errorMsgs {
 	float: left;
 	margin-left: 130px;
 	padding-left: 2em;
@@ -827,47 +882,13 @@ div.widget[name='multi-vehicle-quote-forms'] .driver > a {
 	font-weight: bold;
 }
 
-.grid {
-	width: 200px;
-	border-top: solid 3px #AAA;
-	border-right: solid 3px #AAA;
-	height: 175px;
+div.widget[name='multi-vehicle-quote-forms'] #infoMsgs{
 	float: left;
-}
-.gridVehicle {
-	clear: both;
-}
-.label {
-	height: 20px;
-	border: none;
-	text-align: center;
-	font-weight: bold;
-}
-.named {
-	border-right: none;
-}
-div.widget[name='multi-vehicle-quote-forms'] .inner {
-  position: absolute;
-}
-div.widget[name='multi-vehicle-quote-forms'] .grid .inner {
-	position: relative;
-	display: inline-block;
-}
-.main > div {
-	margin-top: 50px;
-}
-#multiGrid .newRow {
-	height: 4em;
-	text-align: center;
-}
-#multiGrid .newRow {
-	height: 1em;
-}
-.inner > a{
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	margin: 0 0 0 70px;
-	background: #D44 url('symbol-cross-light.png') no-repeat center center;
-	border-radius: 13em;
+	margin-left: 130px;
+	width: 206px;
+	padding-left: 2em;
+	padding-right: 2em;
+	color: #FFF;
+	background: #333;
+	border-radius: 0.25em;
 }
