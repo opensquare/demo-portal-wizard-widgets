@@ -51,7 +51,7 @@ function Widget_scp_internal_users() {
 	};
 
 	function loadGroups() {
-		$.get('proxy/security/role/all').done(function(rolesArray) {
+		$.get('proxy/security/role/all/scp').done(function(rolesArray) {
 			_this.roles = rolesArray;
 			populateGroups()
 		});
