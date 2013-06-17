@@ -90,7 +90,7 @@ function Widget_scp_internal_users() {
 	}
 
 	function loadUsers() {
-		$.get('proxy/security/user/all').done(function(usersArray) {
+		$.get('proxy/security/user/all/scp').done(function(usersArray) {
 			_this.users = usersArray;
 			pw.notifyChannelOfEvent('scp-internal-users.users-loaded', {users:usersArray});
 		});
