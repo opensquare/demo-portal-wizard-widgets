@@ -10,6 +10,7 @@ function Widget_scp_quote_show() {
 
  		var ref = document.URL.substring(document.URL.lastIndexOf("/") + 1);
 		var url = 'proxy/napier/' + ref;
+		var nodeHTML = "";
 	
 		$.ajax({url:url, dataType: "html"}).done(function(result) {
 			//Main napier response obj
@@ -17,46 +18,55 @@ function Widget_scp_quote_show() {
 			$jXML = $(xmlDoc)
 			$response = $jXML.find( "calcResponse" ).text();
 			$data = $jXML.find( "calcData" ).text();
-
 			//Embedded data string xml
 			if($data != ""){
 				dataXML = $.parseXML($data)
 				$jXMLData = $(dataXML)
 				$data = $jXMLData.find( "calcData" ).contents();
-				var dataHTML ="<div class='quoteData'><h3>Client Data</h3>";
-				dataHTML = dataHTML + parseNode($data) +"</div><br/>"
+				var dataHTML ="<details class='quoteData'><summary class='main calc'>Calc Data</summary>";
+				dataHTML = dataHTML + parseNode($data) +"</details><br/>"
 				$('.napierCalc').append(dataHTML);
-			}
-			
+				nodeHTML = "";
+			}			
 			//Embedded response string xml
 			if($response != ""){
 				responseXML = $.parseXML($response)
 				$jXMLResponse = $(responseXML)
 				$quote = $jXMLResponse.find( "calcElement" ).contents();
-				var responseHTML ="<div class='quoteResponse'><h3>Premium Breakdown</h3>";
-				responseHTML = responseHTML + parseNode($quote) + "</div>"
+				var responseHTML ="<details open class='quoteData'><summary class='main response'>Response Data</summary>";
+				responseHTML = responseHTML + parseNode($quote) + "</details><br/>"
 				$('.napierCalc').append(responseHTML);
 			}
 		});
 
 		function parseNode(node){
-			nodeHTML = "";
 			node.each(function(){
-				if(this.nodeType === 1){
-					displayNodeValue = "null";
-					if(typeof (this.childNodes[0]) != 'undefined'){
-						displayNodeValue = this.childNodes[0].nodeValue;
+				if(this.nodeType === 1 && this.childNodes.length != 0){
+					if(this.childNodes.length === 1){
+						//Top level relevant text node
+						displayNodeValue = "null";
+						if(typeof (this.childNodes[0]) != 'undefined'){
+							displayNodeValue = this.childNodes[0].nodeValue;
+						}
+						nodeHTML = nodeHTML + "<div><span class='property-label'>" + 
+						 (this.localName).replace(/([A-Z])/g, ' $1') + 
+						 "</span><span class='property-value'>" + 
+						 displayNodeValue + "</span></div>";
+					} else {
+						//Nesting
+						displayAttributeValue =  this.nodeName;
+						if(typeof (this.attributes[0]) != 'undefined'){
+							displayAttributeValue = this.attributes[0].nodeValue;
+						}
+						nodeHTML = nodeHTML + "<details class='nestedData'><summary>" + displayAttributeValue + "</summary>"
+						$(this.childNodes).each(function(){
+							parseNode($(this));
+						})
+						nodeHTML = nodeHTML + "</details>"
 					}
-
-					nodeHTML = nodeHTML + "<div><span class='property-label'>" + 
-					 (this.localName).replace(/([A-Z])/g, ' $1') + 
-					 "</span><span class='property-value'>" + 
-					 displayNodeValue + "</span></div>";
 				}
 			})
 			return nodeHTML;
-		}
-			
+		}	
 	};
-	
 }

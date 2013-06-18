@@ -1,4 +1,4 @@
-.napierCalc h1 {
+.scp-quote-show .napierCalc h1 {
 	display: block;
 	margin: 10px 0;
 	padding: 10px 0 20px 60px;
@@ -9,18 +9,19 @@
 	font-weight: normal;
 	text-transform: capitalize;
 }
-.napierCalc h3 {
+.scp-quote-show .main {
 	padding: 10px 0 10px 30px;
 	font-size: 120%;
 	border-bottom: thin solid;
+	font-weight: bold;
 }
-.quoteData h3 {
-	background: url('person_user.png') no-repeat center left;
+.scp-quote-show .calc{
+	background: url('arrow_download.png') no-repeat center left;
 }
-.quoteResponse h3 {
-	background: url('document_list.png') no-repeat center left;
+.scp-quote-show .response {
+	background: url('arrow_upload.png') no-repeat center left;
 }
-.property-label {
+.scp-quote-show .property-label {
 	display: inline-block;
 	width: 30%;
 	padding: 0.1em;
@@ -28,11 +29,22 @@
 	font-weight: bold;
 	text-transform: capitalize;
 }
-.property-value {
+.scp-quote-show .property-value {
 	display: inline-block;
 	width: 60%;
 	padding: 0.05em 0.25em;
 	background-color: #EEE;
 	min-height: 1.2em;
 	vertical-align: top;
+}
+.scp-quote-show .nestedData summary {
+	margin-left: 10px;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+.scp-quote-show .nestedData .property-label	{
+	margin-left: 20px;
+}
+.scp-quote-show .nestedData > .nestedData	{
+	margin-left: 20px;
 }
