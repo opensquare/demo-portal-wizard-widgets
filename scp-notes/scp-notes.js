@@ -13,26 +13,29 @@ function Widget_scp_notes() {
 		//key = 5815;
 
 		//Find total notes for key.
-		$.ajax({type:"GET",url:'proxy/scribe/notes/count?key='+key,dataType: "text"}).done(function(count){totalNotes = JSON.parse(count).count});
+		$.ajax({type:"GET",url:'proxy/scribe/notes/count?key='+key,dataType: "text"}).done(function(count){
+			totalNotes = JSON.parse(count).count;
+			loadNotes(0, globOffset, key, null);
 
-		loadNotes(0, globOffset, key, null);
+			$('#add').click(function() {
 
-		$('#add').click(function() {
+				var noteWidth = $('#notes_ul div').outerWidth() + 10; 
+				var ulOffset = parseInt($('#notes_ul').css('left')) - noteWidth;
+				var $noteHtml = $('<div class="noteContainer"><div class="tab"><a class="cross" href="#" onClick="deleteNote(this);return false;" title="Delete..."></a>' + moment().format("MMMM Do YYYY, h:mm:ss a") + '<br/>SCP Portal</div><div class="note" id=' + "newNote" + editorOffset + ' contentEditable="true"><div name=placeholder>Edit me</div></div></div>');
 
-			var noteWidth = $('#notes_ul div').outerWidth() + 10; 
-			var ulOffset = parseInt($('#notes_ul').css('left')) - noteWidth;
-			var $noteHtml = $('<div class="noteContainer"><div class="tab"><a class="cross" href="#" onClick="deleteNote(this);return false;" title="Delete..."></a>' + moment().format("MMMM Do YYYY, h:mm:ss a") + '<br/>SCP Portal</div><div class="note" id=' + "newNote" + editorOffset + ' contentEditable="true"><div name=placeholder>Edit me</div></div></div>');
+				//Slide existing notes and add new
+				$('#notes_ul:not(:animated)').animate({'left' : ulOffset},1500);
+				$('#notes_ul').append($noteHtml);
 
-			//Slide existing notes and add new
-			$('#notes_ul:not(:animated)').animate({'left' : ulOffset},1500);
-			$('#notes_ul').append($noteHtml);
+				//Create editor inline
+				noteId = 'newNote' + editorOffset 
+	            createEditor(noteId);
+	            editorOffset++
 
-			//Create editor inline
-			noteId = 'newNote' + editorOffset 
-            createEditor(noteId);
-            editorOffset++
-
-		});	
+			});
+		}).fail(function() { 
+			$("#notes_ul").append("<div class='serviceError'>Notes service unavailable, please contact your system administrator</div>");
+	 	});
 	}
 }
 

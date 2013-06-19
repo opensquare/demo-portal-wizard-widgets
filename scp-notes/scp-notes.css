@@ -95,3 +95,9 @@
 .cross:hover {
 	background: red url('symbol-cross-light.png') no-repeat center center;
 }
+.serviceError {
+	color: rgba(255,255,255,0.8);
+	font-size: 2em;
+	margin-left: 2em;
+	width: 10%;
+}
