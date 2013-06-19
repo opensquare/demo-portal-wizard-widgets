@@ -20,6 +20,22 @@ function createDriverStack(){
 	});	
 }
 
+//Retain permissions already set
+function restorePermissions(){
+	$("input[use='permission']").each(function(){
+		if($(this).attr('checked'))	{
+			var info = $(this).attr("name").split("-");
+			var $driver = $("div[code='" + info[2] + "']:gt(0)");
+			var $permission = $("." + info[0] + "[abi='" + info[1]  + "']");
+			$permission.append($driver);
+		}	
+	})
+	// Reset backing checkboxes
+	$('input[type=checkbox]').each(function () {
+          $(this).prop('checked', false);            
+	});
+}
+
 function drag(ev){
 	$("#errorMsgs").empty();
 	$("#infoMsgs").empty();

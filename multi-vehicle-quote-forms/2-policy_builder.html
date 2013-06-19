@@ -2,12 +2,8 @@
 <script type='text/javascript' src='widgets/multi-vehicle-quote-forms/js/multi-vehicle-grid.js' ></script>
 <script>
 	rf.onFormLoad(function() {
-		// Reset backing checkboxes
-		$('input[type=checkbox]').each(function () {
-              $(this).prop('checked', false);            
-		});
 		createDriverStack();
-		//ToDo: issues using click(). Fires after rf submission....
+		restorePermissions();
 		$("input[type='submit']").click(function(){
 			parsePermissions();
 		});
@@ -32,8 +28,8 @@
 		<!-- Backing checkboxes for drag drop component -->
 		<rf.forEach select="//quote//driver" as="d" >
 			<rf.forEach select="//quote//vehicle" as="v" >
-			  <input type="checkbox" name="main-{{v.vehKey}}-{{d.driverID}}" style="display:none;"/>
-			  <input type="checkbox" name="named-{{v.vehKey}}-{{d.driverID}}" style="display:none;"/>
+			  <input type="checkbox" name="main-{{v.vehKey}}-{{d.driverID}}" style="display:none;" use="permission"/>
+			  <input type="checkbox" name="named-{{v.vehKey}}-{{d.driverID}}" style="display:none;" use="permission"/>
 			</rf.forEach>
 		</rf.forEach>
 
