@@ -77,7 +77,7 @@ function removePermission(rp){
 
 function validatePermissions(){
 	var error = false;
-	var errorMsg = "There must be at least one main driver per vehicle";
+	var errorMsg = "<h4>There must be at least one main driver per vehicle</h4>";
 	$("input[name='validSelection']").prop('checked', false);
 
 	//At least one main driver per vehicle
@@ -98,7 +98,7 @@ function validatePermissions(){
 		var y = 'id="' + d;
 		if(x.indexOf(y) == -1){
 			error = true
-			errorMsg = d.replace(/([A-Z])/g, ' $1') + " must have a driving permission on at least one vehicle";
+			errorMsg = "<h4>" + d.replace(/([A-Z])/g, ' $1') + " must have a driving permission on at least one vehicle</h4>";
 		}
 	})
 	if (error){
