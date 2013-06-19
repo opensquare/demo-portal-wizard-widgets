@@ -21,6 +21,9 @@
 .scp-quote-show .response {
 	background: url('arrow_upload.png') no-repeat center left;
 }
+.scp-quote-show .form {
+	background: url('document_list.png') no-repeat center left;
+}
 .scp-quote-show .property-label {
 	display: inline-block;
 	width: 30%;
