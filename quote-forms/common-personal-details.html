@@ -70,7 +70,7 @@
 			<label for="input_gender_female" class="forRadio">Female</label>
 		</div>
 		
-		<div class="field">
+		<div class="field occupation">
 			<label for="input_occupation">Primary occupation</label>
 			<input type="hidden" name="occupationCode" />
 			<input id="input_occupation" type="text" name="occupation" rf.validation="required fromSource" rf.customType="auto-complete-select({ codeFieldName: 'occupationCode' })" rf.source="http://integration.osldev.net/resource-manager/REST/files/itb-resources-test2/lists/_itbLists-occupationSheet.xml?transformer=xslt&xslt=/itb-resources-test2/lists/occupationLookupTransformJSONmin.xsl&contentType=application%2Fjson&occupation=[value]" />

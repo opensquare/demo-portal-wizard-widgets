@@ -161,11 +161,18 @@ div.widget[name='quote-forms'] .hint::before {
 	}
 }
 
+div.widget[name='quote-forms'] .rf-debugbar {
+	background-color: inherit;
+}
+
+div.widget[name='quote-forms'] div.field.occupation .rf-dropdown {
+	left: 39%;
+	display: none;
+	width: 19%;
+}
 div.widget[name='quote-forms'] .rf-dropdown ul {
-	display: inline-block;
-	max-height: 10em; min-width: 20%;
+	max-height: 10em; min-width: 100%;
 	overflow: auto; overflow-x: hidden; overflow-y: auto;
-	margin: 0 0 0 34%;
 	padding: 0;
 	list-style: none;
 	background-color: #FFF;
