@@ -1,0 +1,10 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>scp-product-admin-forms.html</url>
+        <secure>false</secure>
+	</parameters>
+	<attributes>
+		<js>scp-product-admin-forms.js</js>
+	</attributes>
+</widget>
