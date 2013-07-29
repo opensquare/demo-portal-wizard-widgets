@@ -105,6 +105,7 @@
 						name: "next",
 						submission: {
 							url: "{{$script-runner-url}}",
+                            async: "true",
 							data: {
 								script: "NewBusiness/script/createAndAcceptApplicationFromFormData.py",
 								data: "[dataDocument]"
