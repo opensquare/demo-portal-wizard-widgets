@@ -3,6 +3,16 @@
     defaultInitalData: "scp-product-admin-forms-initial-data.xml",
 	formLists: {
 		main: [
+            { id: "load-policy-templates", url: "loading.html", actions: [
+					{
+						name: "next",
+						submission: { 
+							url: "{{$script-runner-url}}/ProductAdmin/getCreateProductLists/output.xml",
+							method: "get",
+                            resultInsertPoint: "/data"
+						}
+					}
+				]},
 			{ id: "new-product", url: "new-product.html", actions: ["next"]},
             { id: "saving", url:"../quote-forms-common/12-saving.html", actions: [
 					{
@@ -18,7 +28,7 @@
 						}
 					}
 				]},
-			{ id: "complete", url:"complete.html"}
+			{ id: "complete", url:"complete.html"},
 		]
 	}
 }

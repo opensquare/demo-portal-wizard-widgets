@@ -8,7 +8,7 @@
             <brand><xsl:value-of select="/data/brand"/></brand>
             <brandAbbreviation><xsl:value-of select="/data/brandAbbreviation"/></brandAbbreviation>
             <productName><xsl:value-of select="/data/productName"/></productName>
-            <referenceNumberSequence><xsl:value-of select="/data/referenceNumberSequence"/></referenceNumberSequence>
+            <referenceNumberSequence><xsl:value-of select="concat(/data/referenceNumberSequence, '.', /data/referenceNumberLength)"/></referenceNumberSequence>
             <policyTemplate type="name"><xsl:value-of select="/data/policyTemplate"/></policyTemplate>
             <clientTemplate type="name"><xsl:value-of select="/data/clientTemplate"/></clientTemplate>
             <insurer type="name"><xsl:value-of select="/data/insurer"/></insurer>

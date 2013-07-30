@@ -2,7 +2,8 @@
     <brand>PBT</brand>
     <brandAbbreviation>PBT</brandAbbreviation>
     <productName>Product Builder Test 1</productName>
-    <referenceNumberSequence>3.8</referenceNumberSequence>
+    <referenceNumberSequence>3</referenceNumberSequence>
+    <referenceNumberLength>8</referenceNumberLength>
     <policyTemplate type="name">Motor Telematics Policy template</policyTemplate>
     <clientTemplate type="name">Motor Client Relationship template</clientTemplate>
     <insurer type="name">insureCo</insurer>

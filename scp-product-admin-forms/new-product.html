@@ -1,16 +1,67 @@
 <form rhinoforms="true">
 	<div class="section">
 		<div class="field">
+            <label>Product Name</label>
 			<input type="text" rf.validation="required" placeholder="Product Name" name="productName"/>
+        </div>
+        <div class="field">
+            <label>Brand</label>
             <input type="text" rf.validation="required" placeholder="Brand" name="brand"/>
+        </div>
+        <div class="field">
+            <label>Brand Abbreviation</label>
             <input type="text" rf.validation="required" placeholder="Brand Abbreviation" name="brandAbbreviation"/>
+        </div>
+        <div class="field">
+            <label>Reference Number Sequence</label>
             <input type="text" rf.validation="required" placeholder="Reference Number Sequence" name="referenceNumberSequence"/>
-            <input type="text" rf.validation="required" placeholder="Policy Template" name="policyTemplate"/>
-            <input type="text" rf.validation="required" placeholder="Client Template" name="clientTemplate"/>
-            <input type="text" rf.validation="required" placeholder="Insurer" name="insurer"/>
-            <input type="text" rf.validation="required" placeholder="Vendor" name="vendor"/>
+        </div>
+        <div class="field">
+            <label>Reference Number Length</label>
+            <input type="text" rf.validation="required" placeholder="Reference Number Length" name="referenceNumberLength"/>
+        </div>
+        <div class="field">
+            <label>Policy Template</label>
+            <select name="policyTemplate">
+            <rf.forEach select="/data/lists/list[@type='policyTemplates']/item" as="item">
+                <option value="{{item.name}}">{{item.name}}</option>
+            </rf.forEach>
+            </select>
+        </div>
+        <div class="field">
+            <label>Client Template</label>
+            <select name="clientTemplate">
+            <rf.forEach select="/data/lists/list[@type='clientTemplates']/item" as="item">
+                <option value="{{item.name}}">{{item.name}}</option>
+            </rf.forEach>
+            </select>
+        </div>
+        <div class="field">
+            <label>Insurer</label>
+            <select name="insurer">
+            <rf.forEach select="/data/lists/list[@type='companies']/item" as="item">
+                <option value="{{item.name}}">{{item.name}}</option>
+            </rf.forEach>
+            </select>
+        </div>
+        <div class="field">
+            <label>Vendor</label>
+            <select name="vendor">
+            <rf.forEach select="/data/lists/list[@type='companies']/item" as="item">
+                <option value="{{item.name}}">{{item.name}}</option>
+            </rf.forEach>
+            </select>
+        </div>
+        <div class="field">
+            <label>RQ Widget</label>
             <input type="text" rf.validation="required" placeholder="RQ Widget" name="rqWidget"/>
+        </div>
+        <div class="field">
+            <label>CP Widget</label>
             <input type="text" rf.validation="required" placeholder="CP Widget" name="cpWidget"/>
+        </div>
+        <div class="field">
+            <label>New Business Calc</label>
             <input type="text" rf.validation="required" placeholder="New Business Calc" name="newBusinessCalc"/>
 		</div>
         <div class="navigation">
