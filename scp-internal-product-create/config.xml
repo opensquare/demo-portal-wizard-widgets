@@ -1,0 +1,9 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>scp-internal-product-create.html</url>
+	</parameters>
+	<attributes>
+		<page.title>Build New Product</page.title>
+	</attributes>
+</widget>

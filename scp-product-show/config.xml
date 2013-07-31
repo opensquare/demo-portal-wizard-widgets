@@ -1,0 +1,10 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>scp-product-show.html</url>
+	</parameters>
+	<attributes>
+		<js>scp-product-show.js</js>
+		<page.title>Product show</page.title>
+	</attributes>
+</widget>
