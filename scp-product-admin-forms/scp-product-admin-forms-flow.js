@@ -13,7 +13,11 @@
 						}
 					}
 				]},
-			{ id: "new-product", url: "new-product.html", actions: ["next"]},
+			{ id: "new-product", url: "new-product.html", actions: [
+                "addAddon:addon.addAddon(index=next)",
+				"deleteAddon:delete(xpath=addons/addonTemplate[index], index=?)",
+                "next"
+            ]},
             { id: "saving", url:"../quote-forms-common/12-saving.html", actions: [
 					{
 						name: "next",
@@ -29,6 +33,9 @@
 					}
 				]},
 			{ id: "complete", url:"complete.html"},
+		],
+        addon: [
+			{ id: "addAddon", docBase: "addons/addonTemplate[index]", url: "add-addon.html", actions: [ "cancel", "next" ] }
 		]
 	}
 }

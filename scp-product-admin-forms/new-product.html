@@ -24,7 +24,7 @@
             <label>Policy Template</label>
             <select name="policyTemplate">
             <rf.forEach select="/data/lists/list[@type='policyTemplates']/item" as="item">
-                <option value="{{item.name}}">{{item.name}}</option>
+                <option value="{{item.uid}}">{{item.name}}</option>
             </rf.forEach>
             </select>
         </div>
@@ -32,7 +32,7 @@
             <label>Client Template</label>
             <select name="clientTemplate">
             <rf.forEach select="/data/lists/list[@type='clientTemplates']/item" as="item">
-                <option value="{{item.name}}">{{item.name}}</option>
+                <option value="{{item.uid}}">{{item.name}}</option>
             </rf.forEach>
             </select>
         </div>
@@ -40,7 +40,7 @@
             <label>Insurer</label>
             <select name="insurer">
             <rf.forEach select="/data/lists/list[@type='companies']/item" as="item">
-                <option value="{{item.name}}">{{item.name}}</option>
+                <option value="{{item.uid}}">{{item.name}}</option>
             </rf.forEach>
             </select>
         </div>
@@ -48,7 +48,7 @@
             <label>Vendor</label>
             <select name="vendor">
             <rf.forEach select="/data/lists/list[@type='companies']/item" as="item">
-                <option value="{{item.name}}">{{item.name}}</option>
+                <option value="{{item.uid}}">{{item.name}}</option>
             </rf.forEach>
             </select>
         </div>
@@ -64,6 +64,16 @@
             <label>New Business Calc</label>
             <input type="text" rf.validation="required" placeholder="New Business Calc" name="newBusinessCalc"/>
 		</div>
+        <div class="field">
+        <label>Addons</label>
+        <rf.forEach select="/data/addons/addonTemplate" as="addon">
+			<div class="addon">
+				<span>{{addon.uid}}</span>
+                <a href="#" rf.action="deleteAddon?index={{addon.index}}">Delete</a>
+			</div>
+        </rf.forEach>
+        <input type="button" rf.action="addAddon" value="Add Addon" />
+        </div>
         <div class="navigation">
 			<input type="button" id="about_next" value="Next" rf.action="next"/>
 		</div>

@@ -1,0 +1,15 @@
+<form rhinoforms="true">
+	<div class="field">
+		<label for="input_code">Addon:</label>
+		<select name="uid">
+        <rf.forEach select="/data/lists/list[@type='addons']/item" as="item">
+            <option value="{{item.uid}}">{{item.name}}</option>
+        </rf.forEach>
+        </select>
+	</div>
+	
+	<div class="navigation">
+		<input type="button" rf.action="cancel" value="Cancel"/>
+		<input type="submit" rf.action="next" value="Next"/>
+	</div>
+</form>		

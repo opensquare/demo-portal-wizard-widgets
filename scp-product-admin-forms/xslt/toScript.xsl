@@ -9,13 +9,14 @@
             <brandAbbreviation><xsl:value-of select="/data/brandAbbreviation"/></brandAbbreviation>
             <productName><xsl:value-of select="/data/productName"/></productName>
             <referenceNumberSequence><xsl:value-of select="concat(/data/referenceNumberSequence, '.', /data/referenceNumberLength)"/></referenceNumberSequence>
-            <policyTemplate type="name"><xsl:value-of select="/data/policyTemplate"/></policyTemplate>
-            <clientTemplate type="name"><xsl:value-of select="/data/clientTemplate"/></clientTemplate>
-            <insurer type="name"><xsl:value-of select="/data/insurer"/></insurer>
-            <vendor type="name"><xsl:value-of select="/data/vendor"/></vendor>
+            <policyTemplate><xsl:value-of select="/data/policyTemplate"/></policyTemplate>
+            <clientTemplate><xsl:value-of select="/data/clientTemplate"/></clientTemplate>
+            <insurer><xsl:value-of select="/data/insurer"/></insurer>
+            <vendor><xsl:value-of select="/data/vendor"/></vendor>
             <rqWidget><xsl:value-of select="/data/rqWidget"/></rqWidget>
             <cpWidget><xsl:value-of select="/data/cpWidget"/></cpWidget>
             <newBusinessCalc><xsl:value-of select="/data/newBusinessCalc"/></newBusinessCalc>
+            <xsl:copy-of select="/data/addons"/>
         </scriptData>
     </xsl:template>
 </xsl:stylesheet>
