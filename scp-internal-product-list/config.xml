@@ -28,7 +28,7 @@
 			    <return>
 			        <name>asIdentifiedEntity</name>
                     <params>
-                        <descriptionPattern>{productName}|{status}|effectiveTime</descriptionPattern>
+                        <descriptionPattern>{productName}|{status}|{effectiveTime}</descriptionPattern>
                     </params>
 			    </return>
 			</pactrequest>

@@ -5,6 +5,18 @@
 			<input type="text" rf.validation="required" placeholder="Product Name" name="productName"/>
         </div>
         <div class="field">
+            <label>Effective Time</label>
+			<input type="date" name="effectiveTime" rf.validation="required date({ format: 'YYYY-MM-DD' })" />
+        </div>
+        <div class="field">
+            <label>Expiry Time</label>
+			<input type="date" name="expiryTime" rf.validation="date({ format: 'YYYY-MM-DD' })" />
+        </div>
+        <div class="field">
+            <label>Product Name</label>
+			<input type="text" rf.validation="required" placeholder="Product Name" name="productName"/>
+        </div>
+        <div class="field">
             <label>Brand</label>
             <input type="text" rf.validation="required" placeholder="Brand" name="brand"/>
         </div>

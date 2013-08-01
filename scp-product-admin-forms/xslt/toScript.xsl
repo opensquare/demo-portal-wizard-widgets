@@ -16,6 +16,8 @@
             <rqWidget><xsl:value-of select="/data/rqWidget"/></rqWidget>
             <cpWidget><xsl:value-of select="/data/cpWidget"/></cpWidget>
             <newBusinessCalc><xsl:value-of select="/data/newBusinessCalc"/></newBusinessCalc>
+            <effectiveTime><xsl:value-of select="/data/effectiveTime"/></effectiveTime>
+            <expiryTime><xsl:value-of select="/data/expiryTime"/></expiryTime>
             <xsl:copy-of select="/data/addons"/>
         </scriptData>
     </xsl:template>
