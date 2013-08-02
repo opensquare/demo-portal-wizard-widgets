@@ -222,7 +222,7 @@ article[type="internal"] .new-square[type='internal'][subtype='batch'] {
 .scp-product-admin-forms .prodname input {
 	width: 80%;
 }
-.scp-product-admin-forms .navigation .button {
+.scp-product-admin-forms .navigation input[type='button'] {
 	float: right;
 	padding: 0.2em 1em;
 	font-size: 1.5em;
