@@ -206,11 +206,30 @@ article[type="internal"] .new-square[type='internal'][subtype='batch'] {
 	padding: 2em;
 }
 .scp-product-admin-forms .field input, .scp-product-admin-forms .field select {
+	min-width: 12em;
 	padding: 0.1em;
+	font-family: inherit;
 	font-size: 1.125em;
 	border-radius: 0.25em;
 }
-
+.scp-product-admin-forms .field select {
+	min-width: 16em;
+	padding-right: 0;
+}
+.scp-product-admin-forms .field label:nth-child(3) {
+	margin-left: 5em;
+}
+.scp-product-admin-forms .prodname input {
+	width: 80%;
+}
+.scp-product-admin-forms .navigation .button {
+	float: right;
+	padding: 0.2em 1em;
+	font-size: 1.5em;
+	border-radius: 0.5em;
+	background: #555;
+	color: #FFF;
+}
 .scp-product-admin-forms .rf-debugbar {
 	background-color: transparent;
 	color: #DDD;
