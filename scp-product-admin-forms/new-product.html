@@ -64,7 +64,7 @@
         <label>Addons</label>
         <rf.forEach select="/data/addons/addonTemplate" as="addon">
 			<div class="addon">
-				<span>{{addon.uid}}</span>
+				<span>{{addon.name}}</span>
                 <a href="#" rf.action="deleteAddon?index={{addon.index}}">Delete</a>
 			</div>
         </rf.forEach>

@@ -1,11 +1,13 @@
 <form rhinoforms="true">
 	<div class="field">
 		<label for="input_code">Addon:</label>
-		<select name="uid">
+		<select name="uid" rf.validation="required" onchange="$('#addon-name').val($(this).find('option:selected').text());">
+        <option value=""></option>
         <rf.forEach select="/data/lists/list[@type='addons']/item" as="item">
             <option value="{{item.uid}}">{{item.name}}</option>
         </rf.forEach>
         </select>
+        <input type="hidden" id="addon-name" name="name" value=""/>
 	</div>
 	
 	<div class="navigation">
