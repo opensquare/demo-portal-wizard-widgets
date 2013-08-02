@@ -170,6 +170,46 @@ article[type="internal"] .new-square[type='internal'][subtype='batch'] {
 	background-color: #695!important;
 }
 
+/* Product management page */
+.scp-internal-products {
+	padding: 2em;
+}
+.scp-internal-products .new-square[type='product'][subtype='new'] {
+	background-image: url('images/plus-light.png');
+}
+.scp-internal-product-list ul {
+	padding-left: 0;
+	list-style: none;
+	font-size: 1.125em;
+	line-height: 2em;
+}
+.scp-internal-product-list li:nth-child(odd) {
+	background-color: #EEE;
+}
+.scp-internal-product-list li:hover {
+	background-color: #DDD;
+}
+.scp-internal-product-list a.popup {
+	display: none;
+	float: right;
+	padding: 0 1em;
+	font-size: 0.8em;
+	font-weight: bold;
+	background-color: #888;
+	color: #FFF;
+	border-radius: 1em;
+}
+.scp-internal-product-list li:hover a.popup {
+	display: block;
+}
+.scp-product-admin-forms {
+	padding: 2em;
+}
+.scp-product-admin-forms .rf-debugbar {
+	background-color: transparent;
+	color: #DDD;
+}
+
 /*Popup styling*/
 #popup[type='internal'] {
 	border-color: #777;
