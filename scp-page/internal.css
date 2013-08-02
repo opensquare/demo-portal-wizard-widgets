@@ -205,6 +205,12 @@ article[type="internal"] .new-square[type='internal'][subtype='batch'] {
 .scp-product-admin-forms {
 	padding: 2em;
 }
+.scp-product-admin-forms .field input, .scp-product-admin-forms .field select {
+	padding: 0.1em;
+	font-size: 1.125em;
+	border-radius: 0.25em;
+}
+
 .scp-product-admin-forms .rf-debugbar {
 	background-color: transparent;
 	color: #DDD;
