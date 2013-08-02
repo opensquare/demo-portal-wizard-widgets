@@ -11,8 +11,9 @@
 						submission: {
 							url: "{{$script-runner-url}}",
 							data: {
-								script: "ProductAdmin/script/changeStatus.py",
-								data: "[dataDocument]"
+								script: "Util/script/changeStatus.py",
+								uid: "xpath://uid",
+                                status: "xpath://status",
 							},
 							method: "post",
 						}
