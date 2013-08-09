@@ -79,7 +79,7 @@ summary>h2{
 	background-size: contain;
 	font-weight: normal;
 }
-#header-user{
+.header-user{
 	float: right;
 	width: 40%;
 	vertical-align: top;
