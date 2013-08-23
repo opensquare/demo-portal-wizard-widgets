@@ -1,6 +1,6 @@
 <form rhinoforms="true">
 	<div class="field">
-		<label for="input_code">Status:</label>
+		<label for="status">Status:</label>
 		<select name="status">
             <option value="Created">Created</option>
             <option value="Approved">Approved</option>
@@ -10,7 +10,10 @@
             <option value="Expired">Expired</option>
         </select>
 	</div>
-	
+	<div class="field">
+        <label for "effectiveTime">Effective Time:</label>
+        <input type="text" value="now" name="effectiveTime"/>
+    </div>
 	<div class="navigation">
 		<input type="submit" rf.action="next" value="Next"/>
 	</div>
