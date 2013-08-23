@@ -7,10 +7,16 @@
 			</ul>
 	</xsl:template>
 	<xsl:template match="/pactresponse/entity/IdentifiedEntity">
+        <xsl:variable name="productName"><xsl:value-of select="tokenize(description, '\|')[1]"/></xsl:variable>
+        <xsl:variable name="productStatus"><xsl:value-of select="tokenize(description, '\|')[2]"/></xsl:variable>
+        <xsl:variable name="productEffectiveTime"><xsl:value-of select="tokenize(description, '\|')[3]"/></xsl:variable>
 		<li>
+            <xsl:attribute name="class"><xsl:value-of select="$productStatus"/></xsl:attribute>
 			<a>
 				<xsl:attribute name="href">#product/show/<xsl:value-of select="identifier/uid"/></xsl:attribute>
-				<xsl:value-of select="description"/>
+                <span class="productName"><xsl:value-of select="$productName"/></span>
+                <span class="productStatus"><xsl:value-of select="$productStatus"/></span>
+                <span class="productEffectiveTime"><xsl:value-of select="$productEffectiveTime"/></span>
 			</a>
             <a class="popup"><xsl:attribute name="href">#internal/change-status/<xsl:value-of select="identifier/uid"/></xsl:attribute>Change Status</a>
 		</li>
