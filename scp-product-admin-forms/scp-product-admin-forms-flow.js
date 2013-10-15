@@ -3,13 +3,27 @@
     defaultInitalData: "scp-product-admin-forms-initial-data.xml",
 	formLists: {
 		main: [
+            { id: "load-product", url: "loading.html", actions: [
+                {
+                    name: "next",
+                    submission: {
+                        url: "{{$script-runner-url}}/ProductAdmin/getProduct/output.xml",
+                        method: "get",
+                        data: {
+                                uid: "xpath://uid"
+                            },
+                        postTransform: "xslt/fromScript.xsl", 
+                        resultInsertPoint: "/"
+                    }
+                }
+            ]},
             { id: "load-policy-templates", url: "loading.html", actions: [
 					{
 						name: "next",
 						submission: { 
 							url: "{{$script-runner-url}}/ProductAdmin/getCreateProductLists/output.xml",
 							method: "get",
-                            resultInsertPoint: "/data"
+                            resultInsertPoint: "/data/lookups"
 						}
 					}
 				]},

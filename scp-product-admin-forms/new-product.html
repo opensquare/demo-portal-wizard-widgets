@@ -25,13 +25,13 @@
         <div class="field prodtemplate">
             <label>Policy Template</label>
             <select name="policyTemplate">
-            <rf.forEach select="/data/lists/list[@type='policyTemplates']/item" as="item">
+            <rf.forEach select="/data/lookups/lists/list[@type='policyTemplates']/item" as="item">
                 <option value="{{item.uid}}">{{item.name}}</option>
             </rf.forEach>
             </select>
             <label>Client Template</label>
             <select name="clientTemplate">
-            <rf.forEach select="/data/lists/list[@type='clientTemplates']/item" as="item">
+            <rf.forEach select="/data/lookups/lists/list[@type='clientTemplates']/item" as="item">
                 <option value="{{item.uid}}">{{item.name}}</option>
             </rf.forEach>
             </select>
@@ -39,13 +39,13 @@
         <div class="field prodroles">
             <label>Insurer</label>
             <select name="insurer">
-            <rf.forEach select="/data/lists/list[@type='companies']/item" as="item">
+            <rf.forEach select="/data/lookups/lists/list[@type='companies']/item" as="item">
                 <option value="{{item.uid}}">{{item.name}}</option>
             </rf.forEach>
             </select>
             <label>Vendor</label>
             <select name="vendor">
-            <rf.forEach select="/data/lists/list[@type='companies']/item" as="item">
+            <rf.forEach select="/data/lookups/lists/list[@type='companies']/item" as="item">
                 <option value="{{item.uid}}">{{item.name}}</option>
             </rf.forEach>
             </select>
