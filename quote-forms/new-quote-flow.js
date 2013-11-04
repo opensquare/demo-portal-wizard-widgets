@@ -52,14 +52,13 @@
 						name: "next",
 						submission: {
 							preTransform: "xslt/toNapier.xsl", 
-							url: "{{$esb-url}}/action/motor/quote/calc",
+							url: "{{$esb-url}}/motor/quote/calc",
 							data: {
 								source: "motor-new-business",
                                 quickSearch1: "xpath://customer/surname",
                                 quickSearch2: "xpath://customer/address/postcode",
                                 quickSearch3: "xpath://customer/email",
                                 quickSearch4: "xpath://vehicle/reg",
-								calcType: "xpath://product/calc",
 								calcData: "[dataDocument]"
 							},
 							method: "post",
@@ -104,11 +103,9 @@
 					{
 						name: "next",
 						submission: {
-							url: "{{$script-runner-url}}",
+							url: "{{$esb-url}}/motor/quote/create",
 							data: {
-                                async: "true",
-								script: "NewBusiness/script/createAndAcceptApplicationFromFormData.py",
-								data: "[dataDocument]"
+								scriptData: "[dataDocument]"
 							},
 							method: "post",
 							resultInsertPoint: "/quote/pact"
