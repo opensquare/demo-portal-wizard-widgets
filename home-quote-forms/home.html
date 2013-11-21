@@ -1,0 +1,58 @@
+<ul id="crumbTrail">
+	<li class="about">About you</li>
+	<li class="home on">Your home</li>
+	<li class="cover">Your cover</li>
+	<li class="quote">Your quote</li>
+</ul>
+<form rhinoforms="true">
+	<div class="home section">
+		<h1>Your Home</h1>
+		<div class="field">
+			<label for="input_propertyType">Type of Property</label>
+			<select name="propertyType" rf.source="resources/propertyType.csv" rf.validation="required" id="input_propertyStatus" rf.preselectFirstOption="true">
+				<option disabled selected></option>
+			</select>
+		</div>
+        <div class="field">
+			<label for="input_numOfBedrooms">Number Of Bedrooms</label>
+			<select name="numOfBedrooms" rf.source="resources/numOfBedrooms.csv" rf.validation="required" id="input_numOfBedrooms" rf.preselectFirstOption="true">
+				<option disabled selected></option>
+			</select>
+		</div>
+		<div class="field">
+			<label for="input_yearBuilt">Year Built</label>
+			<input type="text" name="yearBuild" rf.validation="required pattern({regex: '^[0-9][0-9][0-9][0-9]+$' , errorMessage: 'Invalid data'})" id="input_yearBuilt"/>
+			<div class="hint">Please enter the approximate year that your property was built</div>
+		</div>
+        <div class="field">
+			<label for="input_ownershipStatus">Ownership Status</label>
+			<select name="ownershipStatus" rf.source="resources/ownershipStatus.csv" rf.validation="required" id="input_ownershipStatus" rf.preselectFirstOption="true">
+				<option disabled selected></option>
+			</select>
+		</div>
+        <div class="field">
+			<label>Has It Been Extended</label>
+			<input type="radio" name="extended" value="S" id="input_extended_y" rf.validation="required"/><label class="forRadio" for="input_extended_y">Yes</label>
+			<input type="radio" name="extended" value="N" id="input_extended_n" rf.validation="required"/><label class="forRadio" for="input_extended_n">No</label>
+		</div>
+        <div class="field">
+			<label>Burglar Alarms</label>
+			<input type="radio" name="burglarAlarm" value="S" id="input_burglarAlarm_y" rf.validation="required"/><label class="forRadio" for="input_burglarAlarm_y">Yes</label>
+			<input type="radio" name="burglarAlarm" value="N" id="input_burglarAlarm_n" rf.validation="required"/><label class="forRadio" for="input_burglarAlarm_n">No</label>
+		</div>
+        <div class="field">
+			<label>Smoke Alarms</label>
+			<input type="radio" name="smokeAlarm" value="S" id="input_smokeAlarm_y" rf.validation="required"/><label class="forRadio" for="input_smokeAlarm_y">Yes</label>
+			<input type="radio" name="smokeAlarm" value="N" id="input_smokeAlarm_n" rf.validation="required"/><label class="forRadio" for="input_smokeAlarm_n">No</label>
+		</div>
+        <div class="field">
+			<label>Pets</label>
+			<input type="radio" name="pets" value="S" id="input_pets_y" rf.validation="required"/><label class="forRadio" for="input_pets_y">Yes</label>
+			<input type="radio" name="pets" value="N" id="input_pets_n" rf.validation="required"/><label class="forRadio" for="input_pets_n">No</label>
+		</div>
+		<div class="navigation">
+			<input type="button" id="home_back" value="Back" rf.action="back"/>
+			<input type="button" id="home_next" value="Next" rf.action="next"/>
+		</div>
+	</div>
+</form>

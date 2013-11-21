@@ -1,0 +1,571 @@
+form {
+	padding: 0.2em 2em 0 2em;
+	clear: both;
+}
+h1 {
+	margin-top: 1.5em; margin-bottom: 0.75em;
+	color: #333;
+	font-size: 230%; font-weight: normal;
+}
+div.widget[name='home-quote-forms'] input[type='date'] {
+	border: thin solid #0090C0;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 1.3em; 
+}
+div.widget[name='home-quote-forms'] input[type="button"] {
+	padding: 0.2em 1em;
+	color: #FFF; background-color: #92CE56;
+	border: none; border-radius: 0.25em;
+	font-size: 1.2em;	
+	cursor: pointer;
+}
+div.widget[name='home-quote-forms'] input[type="button"]:hover {
+	background-color: #82BE46;
+}
+div.widget[name='home-quote-forms'] input[type="checkbox"] {
+	padding: 0.45em;
+	background-color: #FFF;
+	border: thin solid #0090C0;
+	vertical-align: middle;
+	-webkit-appearance: none;
+}
+div.widget[name='home-quote-forms'] input[type="checkbox"]:checked {
+	padding: 0.2em 0.4em 0.2em 0.4em;
+	background-color: #0090C0; 
+}
+div.widget[name='home-quote-forms'] input[type="checkbox"]:checked:after {
+	content: '\2714';
+	color: #FFF; background-color: #0090C0; /*blue*/
+	font-size: 1.3em;   
+}
+div.widget[name='home-quote-forms'] input[type="radio"] {
+	margin: -0.25em 0 0 0;
+	padding: 0.45em;
+	background-color: #FFF;
+	border: thin solid #0090C0;
+	vertical-align: middle;
+	-webkit-appearance: none;
+}
+div.widget[name='home-quote-forms'] input[type="radio"]:checked {
+	padding: 0.2em 0.4em 0.2em 0.4em;
+	background-color: #0090C0; 
+}
+div.widget[name='home-quote-forms'] input[type="radio"]:checked:after {
+	content: '\2714';
+	color: #FFF; background-color: #0090C0; /*blue*/
+    font-size: 1.3em;   
+}
+div.widget[name='home-quote-forms'] input[type="text"],input[type="email"],input[type="password"] {
+	width: 19%;
+	padding: 0.1em 0.25em 0 0.25em;
+	border: thin solid #0090C0;
+	font-size: 1.3em;
+}
+div.widget[name='home-quote-forms'] input[type="submit"] {
+	margin:	1em 1em 1em 0; padding: 0.2em 1em;
+	border: none; border-radius: 0.25em;
+	color: #FFF; background-color: #92CE56;
+	font-size: 2em;	
+	cursor: pointer;
+}
+div.widget[name='home-quote-forms'] input[type="submit"]:hover {
+	background-color: #82BE46;
+}
+div.widget[name='home-quote-forms'] label {
+	display: inline-block;
+	font-size: 1.2em;
+	padding: 0 1em 0 1em;
+	width: 40%;
+}
+div.widget[name='home-quote-forms'] label.forRadio {
+	width: auto;
+	padding-left: 0.25em;
+}
+div.widget[name='home-quote-forms'] label.forPayment {
+	display: inline;
+	position: relative; right: 0.8em;
+	width: 2em;
+	font-size: 1.3em;
+}
+div.widget[name='home-quote-forms'] option {
+	color: #333;
+}
+div.widget[name='home-quote-forms'] p {
+	font-size: 1.2em;
+}
+div.widget[name='home-quote-forms'] select {
+	width: 20%;
+	margin-left: 0;
+	border: thin solid #0090C0;
+	font-size: 1.3em;
+	color: #AAA;
+}
+div.widget[name='home-quote-forms'] select.changed {
+	color: inherit;
+}
+div.widget[name='home-quote-forms'] select:disabled {
+	background-color: rgb(235, 235, 228);
+}
+
+div.widget[name='home-quote-forms'] div.field {
+	min-height: 2.2em;
+	padding: 1em 0;
+	border-bottom: thin solid rgba(0, 0, 0, 0.1);
+}
+div.widget[name='home-quote-forms'] div.field:hover {
+ 	background-color: rgba(0,0,0,0.1);
+ }
+div.widget[name='home-quote-forms'] div.field.on,
+div.widget[name='home-quote-forms'] div.field.on:hover {
+	background-color: rgba(0,0,0,0.2);
+}
+div.widget[name='home-quote-forms'] div.field.on .hint {
+	display: inline-block;
+}
+div.widget[name='home-quote-forms'] div.field a {
+	margin-left: 2em;
+	color: #92CE56;
+	font-weight: bold;
+}
+div.widget[name='home-quote-forms'] div.field a:hover {
+	color: #82BE46;
+}
+div.widget[name='home-quote-forms'] option:first-child {
+	color: #999;
+}
+div.widget[name='home-quote-forms'] .hint {
+	display: none;
+	position: absolute; right: 7em;
+	width: 15em;
+	padding: 0.35em;
+	color: #FFF; background-color: #92CE56;
+	border-radius: 0.25em;
+	z-index: 999;
+}
+div.widget[name='home-quote-forms'] .hint h3 {
+	margin: 0;
+}
+div.widget[name='home-quote-forms'] .hint::before {
+	content: '◄';
+	position: absolute;
+	margin: -0.3em 0 0 -1em;
+	color: #92CE56;
+	font-size: 2em;
+}
+@media screen and (max-width: 1300px) {
+	div.widget[name='home-quote-forms'] .hint {
+		margin-top: 3.5em;
+	}
+	div.widget[name='home-quote-forms'] .hint::before {
+		content: '▲';
+		margin: -1em 0 0 0;
+	}
+}
+
+div.widget[name='home-quote-forms'] .rf-dropdown ul {
+	display: inline-block;
+	max-height: 10em; min-width: 20%;
+	overflow: auto; overflow-x: hidden; overflow-y: auto;
+	margin: 0 0 0 43.5%;
+	padding: 0;
+	list-style: none;
+	background-color: #FFF;
+	border: thin solid #0090C0;
+	cursor: pointer;
+}
+div.widget[name='home-quote-forms'] .rf-dropdown li {
+	padding: 0.1em 0.5em;
+}
+div.widget[name='home-quote-forms'] .rf-dropdown li:hover {
+	color: #FFF; background-color: #0090C0;
+}
+
+div.widget[name='home-quote-forms'] .navigation {
+	clear: both;
+	text-align: right;
+}
+div.widget[name='home-quote-forms'] .navigation input[type="button"] {
+	margin: 1em 1em 1em 0;
+	font-size: 2em;	
+}
+div.widget[name='home-quote-forms'] .navigation input[type="button"]:first-child {
+	font-size: 1.5em;	
+}
+
+div.widget[name='home-quote-forms'] .invalid-message {
+	margin-left: 0.5em;
+	padding: 0.5em;
+	color: #FFF; background: #D44; /*red*/
+	border-radius: 0.25em;
+	font-weight: bold;
+}
+
+div.widget[name='home-quote-forms'] .checkboxLabel {
+	display: inline-block;
+	max-width: 22%;
+	padding: 0;
+	vertical-align: top;
+}
+
+div.widget[name='home-quote-forms'] .disabledSummary {
+	font-size: 1.2em;
+}
+
+div.widget[name='home-quote-forms'] .currency:after {
+	content: '€';
+	float: right;
+	margin-right: -4%;
+}
+
+div.widget[name='home-quote-forms'] #input_title, div.widget[name='home-quote-forms'] .titleSelect {
+	width: auto;
+}
+
+div.widget[name='home-quote-forms'] .dateSel, div.widget[name='home-quote-forms'] .dateSel select {
+	width: auto;
+}
+
+div.widget[name='home-quote-forms'] .disabled {
+	opacity: 0.5;
+}
+div.widget[name='home-quote-forms'] .disabled h1 {
+	font-size: 180%
+}
+div.widget[name='home-quote-forms'] .disabled a {
+	font-weight: bold;
+	float: right;
+	margin-right: 5%;
+	color: #92CE56;
+}
+
+div.widget[name='home-quote-forms'] #sectionOne a {
+	float: right;
+	margin: 0.5em 1em 0 0;
+}
+/* crumb trail */
+div.widget[name='home-quote-forms'] #crumbTrail li {
+	position: relative;
+	float: left;
+	min-width: 16%; height: 20px;
+	margin: 1% 2% 0 0;
+	padding: 10px 12px 10px 30px;
+	list-style: none;
+	color: #FFF; background: #777 no-repeat 6px center;
+	border-radius: 10em 1em 1em 10em;
+	white-space: nowrap;
+}
+div.widget[name='home-quote-forms'] #crumbTrail li:after {
+	content: '♦';
+	position: absolute;
+	top: -20px; right: -17px;
+	color: #777;
+	font-size: 64px;
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.on {
+	height: 40px;
+	margin-left: 3%;
+	padding-left: 15px;
+	background-color: #0DB4F2;
+	font-size: 1.5em; font-weight: bold;
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.on:before {
+	content: '';
+	float: left;
+	width: 75px; height: 75px;
+	margin: -18px 0 0 -50px;
+	border-radius: 10em;
+	background: #0DB4F2 no-repeat center center;
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.on:after {
+	color: #0DB4F2;
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.about {
+	background-image: url('images/person-light-small.png');
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.policy {
+	background-image: url('images/document-contract2-light-small.png');
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.cover {
+	background-image: url('images/document-contract2-light-small.png');
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.occupation {
+	background-image: url('images/briefcase-light-small.png');
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.quote {
+	background-image: url('images/currency-sign-euro-light-small.png');
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.apply {
+	background-image: url('images/email-light-small.png');
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.pay {
+	background-image: url('images/coins-light-small.png');
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.welcome {
+	background-image: url('images/handshake-light-small.png');
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.on.about:before {
+	background-image: url('images/person-light.png');
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.on.policy:before {
+	background-image: url('images/document-contract2-light.png');
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.on.cover:before {
+	background-image: url('images/document-contract2-light.png');
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.on.occupation:before {
+	background-image: url('images/briefcase-light.png');
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.on.quote:before {
+	background-image: url('images/currency-sign-euro-light.png');
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.apply.on:before {
+	background-image: url('images/email-light.png');
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.pay.on:before {
+	background-image: url('images/coins-light.png');
+}
+div.widget[name='home-quote-forms'] #crumbTrail li.welcome.on:before {
+	background-image: url('images/handshake-light.png');
+}
+
+div.widget[name='home-quote-forms'] .rf-debugbar {
+	opacity: 0.15;
+}
+
+div.widget[name='home-quote-forms'] .loading {
+	width: 100%; height: 100px;
+	background: url('images/loading.gif') no-repeat center center;
+}
+
+/* Customer Details page specific styling */
+div.widget[name='home-quote-forms'] #customerDetails label, div.widget[name='home-quote-forms'] #paymentPage label {
+	display: inline-block;
+	padding: 0 1em 0 1em;
+	width: 30%;
+	font-size: 1.2em;
+}
+div.widget[name='home-quote-forms'] #customerDetails label.forRadio {
+	width: auto;
+	padding-left: 0.25em;
+	font-size: 1.2em;
+}
+/*address lookup formatting*/
+div.widget[name='home-quote-forms'] .findAddress div.labelWrapper {
+	vertical-align: top;
+}
+div.widget[name='home-quote-forms'] .findAddress div.labelWrapper, div.widget[name='home-quote-forms'] .findAddress div.tableWrapper {
+	display: inline-block;
+}
+div.widget[name='home-quote-forms'] .findAddress div.labelWrapper {
+	padding: 0 1em;
+	width: 30.5%;
+}
+div.widget[name='home-quote-forms'] .findAddress div.tableWrapper {
+	width: 44%;
+}
+div.widget[name='home-quote-forms'] #customerDetails .findAddress label,
+div.widget[name='home-quote-forms'] #paymentPage .findAddress label {
+	width: 100%;
+	padding: 0;
+}
+div.widget[name='home-quote-forms'] .findAddress input {
+	width: 100%;
+}
+div.widget[name='home-quote-forms'] .addressFound label,
+div.widget[name='home-quote-forms'] .accountDetails label {
+	vertical-align: top;
+}
+div.widget[name='home-quote-forms'] #addressLabel,
+div.widget[name='home-quote-forms'] .bankDetails {
+	display: inline-block;
+}
+div.widget[name='home-quote-forms'] #addressLabel span,
+div.widget[name='home-quote-forms'] .bankDetails>span {
+	display: block;
+	font-size: 1.2em;
+}
+div.widget[name='home-quote-forms'] .pcaCapturePlusTable td {
+	position: static !important;
+	z-index: 1;
+}
+div.widget[name='home-quote-forms'] table .pcaAutoCompleteSmall>div {
+	width: 100% !important; max-height:10em;
+	overflow-x: hidden;
+	padding-right: 0.6em !important;
+	background-color: #FFF;
+	border: thin solid #0090C0;
+}
+div.widget[name='home-quote-forms'] .pcaAutoCompleteSmall .item,
+div.widget[name='home-quote-forms'] .pcaAutoCompleteSmall .selectedItem {
+	display: inline-block;
+	width: 100%;
+}
+div.widget[name='home-quote-forms'] .pcaAutoCompleteSmall .item {
+	border-width: 0 !important;
+}
+div.widget[name='home-quote-forms'] .pcaAutoCompleteSmall .item:hover,
+div.widget[name='home-quote-forms'] .pcaAutoCompleteSmall .selectedItem:hover {
+	background-color: #0090C0;
+}
+div.widget[name='home-quote-forms'] .pcaAutoCompleteSmall .item:hover span,
+div.widget[name='home-quote-forms'] .pcaAutoCompleteSmall .selectedItem:hover span {
+	color: #FFF !important;
+}
+div.widget[name='home-quote-forms'] .pcaAutoCompleteSmall .selectedItem {
+	background-color: #EEE;
+}
+div.widget[name='home-quote-forms'] .pcaCapturePlusTable .recentFavouritesSmall {
+	background-color: #FFF;
+}
+div.widget[name='home-quote-forms'] .pcaCapturePlusTable .recentFavouritesSmall a {
+	margin: 0;
+	color: #000;
+	font-weight: normal;
+}
+div.widget[name='home-quote-forms'] .pcaCapturePlusTable .recentFavouritesSmall .pcaItemHolder:hover {
+	background-color: rgba(0,0,0,0.2);
+}
+div.widget[name='home-quote-forms'] .occ.section select {
+	width: 39%;
+}
+div.widget[name='home-quote-forms'] .occ.section #input_occupation {
+	width: 38%;
+}
+div.widget[name='home-quote-forms'] .occ.section #input_salary,
+div.widget[name='home-quote-forms'] .occ.section #input_monthly_cover {
+	width: 10%;
+}
+/* Landing Page styling */
+div.widget[name='home-quote-forms'] #landingPage h1 {
+	margin-bottom: 0;
+}
+div.widget[name='home-quote-forms'] #landingPage .pane {
+	float: right;
+	clear: both;
+	width: 40%;
+	margin: 0 2em 2em 2em;
+	vertical-align: top;
+	border: thick solid #0DB4F2; border-radius: 1em;
+}
+div.widget[name='home-quote-forms'] #landingPage .pane h2 {
+	margin: 0;
+	padding: 0.2em 0.5em;
+	color: #FFF; background: #0DB4F2;
+}
+div.widget[name='home-quote-forms'] #landingPage .pane input[type="button"] {
+	float: right;
+	margin: 0.5em;
+	font-size: 2em;
+}
+div.widget[name='home-quote-forms'] #landingPage .amount {
+	display: inline-block;
+	width: 100%;
+	text-align: right;
+	font-size: 2em; font-weight: normal;
+}
+div.widget[name='home-quote-forms'] .premium {
+	display: inline;
+	font-size: 2em;
+}
+div.widget[name='home-quote-forms'] .premDetail {
+	margin-left: 33.5%;
+}
+/*div.widget[name='home-quote-forms'] #landingPage .amount:before, div.widget[name='home-quote-forms'] #landingPage .instalmentPremium:before,
+div.widget[name='home-quote-forms']  #landingPage .iptAmount:before, div.widget[name='home-quote-forms'] #paymentPage .amount:before,
+div.widget[name='home-quote-forms']  #paymentPage .instalmentPremium:before,
+div.widget[name='home-quote-forms']  #paymentPage .iptAmount:before {
+	content: '€';
+}*/
+div.widget[name='home-quote-forms'] #landingPage .pane p {
+	margin: 0;
+	padding: 0.5em;
+}
+div.widget[name='home-quote-forms'] #landingPage p>span {
+	font-weight: bold;
+}
+div.widget[name='home-quote-forms'] #landingPage .smallprint {
+	margin-bottom: 0;
+	padding: 0.25em;
+	border-top: thin solid rgba(0,0,0,0.25);
+	font-size: 0.7em;
+}
+div.widget[name='home-quote-forms'] #landingPage #details {
+	clear: both;
+}
+div.widget[name='home-quote-forms'] #landingPage h3 {
+	display: none;
+}
+div.widget[name='home-quote-forms'] #landingPage .details {
+	min-height: 50px;
+	padding-left: 60px;
+}
+div.widget[name='home-quote-forms'] #landingPage .duration {
+	background: url('calendar-year-dark.png') no-repeat; 
+}
+div.widget[name='home-quote-forms'] #landingPage .vehicle {
+	background: url('transport-car-dark.png') no-repeat; 
+}
+div.widget[name='home-quote-forms'] #landingPage .drivers {
+	background: url('person-user-dark.png') no-repeat; 
+}
+div.widget[name='home-quote-forms'] #save {
+	margin-bottom: 1em;
+	border: thick solid #92CE56; border-radius: 1em;
+}
+div.widget[name='home-quote-forms'] #save:before {
+	content: '';
+	float: right;
+	height: 0; width: 0;
+	margin: -24px 40px 0 0;
+	border-right: 20px dotted transparent; border-bottom: 20px dotted #92CE56; border-left: 20px dotted transparent;
+}
+div.widget[name='home-quote-forms'] #save span {
+	padding: 0.1em 0.25em;
+	color: #FFF; background: #92CE56;
+	white-space: nowrap;
+	border-radius: 0.25em;
+	font-weight: bold;
+}
+div.widget[name='home-quote-forms'] #save p {
+	margin: 0;
+	padding: 0.5em;
+}
+div.widget[name='home-quote-forms'] #save li {
+	padding-bottom: 1em;
+}
+div.widget[name='home-quote-forms'] #save li a {
+	padding: 0.5em 0.4em;
+	border-radius: 10em;
+	color: #FFF; background: #0DB4F2;
+	font-weight: bold;
+}
+
+/*Driver summary icons*/
+div.widget[name='home-quote-forms'] .Male {
+	display: inline-block;
+	height: 50px;
+	padding: 12px 50px;
+	vertical-align: middle;
+	font-size: 1.3em;
+	background: url('person-man-dark.png') no-repeat center top;
+}
+div.widget[name='home-quote-forms'] .Female {
+	display: inline-block;
+	height: 50px;
+	padding: 12px 50px;
+	vertical-align: middle;
+	font-size: 1.3em;
+	background: url('person-woman-dark.png') no-repeat center top;
+}
+/*Payment page*/
+div.widget[name='home-quote-forms'] #paymentPage label.forRadio {
+	position: relative;
+	right: 0.8em;
+	width: 3em;
+	font-size: 1.3em;
+}
+div.widget[name='home-quote-forms'] #input_sort_code {
+	width: 10%;
+}
+div.widget[name='home-quote-forms'] #input_code {
+	width: 5%;
+}

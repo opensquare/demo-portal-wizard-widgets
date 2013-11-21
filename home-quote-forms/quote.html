@@ -1,0 +1,38 @@
+<ul id="crumbTrail">
+	<li class="about">About you</li>
+	<li class="occupation">Your occupation</li>
+	<li class="cover">Your cover</li>
+	<li class="quote on">Your quote</li>
+</ul>
+<form rhinoforms="true" id="landingPage">
+	<h1>Your Quote</h1>
+	<div class="pane">
+		<p>Total premium: <span class="amount">{{//calcResult/calcElement/totalPremium}}</span></p>
+		<input type="button" rf.action="single" value="Buy"/>
+		<p class="smallprint">We can accept payment online using a debit or credit card.</p>
+	</div>
+	
+	<p>Thank you for considering us for your insurance needs.  Here is our price to insure you, as per your stated requirements.</p>
+	
+	<div class="navigation">
+		<input type="button" rf.action="back" value="Back"/>
+		<input type="button" value="Save" onclick="$('#save').toggle();"/>
+		<input type="button" rf.action="sorry" style="display:none"/>
+	</div>
+
+	<div id="save" style="display:none">
+		<p>To save your quote for later retrieval you will need to visit this url <span>http://demo.osl-cloud.com/home-quote?ref={{//calcResult/ref}}</span>.  We can help you remember this by:</p>
+		<ul>
+			<li><span>Bookmarking</span> it in this browser <a href="#">Go</a></li>
+			<li><span>Emailing</span> it to this email address: <input required/> <a href="#">Go</a></li>
+			<li><span>Texting</span> it to this mobile number: <input required/> <a href="#">Go</a></li>
+		</ul>
+	</div>
+</form>
+<script type="text/javascript">
+	rf.onFormLoad(function(){
+		if("{{//calcResult/ref}}"=="na"){
+			$("[rf\\.action=sorry]").click();
+		}
+	})
+</script>

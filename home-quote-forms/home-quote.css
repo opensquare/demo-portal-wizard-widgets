@@ -1,0 +1,21 @@
+/*forms use rq.css as base stylesheet, this is for additional styling*/
+label{
+	display: inline-block;
+	font-size: 1.2em;
+	padding: 0 1em 0 1em;
+	width: 30%;
+}
+
+label.forRadio {
+	width: auto;
+	padding-left: 0.25em;
+	font-size: 1.2em;
+}
+.occ select,
+select#input_coverType{
+	width:auto;
+}
+.occ.section .amount:before,
+.cover.section .amount:before{
+	content: '£';
+}

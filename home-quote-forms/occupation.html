@@ -1,0 +1,32 @@
+<ul id="crumbTrail">
+	<li class="about">About you</li>
+	<li class="occupation on">Your occupation</li>
+	<li class="cover">Your cover</li>
+	<li class="quote">Your quote</li>
+</ul>
+<form rhinoforms="true">
+	<div class="occ section">
+		<h1>Your Occupation</h1>
+		<div class="field">
+			<label for="input_occStatus">Type of Employment</label>
+			<select name="status" rf.source="resources/occStatus.csv" rf.validation="required" id="input_occStatus" rf.preselectFirstOption="true">
+				<option disabled selected></option>
+			</select>
+		</div>
+		<div class="field">
+			<label for="input_occupation">Occupation</label>
+			<input type="hidden" name="code" />
+			<input id="input_occupation" type="text" name="description" rf.validation="required fromSource" rf.customType="auto-complete-select({ codeFieldName: 'code' })" rf.source="http://project-demo.osl-cloud.com/resource-manager/REST/files/project-forms-resources/lists/_lists-occupationSheet.xml?transformer=xslt&xslt=/project-forms-resources/lists/occupationLookupTransformJSONmin.xsl&contentType=application%2Fjson&occupation=[value]" />
+		</div>
+		<div class="field">
+			<label for="input_salary">Salary</label>
+			<input type="text" name="salary" rf.validation="required pattern({regex: '^[0-9\.]+$' , errorMessage: 'Invalid amount'})" id="input_salary"/>
+			<span> {{//currency}}</span>
+			<div class="hint">Please enter your annual salary, leaving out any commas</div>
+		</div>
+		<div class="navigation">
+			<input type="button" id="occ_back" value="Back" rf.action="back"/>
+			<input type="button" id="occ_next" value="Next" rf.action="next"/>
+		</div>
+	</div>
+</form>

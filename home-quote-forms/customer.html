@@ -1,0 +1,101 @@
+<script type='text/javascript' src='widgets/quote-forms-common/js/address-lookup.js' ></script>
+<link rel="stylesheet" type="text/css" href="//services.postcodeanywhere.co.uk/css/captureplus-1.34.min.css?key=ut99-ca31-nt36-bt86" />
+<script type="text/javascript" src="//services.postcodeanywhere.co.uk/js/captureplus-1.34.min.js?key=ut99-ca31-nt36-bt86&app=6352"></script>
+<div id="ut99ca31nt36bt866352"></div>
+<ul id="crumbTrail">
+	<li class="about on">About you</li>
+	<li class="occupation">Your home</li>
+	<li class="cover">Your cover</li>
+	<li class="quote">Your quote</li>
+</ul>
+<form rhinoforms="true" id="customerDetails">
+	<div class="about section">
+		<h1>About You</h1>
+		<div class="field">
+			<label for="input_title">Your Name</label>
+			<select id="input_title" class="titleSelect" rf.validation="required" rf.source="../quote-forms-common/resources/titles.txt" name="title" rf.preselectFirstOption="true">
+				<option disabled selected>Title</option>
+			</select>
+			<input type="text" class="firstName" rf.validation="required" placeholder="First Name" name="firstName" id="input_firstName"/>
+			<input type="text" class="surname" rf.validation="required" placeholder="Surname" name="surname" id="input_surname"/>
+		</div>
+		<div class="field">
+			<label>Date of Birth</label>
+			<input type="text" name="dob" rf.customType="date-selects({yearStart:'#dobYrStart', yearEnd:'#dobYrEnd'})" class="dateSel"
+				   rf.validationFunction="if(!(utils.isGreaterThan(fields.age.value, 17))){error = {name: field.name, message:'You must be 18 years or older'}} else {field.validate('required date')}"/>
+			<input type="hidden" name="age" rf.calculated="{ new Date(new Date() - moment(fields.dob.value, 'DD/MM/YYYY')).getFullYear() - 1970 }" />
+			<input type="hidden" id="dobYrStart" rf.calculated="new Date().getFullYear()-18"/>
+			<input type="hidden" id="dobYrEnd" rf.calculated="new Date().getFullYear()-100"/>
+		</div>
+		<div class="field">
+			<label>Gender</label>
+			<input id="input_gender_male" type="radio" name="gender" value="Male" rf.validation="required"/>
+			<label for="input_gender_male" class="forRadio">Male</label>
+			<input id="input_gender_female" type="radio" name="gender" value="Female"/>
+			<label for="input_gender_female" class="forRadio">Female</label>
+		</div>
+		<div class="field findAddress">
+			<div class="labelWrapper">
+				<label for="input_address">Address</label>
+			</div>
+			<div class="tableWrapper">
+				<input class="addressLookup" id="input_address" type="text" placeholder="Start typing your address or postcode"/>
+			</div>
+		</div>
+		<div class="field addressFound" style="display:none">
+			<label>Your address</label>
+			<span id="addressLabel">
+				<span name="address.line1">{{address.line1}}</span>
+				<span name="address.line2">{{address.line2}}</span>
+				<span name="address.line3">{{address.line3}}</span>
+				<span name="address.line4">{{address.line4}}</span>
+				<span name="address.postcode">{{address.postcode}}</span>
+			</span>
+			<input type="hidden" name="address.line1"/>
+			<input type="hidden" name="address.line2"/>
+			<input type="hidden" name="address.line3"/>
+			<input type="hidden" name="address.line4"/>
+			<input type="hidden" name="address.postcode"/>
+			<a href="" onclick="return false" value="Change address" class="changeAddressButton">Change address</a>
+		</div>
+		<div class="field">
+			<label>Do you smoke?</label>
+			<input type="radio" name="smoke" value="S" id="input_smoke_y" rf.validation="required"/><label class="forRadio" for="input_smoke_y">Yes</label>
+			<input type="radio" name="smoke" value="N" id="input_smoke_n" rf.validation="required"/><label class="forRadio" for="input_smoke_n">No</label>
+		</div>
+		<div class="navigation">
+			<input type="button" id="about_next" value="Next" rf.action="next"/>
+		</div>
+	</div>
+	<script>
+		rf.onFormLoad(function(){
+			function completeGender(title){
+				titleGenderMap = new Object();
+				var M = '#input_gender_male';
+				var F = '#input_gender_female';
+
+				titleGenderMap['Mr'] = M;
+				titleGenderMap['Mrs'] = F;
+				titleGenderMap['Miss'] = F;
+				titleGenderMap['Ms'] = F;
+				titleGenderMap['Sir'] = M;
+				titleGenderMap['Lady'] = F;
+				titleGenderMap['Lord'] = M;
+				titleGenderMap['Dr'] = '';
+				var genderCheckbox = titleGenderMap[title];
+
+				$(genderCheckbox).attr('checked','checked'); 
+				$(genderCheckbox).siblings('.invalid-message').remove();
+			}
+
+			$("#input_title").change(function(){
+				completeGender($("#input_title option:selected").val());
+			});
+			// trigger processCalculated recalulation on dob change
+			$("[name=dob]").change(function(){
+				$("[name=age]").change();
+			});
+			new AddressLookup().init();
+		})
+	</script>
+</form>
