@@ -31,12 +31,11 @@
 						name: "next",
 						submission: {
 							preTransform: "xslt/toNapier.xsl",
-							url: "{{$napier-loadbalancer-url}}/REST/calcs",
+							url: "{{$esb-url}}/home/quote/calc",
 							data: {
 								source: "home-new-business",
 								quickSearch1: "xpath://customer/surname",
 								quickSearch2: "xpath://customer/address/postcode",
-								calcType: "xpath://product/calc",
 								calcData: "[dataDocument]"
 							},
 							method: "post",
@@ -56,7 +55,7 @@
 					{
 						name: "next",
 						submission: {
-							url: "{{$script-runner-url}}",
+							url: "{{$esb-url}}",
 							data: {
 								script: "NewBusiness/script/importNBCaseFromForms.py",
 								data: "[dataDocument]"

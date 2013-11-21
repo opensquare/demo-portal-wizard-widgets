@@ -7,9 +7,18 @@
 <form rhinoforms="true" id="landingPage">
 	<h1>Your Quote</h1>
 	<div class="pane">
+        <h2>Single Payment</h2>
 		<p>Total premium: <span class="amount">{{//calcResult/calcElement/totalPremium}}</span></p>
 		<input type="button" rf.action="single" value="Buy"/>
 		<p class="smallprint">We can accept payment online using a debit or credit card.</p>
+	</div>
+    
+    <div id="multiplePayment" class="pane">
+		<h2>Monthly Instalments</h2>
+		<p>Initial deposit: <span class="amount">{{//calcResult/calcElement/deposit}}</span></p>
+		<p>Then <span class="instalmentCount">8</span> equal payments of <span class="instalmentPremium">{{//calcResult/calcElement/instalmentPremium}}</span>.</p>
+		<input type="button" rf.action="multiple" value="Buy"/>
+		<p class="smallprint">Deposit is payable online using a debit or credit card.  Monthly instalments are taken by direct debit and will require the completion of bank details and a Direct Debit Mandate. Premium credit is provided by Model Insurer Credit Ltd.</p>
 	</div>
 	
 	<p>Thank you for considering us for your insurance needs.  Here is our price to insure you, as per your stated requirements.</p>

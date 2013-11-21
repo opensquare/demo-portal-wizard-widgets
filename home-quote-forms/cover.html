@@ -13,6 +13,12 @@
 				<option disabled selected></option>
 			</select>
 		</div>
+        
+        <div class="field">
+			<label for="input_noClaimsYears">How many years No Claims Discount do you have?</label>
+			<select id="input_noClaimsYears" name="noClaimsYears" rf.validation="required" rf.source="resources/noClaimsYears.csv" rf.preselectFirstOption="true"></select>
+		</div>
+        
 		<div class="field">
 			<label for="input_coverStart">When do you want your cover to start?</label>
 			<input id="input_coverStart" type="date" name="startDateISO" rf.validation="required date({ format: 'YYYY-MM-DD' })" 
