@@ -291,7 +291,7 @@ div.widget[name='home-quote-forms'] #crumbTrail li.occupation {
 	background-image: url('images/briefcase-light-small.png');
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.quote {
-	background-image: url('images/currency-sign-euro-light-small.png');
+	background-image: url('images/currency-sign-pound-light-small.png');
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.apply {
 	background-image: url('images/email-light-small.png');
@@ -315,7 +315,7 @@ div.widget[name='home-quote-forms'] #crumbTrail li.on.occupation:before {
 	background-image: url('images/briefcase-light.png');
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.on.quote:before {
-	background-image: url('images/currency-sign-euro-light.png');
+	background-image: url('images/currency-sign-pound-light.png');
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.apply.on:before {
 	background-image: url('images/email-light.png');
