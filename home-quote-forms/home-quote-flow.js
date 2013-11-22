@@ -11,12 +11,9 @@
 						name: "calc",
 						target: "calculating",
 						submission: {
-							url: "{{$appPath}}/calcRetrieval",
-							data: {
-								calcRef: "xpath://calcref"
-							},
+							url: "{{$esb-url}}/calc/calcdata/{{//calcref}}.xml",
 							method: "get",
-							postTransform: "",
+							postTransform: "xslt/retrieveCalc.xsl",
 							resultInsertPoint: "/"
 						}
 					}

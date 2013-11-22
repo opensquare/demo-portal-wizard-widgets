@@ -33,6 +33,10 @@
                     </xsl:choose>
                 </alarmDiscount>
             </part>
+            <part partname="additionalData">
+                <xsl:copy-of select="/quote/*[not(name()='calcRef')][not(name()='userType')]"/>
+                <calcSource>RQ</calcSource>
+            </part>
         </calcData>
     </xsl:template>
 </xsl:stylesheet>
