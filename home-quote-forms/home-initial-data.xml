@@ -8,4 +8,11 @@
 	<cover>
 		<startTime>00:00:00</startTime>
 	</cover>
+    <addon_THIS>N</addon_THIS>
+    <addon_THAT>N</addon_THAT>
+    <addon_TOTHER>N</addon_TOTHER>
+    <upgrade_B-SILVER>N</upgrade_B-SILVER>
+    <upgrade_B-AD>N</upgrade_B-AD>
+    <upgrade_C-SILVER>N</upgrade_C-SILVER>
+    <upgrade_C-AD>N</upgrade_C-AD>
 </quote>

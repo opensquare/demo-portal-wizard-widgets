@@ -8,20 +8,55 @@
 	<h1>Your Quote</h1>
 	<div class="pane">
         <h2>Single Payment</h2>
-		<p>Total premium: <span class="amount">{{//calcResult/calcElement/totalPremium}}</span></p>
+		<p>Total premium: <span class="amount" id="totalPremium">{{//calcResult/calcElement/totalPremium}}</span></p>
 		<input type="button" rf.action="single" value="Buy"/>
 		<p class="smallprint">We can accept payment online using a debit or credit card.</p>
 	</div>
     
-    <div id="multiplePayment" class="pane">
+    <!--div id="multiplePayment" class="pane">
 		<h2>Monthly Instalments</h2>
 		<p>Initial deposit: <span class="amount">{{//calcResult/calcElement/deposit}}</span></p>
 		<p>Then <span class="instalmentCount">8</span> equal payments of <span class="instalmentPremium">{{//calcResult/calcElement/instalmentPremium}}</span>.</p>
 		<input type="button" rf.action="multiple" value="Buy"/>
 		<p class="smallprint">Deposit is payable online using a debit or credit card.  Monthly instalments are taken by direct debit and will require the completion of bank details and a Direct Debit Mandate. Premium credit is provided by Model Insurer Credit Ltd.</p>
-	</div>
+	</div-->
 	
 	<p>Thank you for considering us for your insurance needs.  Here is our price to insure you, as per your stated requirements.</p>
+    <div id="buildings" class="pane" rf.includeIf="'{{//cover/type}}'.indexOf('Buildings') != -1">
+        <h2>Buildings</h2>
+        <p>Buildings Premium: <span class="amount" id="buildingsPremium">{{//calcResult/calcElement/calcElement[@partname='buildings']/premium}}</span></p>
+        <rf.forEach select="//calcResult/calcElement/calcElement[@partname='buildings']/calcElement[starts-with(@partname, 'upgrade')]" as="upgrade">
+            <div class="field">
+			<label>{{upgrade.upgradeName}} {{upgrade.upgradePremium}}</label>
+                <input type="radio" name="upgrade_{{upgrade.rateKey}}" value="Y" id="input_{{upgrade.upgradeName}}_y" rf.validation="required" onchange="updatePremiums(this.checked, {{upgrade.upgradePremium}} , $('#buildingsPremium,#totalPremium'))"/><label class="forRadio" for="input_{{upgrade.upgradeName}}_y">Yes</label>
+                <input type="radio" name="upgrade_{{upgrade.rateKey}}" value="N" id="input_{{upgrade.upgradeName}}_n" rf.validation="required" onchange="updatePremiums(!this.checked, {{upgrade.upgradePremium}} , $('#buildingsPremium,#totalPremium'))"/><label class="forRadio" for="input_{{upgrade.upgradeName}}_n">No</label>
+            </div>
+        </rf.forEach>
+    </div>
+    
+    <div id="contents" class="pane" rf.includeIf="'{{//cover/type}}'.indexOf('Contents') != -1">
+        <h2>Contents</h2>
+        <p>Contents Premium: <span class="amount" id="contentsPremium">{{//calcResult/calcElement/calcElement[@partname='contents']/premium}}</span></p>
+        <rf.forEach select="//calcResult/calcElement/calcElement[@partname='contents']/calcElement[starts-with(@partname, 'upgrade')]" as="upgrade">
+            <div class="field">
+			<label>{{upgrade.upgradeName}} {{upgrade.upgradePremium}}</label>
+                <input type="radio" name="upgrade_{{upgrade.rateKey}}" value="Y" id="input_{{upgrade.upgradeName}}_y" rf.validation="required" onchange="updatePremiums(this.checked, {{upgrade.upgradePremium}} , $('#contentsPremium,#totalPremium'))"/><label class="forRadio" for="input_{{upgrade.upgradeName}}_y">Yes</label>
+                <input type="radio" name="upgrade_{{upgrade.rateKey}}" value="N" id="input_{{upgrade.upgradeName}}_n" rf.validation="required" onchange="updatePremiums(!this.checked, {{upgrade.upgradePremium}} , $('#contentsPremium,#totalPremium'))"/><label class="forRadio" for="input_{{upgrade.upgradeName}}_n">No</label>
+            </div>
+        </rf.forEach>
+    </div>
+    
+    <div id="addons" class="pane">
+        <h2>Addons</h2>
+        <p>Addons Premium: <span class="amount" id="addonsPremium">0.00</span></p>
+        <rf.forEach select="//calcResult/calcElement/calcElement[starts-with(@partname, 'addon')]" as="addon">
+            <div class="field">
+			<label>{{addon.addonName}} {{addon.addonPremium}}</label>
+                <input type="radio" name="addon_{{addon.rateKey}}" value="Y" id="input_{{addon.addonName}}_y" rf.validation="required" onchange="updatePremiums(this.checked, {{addon.addonPremium}} , $('#addonsPremium,#totalPremium'))"/><label class="forRadio" for="input_{{addon.addonName}}_y">Yes</label>
+                <input type="radio" name="addon_{{addon.rateKey}}" value="N" id="input_{{addon.addonName}}_n" rf.validation="required" onchange="updatePremiums(!this.checked, {{addon.addonPremium}} , $('#addonsPremium,#totalPremium'))"/><label class="forRadio" for="input_{{addon.addonName}}_n">No</label>
+            </div>
+        </rf.forEach>
+    </div>
 	
 	<div class="navigation">
 		<input type="button" rf.action="back" value="Back"/>
@@ -43,5 +78,22 @@
 		if("{{//calcResult/ref}}"=="na"){
 			$("[rf\\.action=sorry]").click();
 		}
-	})
+	});
+    
+    function updatePremiums(add, premium, $targets){
+        console.log($targets);
+        $targets.each(function(){
+            var $this = $(this);
+            console.log($this);
+            var existingPremium = $this.html();
+            existingPremium = existingPremium.replace(",", "");
+            var newPremium;
+            if(add){
+                newPremium = (existingPremium * 1) + premium;
+            }else{
+                newPremium = (existingPremium * 1) - premium;
+            }
+            $this.html((newPremium).toFixed(2));
+        })
+    }
 </script>

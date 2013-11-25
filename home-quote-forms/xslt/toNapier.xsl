@@ -4,6 +4,7 @@
     <xsl:template match="/">
         <calcData xmlns="">
             <debug>false</debug>
+            <xsl:if test="/quote/cover/type = 'Buildings And Contents' or /quote/cover/type = 'Buildings Only'">
             <part partname="buildings">
                 <NCDYears>
                     <xsl:value-of select="/quote/cover/noClaimsYears"/>
@@ -13,7 +14,19 @@
                 </Age>
                 <VolExcess>50</VolExcess>
                 <SumInsured>475000</SumInsured>
+                <part partname="upgrade">
+                    <rateKey>B-SILVER</rateKey>
+                    <upgradeName>Silver</upgradeName>
+                    <selected>false</selected>
+                </part>
+                <part partname="upgrade">
+                    <rateKey>B-AD</rateKey>
+                    <upgradeName>Accidental Damage</upgradeName>
+                    <selected>false</selected>
+                </part>
             </part>
+            </xsl:if>
+            <xsl:if test="/quote/cover/type = 'Buildings And Contents' or /quote/cover/type = 'Contents Only'">
             <part partname="contents">
                 <NCDYears>
                     <xsl:value-of select="/quote/cover/noClaimsYears"/>
@@ -32,6 +45,32 @@
                         <xsl:otherwise>0</xsl:otherwise>
                     </xsl:choose>
                 </alarmDiscount>
+                <part partname="upgrade">
+                    <rateKey>C-SILVER</rateKey>
+                    <upgradeName>Silver</upgradeName>
+                    <selected>false</selected>
+                </part>
+                <part partname="upgrade">
+                    <rateKey>C-AD</rateKey>
+                    <upgradeName>Accidental Damage</upgradeName>
+                    <selected>false</selected>
+                </part>
+            </part>
+            </xsl:if>
+            <part partname="addon">
+                <rateKey>THIS</rateKey>
+                <addonName>This</addonName>
+                <selected>false</selected>
+            </part>
+            <part partname="addon">
+                <rateKey>THAT</rateKey>
+                <addonName>That</addonName>
+                <selected>false</selected>
+            </part>
+            <part partname="addon">
+                <rateKey>TOTHER</rateKey>
+                <addonName>The Other</addonName>
+                <selected>false</selected>
             </part>
             <part partname="additionalData">
                 <xsl:copy-of select="/quote/*[not(name()='calcRef')][not(name()='userType')]"/>
