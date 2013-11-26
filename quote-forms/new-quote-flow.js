@@ -11,7 +11,7 @@
                         name: "calc",
                         target: "calculating",
                         submission: {
-							url: "{{$esb-url}}/resource/calc/calcdata/{{//calcref}}.xml",
+							url: "{{$esb-url}}/calc/calcdata/{{//calcref}}.xml",
 							method: "get",
 							postTransform: "xslt/retrieveCalc.xsl",
 							resultInsertPoint: "/"
