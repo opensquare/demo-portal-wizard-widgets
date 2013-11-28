@@ -22,7 +22,7 @@
 		<div class="field">
 			<label>Date of Birth</label>
 			<input type="text" name="dob" rf.customType="date-selects({yearStart:'#dobYrStart', yearEnd:'#dobYrEnd'})" class="dateSel"
-				   rf.validationFunction="if(!(utils.isGreaterThan(fields.age.value, 17))){error = {name: field.name, message:'You must be 18 years or older'}} else {field.validate('required date')}"/>
+			       rf.validationFunction="if(!(utils.isGreaterThan(fields.age.value, 17))){error = {name: field.name, message:'You must be 18 years or older'}} else {field.validate('required date')}"/>
 			<input type="hidden" name="age" rf.calculated="{ new Date(new Date() - moment(fields.dob.value, 'DD/MM/YYYY')).getFullYear() - 1970 }" />
 			<input type="hidden" id="dobYrStart" rf.calculated="new Date().getFullYear()-18"/>
 			<input type="hidden" id="dobYrEnd" rf.calculated="new Date().getFullYear()-100"/>

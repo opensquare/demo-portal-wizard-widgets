@@ -4,42 +4,43 @@
 	<li class="cover on">Your cover</li>
 	<li class="quote">Your quote</li>
 </ul>
-<form rhinoforms="true">
-	<div class="cover section">
-		<h1>Your Cover</h1>
-		<div class="field">
-			<label for="input_coverType">Cover Type</label>
-			<select name="type" id="input_coverType" rf.validation="required" rf.source="resources/coverType.csv" rf.preselectFirstOption="true">
-				<option disabled selected></option>
-			</select>
-		</div>
-        
-        <div class="field">
-			<label for="input_noClaimsYears">How many years No Claims Discount do you have?</label>
-			<select id="input_noClaimsYears" name="noClaimsYears" rf.validation="required" rf.source="resources/noClaimsYears.csv" rf.preselectFirstOption="true"></select>
-		</div>
-        
-		<div class="field">
-			<label for="input_coverStart">When do you want your cover to start?</label>
-			<input id="input_coverStart" type="date" name="startDateISO" rf.validation="required date({ format: 'YYYY-MM-DD' })" 
-				   rf.initialValue="if('{{startDate}}' !== '') {new moment('{{startDate}}').format('YYYY-MM-DD')}"/>
-			<input type="hidden" name="startDate" rf.validation="required date({ format: 'DD/MM/YYYY' })" rf.calculated="if (fields.startDateISO.value !=='') {new moment(fields.startDateISO.value).format('DD/MM/YYYY');}"/>
-		</div>
-		
-		<div class="navigation">
-			<input type="button" id="cover_back" value="Back" rf.action="back"/>
-			<input type="button" id="cover_next" value="Next" rf.action="next"/>
-		</div>
-	</div>
-	<script>
-		rf.onFormLoad(function(){
-			// retrigger start date rf.calculated after initial value is set
-			$("#input_coverStart").change();
-		})
+<form rhinoforms="true" id="landingPage">
+	<h1>Your Cover</h1>
+	
+    <rf.forEach select="//products/product" as="product">
+    
+    <div id="contents" class="pane">
+        <h2><input type="radio" name="selectedProduct" value="{{product.name}}" id="input_{{product.name}}" rf.validation="required"/><label class="forRadio" for="input_{{product.name}}">{{product.name}}</label></h2>
+        <p>Premium: <span class="amount" id="contentsPremium">{{product.calc//totalPremium}}</span></p>
+        <hr/>
+        <div class="coverPart">Basic Buildings</div>
+        <div class="coverPart">Basic Contents</div>
+        <rf.forEach select="./included/*/upgrade" as="upgrade">
+            <div class="coverPart upgrade">{{upgrade.name}}</div>
+        </rf.forEach>
+        <rf.forEach select="./included/addons/addon" as="addon">
+            <div class="coverPart addon">{{addon.name}}</div>
+        </rf.forEach>
+        <hr/>
+        <input type="button" value="Select" onclick="selectProduct('{{product.name}}')"/>
+    </div>
+    
+    </rf.forEach>
+	
+	<div class="navigation">
+        <input type="button" id="cover_back" value="Back" rf.action="back"/>
+        <input type="button" id="cover_next" value="Next" rf.action="next"/>
+    </div>
 
-		/* Restrict and default HTML date tag */
-		$('#input_coverStart').attr("value", moment().format("YYYY-MM-DD"));
-		$('#input_coverStart').attr("max", moment().add('days', 29).format("YYYY-MM-DD"));
-		$('#input_coverStart').attr("min", moment().format("YYYY-MM-DD"));
-	</script>
 </form>
+<script type="text/javascript">
+	rf.onFormLoad(function(){
+		if("{{//calcResult/ref}}"=="na"){
+			$("[rf\\.action=sorry]").click();
+		}
+	});
+    
+    function selectProduct(productName){
+        $("input[name=selectedProduct][value='" + productName + "']").attr('checked', 'checked');
+    }
+</script>

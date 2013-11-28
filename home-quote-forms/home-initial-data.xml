@@ -1,18 +1,138 @@
 <quote>
-	<currency>GBP</currency>
-	<product>
-		
-	</product>
-	<customer>
-	</customer>
-	<cover>
-		<startTime>00:00:00</startTime>
-	</cover>
-    <addon_THIS>N</addon_THIS>
-    <addon_THAT>N</addon_THAT>
-    <addon_TOTHER>N</addon_TOTHER>
-    <upgrade_B-SILVER>N</upgrade_B-SILVER>
-    <upgrade_B-AD>N</upgrade_B-AD>
-    <upgrade_C-SILVER>N</upgrade_C-SILVER>
-    <upgrade_C-AD>N</upgrade_C-AD>
+    <currency>GBP</currency>
+    <cover>
+        <startTime>00:00:00</startTime>
+    </cover>
+    <selectedProduct>Brilliant Basics</selectedProduct>
+    <products>
+        <product>
+            <name>Brilliant Basics</name>
+            <included>
+                <buildings>
+                    <upgrade>
+                        <name>Buildings Accidental Damage</name>
+                        <rateKey>B-AD</rateKey>
+                    </upgrade>
+                </buildings>
+                <contents>
+                    <upgrade>
+                        <name>Contents Accidental Damage</name>
+                        <rateKey>C-AD</rateKey>
+                    </upgrade>
+                </contents>
+                <addons>
+                    <addon>
+                        <name>This</name>
+                        <rateKey>THIS</rateKey>
+                    </addon>
+                </addons>
+            </included>
+            <optional>
+                <buildings>
+                    <upgrade>
+                        <name>Buildings Silver</name>
+                        <rateKey>B-SILVER</rateKey>
+                    </upgrade>
+                </buildings>
+                <contents>
+                    <upgrade>
+                        <name>Contents Silver</name>
+                        <rateKey>C-SILVER</rateKey>
+                    </upgrade>
+                </contents>
+                <addons>
+                    <addon>
+                        <name>That</name>
+                        <rateKey>THAT</rateKey>
+                    </addon>
+                </addons>
+            </optional>
+        </product>
+        <product>
+            <name>More Than</name>
+            <included>
+                <buildings>
+                    <upgrade>
+                        <name>Buildings Accidental Damage</name>
+                        <rateKey>B-AD</rateKey>
+                    </upgrade>
+                </buildings>
+                <contents>
+                    <upgrade>
+                        <name>Contents Accidental Damage</name>
+                        <rateKey>C-AD</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Contents Silver</name>
+                        <rateKey>C-SILVER</rateKey>
+                    </upgrade>
+                </contents>
+                <addons>
+                    <addon>
+                        <name>This</name>
+                        <rateKey>THIS</rateKey>
+                    </addon>
+                    <addon>
+                        <name>That</name>
+                        <rateKey>THAT</rateKey>
+                    </addon>
+                </addons>
+            </included>
+            <optional>
+                <buildings>
+                    <upgrade>
+                        <name>Buildings Silver</name>
+                        <rateKey>B-SILVER</rateKey>
+                    </upgrade>
+                </buildings>
+                <addons>
+                    <addon>
+                        <name>The Other</name>
+                        <rateKey>TOTHER</rateKey>
+                    </addon>
+                </addons>
+            </optional>
+        </product>
+        <product>
+            <name>Moreness</name>
+            <included>
+                <buildings>
+                    <upgrade>
+                        <name>Buildings Accidental Damage</name>
+                        <rateKey>B-AD</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Buildings Silver</name>
+                        <rateKey>B-SILVER</rateKey>
+                    </upgrade>
+                </buildings>
+                <contents>
+                    <upgrade>
+                        <name>Contents Accidental Damage</name>
+                        <rateKey>C-AD</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Contents Silver</name>
+                        <rateKey>C-SILVER</rateKey>
+                    </upgrade>
+                </contents>
+                <addons>
+                    <addon>
+                        <name>This</name>
+                        <rateKey>THIS</rateKey>
+                    </addon>
+                    <addon>
+                        <name>That</name>
+                        <rateKey>THAT</rateKey>
+                    </addon>
+                    <addon>
+                        <name>The Other</name>
+                        <rateKey>TOTHER</rateKey>
+                    </addon>
+                </addons>
+            </included>
+            <optional>
+            </optional>
+        </product>
+    </products>
 </quote>

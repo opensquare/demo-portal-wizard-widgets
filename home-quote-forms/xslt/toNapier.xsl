@@ -4,7 +4,6 @@
     <xsl:template match="/">
         <calcData xmlns="">
             <debug>false</debug>
-            <xsl:if test="/quote/cover/type = 'Buildings And Contents' or /quote/cover/type = 'Buildings Only'">
             <part partname="buildings">
                 <NCDYears>
                     <xsl:value-of select="/quote/cover/noClaimsYears"/>
@@ -14,19 +13,13 @@
                 </Age>
                 <VolExcess>50</VolExcess>
                 <SumInsured>475000</SumInsured>
-                <part partname="upgrade">
-                    <rateKey>B-SILVER</rateKey>
-                    <upgradeName>Silver</upgradeName>
-                    <selected>false</selected>
-                </part>
-                <part partname="upgrade">
-                    <rateKey>B-AD</rateKey>
-                    <upgradeName>Accidental Damage</upgradeName>
-                    <selected>false</selected>
-                </part>
+                <xsl:apply-templates select="/quote/products/product[not(calc)][1]/included/buildings/upgrade">
+                    <xsl:with-param name="selected">true</xsl:with-param>
+                </xsl:apply-templates>
+                <xsl:apply-templates select="/quote/products/product[not(calc)][1]/optional/buildings/upgrade">
+                    <xsl:with-param name="selected">false</xsl:with-param>
+                </xsl:apply-templates>
             </part>
-            </xsl:if>
-            <xsl:if test="/quote/cover/type = 'Buildings And Contents' or /quote/cover/type = 'Contents Only'">
             <part partname="contents">
                 <NCDYears>
                     <xsl:value-of select="/quote/cover/noClaimsYears"/>
@@ -45,37 +38,47 @@
                         <xsl:otherwise>0</xsl:otherwise>
                     </xsl:choose>
                 </alarmDiscount>
-                <part partname="upgrade">
-                    <rateKey>C-SILVER</rateKey>
-                    <upgradeName>Silver</upgradeName>
-                    <selected>false</selected>
-                </part>
-                <part partname="upgrade">
-                    <rateKey>C-AD</rateKey>
-                    <upgradeName>Accidental Damage</upgradeName>
-                    <selected>false</selected>
-                </part>
+                <xsl:apply-templates select="/quote/products/product[not(calc)][1]/included/contents/upgrade">
+                    <xsl:with-param name="selected">true</xsl:with-param>
+                </xsl:apply-templates>
+                <xsl:apply-templates select="/quote/products/product[not(calc)][1]/optional/contents/upgrade">
+                    <xsl:with-param name="selected">false</xsl:with-param>
+                </xsl:apply-templates>
             </part>
-            </xsl:if>
-            <part partname="addon">
-                <rateKey>THIS</rateKey>
-                <addonName>This</addonName>
-                <selected>false</selected>
-            </part>
-            <part partname="addon">
-                <rateKey>THAT</rateKey>
-                <addonName>That</addonName>
-                <selected>false</selected>
-            </part>
-            <part partname="addon">
-                <rateKey>TOTHER</rateKey>
-                <addonName>The Other</addonName>
-                <selected>false</selected>
-            </part>
+            <xsl:apply-templates select="/quote/products/product[not(calc)][1]/included/addons/addon">
+                    <xsl:with-param name="selected">true</xsl:with-param>
+                </xsl:apply-templates>
+                <xsl:apply-templates select="/quote/products/product[not(calc)][1]/optional/addons/addon">
+                    <xsl:with-param name="selected">false</xsl:with-param>
+                </xsl:apply-templates>
             <part partname="additionalData">
                 <xsl:copy-of select="/quote/*[not(name()='calcRef')][not(name()='userType')]"/>
                 <calcSource>RQ</calcSource>
             </part>
         </calcData>
+    </xsl:template>
+    <xsl:template match="upgrade">
+        <xsl:param name="selected"/>
+        <part partname="upgrade">
+            <rateKey>
+                <xsl:value-of select="rateKey"/>
+            </rateKey>
+            <upgradeName>
+                <xsl:value-of select="name"/>
+            </upgradeName>
+            <selected><xsl:value-of select="$selected"/></selected>
+        </part>
+    </xsl:template>
+    <xsl:template match="addon">
+        <xsl:param name="selected"/>
+        <part partname="addon">
+            <rateKey>
+                <xsl:value-of select="rateKey"/>
+            </rateKey>
+            <addonName>
+                <xsl:value-of select="name"/>
+            </addonName>
+            <selected><xsl:value-of select="$selected"/></selected>
+        </part>
     </xsl:template>
 </xsl:stylesheet>

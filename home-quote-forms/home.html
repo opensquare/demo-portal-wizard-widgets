@@ -50,9 +50,36 @@
 			<input type="radio" name="pets" value="S" id="input_pets_y" rf.validation="required"/><label class="forRadio" for="input_pets_y">Yes</label>
 			<input type="radio" name="pets" value="N" id="input_pets_n" rf.validation="required"/><label class="forRadio" for="input_pets_n">No</label>
 		</div>
+	</div>
+    <div class="cover section">
+		<h1>Your Cover</h1>
+        
+        <div class="field">
+			<label for="input_noClaimsYears">How many years No Claims Discount do you have?</label>
+			<select id="input_noClaimsYears" name="noClaimsYears" rf.validation="required" rf.source="resources/noClaimsYears.csv" rf.preselectFirstOption="true"></select>
+		</div>
+        
+		<div class="field">
+			<label for="input_coverStart">When do you want your cover to start?</label>
+			<input id="input_coverStart" type="date" name="startDateISO" rf.validation="required date({ format: 'YYYY-MM-DD' })" 
+				   rf.initialValue="if('{{startDate}}' !== '') {new moment('{{startDate}}').format('YYYY-MM-DD')}"/>
+			<input type="hidden" name="startDate" rf.validation="required date({ format: 'DD/MM/YYYY' })" rf.calculated="if (fields.startDateISO.value !=='') {new moment(fields.startDateISO.value).format('DD/MM/YYYY');}"/>
+		</div>
+		
 		<div class="navigation">
-			<input type="button" id="home_back" value="Back" rf.action="back"/>
-			<input type="button" id="home_next" value="Next" rf.action="next"/>
+			<input type="button" id="cover_back" value="Back" rf.action="back"/>
+			<input type="button" id="cover_next" value="Next" rf.action="next"/>
 		</div>
 	</div>
+	<script>
+		rf.onFormLoad(function(){
+			// retrigger start date rf.calculated after initial value is set
+			$("#input_coverStart").change();
+		})
+
+		/* Restrict and default HTML date tag */
+		$('#input_coverStart').attr("value", moment().format("YYYY-MM-DD"));
+		$('#input_coverStart').attr("max", moment().add('days', 29).format("YYYY-MM-DD"));
+		$('#input_coverStart').attr("min", moment().format("YYYY-MM-DD"));
+	</script>
 </form>
