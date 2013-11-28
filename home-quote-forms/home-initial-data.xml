@@ -10,40 +10,60 @@
             <included>
                 <buildings>
                     <upgrade>
-                        <name>Buildings Accidental Damage</name>
+                        <name>Locks And Keys</name>
+                        <rateKey>B-LOCKS</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Home Emergency</name>
+                        <rateKey>B-EMERGENCY</rateKey>
+                    </upgrade>
+                </buildings>
+                <contents>
+                    <upgrade>
+                        <name>Freezer Food</name>
+                        <rateKey>C-FREEZER</rateKey>
+                    </upgrade>
+                </contents>
+            </included>
+            <optional>
+                <buildings>
+                    <upgrade>
+                        <name>Buildings Full Accidental Damage</name>
                         <rateKey>B-AD</rateKey>
                     </upgrade>
                 </buildings>
                 <contents>
                     <upgrade>
-                        <name>Contents Accidental Damage</name>
+                        <name>Contents Full Accidental Damage</name>
                         <rateKey>C-AD</rateKey>
                     </upgrade>
+                    <upgrade>
+                        <name>Student Cover</name>
+                        <rateKey>C-STUDENT</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Personal Possessions</name>
+                        <rateKey>C-PP</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Portable Tech</name>
+                        <rateKey>C-PORTABLE</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Bikes</name>
+                        <rateKey>C-BIKES</rateKey>
+                    </upgrade>
                 </contents>
                 <addons>
                     <addon>
-                        <name>This</name>
-                        <rateKey>THIS</rateKey>
+                        <name>Legal</name>
+                        <rateKey>LEGAL</rateKey>
                     </addon>
                 </addons>
-            </included>
-            <optional>
-                <buildings>
-                    <upgrade>
-                        <name>Buildings Silver</name>
-                        <rateKey>B-SILVER</rateKey>
-                    </upgrade>
-                </buildings>
-                <contents>
-                    <upgrade>
-                        <name>Contents Silver</name>
-                        <rateKey>C-SILVER</rateKey>
-                    </upgrade>
-                </contents>
                 <addons>
                     <addon>
-                        <name>That</name>
-                        <rateKey>THAT</rateKey>
+                        <name>Garden Cover</name>
+                        <rateKey>GARDEN</rateKey>
                     </addon>
                 </addons>
             </optional>
@@ -53,42 +73,76 @@
             <included>
                 <buildings>
                     <upgrade>
-                        <name>Buildings Accidental Damage</name>
+                        <name>Locks And Keys</name>
+                        <rateKey>B-LOCKS</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Home Emergency</name>
+                        <rateKey>B-EMERGENCY</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Buildings Upgrade</name>
+                        <rateKey>B-UPGRADE</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Buildings Partial Accidental Damage</name>
+                        <rateKey>B-PARTIAL-AD</rateKey>
+                    </upgrade>
+                </buildings>
+                <contents>
+                    <upgrade>
+                        <name>Freezer Food</name>
+                        <rateKey>C-FREEZER</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Contents Upgrade</name>
+                        <rateKey>C-UPGRADE</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Contents Partial Accidental Damage</name>
+                        <rateKey>C-PARTIAL-AD</rateKey>
+                    </upgrade>
+                </contents>
+            </included>
+            <optional>
+                <buildings>
+                    <upgrade>
+                        <name>Buildings Full Accidental Damage</name>
                         <rateKey>B-AD</rateKey>
                     </upgrade>
                 </buildings>
                 <contents>
                     <upgrade>
-                        <name>Contents Accidental Damage</name>
+                        <name>Contents Full Accidental Damage</name>
                         <rateKey>C-AD</rateKey>
                     </upgrade>
                     <upgrade>
-                        <name>Contents Silver</name>
-                        <rateKey>C-SILVER</rateKey>
+                        <name>Student Cover</name>
+                        <rateKey>C-STUDENT</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Personal Possessions</name>
+                        <rateKey>C-PP</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Bikes</name>
+                        <rateKey>C-BIKES</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Portable Tech</name>
+                        <rateKey>C-PORTABLE</rateKey>
                     </upgrade>
                 </contents>
                 <addons>
                     <addon>
-                        <name>This</name>
-                        <rateKey>THIS</rateKey>
-                    </addon>
-                    <addon>
-                        <name>That</name>
-                        <rateKey>THAT</rateKey>
+                        <name>Legal</name>
+                        <rateKey>LEGAL</rateKey>
                     </addon>
                 </addons>
-            </included>
-            <optional>
-                <buildings>
-                    <upgrade>
-                        <name>Buildings Silver</name>
-                        <rateKey>B-SILVER</rateKey>
-                    </upgrade>
-                </buildings>
                 <addons>
                     <addon>
-                        <name>The Other</name>
-                        <rateKey>TOTHER</rateKey>
+                        <name>Garden Cover</name>
+                        <rateKey>GARDEN</rateKey>
                     </addon>
                 </addons>
             </optional>
@@ -98,40 +152,70 @@
             <included>
                 <buildings>
                     <upgrade>
-                        <name>Buildings Accidental Damage</name>
-                        <rateKey>B-AD</rateKey>
+                        <name>Locks And Keys</name>
+                        <rateKey>B-LOCKS</rateKey>
                     </upgrade>
                     <upgrade>
-                        <name>Buildings Silver</name>
-                        <rateKey>B-SILVER</rateKey>
+                        <name>Home Emergency</name>
+                        <rateKey>B-EMERGENCY</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Buildings Upgrade</name>
+                        <rateKey>B-UPGRADE</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Buildings Full Accidental Damage</name>
+                        <rateKey>B-AD</rateKey>
                     </upgrade>
                 </buildings>
                 <contents>
                     <upgrade>
-                        <name>Contents Accidental Damage</name>
+                        <name>Freezer Food</name>
+                        <rateKey>C-FREEZER</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Contents Upgrade</name>
+                        <rateKey>C-UPGRADE</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Contents Full Accidental Damage</name>
                         <rateKey>C-AD</rateKey>
                     </upgrade>
                     <upgrade>
-                        <name>Contents Silver</name>
-                        <rateKey>C-SILVER</rateKey>
+                        <name>Personal Possessions</name>
+                        <rateKey>C-PP</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Portable Tech</name>
+                        <rateKey>C-PORTABLE</rateKey>
+                    </upgrade>
+                </contents>
+                <addons>
+                    <addons>
+                        <addon>
+                            <name>Garden Cover</name>
+                            <rateKey>GARDEN</rateKey>
+                        </addon>
+                    </addons>
+                </addons>
+            </included>
+            <optional>
+                <contents>
+                    <upgrade>
+                        <name>Student Cover</name>
+                        <rateKey>C-STUDENT</rateKey>
+                    </upgrade>
+                    <upgrade>
+                        <name>Bikes</name>
+                        <rateKey>C-BIKES</rateKey>
                     </upgrade>
                 </contents>
                 <addons>
                     <addon>
-                        <name>This</name>
-                        <rateKey>THIS</rateKey>
-                    </addon>
-                    <addon>
-                        <name>That</name>
-                        <rateKey>THAT</rateKey>
-                    </addon>
-                    <addon>
-                        <name>The Other</name>
-                        <rateKey>TOTHER</rateKey>
+                        <name>Legal</name>
+                        <rateKey>LEGAL</rateKey>
                     </addon>
                 </addons>
-            </included>
-            <optional>
             </optional>
         </product>
     </products>
