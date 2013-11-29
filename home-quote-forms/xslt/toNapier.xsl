@@ -6,7 +6,7 @@
             <debug>false</debug>
             <part partname="buildings">
                 <NCDYears>
-                    <xsl:value-of select="/quote/cover/noClaimsYears"/>
+                    <xsl:value-of select="/quote/home/noClaimsYears"/>
                 </NCDYears>
                 <Age>
                     <xsl:value-of select="/quote/customer/age"/>
@@ -22,7 +22,7 @@
             </part>
             <part partname="contents">
                 <NCDYears>
-                    <xsl:value-of select="/quote/cover/noClaimsYears"/>
+                    <xsl:value-of select="/quote/home/noClaimsYears"/>
                 </NCDYears>
                 <Age>
                     <xsl:value-of select="/quote/customer/age"/>
