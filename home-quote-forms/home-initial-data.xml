@@ -9,19 +9,24 @@
             <name>Brilliant Basics</name>
             <included>
                 <buildings>
+                    <limit>400,000</limit>
                     <upgrade>
                         <name>Locks And Keys</name>
                         <rateKey>B-LOCKS</rateKey>
+                        <limit>500</limit>
                     </upgrade>
                     <upgrade>
                         <name>Home Emergency</name>
                         <rateKey>B-EMERGENCY</rateKey>
+                        <limit>200</limit>
                     </upgrade>
                 </buildings>
                 <contents>
+                    <limit>50,000</limit>
                     <upgrade>
                         <name>Freezer Food</name>
                         <rateKey>C-FREEZER</rateKey>
+                        <limit>250</limit>
                     </upgrade>
                 </contents>
             </included>
@@ -40,30 +45,36 @@
                     <upgrade>
                         <name>Student Cover</name>
                         <rateKey>C-STUDENT</rateKey>
+                        <limit>3,000</limit>
                     </upgrade>
                     <upgrade>
                         <name>Personal Possessions</name>
                         <rateKey>C-PP</rateKey>
+                        <limit>10,000</limit>
                     </upgrade>
                     <upgrade>
                         <name>Portable Tech</name>
                         <rateKey>C-PORTABLE</rateKey>
+                        <limit>1,000</limit>
                     </upgrade>
                     <upgrade>
                         <name>Bikes</name>
                         <rateKey>C-BIKES</rateKey>
+                        <limit>1,500</limit>
                     </upgrade>
                 </contents>
                 <addons>
                     <addon>
                         <name>Legal</name>
                         <rateKey>LEGAL</rateKey>
+                        <limit>50,000</limit>
                     </addon>
                 </addons>
                 <addons>
                     <addon>
                         <name>Garden Cover</name>
                         <rateKey>GARDEN</rateKey>
+                        <limit>2,000</limit>
                     </addon>
                 </addons>
             </optional>
@@ -72,17 +83,21 @@
             <name>More Than</name>
             <included>
                 <buildings>
+                    <limit>500,000</limit>
                     <upgrade>
                         <name>Locks And Keys</name>
                         <rateKey>B-LOCKS</rateKey>
+                        <limit>500</limit>
                     </upgrade>
                     <upgrade>
                         <name>Home Emergency</name>
                         <rateKey>B-EMERGENCY</rateKey>
+                        <limit>200</limit>
                     </upgrade>
                     <upgrade>
                         <name>Buildings Upgrade</name>
                         <rateKey>B-UPGRADE</rateKey>
+                        <limit>5,000</limit>
                     </upgrade>
                     <upgrade>
                         <name>Buildings Partial Accidental Damage</name>
@@ -90,13 +105,16 @@
                     </upgrade>
                 </buildings>
                 <contents>
+                    <limit>75,000</limit>
                     <upgrade>
                         <name>Freezer Food</name>
                         <rateKey>C-FREEZER</rateKey>
+                        <limit>250</limit>
                     </upgrade>
                     <upgrade>
                         <name>Contents Upgrade</name>
                         <rateKey>C-UPGRADE</rateKey>
+                        <limit>5,000</limit>
                     </upgrade>
                     <upgrade>
                         <name>Contents Partial Accidental Damage</name>
@@ -119,30 +137,36 @@
                     <upgrade>
                         <name>Student Cover</name>
                         <rateKey>C-STUDENT</rateKey>
+                        <limit>3,000</limit>
                     </upgrade>
                     <upgrade>
                         <name>Personal Possessions</name>
                         <rateKey>C-PP</rateKey>
+                        <limit>20,000</limit>
                     </upgrade>
                     <upgrade>
                         <name>Bikes</name>
                         <rateKey>C-BIKES</rateKey>
+                        <limit>1,500</limit>
                     </upgrade>
                     <upgrade>
                         <name>Portable Tech</name>
                         <rateKey>C-PORTABLE</rateKey>
+                        <limit>1,000</limit>
                     </upgrade>
                 </contents>
                 <addons>
                     <addon>
                         <name>Legal</name>
                         <rateKey>LEGAL</rateKey>
+                        <limit>50,000</limit>
                     </addon>
                 </addons>
                 <addons>
                     <addon>
                         <name>Garden Cover</name>
                         <rateKey>GARDEN</rateKey>
+                        <limit>3,000</limit>
                     </addon>
                 </addons>
             </optional>
@@ -151,17 +175,21 @@
             <name>Moreness</name>
             <included>
                 <buildings>
+                    <limit>1,000,000</limit>
                     <upgrade>
                         <name>Locks And Keys</name>
                         <rateKey>B-LOCKS</rateKey>
+                        <limit>500</limit>
                     </upgrade>
                     <upgrade>
                         <name>Home Emergency</name>
                         <rateKey>B-EMERGENCY</rateKey>
+                        <limit>1,000</limit>
                     </upgrade>
                     <upgrade>
                         <name>Buildings Upgrade</name>
                         <rateKey>B-UPGRADE</rateKey>
+                        <limit>5,000</limit>
                     </upgrade>
                     <upgrade>
                         <name>Buildings Full Accidental Damage</name>
@@ -169,13 +197,16 @@
                     </upgrade>
                 </buildings>
                 <contents>
+                    <limit>100,000</limit>
                     <upgrade>
                         <name>Freezer Food</name>
                         <rateKey>C-FREEZER</rateKey>
+                        <limit>250</limit>
                     </upgrade>
                     <upgrade>
                         <name>Contents Upgrade</name>
                         <rateKey>C-UPGRADE</rateKey>
+                        <limit>5,000</limit>
                     </upgrade>
                     <upgrade>
                         <name>Contents Full Accidental Damage</name>
@@ -184,10 +215,12 @@
                     <upgrade>
                         <name>Personal Possessions</name>
                         <rateKey>C-PP</rateKey>
+                        <limit>20,000</limit>
                     </upgrade>
                     <upgrade>
                         <name>Portable Tech</name>
                         <rateKey>C-PORTABLE</rateKey>
+                        <limit>1,000</limit>
                     </upgrade>
                 </contents>
                 <addons>
@@ -195,6 +228,7 @@
                         <addon>
                             <name>Garden Cover</name>
                             <rateKey>GARDEN</rateKey>
+                            <limit>2,000</limit>
                         </addon>
                     </addons>
                 </addons>
@@ -204,16 +238,19 @@
                     <upgrade>
                         <name>Student Cover</name>
                         <rateKey>C-STUDENT</rateKey>
+                        <limit>3,000</limit>
                     </upgrade>
                     <upgrade>
                         <name>Bikes</name>
                         <rateKey>C-BIKES</rateKey>
+                        <limit>1,500</limit>
                     </upgrade>
                 </contents>
                 <addons>
                     <addon>
                         <name>Legal</name>
                         <rateKey>LEGAL</rateKey>
+                        <limit>50,000</limit>
                     </addon>
                 </addons>
             </optional>

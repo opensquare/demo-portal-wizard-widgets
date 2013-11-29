@@ -12,7 +12,7 @@
                     <xsl:value-of select="/quote/customer/age"/>
                 </Age>
                 <VolExcess>50</VolExcess>
-                <SumInsured>475000</SumInsured>
+                <SumInsured><xsl:value-of select="translate(/quote/products/product[not(calc)][1]/included/buildings/limit, ',', '')"/></SumInsured>
                 <xsl:apply-templates select="/quote/products/product[not(calc)][1]/included/buildings/upgrade">
                     <xsl:with-param name="selected">true</xsl:with-param>
                 </xsl:apply-templates>
@@ -28,7 +28,7 @@
                     <xsl:value-of select="/quote/customer/age"/>
                 </Age>
                 <VolExcess>50</VolExcess>
-                <SumInsured>200000</SumInsured>
+                <SumInsured><xsl:value-of select="translate(/quote/products/product[not(calc)][1]/included/contents/limit, ',', '')"/></SumInsured>
                 <locksDiscount>0</locksDiscount>
                 <alarmDiscount>
                     <xsl:choose>
