@@ -23,9 +23,9 @@
         <p>When you are ready to purchase this insurance, click the Buy button opposite.  We can accept payment online using a debit or credit card.</p>
     </div>
 
-    <div class="pane ">
+    <div class="pane major">
         <h2>{{/quote/SelectedProduct}}</h2>
-        <h2>Total premium: <span class="amount" id="totalPremium">&pound;{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/totalPremium}}</span></h2>
+        <p>Total premium: <span class="amount" id="totalPremium">&pound;{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/totalPremium}}</span></p>
         <input id="buy" type="button" rf.action="single" value="Buy"/>
     </div>
     

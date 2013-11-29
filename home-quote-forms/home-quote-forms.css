@@ -556,9 +556,18 @@ div.widget[name='home-quote-forms'] #landingPage .drivers {
 
 div.widget[name='home-quote-forms'] #addons .pane {
 	float: right;
-	clear: both;
+	clear: right;
     width:30%;
     min-height:0;
+}
+div.widget[name='home-quote-forms'] #addons .pane.major {
+	border-color: #0DB4F2;
+}
+div.widget[name='home-quote-forms'] #addons .pane.major h2 {
+	background-color: #0DB4F2;
+}
+div.widget[name='home-quote-forms'] #addons .pane.major input {
+	background-color: #92CE56;
 }
 div.widget[name='home-quote-forms'] #addons .pane .amount {
 	float: right;
