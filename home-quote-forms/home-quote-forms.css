@@ -11,6 +11,9 @@ h1 {
 	color: #333;
 	font-size: 230%; font-weight: normal;
 }
+hr{
+	clear: both;
+}
 div.widget[name='home-quote-forms'] input[type='date'] {
 	border: thin solid #0090C0;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 1.3em; 

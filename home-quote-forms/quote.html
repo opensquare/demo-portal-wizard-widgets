@@ -8,13 +8,26 @@
 	<h1>Your Quote</h1>
 	<div class="bodyText">
         <p>Thank you for considering us for your insurance needs.  Here is our price to insure you, as per your stated requirements.</p>
-        <p>You selected:</p>
+        <p>You selected our XXXX package which provides the following coverage:</p>
+        <div class="coverPart"><span class="partName">Cover</span><span class="limit">upto</span></div>
+        <div class="coverPart basic"><span class="partName">Basic Buildings</span><span class="limit">&pound;{{//products/product[name=/quote/selectedProduct]//included/buildings/limit}}</span></div>
+        <div class="coverPart basic"><span class="partName">Basic Contents</span><span class="limit">&pound;{{//products/product[name=/quote/selectedProduct]//included/contents/limit}}</span></div>
+        <rf.forEach select="./included/*/upgrade" as="upgrade">
+            <div class="coverPart upgrade"><span class="partName">{{upgrade.name}}</span><span class="limit">&pound;{{upgrade.limit}}</span></div>
+        </rf.forEach>
+        <rf.forEach select="./included/addons/addon" as="addon">
+            <div class="coverPart addon"><span class="partName">{{addon.name}}</span><span class="limit">&pound;{{addon.limit}}</span></div>
+        </rf.forEach>
+        <input id="coverChange" type="button" rf.action="back" value="Change product"/>
+        <p>Review the add-ons opposite to add valuable cover to your package.</p>
+        <p>When you are ready to purchase this insurance, click the Buy button opposite.  We can accept payment online using a debit or credit card.</p>
+    </div>
+
+    <div class="pane ">
         <h2>{{/quote/SelectedProduct}}</h2>
-        <input id="coverChange" type="button" rf.action="back" value="Change"/>
-		<h2>Total premium: <span class="amount" id="totalPremium">&pound;{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/totalPremium}}</span></h2>
-		<input id="buy" type="button" rf.action="single" value="Buy"/>
-		<p class="smallprint">We can accept payment online using a debit or credit card.</p>
-	</div>
+        <h2>Total premium: <span class="amount" id="totalPremium">&pound;{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/totalPremium}}</span></h2>
+        <input id="buy" type="button" rf.action="single" value="Buy"/>
+    </div>
     
     <!--div id="multiplePayment" class="pane">
 		<h2>Monthly Instalments</h2>
