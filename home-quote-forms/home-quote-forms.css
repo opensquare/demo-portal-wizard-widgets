@@ -288,7 +288,7 @@ div.widget[name='home-quote-forms'] #crumbTrail li.cover {
 	background-image: url('images/document-contract2-light-small.png');
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.occupation {
-	background-image: url('images/briefcase-light-small.png');
+	background-image: url('images/home-light-small.png');
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.quote {
 	background-image: url('images/currency-sign-pound-light-small.png');
@@ -312,7 +312,7 @@ div.widget[name='home-quote-forms'] #crumbTrail li.on.cover:before {
 	background-image: url('images/document-contract2-light.png');
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.on.occupation:before {
-	background-image: url('images/briefcase-light.png');
+	background-image: url('images/home-light.png');
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.on.quote:before {
 	background-image: url('images/currency-sign-pound-light.png');
@@ -329,6 +329,7 @@ div.widget[name='home-quote-forms'] #crumbTrail li.welcome.on:before {
 
 div.widget[name='home-quote-forms'] .rf-debugbar {
 	opacity: 0.15;
+	background-color: transparent;
 }
 
 div.widget[name='home-quote-forms'] .loading {
@@ -441,7 +442,7 @@ div.widget[name='home-quote-forms'] #landingPage h1 {
 div.widget[name='home-quote-forms'] #landingPage .pane {
 	display: inline-block;
 	width: 25%;
-	min-height: 400px;
+	min-height: 420px;
 	position: relative;
 	margin: 2em;
 	vertical-align: top;
@@ -449,8 +450,8 @@ div.widget[name='home-quote-forms'] #landingPage .pane {
 }
 div.widget[name='home-quote-forms'] #landingPage .pane.selected {
 	border-width: 10px;
-	min-height: 420px;
-	margin-top: 1em;
+	min-height: 480px;
+	margin-top: 0;
 }
 div.widget[name='home-quote-forms'] #landingPage .pane h2 {
 	margin: 0;
@@ -501,10 +502,10 @@ div.widget[name='home-quote-forms'] #landingPage .coverPart {
 	padding: 0.2em 1em;
 	font-size: 0.75em;
 }
-div.widget[name='home-quote-forms'] #landingPage .coverPart:nth-child(1) {
+div.widget[name='home-quote-forms'] #landingPage .coverPart:nth-child(4) {
 	font-weight: bold;
 }
-div.widget[name='home-quote-forms'] #landingPage .coverPart:nth-child(even) {
+div.widget[name='home-quote-forms'] #landingPage .coverPart:nth-child(odd) {
 	background-color: #efe;
 }
 div.widget[name='home-quote-forms'] #landingPage .coverPart .limit {
