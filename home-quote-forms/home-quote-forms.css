@@ -2,6 +2,10 @@ form {
 	padding: 0.2em 2em 0 2em;
 	clear: both;
 }
+form[rhinoforms='true'] .invalid {
+	background-color: #fff;
+	border-color: salmon;
+}
 h1 {
 	margin-top: 1.5em; margin-bottom: 0.75em;
 	color: #333;
@@ -12,7 +16,7 @@ div.widget[name='home-quote-forms'] input[type='date'] {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 1.3em; 
 }
 div.widget[name='home-quote-forms'] input[type="button"] {
-	padding: 0.2em 1em;
+	padding: 0.2em 1em 0.05em 1em;
 	color: #FFF; background-color: #92CE56;
 	border: none; border-radius: 0.25em;
 	font-size: 1.2em;	
@@ -110,13 +114,16 @@ div.widget[name='home-quote-forms'] div.field {
 	min-height: 2.2em;
 	padding: 1em 0;
 	border-bottom: thin solid rgba(0, 0, 0, 0.1);
+	border-radius: 0.25em;
 }
 div.widget[name='home-quote-forms'] div.field:hover {
  	background-color: rgba(0,0,0,0.1);
+ 	border-color: #FFF;
  }
 div.widget[name='home-quote-forms'] div.field.on,
 div.widget[name='home-quote-forms'] div.field.on:hover {
 	background-color: rgba(0,0,0,0.2);
+ 	border-color: #FFF;
 }
 div.widget[name='home-quote-forms'] div.field.on .hint {
 	display: inline-block;
@@ -442,7 +449,7 @@ div.widget[name='home-quote-forms'] #landingPage h1 {
 div.widget[name='home-quote-forms'] #landingPage .pane {
 	display: inline-block;
 	width: 25%;
-	min-height: 420px;
+	min-height: 440px;
 	position: relative;
 	margin: 2em;
 	vertical-align: top;
@@ -450,7 +457,7 @@ div.widget[name='home-quote-forms'] #landingPage .pane {
 }
 div.widget[name='home-quote-forms'] #landingPage .pane.selected {
 	border-width: 10px;
-	min-height: 480px;
+	min-height: 500px;
 	margin-top: 0;
 }
 div.widget[name='home-quote-forms'] #landingPage .pane h2 {
