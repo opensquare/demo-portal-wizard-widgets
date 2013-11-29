@@ -396,10 +396,11 @@ div.widget[name='home-quote-forms'] .pcaCapturePlusTable td {
 	z-index: 1;
 }
 div.widget[name='home-quote-forms'] table .pcaAutoCompleteSmall>div {
-	width: 100% !important; max-height:10em;
-	overflow-x: hidden;
-	padding-right: 0.6em !important;
-	background-color: #FFF;
+	width: 102% !important;
+	zmax-height:10em;
+	zoverflow-x: hidden;
+	zpadding-right: 0.6em !important;
+	zbackground-color: #FFF;
 	border: thin solid #0090C0;
 }
 div.widget[name='home-quote-forms'] .pcaAutoCompleteSmall .item,
@@ -442,6 +443,12 @@ div.widget[name='home-quote-forms'] .occ.section #input_salary,
 div.widget[name='home-quote-forms'] .occ.section #input_monthly_cover {
 	width: 10%;
 }
+
+/* Home Details Page styling */
+div.widget[name='home-quote-forms'] #homeDetails #input_coverStart {
+	width: 19.5%;
+}
+
 /* Landing Page styling */
 div.widget[name='home-quote-forms'] #landingPage h1 {
 	margin-bottom: 0;
