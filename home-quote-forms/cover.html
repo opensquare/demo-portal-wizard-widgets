@@ -7,15 +7,17 @@
 <form rhinoforms="true" id="landingPage">
 	<h1>Your Cover</h1>
 	
+    <input type="text" name="selectedProduct" id="input_selectedProduct" style="display:none"/>
+    
     <rf.forEach select="//products/product" as="product">
     
-    <div id="contents" class="pane">
-        <h2><input type="radio" name="selectedProduct" value="{{product.name}}" id="input_{{product.name}}" rf.validation="required"/><label class="forRadio" for="input_{{product.name}}">{{product.name}}</label></h2>
+    <div class="pane" product="{{product.name}}">
+        <h2>{{product.name}}</h2>
         <p>Premium: <span class="amount" id="contentsPremium">&pound;{{product.calc//totalPremium}}</span></p>
         <hr/>
         <div class="coverPart"><span class="partName">Cover</span><span class="limit">upto</span></div>
-        <div class="coverPart basic"><span class="partName">Basic Buildings</span><span class="limit">{{product.included/buildings/limit}}</span></div>
-        <div class="coverPart basic"><span class="partName">Basic Contents</span><span class="limit">{{product.included/contents/limit}}</span></div>
+        <div class="coverPart basic"><span class="partName">Basic Buildings</span><span class="limit">&pound;{{product.included/buildings/limit}}</span></div>
+        <div class="coverPart basic"><span class="partName">Basic Contents</span><span class="limit">&pound;{{product.included/contents/limit}}</span></div>
         <rf.forEach select="./included/*/upgrade" as="upgrade">
             <div class="coverPart upgrade"><span class="partName">{{upgrade.name}}</span><span class="limit">&pound;{{upgrade.limit}}</span></div>
         </rf.forEach>
@@ -43,6 +45,7 @@
     
     function selectProduct(productName){
         $(".pane").removeClass('selected');
-        $("input[name=selectedProduct][value='" + productName + "']").attr('checked', 'checked').parent().parent().addClass('selected');
+        $("#input_selectedProduct").val(productName);
+        $("div.pane[product='" + productName + "']").addClass('selected');
     }
 </script>
