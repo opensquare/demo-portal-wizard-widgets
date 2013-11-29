@@ -501,6 +501,9 @@ div.widget[name='home-quote-forms'] #landingPage .coverPart {
 	padding: 0.2em 1em;
 	font-size: 0.75em;
 }
+div.widget[name='home-quote-forms'] #landingPage .coverPart:nth-child(1) {
+	font-weight: bold;
+}
 div.widget[name='home-quote-forms'] #landingPage .coverPart:nth-child(even) {
 	background-color: #efe;
 }

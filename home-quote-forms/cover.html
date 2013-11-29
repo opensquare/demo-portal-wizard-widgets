@@ -13,13 +13,14 @@
         <h2><input type="radio" name="selectedProduct" value="{{product.name}}" id="input_{{product.name}}" rf.validation="required"/><label class="forRadio" for="input_{{product.name}}">{{product.name}}</label></h2>
         <p>Premium: <span class="amount" id="contentsPremium">&pound;{{product.calc//totalPremium}}</span></p>
         <hr/>
+        <div class="coverPart"><span class="partName">Cover</span><span class="limit">upto</span></div>
         <div class="coverPart basic"><span class="partName">Basic Buildings</span><span class="limit">{{product.included/buildings/limit}}</span></div>
         <div class="coverPart basic"><span class="partName">Basic Contents</span><span class="limit">{{product.included/contents/limit}}</span></div>
         <rf.forEach select="./included/*/upgrade" as="upgrade">
-            <div class="coverPart upgrade"><span class="partName">{{upgrade.name}}</span><span class="limit">{{upgrade.limit}}</span></div>
+            <div class="coverPart upgrade"><span class="partName">{{upgrade.name}}</span><span class="limit">&pound;{{upgrade.limit}}</span></div>
         </rf.forEach>
         <rf.forEach select="./included/addons/addon" as="addon">
-            <div class="coverPart addon"><span class="partName">{{addon.name}}</span><span class="limit">{{addon.limit}}</span></div>
+            <div class="coverPart addon"><span class="partName">{{addon.name}}</span><span class="limit">&pound;{{addon.limit}}</span></div>
         </rf.forEach>
         <hr/>
         <input type="button" value="Select" onclick="selectProduct('{{product.name}}')"/>
