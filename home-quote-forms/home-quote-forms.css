@@ -554,6 +554,17 @@ div.widget[name='home-quote-forms'] #landingPage .drivers {
 	background: url('person-user-dark.png') no-repeat; 
 }
 
+div.widget[name='home-quote-forms'] #addons .bodyText {
+	float: left;
+	width: 50%;
+}
+div.widget[name='home-quote-forms'] #addons .bodyText .limit {
+	float: right;
+}
+div.widget[name='home-quote-forms'] #addons #coverChange {
+	margin-top: 1em;
+	font-size: 0.9em;
+}
 div.widget[name='home-quote-forms'] #addons .pane {
 	float: right;
 	clear: right;
@@ -561,13 +572,16 @@ div.widget[name='home-quote-forms'] #addons .pane {
     min-height:0;
 }
 div.widget[name='home-quote-forms'] #addons .pane.major {
-	border-color: #0DB4F2;
+	border-color: #92CE56;
 }
 div.widget[name='home-quote-forms'] #addons .pane.major h2 {
-	background-color: #0DB4F2;
+	background-color: #92CE56;
 }
 div.widget[name='home-quote-forms'] #addons .pane.major input {
-	background-color: #92CE56;
+	width: 100%;
+	margin: 0;
+	background-color: #0DB4F2;
+	border-radius: 0 0 0.5em 0.5em;
 }
 div.widget[name='home-quote-forms'] #addons .pane .amount {
 	float: right;
