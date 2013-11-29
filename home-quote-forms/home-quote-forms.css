@@ -294,7 +294,7 @@ div.widget[name='home-quote-forms'] #crumbTrail li.policy {
 div.widget[name='home-quote-forms'] #crumbTrail li.cover {
 	background-image: url('images/document-contract2-light-small.png');
 }
-div.widget[name='home-quote-forms'] #crumbTrail li.occupation {
+div.widget[name='home-quote-forms'] #crumbTrail li.home {
 	background-image: url('images/home-light-small.png');
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.quote {
@@ -318,7 +318,7 @@ div.widget[name='home-quote-forms'] #crumbTrail li.on.policy:before {
 div.widget[name='home-quote-forms'] #crumbTrail li.on.cover:before {
 	background-image: url('images/document-contract2-light.png');
 }
-div.widget[name='home-quote-forms'] #crumbTrail li.on.occupation:before {
+div.widget[name='home-quote-forms'] #crumbTrail li.on.home:before {
 	background-image: url('images/home-light.png');
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.on.quote:before {
