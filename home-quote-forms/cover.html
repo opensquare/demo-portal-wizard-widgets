@@ -41,6 +41,6 @@
 	});
     
     function selectProduct(productName){
-        $("input[name=selectedProduct][value='" + productName + "']").attr('checked', 'checked');
+        $("input[name=selectedProduct][value='" + productName + "']").attr('checked', 'checked').parent.parent.toggleClass('selected');
     }
 </script>

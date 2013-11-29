@@ -439,6 +439,7 @@ div.widget[name='home-quote-forms'] #landingPage h1 {
 	margin-bottom: 0;
 }
 div.widget[name='home-quote-forms'] #landingPage .pane {
+	display: inline-block;
 	width: 25%;
 	min-height: 400px;
 	position: relative;
@@ -450,6 +451,9 @@ div.widget[name='home-quote-forms'] #landingPage .pane h2 {
 	margin: 0;
 	padding: 0.2em 0.5em;
 	color: #FFF; background: #0DB4F2;
+}
+div.widget[name='home-quote-forms'] #landingPage .pane input[type="radio"] {
+	visibility: hidden;
 }
 div.widget[name='home-quote-forms'] #landingPage .pane input[type="button"] {
 	position: absolute;
@@ -484,6 +488,16 @@ div.widget[name='home-quote-forms'] #landingPage .pane p {
 }
 div.widget[name='home-quote-forms'] #landingPage p>span {
 	font-weight: bold;
+}
+div.widget[name='home-quote-forms'] #landingPage .coverPart {
+	padding: 0.2em 1em;
+	font-size: 0.75em;
+}
+div.widget[name='home-quote-forms'] #landingPage .coverPart:nth-child(even) {
+	background-color: #efe;
+}
+div.widget[name='home-quote-forms'] #landingPage .coverPart .limit {
+	float: right;
 }
 div.widget[name='home-quote-forms'] #landingPage .smallprint {
 	margin-bottom: 0;
