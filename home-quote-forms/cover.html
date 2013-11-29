@@ -11,7 +11,7 @@
     
     <div id="contents" class="pane">
         <h2><input type="radio" name="selectedProduct" value="{{product.name}}" id="input_{{product.name}}" rf.validation="required"/><label class="forRadio" for="input_{{product.name}}">{{product.name}}</label></h2>
-        <p>Premium: <span class="amount" id="contentsPremium">{{product.calc//totalPremium}}</span></p>
+        <p>Premium: <span class="amount" id="contentsPremium">&pound;{{product.calc//totalPremium}}</span></p>
         <hr/>
         <div class="coverPart basic"><span class="partName">Basic Buildings</span><span class="limit">{{product.included/buildings/limit}}</span></div>
         <div class="coverPart basic"><span class="partName">Basic Contents</span><span class="limit">{{product.included/contents/limit}}</span></div>
@@ -41,6 +41,6 @@
 	});
     
     function selectProduct(productName){
-        $("input[name=selectedProduct][value='" + productName + "']").attr('checked', 'checked').parent.parent.toggleClass('selected');
+        $("input[name=selectedProduct][value='" + productName + "']").attr('checked', 'checked').parent().parent().toggleClass('selected');
     }
 </script>
