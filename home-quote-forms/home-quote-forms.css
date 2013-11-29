@@ -439,9 +439,9 @@ div.widget[name='home-quote-forms'] #landingPage h1 {
 	margin-bottom: 0;
 }
 div.widget[name='home-quote-forms'] #landingPage .pane {
-	float: right;
-	clear: both;
-	width: 40%;
+	width: 25%;
+	min-height: 400px;
+	position: relative;
 	margin: 0 2em 2em 2em;
 	vertical-align: top;
 	border: thick solid #0DB4F2; border-radius: 1em;
@@ -452,9 +452,12 @@ div.widget[name='home-quote-forms'] #landingPage .pane h2 {
 	color: #FFF; background: #0DB4F2;
 }
 div.widget[name='home-quote-forms'] #landingPage .pane input[type="button"] {
-	float: right;
-	margin: 0.5em;
+	position: absolute;
+	bottom: 0;
+    margin: 0;
+    width: 100%;
 	font-size: 2em;
+    border-radius: 0 0 0.35em 0.35em;
 }
 div.widget[name='home-quote-forms'] #landingPage .amount {
 	display: inline-block;
