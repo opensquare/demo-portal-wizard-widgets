@@ -45,6 +45,8 @@
 		if("{{//calcResult/ref}}"=="na"){
 			$("[rf\\.action=sorry]").click();
 		}
+        var productName = $("#input_selectedProduct").val();
+        selectProduct(productName);
 	});
     
     function selectProduct(productName){

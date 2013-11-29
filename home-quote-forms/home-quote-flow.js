@@ -81,8 +81,8 @@
 					}
 				]
 			},
-            { id: "cover", url: "cover.html", actions: [ "back" , "next"]},
-			{ id: "quote", url: "quote.html", actions: ["back:customer", "sorry:sorry", "single:buy.singlePayment", "addItem:specifiedItem.editItem(index=next)", "editItem:specifiedItem.editItem(index=?)","deleteItem:delete(xpath=items/item[index], index=?)"]},
+            { id: "cover", url: "cover.html", actions: [ "back:customer", "sorry:sorry", "next"]},
+			{ id: "quote", url: "quote.html", actions: ["back:cover", "sorry:sorry", "single:buy.singlePayment", "addItem:specifiedItem.editItem(index=next)", "editItem:specifiedItem.editItem(index=?)","deleteItem:delete(xpath=items/item[index], index=?)"]},
 			{ id: "sorry", url: "sorry.html" , actions: [ "restart:customer" ]}
 		],
         specifiedItem: [
