@@ -462,12 +462,6 @@ div.widget[name='home-quote-forms'] #landingPage .pane, div.widget[name='home-qu
 	vertical-align: top;
 	border: thick solid #0DB4F2; border-radius: 1em;
 }
-
-div.widget[name='home-quote-forms'] #addons .pane{
-    width:100%;
-    min-height:0px;
-}
-
 div.widget[name='home-quote-forms'] #landingPage .pane.selected {
 	border-width: 10px;
 	min-height: 500px;
@@ -555,6 +549,26 @@ div.widget[name='home-quote-forms'] #landingPage .vehicle {
 }
 div.widget[name='home-quote-forms'] #landingPage .drivers {
 	background: url('person-user-dark.png') no-repeat; 
+}
+
+div.widget[name='home-quote-forms'] #addons .pane {
+	float: right;
+	clear: both;
+    width:30%;
+    min-height:0;
+}
+div.widget[name='home-quote-forms'] #addons .pane .amount {
+	float: right;
+}
+div.widget[name='home-quote-forms'] #addons .pane .field {
+	font-size: 0.8em;
+	border-radius: 0;
+}
+div.widget[name='home-quote-forms'] #addons .pane .field.on {
+	background-color: inherit;
+}
+div.widget[name='home-quote-forms'] #addons .pane .field label:first-child {
+	width: 37%;
 }
 div.widget[name='home-quote-forms'] #save {
 	margin-bottom: 1em;
