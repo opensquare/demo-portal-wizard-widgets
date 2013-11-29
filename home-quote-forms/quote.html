@@ -56,6 +56,27 @@
                 <input type="radio" name="addon_{{addon.rateKey}}" value="N" id="input_{{addon.addonName}}_n" rf.validation="required" onchange="updatePremiums(!this.checked, {{addon.addonPremium}} , $('#addonsPremium,#totalPremium'))"/><label class="forRadio" for="input_{{addon.addonName}}_n">No</label>
             </div>
         </rf.forEach>
+        <div class="field">
+			<label>Specified Items</label>
+            <input type="radio" name="addon_items" value="Y" id="input_items_y" rf.validation="required"/><label class="forRadio" for="input_items_y">Yes</label>
+            <input type="radio" name="addon_items" value="N" id="input_items_n" rf.validation="required"/><label class="forRadio" for="input_items_n">No</label>
+        </div>
+        <div class="items" rf.includeIf="{ fields.addon_items.value == 'Y' }" >
+            <h4>Items</h4>
+            <p>Please enter details of any items worth over 1,000.</p>
+            <div>
+                <rf.forEach select="items/item" as="item">
+                <div class="item">
+                    <span>
+                        {{item.description}}: {{item.value}}
+                        <a href="#" rf.action="editItem?index={{item.index}}">Edit</a>
+                        <a href="#" rf.action="deleteItem?index={{item.index}}">Delete</a>
+                    </span>
+                </div>
+                </rf.forEach>
+            </div>
+            <input type="button" rf.action="addItem" value="Add Item" />
+        </div>
     </div>
 	
 	<div class="navigation">
@@ -79,7 +100,7 @@
 		if("{{//calcResult/ref}}"=="na"){
 			$("[rf\\.action=sorry]").click();
 		}
-        $("input[type='radio'][value='N']").attr("checked", "checked");
+        $("input:not([name='addon_items'])[type='radio'][value='N']").attr("checked", "checked");
         init = true;
 	});
     
