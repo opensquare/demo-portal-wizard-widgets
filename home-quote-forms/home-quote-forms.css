@@ -4,7 +4,7 @@ form {
 }
 form[rhinoforms='true'] .invalid {
 	background-color: #fff;
-	border-color: salmon;
+	border-color: salmon!important;
 }
 h1 {
 	margin-top: 1.5em; margin-bottom: 0.75em;
