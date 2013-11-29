@@ -443,9 +443,14 @@ div.widget[name='home-quote-forms'] #landingPage .pane {
 	width: 25%;
 	min-height: 400px;
 	position: relative;
-	margin: 0 2em 2em 2em;
+	margin: 2em;
 	vertical-align: top;
 	border: thick solid #0DB4F2; border-radius: 1em;
+}
+div.widget[name='home-quote-forms'] #landingPage .pane.selected {
+	border-width: 10px;
+	min-height: 420px;
+	margin-top: 1em;
 }
 div.widget[name='home-quote-forms'] #landingPage .pane h2 {
 	margin: 0;
@@ -462,6 +467,9 @@ div.widget[name='home-quote-forms'] #landingPage .pane input[type="button"] {
     width: 100%;
 	font-size: 2em;
     border-radius: 0 0 0.35em 0.35em;
+}
+div.widget[name='home-quote-forms'] #landingPage .pane.selected input[type="button"] {
+	border-radius: 0 0 0.15em 0.15em;
 }
 div.widget[name='home-quote-forms'] #landingPage .amount {
 	display: inline-block;

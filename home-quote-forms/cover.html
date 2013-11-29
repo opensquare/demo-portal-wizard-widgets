@@ -41,6 +41,7 @@
 	});
     
     function selectProduct(productName){
-        $("input[name=selectedProduct][value='" + productName + "']").attr('checked', 'checked').parent().parent().toggleClass('selected');
+        $(".pane").removeClass('selected');
+        $("input[name=selectedProduct][value='" + productName + "']").attr('checked', 'checked').parent().parent().addClass('selected');
     }
 </script>
