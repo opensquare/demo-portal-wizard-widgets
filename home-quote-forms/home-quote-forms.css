@@ -446,7 +446,7 @@ div.widget[name='home-quote-forms'] .occ.section #input_monthly_cover {
 div.widget[name='home-quote-forms'] #landingPage h1 {
 	margin-bottom: 0;
 }
-div.widget[name='home-quote-forms'] #landingPage .pane {
+div.widget[name='home-quote-forms'] #landingPage .pane, div.widget[name='home-quote-forms'] #addons .pane {
 	display: inline-block;
 	width: 25%;
 	min-height: 440px;
@@ -455,12 +455,18 @@ div.widget[name='home-quote-forms'] #landingPage .pane {
 	vertical-align: top;
 	border: thick solid #0DB4F2; border-radius: 1em;
 }
+
+div.widget[name='home-quote-forms'] #addons .pane{
+    width:100%;
+    min-height:0px;
+}
+
 div.widget[name='home-quote-forms'] #landingPage .pane.selected {
 	border-width: 10px;
 	min-height: 500px;
 	margin-top: 0;
 }
-div.widget[name='home-quote-forms'] #landingPage .pane h2 {
+div.widget[name='home-quote-forms'] #landingPage .pane h2, div.widget[name='home-quote-forms'] #addons .pane h2 {
 	margin: 0;
 	padding: 0.2em 0.5em;
 	color: #FFF; background: #0DB4F2;
