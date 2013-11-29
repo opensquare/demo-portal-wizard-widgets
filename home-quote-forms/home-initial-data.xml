@@ -36,12 +36,14 @@
                     <upgrade>
                         <name>Buildings Full Accidental Damage</name>
                         <rateKey>B-AD</rateKey>
+                        <limit>*</limit>
                     </upgrade>
                 </buildings>
                 <contents>
                     <upgrade>
                         <name>Contents Full Accidental Damage</name>
                         <rateKey>C-AD</rateKey>
+                        <limit>*</limit>
                     </upgrade>
                     <upgrade>
                         <name>Student Cover</name>
@@ -103,6 +105,7 @@
                     <upgrade>
                         <name>Buildings Partial Accidental Damage</name>
                         <rateKey>B-PARTIAL-AD</rateKey>
+                        <limit>*</limit>
                     </upgrade>
                 </buildings>
                 <contents>
@@ -120,6 +123,7 @@
                     <upgrade>
                         <name>Contents Partial Accidental Damage</name>
                         <rateKey>C-PARTIAL-AD</rateKey>
+                        <limit>*</limit>
                     </upgrade>
                 </contents>
             </included>
@@ -128,12 +132,14 @@
                     <upgrade>
                         <name>Buildings Full Accidental Damage</name>
                         <rateKey>B-AD</rateKey>
+                        <limit>*</limit>
                     </upgrade>
                 </buildings>
                 <contents>
                     <upgrade>
                         <name>Contents Full Accidental Damage</name>
                         <rateKey>C-AD</rateKey>
+                        <limit>*</limit>
                     </upgrade>
                     <upgrade>
                         <name>Student Cover</name>
@@ -195,6 +201,7 @@
                     <upgrade>
                         <name>Buildings Full Accidental Damage</name>
                         <rateKey>B-AD</rateKey>
+                        <limit>*</limit>
                     </upgrade>
                 </buildings>
                 <contents>
@@ -212,6 +219,7 @@
                     <upgrade>
                         <name>Contents Full Accidental Damage</name>
                         <rateKey>C-AD</rateKey>
+                        <limit>*</limit>
                     </upgrade>
                     <upgrade>
                         <name>Personal Possessions</name>
