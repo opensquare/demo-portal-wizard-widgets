@@ -609,6 +609,21 @@ div.widget[name='home-quote-forms'] #addons .pane .field.on {
 div.widget[name='home-quote-forms'] #addons .pane .field label:first-child {
 	width: 50%;
 }
+div.widget[name='home-quote-forms'] #addons .pane .items p {
+	margin-top: 0;
+	padding: 0 1em;
+	font-size: 0.9em;
+	font-weight: bold;
+}
+div.widget[name='home-quote-forms'] #addons .pane .item {
+	padding: 0.25em 1em;
+	font-size: 0.9em;
+}
+div.widget[name='home-quote-forms'] #addons .pane .items input[type="button"] {
+	float: right;
+	margin-right: 1em;
+	font-size: 0.9em;
+}
 div.widget[name='home-quote-forms'] #save {
 	margin-bottom: 1em;
 	border: thick solid #92CE56; border-radius: 1em;

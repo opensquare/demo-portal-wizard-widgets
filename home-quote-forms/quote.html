@@ -77,15 +77,13 @@
             <input type="radio" name="addon_items" value="N" id="input_items_n" rf.validation="required"/><label class="forRadio" for="input_items_n">No</label>
         </div>
         <div class="items" rf.includeIf="{ fields.addon_items.value == 'Y' }" >
-            <h4>Items</h4>
             <p>Please enter details of any items worth over &pound;1,000.</p>
             <div>
                 <rf.forEach select="items/item" as="item">
                 <div class="item">
                     <span>
-                        {{item.description}}: {{item.value}}
-                        <a href="#" rf.action="editItem?index={{item.index}}">Edit</a>
-                        <a href="#" rf.action="deleteItem?index={{item.index}}">Delete</a>
+                        <a href="#" class="edit" rf.action="editItem?index={{item.index}}">{{item.description}}: {{item.value}}</a>
+                        <a href="#" class="delete" rf.action="deleteItem?index={{item.index}}">x</a>
                     </span>
                 </div>
                 </rf.forEach>
