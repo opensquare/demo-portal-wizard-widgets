@@ -24,7 +24,7 @@
     </div>
 
     <div class="pane major">
-        <h2>{{/quote/SelectedProduct}}</h2>
+        <h2>{{/quote/selectedProduct}}</h2>
         <p>Total premium: <span class="amount" id="totalPremium">{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/totalPremium}}</span></p>
         <input id="buy" type="button" rf.action="single" value="Buy"/>
     </div>
@@ -77,13 +77,13 @@
             <input type="radio" name="addon_items" value="N" id="input_items_n" rf.validation="required"/><label class="forRadio" for="input_items_n">No</label>
         </div>
         <div class="items" rf.includeIf="{ fields.addon_items.value == 'Y' }" >
-            <p>Please enter details of any items worth over &pound;1,000.</p>
+            <p>Enter details of any items worth over &pound;1,000:</p>
             <div>
                 <rf.forEach select="items/item" as="item">
                 <div class="item">
                     <span>
-                        <a href="#" class="edit" rf.action="editItem?index={{item.index}}">{{item.description}}: {{item.value}}</a>
-                        <a href="#" class="delete" rf.action="deleteItem?index={{item.index}}">x</a>
+                        <a href="#" class="edit" rf.action="editItem?index={{item.index}}" title="click to edit">{{item.description}}: {{item.value}}</a>
+                        <a href="#" class="delete" rf.action="deleteItem?index={{item.index}}" title="click to delete">x</a>
                     </span>
                 </div>
                 </rf.forEach>

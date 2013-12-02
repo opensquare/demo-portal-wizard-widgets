@@ -615,14 +615,33 @@ div.widget[name='home-quote-forms'] #addons .pane .items p {
 	font-size: 0.9em;
 	font-weight: bold;
 }
-div.widget[name='home-quote-forms'] #addons .pane .item {
-	padding: 0.25em 1em;
-	font-size: 0.9em;
-}
 div.widget[name='home-quote-forms'] #addons .pane .items input[type="button"] {
 	float: right;
 	margin-right: 1em;
 	font-size: 0.9em;
+}
+div.widget[name='home-quote-forms'] #addons .pane .item {
+	padding: 0.25em 1em;
+	font-size: 0.9em;
+}
+div.widget[name='home-quote-forms'] #addons .pane .item .delete {
+	visibility: hidden;
+	float: right;
+	width: 16px;
+	height: 16px;
+	background: red;
+	color: white;
+	padding: 4px;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 11px;
+	font-weight: bold;
+}
+div.widget[name='home-quote-forms'] #addons .pane .item:hover .delete {
+	visibility: visible;
+}
+div.widget[name='home-quote-forms'] #addons .pane .item .delete:hover {
+	text-decoration: none;
 }
 div.widget[name='home-quote-forms'] #save {
 	margin-bottom: 1em;
