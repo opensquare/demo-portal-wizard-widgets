@@ -38,11 +38,11 @@
 	</div-->
 	
     <div id="buildings" class="pane">
-        <h2>Buildings</h2>
+        <h2>Buildings Upgrades</h2>
         <p>Buildings Premium: <span class="amount" id="buildingsPremium">{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[@partname='buildings']/premium}}</span></p>
         <rf.forEach select="//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[@partname='buildings']/calcElement[starts-with(@partname, 'upgrade')][selected='false']" as="upgrade">
             <div class="field">
-			<label>{{upgrade.upgradeName}} {{upgrade.upgradePremium}}</label>
+			<label>{{upgrade.upgradeName}} &pound;{{upgrade.upgradePremium}}</label>
                 <input type="radio" name="upgrade_{{upgrade.rateKey}}" value="Y" id="input_{{upgrade.upgradeName}}_y" rf.validation="required" onchange="updatePremiums(this.checked, {{upgrade.upgradePremium}} , $('#buildingsPremium,#totalPremium'))"/><label class="forRadio" for="input_{{upgrade.upgradeName}}_y">Yes</label>
                 <input type="radio" name="upgrade_{{upgrade.rateKey}}" value="N" id="input_{{upgrade.upgradeName}}_n" rf.validation="required" onchange="updatePremiums(!this.checked, {{upgrade.upgradePremium}} , $('#buildingsPremium,#totalPremium'))"/><label class="forRadio" for="input_{{upgrade.upgradeName}}_n">No</label>
             </div>
@@ -50,11 +50,11 @@
     </div>
     
     <div id="contents" class="pane">
-        <h2>Contents</h2>
+        <h2>Contents Upgrades</h2>
         <p>Contents Premium: <span class="amount" id="contentsPremium">{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[@partname='contents']/premium}}</span></p>
         <rf.forEach select="//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[@partname='contents']/calcElement[starts-with(@partname, 'upgrade')][selected='false']" as="upgrade">
             <div class="field">
-			<label>{{upgrade.upgradeName}} {{upgrade.upgradePremium}}</label>
+			<label>{{upgrade.upgradeName}} &pound;{{upgrade.upgradePremium}}</label>
                 <input type="radio" name="upgrade_{{upgrade.rateKey}}" value="Y" id="input_{{upgrade.upgradeName}}_y" rf.validation="required" onchange="updatePremiums(this.checked, {{upgrade.upgradePremium}} , $('#contentsPremium,#totalPremium'))"/><label class="forRadio" for="input_{{upgrade.upgradeName}}_y">Yes</label>
                 <input type="radio" name="upgrade_{{upgrade.rateKey}}" value="N" id="input_{{upgrade.upgradeName}}_n" rf.validation="required" onchange="updatePremiums(!this.checked, {{upgrade.upgradePremium}} , $('#contentsPremium,#totalPremium'))"/><label class="forRadio" for="input_{{upgrade.upgradeName}}_n">No</label>
             </div>
@@ -62,11 +62,11 @@
     </div>
     
     <div id="addons" class="pane">
-        <h2>Addons</h2>
+        <h2>Add-on Options</h2>
         <p>Addons Premium: <span class="amount" id="addonsPremium">0.00</span></p>
         <rf.forEach select="//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[starts-with(@partname, 'addon')][selected='false']" as="addon">
             <div class="field">
-			<label>{{addon.addonName}} {{addon.addonPremium}}</label>
+			<label>{{addon.addonName}} &pound;{{addon.addonPremium}}</label>
                 <input type="radio" name="addon_{{addon.rateKey}}" value="Y" id="input_{{addon.addonName}}_y" rf.validation="required" onchange="updatePremiums(this.checked, {{addon.addonPremium}} , $('#addonsPremium,#totalPremium'))"/><label class="forRadio" for="input_{{addon.addonName}}_y">Yes</label>
                 <input type="radio" name="addon_{{addon.rateKey}}" value="N" id="input_{{addon.addonName}}_n" rf.validation="required" onchange="updatePremiums(!this.checked, {{addon.addonPremium}} , $('#addonsPremium,#totalPremium'))"/><label class="forRadio" for="input_{{addon.addonName}}_n">No</label>
             </div>

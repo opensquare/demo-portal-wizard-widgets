@@ -570,6 +570,7 @@ div.widget[name='home-quote-forms'] #addons .pane {
 	clear: right;
     width:30%;
     min-height:0;
+    margin: 1em;
 }
 div.widget[name='home-quote-forms'] #addons .pane.major {
 	border-color: #92CE56;
@@ -577,24 +578,30 @@ div.widget[name='home-quote-forms'] #addons .pane.major {
 div.widget[name='home-quote-forms'] #addons .pane.major h2 {
 	background-color: #92CE56;
 }
+div.widget[name='home-quote-forms'] #addons .pane p {
+	padding: 0 0.75em;
+}
 div.widget[name='home-quote-forms'] #addons .pane.major input {
 	width: 100%;
 	margin: 0;
-	background-color: #0DB4F2;
-	border-radius: 0 0 0.5em 0.5em;
+	border-radius: 0 0 0.35em 0.35em;
+	font-size: 2em;
 }
 div.widget[name='home-quote-forms'] #addons .pane .amount {
 	float: right;
 }
 div.widget[name='home-quote-forms'] #addons .pane .field {
+	margin: 0;
 	font-size: 0.8em;
 	border-radius: 0;
+	border: none;
+	border-top: thin solid rgba(0,0,0,0.1);
 }
 div.widget[name='home-quote-forms'] #addons .pane .field.on {
 	background-color: inherit;
 }
 div.widget[name='home-quote-forms'] #addons .pane .field label:first-child {
-	width: 37%;
+	width: 50%;
 }
 div.widget[name='home-quote-forms'] #save {
 	margin-bottom: 1em;
