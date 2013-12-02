@@ -125,13 +125,14 @@
                 var $this = $(this);
                 var existingPremium = $this.html();
                 existingPremium = existingPremium.replace(",", "");
+                existingPremium = existingPremium.replace("£", "");
                 var newPremium;
                 if(add){
                     newPremium = (existingPremium * 1) + premium;
                 }else{
                     newPremium = (existingPremium * 1) - premium;
                 }
-                $this.html((newPremium).toFixed(2));
+                $this.html('&pound;'+(newPremium).toFixed(2));
             })
         }
     }
