@@ -265,4 +265,7 @@
             </optional>
         </product>
     </products>
+    <vehicle>
+        <reg>abc123</reg>
+    </vehicle>
 </quote>
