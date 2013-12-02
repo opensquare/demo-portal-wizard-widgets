@@ -8,14 +8,14 @@
 	<h1>Your Quote</h1>
 	<div class="bodyText">
         <p>Thank you for considering us for your insurance needs.  Here is our price to insure you, as per your stated requirements.</p>
-        <p>You selected our XXXX package which provides the following coverage:</p>
+        <p>You selected our {{/quote/selectedProduct}} package which provides the following coverage:</p>
         <div class="coverPart"><span class="partName">Cover</span><span class="limit">upto</span></div>
         <div class="coverPart basic"><span class="partName">Basic Buildings</span><span class="limit">&pound;{{//products/product[name=/quote/selectedProduct]//included/buildings/limit}}</span></div>
         <div class="coverPart basic"><span class="partName">Basic Contents</span><span class="limit">&pound;{{//products/product[name=/quote/selectedProduct]//included/contents/limit}}</span></div>
-        <rf.forEach select="./included/*/upgrade" as="upgrade">
+        <rf.forEach select="//products/product[name=/quote/selectedProduct]//included/*/upgrade" as="upgrade">
             <div class="coverPart upgrade"><span class="partName">{{upgrade.name}}</span><span class="limit">&pound;{{upgrade.limit}}</span></div>
         </rf.forEach>
-        <rf.forEach select="./included/addons/addon" as="addon">
+        <rf.forEach select="//products/product[name=/quote/selectedProduct]//included/addons/addon" as="addon">
             <div class="coverPart addon"><span class="partName">{{addon.name}}</span><span class="limit">&pound;{{addon.limit}}</span></div>
         </rf.forEach>
         <input id="coverChange" type="button" rf.action="back" value="Change product"/>
@@ -90,6 +90,12 @@
             </div>
             <input type="button" rf.action="addItem" value="Add Item" />
         </div>
+    </div>
+
+    <div class="pane major">
+        <h2>{{/quote/selectedProduct}}</h2>
+        <p>Total premium: <span class="amount" id="totalPremium">{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/totalPremium}}</span></p>
+        <input id="buy" type="button" rf.action="single" value="Buy"/>
     </div>
 	
 	<div class="navigation">
