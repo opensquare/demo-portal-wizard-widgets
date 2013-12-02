@@ -25,7 +25,7 @@
 
     <div class="pane major">
         <h2>{{/quote/SelectedProduct}}</h2>
-        <p>Total premium: <span class="amount" id="totalPremium">&pound;{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/totalPremium}}</span></p>
+        <p>Total premium: <span class="amount" id="totalPremium">{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/totalPremium}}</span></p>
         <input id="buy" type="button" rf.action="single" value="Buy"/>
     </div>
     
@@ -39,7 +39,7 @@
 	
     <div id="buildings" class="pane">
         <h2>Buildings Upgrades</h2>
-        <p>Buildings Premium: <span class="amount" id="buildingsPremium">&pound;{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[@partname='buildings']/premium}}</span></p>
+        <p>Buildings Premium: <span class="amount" id="buildingsPremium">{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[@partname='buildings']/premium}}</span></p>
         <rf.forEach select="//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[@partname='buildings']/calcElement[starts-with(@partname, 'upgrade')][selected='false']" as="upgrade">
             <div class="field">
 			<label>{{upgrade.upgradeName}} &pound;{{upgrade.upgradePremium}}</label>
@@ -51,7 +51,7 @@
     
     <div id="contents" class="pane">
         <h2>Contents Upgrades</h2>
-        <p>Contents Premium: <span class="amount" id="contentsPremium">&pound;{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[@partname='contents']/premium}}</span></p>
+        <p>Contents Premium: <span class="amount" id="contentsPremium">{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[@partname='contents']/premium}}</span></p>
         <rf.forEach select="//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[@partname='contents']/calcElement[starts-with(@partname, 'upgrade')][selected='false']" as="upgrade">
             <div class="field">
 			<label>{{upgrade.upgradeName}} &pound;{{upgrade.upgradePremium}}</label>
@@ -63,7 +63,7 @@
     
     <div id="addons" class="pane">
         <h2>Add-on Options</h2>
-        <p>Addons Premium: <span class="amount" id="addonsPremium">&pound;0.00</span></p>
+        <p>Addons Premium: <span class="amount" id="addonsPremium">0.00</span></p>
         <rf.forEach select="//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[starts-with(@partname, 'addon')][selected='false']" as="addon">
             <div class="field">
 			<label>{{addon.addonName}} &pound;{{addon.addonPremium}}</label>
@@ -78,7 +78,7 @@
         </div>
         <div class="items" rf.includeIf="{ fields.addon_items.value == 'Y' }" >
             <h4>Items</h4>
-            <p>Please enter details of any items worth over 1,000.</p>
+            <p>Please enter details of any items worth over &pound;1,000.</p>
             <div>
                 <rf.forEach select="items/item" as="item">
                 <div class="item">
@@ -125,14 +125,13 @@
                 var $this = $(this);
                 var existingPremium = $this.html();
                 existingPremium = existingPremium.replace(",", "");
-                existingPremium = existingPremium.replace("£", "");
                 var newPremium;
                 if(add){
                     newPremium = (existingPremium * 1) + premium;
                 }else{
                     newPremium = (existingPremium * 1) - premium;
                 }
-                $this.html('&pound;'+(newPremium).toFixed(2));
+                $this.html((newPremium).toFixed(2));
             })
         }
     }
