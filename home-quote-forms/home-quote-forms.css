@@ -590,6 +590,9 @@ div.widget[name='home-quote-forms'] #addons .pane.major input {
 div.widget[name='home-quote-forms'] #addons .pane .amount {
 	float: right;
 }
+div.widget[name='home-quote-forms'] #addons .pane.major .amount {
+	font-size: 2em;
+}
 div.widget[name='home-quote-forms'] #addons .pane .field {
 	margin: 0;
 	font-size: 0.8em;

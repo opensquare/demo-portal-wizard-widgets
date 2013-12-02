@@ -39,7 +39,7 @@
 	
     <div id="buildings" class="pane">
         <h2>Buildings Upgrades</h2>
-        <p>Buildings Premium: <span class="amount" id="buildingsPremium">{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[@partname='buildings']/premium}}</span></p>
+        <p>Buildings Premium: <span class="amount" id="buildingsPremium">&pound;{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[@partname='buildings']/premium}}</span></p>
         <rf.forEach select="//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[@partname='buildings']/calcElement[starts-with(@partname, 'upgrade')][selected='false']" as="upgrade">
             <div class="field">
 			<label>{{upgrade.upgradeName}} &pound;{{upgrade.upgradePremium}}</label>
@@ -51,7 +51,7 @@
     
     <div id="contents" class="pane">
         <h2>Contents Upgrades</h2>
-        <p>Contents Premium: <span class="amount" id="contentsPremium">{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[@partname='contents']/premium}}</span></p>
+        <p>Contents Premium: <span class="amount" id="contentsPremium">&pound;{{//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[@partname='contents']/premium}}</span></p>
         <rf.forEach select="//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[@partname='contents']/calcElement[starts-with(@partname, 'upgrade')][selected='false']" as="upgrade">
             <div class="field">
 			<label>{{upgrade.upgradeName}} &pound;{{upgrade.upgradePremium}}</label>
@@ -63,7 +63,7 @@
     
     <div id="addons" class="pane">
         <h2>Add-on Options</h2>
-        <p>Addons Premium: <span class="amount" id="addonsPremium">0.00</span></p>
+        <p>Addons Premium: <span class="amount" id="addonsPremium">&pound;0.00</span></p>
         <rf.forEach select="//products/product[name=/quote/selectedProduct]//calcResult/calcElement/calcElement[starts-with(@partname, 'addon')][selected='false']" as="addon">
             <div class="field">
 			<label>{{addon.addonName}} &pound;{{addon.addonPremium}}</label>
