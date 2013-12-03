@@ -20,13 +20,13 @@ div.widget[name='home-quote-forms'] input[type='date'] {
 }
 div.widget[name='home-quote-forms'] input[type="button"] {
 	padding: 0.2em 1em 0.05em 1em;
-	color: #FFF; background-color: #92CE56;
+	color: #FFF; background-color: #66CC33;
 	border: none; border-radius: 0.25em;
 	font-size: 1.2em;	
 	cursor: pointer;
 }
 div.widget[name='home-quote-forms'] input[type="button"]:hover {
-	background-color: #82BE46;
+	background-color: #c9c9c9;
 }
 div.widget[name='home-quote-forms'] input[type="checkbox"] {
 	padding: 0.45em;
@@ -70,12 +70,12 @@ div.widget[name='home-quote-forms'] input[type="text"],input[type="email"],input
 div.widget[name='home-quote-forms'] input[type="submit"] {
 	margin:	1em 1em 1em 0; padding: 0.2em 1em;
 	border: none; border-radius: 0.25em;
-	color: #FFF; background-color: #92CE56;
+	color: #FFF; background-color: #66CC33;
 	font-size: 2em;	
 	cursor: pointer;
 }
 div.widget[name='home-quote-forms'] input[type="submit"]:hover {
-	background-color: #82BE46;
+	background-color: #c9c9c9;
 }
 div.widget[name='home-quote-forms'] label {
 	display: inline-block;
@@ -120,7 +120,7 @@ div.widget[name='home-quote-forms'] div.field {
 	border-radius: 0.25em;
 }
 div.widget[name='home-quote-forms'] div.field:hover {
- 	background-color: rgba(0,0,0,0.1);
+ 	background-color:#f2f2f2;
  	border-color: #FFF;
  }
 div.widget[name='home-quote-forms'] div.field.on,
@@ -133,11 +133,11 @@ div.widget[name='home-quote-forms'] div.field.on .hint {
 }
 div.widget[name='home-quote-forms'] div.field a {
 	margin-left: 2em;
-	color: #92CE56;
+	color: #66CC33;
 	font-weight: bold;
 }
 div.widget[name='home-quote-forms'] div.field a:hover {
-	color: #82BE46;
+	color: #c9c9c9;
 }
 div.widget[name='home-quote-forms'] option:first-child {
 	color: #999;
@@ -147,7 +147,7 @@ div.widget[name='home-quote-forms'] .hint {
 	position: absolute; right: 7em;
 	width: 15em;
 	padding: 0.35em;
-	color: #FFF; background-color: #92CE56;
+	color: #FFF; background-color: #66CC33;
 	border-radius: 0.25em;
 	z-index: 999;
 }
@@ -158,7 +158,7 @@ div.widget[name='home-quote-forms'] .hint::before {
 	content: '◄';
 	position: absolute;
 	margin: -0.3em 0 0 -1em;
-	color: #92CE56;
+	color: #66CC33;
 	font-size: 2em;
 }
 @media screen and (max-width: 1300px) {
@@ -244,7 +244,7 @@ div.widget[name='home-quote-forms'] .disabled a {
 	font-weight: bold;
 	float: right;
 	margin-right: 5%;
-	color: #92CE56;
+	color: #66CC33;
 }
 
 div.widget[name='home-quote-forms'] #sectionOne a {
@@ -274,7 +274,7 @@ div.widget[name='home-quote-forms'] #crumbTrail li.on {
 	height: 40px;
 	margin-left: 3%;
 	padding-left: 15px;
-	background-color: #0DB4F2;
+	background-color: #66CC33;
 	font-size: 1.5em; font-weight: bold;
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.on:before {
@@ -283,10 +283,10 @@ div.widget[name='home-quote-forms'] #crumbTrail li.on:before {
 	width: 75px; height: 75px;
 	margin: -18px 0 0 -50px;
 	border-radius: 10em;
-	background: #0DB4F2 no-repeat center center;
+	background: #66CC33 no-repeat center center;
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.on:after {
-	color: #0DB4F2;
+	color: #66CC33;
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.about {
 	background-image: url('images/person-light-small.png');
@@ -463,7 +463,7 @@ div.widget[name='home-quote-forms'] #landingPage .pane, div.widget[name='home-qu
 	position: relative;
 	margin: 2em;
 	vertical-align: top;
-	border: thick solid #0DB4F2; border-radius: 1em;
+	border: thick solid #66CC33; border-radius: 1em;
 }
 div.widget[name='home-quote-forms'] #landingPage .pane.selected {
 	border-width: 10px;
@@ -473,7 +473,7 @@ div.widget[name='home-quote-forms'] #landingPage .pane.selected {
 div.widget[name='home-quote-forms'] #landingPage .pane h2, div.widget[name='home-quote-forms'] #addons .pane h2 {
 	margin: 0;
 	padding: 0.2em 0.5em;
-	color: #FFF; background: #0DB4F2;
+	color: #FFF; background: #66CC33;
 }
 div.widget[name='home-quote-forms'] #landingPage .pane input[type="radio"] {
 	visibility: hidden;
@@ -578,10 +578,10 @@ div.widget[name='home-quote-forms'] #addons .pane {
     margin: 1em;
 }
 div.widget[name='home-quote-forms'] #addons .pane.major {
-	border-color: #92CE56;
+	border-color: #66CC33;
 }
 div.widget[name='home-quote-forms'] #addons .pane.major h2 {
-	background-color: #92CE56;
+	background-color: #66CC33;
 }
 div.widget[name='home-quote-forms'] #addons .pane p {
 	margin-top: 0.5em;
@@ -651,18 +651,18 @@ div.widget[name='home-quote-forms'] #addons .pane .item .delete:hover {
 }
 div.widget[name='home-quote-forms'] #save {
 	margin-bottom: 1em;
-	border: thick solid #92CE56; border-radius: 1em;
+	border: thick solid #66CC33; border-radius: 1em;
 }
 div.widget[name='home-quote-forms'] #save:before {
 	content: '';
 	float: right;
 	height: 0; width: 0;
 	margin: -24px 40px 0 0;
-	border-right: 20px dotted transparent; border-bottom: 20px dotted #92CE56; border-left: 20px dotted transparent;
+	border-right: 20px dotted transparent; border-bottom: 20px dotted #66CC33; border-left: 20px dotted transparent;
 }
 div.widget[name='home-quote-forms'] #save span {
 	padding: 0.1em 0.25em;
-	color: #FFF; background: #92CE56;
+	color: #FFF; background: #66CC33;
 	white-space: nowrap;
 	border-radius: 0.25em;
 	font-weight: bold;
@@ -677,7 +677,7 @@ div.widget[name='home-quote-forms'] #save li {
 div.widget[name='home-quote-forms'] #save li a {
 	padding: 0.5em 0.4em;
 	border-radius: 10em;
-	color: #FFF; background: #0DB4F2;
+	color: #FFF; background: #66CC33;
 	font-weight: bold;
 }
 
