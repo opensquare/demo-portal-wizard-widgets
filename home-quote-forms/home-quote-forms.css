@@ -700,7 +700,7 @@ div.widget[name='home-quote-forms'] .Female {
 }
 
 /*Payment page*/
-div.widget[name='home-quote-forms'] #paymentPage div:nth-child(3) {
+div.widget[name='home-quote-forms'] #paymentPage div:nth-child(3) .field {
 	background: transparent!important;
 }
 div.widget[name='home-quote-forms'] #paymentPage div:nth-child(3) span span {
