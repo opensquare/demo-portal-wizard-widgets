@@ -15,9 +15,9 @@
 </div>
 
 <p>
-	Also, we just need a few contact details before you can purchase your insurance policy. The email and
+	We just need a few contact details before you can purchase your insurance policy. The email and
 	password you supply will enable you to access your own Customer Portal, where you can view
-	information about your policy, access your policy documents and more.
+	information about your policy, access your policy documents online, and more.
 </p>
 
 <div id="loginDetails">
@@ -30,8 +30,6 @@
 		<input type="password" name="customer.password" id="input_password"
 			   rf.validation="required pattern({regex: '^.{8,}?$', errorMessage:'Invalid Password'}) pattern({regex: '^.*[0-9]+.*$', errorMessage:'Invalid Password'})"/>
 		<div class="hint">Password must be at least 8 characters long and contain at least 1 number</div>
-	</div>
-	<div class="field">
 		<label for="input_password_confirm">Confirm Password</label>
 		<input type="password" name="passwordConfirm" id="input_password_confirm" 
 			   rf.validationFunction="if (fields.customer_password.value !== field.value && field.value !== '') {error = {name: field.name, message: 'This password must match the one entered above'} } else { this.validate('required')}"/>

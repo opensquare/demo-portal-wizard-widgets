@@ -699,6 +699,10 @@ div.widget[name='home-quote-forms'] .Female {
 	background: url('person-woman-dark.png') no-repeat center top;
 }
 /*Payment page*/
+
+div.widget[name='home-quote-forms'] #paymentPage h1:nth-child(4) {
+	background: url('images/payment-cards.png') no-repeat right center;
+}
 div.widget[name='home-quote-forms'] #paymentPage label.forRadio {
 	position: relative;
 	right: 0.8em;
