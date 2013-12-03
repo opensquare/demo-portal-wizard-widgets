@@ -42,7 +42,7 @@
 	</div>
 	<div class="field findAddress" rf.includeIf="fields.phCard.value == 'false'">
 		<div class="labelWrapper">
-			<label for="input_address">Billing Address</label>
+			<label for="input_address">Billing address</label>
 			</div>
 		<div class="tableWrapper">
 			<input class="addressLookup" id="input_address" type="text" placeholder="Start typing your address or postcode"/>
@@ -66,17 +66,17 @@
 		</div>
 	</div>
 	<div class="field">
-		<label for="input_card_type">Card Type</label>
+		<label for="input_card_type">Card type</label>
 		<select name="card.cardType" id="input_card_type" rf.validation="required" rf.source="../quote-forms-common/resources/cardTypes.txt" rf.preselectFirstOption="true">
 			<option disabled selected></option>
 		</select>
 	</div>
 	<div class="field">
-		<label for="input_card_number">Card Number (without spaces)</label>
+		<label for="input_card_number">Card number (without spaces)</label>
 		<input type="text" id="input_card_number" name="card.number" rf.validation="required pattern({regex:'^[0-9]{16}$', errorMessage:'Invalid card number'})"/>
 	</div>
 	<div class="field">
-		<label for="input_card_from_month">Valid From</label>
+		<label for="input_card_from_month">Valid from</label>
 		<select id="input_card_from_month" name="card.validFromMonth" class="dateSel" rf.preselectFirstOption="true">
 			<option disabled selected>Month</option><option>01</option><option>02</option><option>03</option><option>04</option>
 			<option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option>
@@ -99,12 +99,12 @@
 		</select>
 	</div>
 	<div class="field">
-		<label for="input_issue">Issue Number</label>
+		<label for="input_issue">Issue number</label>
 		<input type="text" id="input_issue" name="card.issue" rf.validation="pattern({regex:'^[0-9]*$', errorMessage:'Invalid number'})"/>
 		<div class="hint">Leave blank if not present</div>
 	</div>
 	<div class="field">
-		<label for="input_code">3 Digit Security Code</label>
+		<label for="input_code">3 digit security code</label>
 		<input type="password" id="input_code" maxlength="3" name="card.code" rf.validation="required pattern({regex:'^[0-9]{3}$', errorMessage:'Invalid number'})" />
 		<div class="hint">This can be found on the back of your card</div>
 	</div>
