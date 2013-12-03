@@ -698,8 +698,18 @@ div.widget[name='home-quote-forms'] .Female {
 	font-size: 1.3em;
 	background: url('person-woman-dark.png') no-repeat center top;
 }
-/*Payment page*/
 
+/*Payment page*/
+div.widget[name='home-quote-forms'] #paymentPage div:nth-child(3) {
+	background: transparent!important;
+}
+div.widget[name='home-quote-forms'] #paymentPage div:nth-child(3) span span {
+	float: right;
+	font-size: 2em;
+}
+div.widget[name='home-quote-forms'] #paymentPage div:nth-child(3) span span:before {
+	content: '£';
+}
 div.widget[name='home-quote-forms'] #paymentPage h1:nth-child(4) {
 	background: url('images/payment-cards.png') no-repeat right center;
 }
