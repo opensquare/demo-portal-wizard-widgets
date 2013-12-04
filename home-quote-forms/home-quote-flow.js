@@ -91,21 +91,28 @@
 		buy: [
 			{ id: "singlePayment", url:"../quote-forms-common/10-single-payment.html", actions:["next:payment", "back:main.quote"]},
 			{ id: "payment", docBase: "/quote/payment", url:"../quote-forms-common/11-payment.html", actions:["next"]},
-			{ id: "saving", url:"../quote-forms-common/12-saving.html", actions:[
-					{
-						name: "next",
-						submission: {
-							url: "{{$esb-url}}",
-							data: {
-								script: "NewBusiness/script/importNBCaseFromForms.py",
-								data: "[dataDocument]"
-							},
-							method: "post",
-							resultInsertPoint: "/quote/pact"
-						}
-					}
-				]},
-			{ id: "complete", url:"../quote-forms-common/complete.html"}
+            { id: "buying",
+            url: "buying.html",
+            actions : [
+                {
+                    name: "next",
+                    submission: {
+                            preTransform: "xslt/toMM.xsl",
+                            url: "{{$mm-url}}/submitjob",
+                            data: {
+                                    username: "adam",
+                                    description: "Household Application",
+                                    searchTerms: "xpath://brokerCode",
+                                    jobType: "MERGE",
+                                    payload: "[dataDocument]"
+                            },
+                            method: "post",
+                            resultInsertPoint: "/quote/docSubmission"
+                    }
+                }
+            ]
+			},
+			{ id: "complete", url:"complete.html"}
 		]
 	}
 }

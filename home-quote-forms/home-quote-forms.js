@@ -63,4 +63,34 @@ function Widget_home_quote_forms() {
 	}	
 }
 
+var docWaitTime = 0;
+
+function createDocLink(){
+    var flowId = $("input[name='rf.flowId']").val();
+    var url = $("#mm_job_proxy").attr('rf.source') + '?rf.flowId=' + flowId;
+    $.getJSON(url, function(data) {
+        var resolved = data["resolved"];
+        if(pw.defined(resolved)){
+            var status = data["status"];
+            if(status == "FINISHED_SUCCESSFULLY"){
+                var docUrl = $("#mm_doc_proxy").val();
+                $("#docLink").html("<a target='new' href=\'" + docUrl + "\'>Click here to download your documents.</a>");
+            }else{
+                docFailed();
+            }
+        }else{
+            docWaitTime = docWaitTime + 3000;
+            if(docWaitTime >= 120000){
+                docFailed();
+            }else{
+                setTimeout(createDocLink, 3000);
+            }
+        }
+    });
+}
+
+function docFailed(){
+    $("#docLink").html("<h5 class='errorMessage'>An error has occurred generating the application form. Please contact the service center on 0800 123 123</h5>");
+}
+
 	
