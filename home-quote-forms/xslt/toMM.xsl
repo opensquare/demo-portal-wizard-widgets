@@ -4,7 +4,7 @@
     <xsl:template match="/">
         <mmJob xsi:schemaLocation="http://www.opensquare.co.uk/mmJob http://mailmerger.osl-cloud.com/xml/ns/mmJob_2_2.xsd" xmlns="http://www.opensquare.co.uk/mmJob" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <template>
-                <fileName>household-welcome-letter.docx</fileName>
+                <fileName>morethan-policy-letter-v1.0.docx</fileName>
                 <mergeType>pdf</mergeType>
             </template>
             <destinations>
@@ -15,11 +15,12 @@
             <data>
                 <record>
                     <xsl:apply-templates select="quote/*[not(name() = 'products')]"/>
+                    <xsl:apply-templates select="quote/products/product[name = /quote/selectedProduct]"/>
                 </record>
             </data>
         </mmJob>
     </xsl:template>
-    <xsl:template match="*">
+    <xsl:template match="*[not(name()='upgrade')][not(name()='addon')][not(@partname)]">
         <xsl:choose>
             <xsl:when test="count(./*) &gt; 0">
                 <xsl:apply-templates select="*"/>
@@ -34,4 +35,8 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    <xsl:template match="upgrade"></xsl:template>
+    <xsl:template match="addon"></xsl:template>
+    <xsl:template match="*[starts-with(@partname, 'addon')]"></xsl:template>
+    <xsl:template match="*[starts-with(@partname, 'upgrade')]"></xsl:template>
 </xsl:stylesheet>
