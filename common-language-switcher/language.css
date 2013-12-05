@@ -1,11 +1,12 @@
 nav{
 	float: right;
-	margin-top: -5px;
-	background: #CDCDCD;
-	padding: 5px;
-	border-radius: 6px;
 	width: 42px;
 	height: 20px;
+	padding: 5px;
+	margin-top: -5px;
+	background: #CDCDCD;
+	border-radius: 6px;
+	cursor: pointer;
 }
 nav:hover{
 	height: 100px;
