@@ -24,6 +24,7 @@ header h2 {
 	margin: 0;
 	font-size: 1em;
 	color: #0DB4F2; /* Blue */
+	text-shadow: 0 0 8px rgba(0,0,0,0.3);
 }
 header h2 span {
 	color: #92CE56; /* Green */
@@ -33,9 +34,14 @@ header .common-header-menu, header .common-language-switcher {
 }
 header .common-language-switcher nav {
 	position: absolute;
+	width: 50px;
 	height: auto;
-	margin: 0;
+	margin: -6px 0 0 0;
 	background: #FFF;
+}
+header .common-language-switcher #languages a {
+	width: 26px;
+	margin: 8px auto;
 }
 #home-banner {
 	height: 500px;
@@ -58,7 +64,7 @@ header .common-language-switcher nav {
 	color: rgba(255,255,255,0.9);
 	font-weight: normal;
 	font-size: 2em;
-	border-radius: 0.15em;
+	border-radius: 0 0.5em 0.5em 0;
 }
 #home-content {
 	position: absolute;
@@ -130,16 +136,19 @@ footer {
     position: absolute;
     bottom: 0;
 	width: 100%;
-	padding: 0 10%;
+	padding: 1em 10%;
     background: rgba(0,0,0,0.7);
 	color: #FFF;
-	font-size: 0.75em;
+	font-size: 0.7em;
 }
 footer p {
+	display: inline-block;
+	width: 80%;
 	margin: 0;
 	padding: 0 1em 1em 1em;
+	vertical-align: top;
 }
 footer p:first-child{
-	padding-top: 1em;
+	width: 20%;
 	font-weight: bold;
 }
