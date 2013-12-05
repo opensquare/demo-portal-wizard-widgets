@@ -68,6 +68,11 @@ header .common-language-switcher {
 	padding: 0;
 	overflow: hidden;
 	vertical-align: top;
+	cursor: pointer;
+}
+#home-content article a {
+	color: inherit;
+	text-decoration: none;
 }
 #home-content article div {
 	display: inline-block;
@@ -92,9 +97,13 @@ header .common-language-switcher {
 #home-content article h2 {
 	display: inline-block;
 	width: 100px;
-	padding-top: 3em;
+	margin: 0;
+	padding: 3em 0 0.25em 0;
 	vertical-align: top;
+	background: no-repeat center 5%;
+	color: #FFF;
 	font-size: 1em;
+	font-weight: normal;
 	text-align: center;
 }
 #home-content article.news>h2 {
@@ -121,44 +130,4 @@ footer p {
 footer p:first-child{
 	padding-top: 1em;
 	font-weight: bold;
-}
-
-
-#home-content article{
-	display: inline-block;
-	width: 270px;
-	height: 182px;
-	overflow: hidden;
-	margin: 0 3em 3em 0;
-	vertical-align: top;
-	background: #0DB4F2;
-	box-shadow: 0 0 10px rgba(0,0,0,0.2);
-	border: thick solid transparent;
-	border-radius: 1em;
-	text-align: center;
-	cursor: pointer;
-}
-#home-content article>h2{
-	display: inline-block;
-	width: 100%;
-	height: 15%;
-	margin: 0;
-	padding: 2.5em 0 0.25em 0;
-	background: no-repeat center 5%;
-	color: #fff;
-	font-weight: normal;
-}
-#home-content article>p{
-	height: 100%;
-	margin: 0;
-	padding: 1em;
-	font-size: 0.8em;
-	line-height: 1.25em;
-	border-radius: 0.25em;
-	background: #FFF;
-	color: #000;
-}
-#home-content article.products a {
-	color: inherit;
-	text-decoration: none;
 }
