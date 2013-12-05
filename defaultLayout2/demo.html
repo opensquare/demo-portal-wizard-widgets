@@ -28,4 +28,8 @@
 		<div class="widget" name="common-footer"></div>
 	</footer>
 
-	<audio id="demo" src="widgets/defaultLayout2/switch.wav"></audio>
+	<audio id="sound" src="widgets/defaultLayout2/switch.wav"></audio>
+
+	<script type="javascript">
+		$('#home-content article').hover(function(){document.getElementById('sound').play()});
+	</script>
