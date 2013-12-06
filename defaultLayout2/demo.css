@@ -143,6 +143,17 @@ header .common-language-switcher #languages a {
 #home-content article.portal>h2 {
 	background-image: url('terminal-light.png');
 }
+#home-content article.products a {
+	width: 100px;
+	height: 75px;
+	padding-top: 20px;
+	overflow: hidden;
+	vertical-align: top;
+	background: url('cube-small-light.png') no-repeat top center;
+}
+#home-content article.products a {
+	background-image: url('home-small-light.png');
+}
 footer {
     position: absolute;
     bottom: 0;
