@@ -25,6 +25,7 @@
 				actions: [
 					{
 						name: "next",
+                        dataDocTransform: "xslt/removeCalcResults.xsl",
 						submission: {
 							preTransform: "xslt/toNapier.xsl",
 							url: "{{$esb-url}}/home/quote/calc",
