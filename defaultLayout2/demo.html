@@ -31,5 +31,7 @@
 	<audio id="sound" src="widgets/defaultLayout2/switch.wav"></audio>
 
 	<script type="javascript">
-		$('#home-content article').hover(function(){document.getElementById('sound').play()});
+		$(document).ready(function(){
+			$('#home-content article').hover(function(){document.getElementById('sound').play()});
+		})
 	</script>
