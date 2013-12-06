@@ -21,7 +21,15 @@
 			},
 			{ id: "customer", docBase: "/quote/customer", url: "customer.html", actions: ["next"]},
 			{ id: "home", docBase: "/quote/home", url: "home.html", actions: ["back", "next"]},
-			{ id: "calculating", url: "calculating.html", 
+            { id: "calculating", url: "calculating.html", 
+				actions: [
+					{
+						name: "next",
+                        dataDocTransform: "xslt/removeCalcResults.xsl",
+					}
+				]
+			},
+			{ id: "calculating1", url: "calculating.html", 
 				actions: [
 					{
 						name: "next",
