@@ -10,15 +10,15 @@
 	</section>
 
 	<section id="home-content">
-		<article class="news" onmouseover="document.getElementById('demo').play()">
+		<article class="news">
 			<p>Click here to find out all the latest goings on in the exciting world of insurance.</p>
 			<h2>News</h2>
 		</article>
-		<article class="products" onmouseover="document.getElementById('demo').play()">
+		<article class="products">
 			<div class="widget" name="products2"></div>
 			<h2 title="Click to get an online quote - be on cover in minutes">Get a quote</h2>
 		</article>
-		<article class="portal" onmouseover="document.getElementById('demo').play()">
+		<article class="portal">
 			<p>Already have a policy with us?  Go to our Customer Portal to see the details and make changes.</p>
 			<h2><a href="cp">Customer login</a></h2>
 		</article>
@@ -31,7 +31,5 @@
 	<audio id="sound" src="widgets/defaultLayout2/switch.wav"></audio>
 
 	<script type="javascript">
-		$(document).ready(function(){
-			$('#home-content article').hover(function(){document.getElementById('sound').play()});
-		})
+		$('#home-content article').hover(function(){document.getElementById('sound').play()});
 	</script>
