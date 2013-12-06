@@ -107,7 +107,6 @@ header .common-language-switcher #languages a {
 #home-content article p {
 	display: none;
 	max-width: 400px;
-	min-height: 4.6em;
 	margin: 0 0.5em 0 0;
 	font-size: 0.9em;
 	color: #FFF;
@@ -146,12 +145,12 @@ header .common-language-switcher #languages a {
 #home-content article.products a {
 	width: 100px;
 	height: 75px;
-	padding-top: 20px;
+	padding-top: 40px;
 	overflow: hidden;
 	vertical-align: top;
-	background: url('cube-small-light.png') no-repeat top center;
+	background: url('cube-small-light.png') no-repeat center 10px;
 }
-#home-content article.products a {
+#home-content article.products a[href='home-quote'] {
 	background-image: url('home-small-light.png');
 }
 footer {
