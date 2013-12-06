@@ -45,7 +45,7 @@ header .common-language-switcher #languages a {
 }
 #home-banner {
 	height: 500px;
-	height: 100vmin;
+	height: 100vh;
 	padding-top: 5%;
 	background: url('xray10@flickr.com.jpg') no-repeat center; /* (c)xray10@flickr.com licensed under creative commons*/
 	background-size: cover;
@@ -65,6 +65,11 @@ header .common-language-switcher #languages a {
 	font-weight: normal;
 	font-size: 2em;
 	border-radius: 0 0.5em 0.5em 0;
+}
+@media screen and (max-width: 650px) {
+	#home-banner h2 {
+		display: none;
+	}
 }
 #home-content {
 	position: absolute;
@@ -150,4 +155,14 @@ footer p {
 footer p:first-child{
 	width: 19.5%;
 	font-weight: bold;
+}
+@media screen and (max-width: 800px) {
+	footer {
+		padding: 1em;
+	}
+}
+@media screen and (max-height: 500px) {
+	footer {
+		position: static;
+	}
 }
