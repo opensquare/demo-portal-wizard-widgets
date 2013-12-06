@@ -95,6 +95,7 @@ header .common-language-switcher #languages a {
 	cursor: pointer;
 }
 #home-content article a {
+	display: inline-block;
 	padding: 1em;
 	color: inherit;
 	text-decoration: none;
