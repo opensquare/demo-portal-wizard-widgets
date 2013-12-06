@@ -39,7 +39,8 @@ header h2 span{
 
 #rq-banner{
 	height: 300px;
-	background: url('rq-banner.jpg') no-repeat center; /* (c) ewitch@flickr.com */
+	background:#ffffff;
+	/*background: url('rq-banner.jpg') no-repeat center; *//* (c) ewitch@flickr.com */
 	background-size: cover;
 }
 #rq-banner>h1{
