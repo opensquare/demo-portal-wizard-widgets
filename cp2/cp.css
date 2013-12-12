@@ -1,0 +1,194 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	min-width: 275px;
+	margin: 0;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	background: #F0F0F0;
+	color: #333;
+}
+#backgroundText text {
+	fill: none;
+	stroke: rgba(0, 0, 0, 0.05);
+}
+header {
+	position: absolute;
+	width: 100%;
+	margin: 0;
+	padding: 1em 10%;
+	background: rgba(255,255,255,0.3);
+}
+header h2 {
+	float: left;
+	margin: 0;
+	font-size: 1em;
+	color: rgba(255,255,255,0.8);
+	text-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+header h2 span {
+	display: inline-block;
+	margin: -1em 0 -1em 0.25em;
+	font-size: 1.25em;
+	color: #92CE56; /* Green */
+}
+header .common-header-menu, header .common-language-switcher {
+	float: right;
+}
+header .common-language-switcher nav {
+	position: absolute;
+	width: 50px;
+	height: auto;
+	margin: -6px 0 0 0;
+	background: transparent;
+	border: thin solid;
+	transition: 1s;
+}
+header .common-language-switcher nav:hover {
+	background-color: rgba(255,255,255,0.3);
+}
+header .common-language-switcher #languages a {
+	width: 26px;
+	margin: 8px auto;
+}
+#home-banner {
+	height: 500px;
+	height: 100vh;
+	padding-top: 5%;
+	background: url('bertkaufmann@flickr.com.jpg') no-repeat center; /* (c)Bert Kaufmann, flickr.com - licensed under creative commons*/
+	background-size: cover;
+}
+#home-banner>h1 {
+	width: 400px;
+	height: 125px;
+	margin: 0 0 0 1%;
+	background: url('model-insurance.png') no-repeat left bottom;
+}
+#home-banner h2 {
+	display: inline-block;
+	margin: 0;
+	padding: 0.1em 0.5em 0.15em 4em;
+	background: rgba(0,0,0,0.35);
+	color: rgba(255,255,255,0.9);
+	font-weight: normal;
+	font-size: 2em;
+	border-radius: 0 0.4em 0 0;
+}
+@media screen and (max-width: 650px) {
+	#home-banner h2 {
+		display: none;
+	}
+}
+
+div.widget>.widget-head{
+	display: none;
+}
+div.widget>.widget-messages{
+	overflow: hidden;
+	background-color: #A0F0F0;
+	color: #333;
+	border-radius: 0.25em;
+}
+div.widget>.widget-messages>div{
+	padding: 0.25em 0.5em;
+}
+div.widget>.widget-messages>div>a{
+	float: right;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url('symbol-close.png') no-repeat;
+	cursor: pointer;
+}
+div.widget>.widget-messages>div.error{
+	background-color: #F0A0A0;
+}
+#login-form form{
+	width: 46%;
+	min-width: 275px;
+	display: inline-block;
+	vertical-align: top;
+	padding: 1%;
+}
+#login-form h2{
+	margin: 0 0 0.5em 0;
+	color: #0090D0;
+}
+#login-form h3{
+	font-size: 1.1em;
+	margin: 0;
+}
+#login-form label{
+	display: inline-block;
+	width: 100%;
+	margin-top: 1em;
+}
+#login-form input{
+	display: block;
+	width: 90%;
+	font-size: 1.5em;
+	border: thin solid #aaa;
+}
+#login-form button{
+	float: right;
+	margin-top: 1em;
+	padding: 0.2em 2em;
+	background: #92CE56;
+	color: white;
+	border: none;
+	border-radius: 0.25em;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+#login-form button:hover{
+	background-color: #82BE46;
+}
+#login-form-enter{
+	margin-bottom: 2em;
+}
+#login-form-enter button{
+	margin-right: 4em;
+}
+#login-form a{
+	float: left;
+	margin-top: 1.5em;
+	font-size: 0.75em;
+	color: inherit;
+	text-decoration: none;
+}
+#login-form a:hover{
+	text-decoration: underline;
+}
+#login-form-reset-text{
+	padding: 0.6em 0;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 1em 10%;
+    background: rgba(60,60,60,0.9);
+	color: #DDD;
+	font-size: 0.65em;
+}
+footer p {
+	display: inline-block;
+	width: 80%;
+	margin: 0;
+	vertical-align: top;
+}
+footer p:first-child{
+	width: 19.5%;
+	font-weight: bold;
+}
+@media screen and (max-width: 800px) {
+	footer {
+		padding: 1em;
+	}
+}
+@media screen and (max-height: 500px) {
+	footer {
+		position: static;
+	}
+}
