@@ -80,6 +80,14 @@ header .common-language-switcher #languages a {
 	}
 }
 
+#home-content {
+	position: absolute;
+	top: 20%;
+	right: 5%;
+	width: 60%;
+	background: rgba(255,255,255,0.8);
+	border-radius: 0.5em;
+}
 div.widget>.widget-head{
 	display: none;
 }
