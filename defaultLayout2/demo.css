@@ -23,10 +23,13 @@ header h2 {
 	float: left;
 	margin: 0;
 	font-size: 1em;
-	color: #0DB4F2; /* Blue */
+	color: rgba(255,255,255,0.8);
 	text-shadow: 0 0 8px rgba(0,0,0,0.3);
 }
 header h2 span {
+	display: inline-block;
+	margin: -1em 0 -1em 0.25em;
+	font-size: 1.25em;
 	color: #92CE56; /* Green */
 }
 header .common-header-menu, header .common-language-switcher {
@@ -158,9 +161,9 @@ footer {
     bottom: 0;
 	width: 100%;
 	padding: 1em 10%;
-    background: rgba(0,0,0,0.6);
+    background: rgba(60,60,60,0.9);
 	color: #DDD;
-	font-size: 0.7em;
+	font-size: 0.65em;
 }
 footer p {
 	display: inline-block;
