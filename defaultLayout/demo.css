@@ -1,154 +1,187 @@
-body{
+* {
+	box-sizing: border-box;
+}
+body {
 	min-width: 275px;
 	margin: 0;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	background: #F0F0F0;
 	color: #333;
 }
-
-#backgroundText text{
+#backgroundText text {
 	fill: none;
 	stroke: rgba(0, 0, 0, 0.05);
 }
-
-header{
-	width: 80%;
-	margin: 1em auto;
-	padding-bottom: 1em;
+header {
+	position: absolute;
+	width: 100%;
+	margin: 0;
+	padding: 1em 10%;
+	background: rgba(255,255,255,0.3);
 }
-header h2{
+header h2 {
 	float: left;
 	margin: 0;
 	font-size: 1em;
-	color: #0DB4F2; /* Blue */
+	color: rgba(255,255,255,0.8);
+	text-shadow: 0 0 8px rgba(0,0,0,0.3);
 }
-header h2 span{
+header h2 span {
+	display: inline-block;
+	margin: -1em 0 -1em 0.25em;
+	font-size: 1.25em;
 	color: #92CE56; /* Green */
 }
-@media screen and (max-width: 1000px) {
-	header{
-		width:98%;
-	}
+header .common-header-menu, header .common-language-switcher {
+	float: right;
 }
-
-#home-banner{
+header .common-language-switcher nav {
+	position: absolute;
+	width: 50px;
+	height: auto;
+	margin: -6px 0 0 0;
+	background: transparent;
+	border: thin solid;
+	transition: 1s;
+}
+header .common-language-switcher nav:hover {
+	background-color: rgba(255,255,255,0.3);
+}
+header .common-language-switcher #languages a {
+	width: 26px;
+	margin: 8px auto;
+}
+#home-banner {
 	height: 500px;
-	background: url('banner.jpg') no-repeat center; /* (c)xray10 @ flickr.com */
+	height: 100vh;
+	padding-top: 5%;
+	background: url('xray10@flickr.com.jpg') no-repeat center; /* (c)xray10@flickr.com licensed under creative commons*/
 	background-size: cover;
 }
-#home-banner>h1{
+#home-banner>h1 {
 	width: 400px;
 	height: 125px;
 	margin: 0 0 0 1%;
 	background: url('model-insurance.png') no-repeat left bottom;
 }
-#home-banner h2{
+#home-banner h2 {
 	display: inline-block;
 	margin: 0;
-	padding: 0 0.5em 0 4em;
+	padding: 0.1em 0.5em 0.15em 4em;
 	background: rgba(0,0,0,0.35);
 	color: rgba(255,255,255,0.9);
 	font-weight: normal;
 	font-size: 2em;
-	border-radius: 0.15em;
+	border-radius: 0 0.4em 0 0;
 }
-#home-content{
-	width: 80%;
-	margin: -2em auto 0 auto;
-	text-align: center;
-}
-#home-content article{
-	display: inline-block;
-	width: 270px;
-	height: 182px;
-	overflow: hidden;
-	margin: 0 3em 3em 0;
-	vertical-align: top;
-	background: #0DB4F2;
-	box-shadow: 0 0 10px rgba(0,0,0,0.2);
-	border: thick solid transparent;
-	border-radius: 1em;
-	text-align: center;
-	cursor: pointer;
-}
-#home-content article:hover{
-	background: #92CE56;
-}
-#home-content article>h2{
-	display: inline-block;
-	width: 100%;
-	height: 15%;
-	margin: 0;
-	padding: 2.5em 0 0.25em 0;
-	background: no-repeat center 5%;
-	color: #fff;
-	font-weight: normal;
-}
-#home-content article.news>h2{
-	background-image: url('world-light.png');
-}
-#home-content article.products>h2{
-	background-image: url('calculator-buttons-light.png'); 
-}
-#home-content article.portal>h2{
-	background-image: url('terminal-light.png');
-}
-#home-content article>p{
-	height: 100%;
-	margin: 0;
-	padding: 1em;
-	font-size: 0.8em;
-	line-height: 1.25em;
-	border-radius: 0.25em;
-	background: #FFF;
-	color: #000;
-}
-#home-content article.products ul{
-	margin: 0;
-	padding: 0;
-	background: #FFF;
-	list-style: none;
-}
-#home-content article.products li{
-	padding: 0.5em 0;
-}
-#home-content article.products a {
-	color: inherit;
-	text-decoration: none;
-	font-weight: bold;
-}
-#home-content article.products:hover{
-	height: auto;
-}
-#home-content article.products li:hover {
-	background: #92CE56;
-	color: #FFF;
-}
-
-@media screen and (max-width: 1000px) {
-	#home-content{
-		width:98%;
+@media screen and (max-width: 650px) {
+	#home-banner h2 {
+		display: none;
 	}
 }
-
-footer{
-	width: 80%;
-	margin: 3em auto 1em auto;
-	background-color: #777;
-	color: #FFF;
-	font-size: 0.75em;
-	border-radius: 0.25em;
-}
-footer p{
-	padding: 0 1em 1em 1em;
+#home-content {
+	position: absolute;
+	right: 0;
+	top: 25%;
+	width: 100%;
 	margin: 0;
+	text-align: right;
+}
+#home-content article {
+	display: block;
+	width: 100%;
+	height: 100px;
+	margin: 0 1em 1em 0;
+	padding: 0;
+	overflow: hidden;
+	vertical-align: top;
+}
+#home-content article a {
+	display: inline-block;
+	padding: 1em;
+	color: inherit;
+	text-decoration: none;
+}
+#home-content article div {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+#home-content article p {
+	display: none;
+	max-width: 400px;
+	margin: 0 0.5em 0 0;
+	font-size: 0.9em;
+	color: #FFF;
+	text-align: center;
+	border-radius: 0.5em;
+	border: medium solid #FFF;
+}
+#home-content article:hover p {
+	display: inline-block;
+}
+#home-content article p:hover {
+	background: rgba(255,255,255,0.2);
+	transition: 0.5s;
+}
+#home-content article h2 {
+	display: inline-block;
+	width: 100px;
+	margin: 0;
+	padding: 3em 0 0.25em 0;
+	vertical-align: top;
+	background: no-repeat center 5%;
+	color: #FFF;
+	font-size: 1em;
+	font-weight: normal;
+	text-align: center;
+}
+#home-content article.news>h2 {
+	background-image: url('world-light.png');
+}
+#home-content article.products>h2 {
+	background-image: url('calculator-buttons-light.png'); 
+}
+#home-content article.portal>h2 {
+	background-image: url('terminal-light.png');
+}
+#home-content article.products a {
+	width: 100px;
+	height: 75px;
+	padding-top: 40px;
+	overflow: hidden;
+	vertical-align: top;
+	background: url('cube-small-light.png') no-repeat center 10px;
+}
+#home-content article.products a[href='home-quote'] {
+	background-image: url('home-small-light.png');
+}
+footer {
+    position: absolute;
+    bottom: 0;
+	width: 100%;
+	padding: 1em 10%;
+    background: rgba(60,60,60,0.9);
+	color: #DDD;
+	font-size: 0.65em;
+}
+footer p {
+	display: inline-block;
+	width: 80%;
+	margin: 0;
+	vertical-align: top;
 }
 footer p:first-child{
-	padding-top: 1em;
+	width: 19.5%;
 	font-weight: bold;
 }
-@media screen and (max-width: 1000px) {
-	footer{
-		width:98%;
+@media screen and (max-width: 800px) {
+	footer {
+		padding: 1em;
+	}
+}
+@media screen and (max-height: 500px) {
+	footer {
+		position: static;
 	}
 }

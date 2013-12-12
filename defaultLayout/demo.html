@@ -1,4 +1,4 @@
-	<header>
+	<header id="home-header">
 		<h2>Speak to us today <span>0800 123 456</span></h2>
 		<div class="widget" name="common-language-switcher"></div>
 		<div class="widget" name="common-header-menu"></div>
@@ -11,22 +11,25 @@
 
 	<section id="home-content">
 		<article class="news">
+			<p><a>Click here to find out all the latest goings on in the exciting world of insurance.</a></p>
 			<h2>News</h2>
-			<p>Click here to find out all the latest goings on in the exciting world of insurance.</p>
 		</article>
 		<article class="products">
-			<h2>Get a quote</h2>
-			<p>Tell us your details and let us get you a price online.  You can even buy and be on cover in minutes.</p>
-			<div class="widget" name="products"></div>
+			<div class="widget" name="products2"></div>
+			<h2 title="Click to get an online quote - be on cover in minutes">Get a quote</h2>
 		</article>
-		<a href="cp">
-			<article class="portal">
-					<h2>Customer login</h2>
-					<p>Already have a policy with us?  Go to our Customer Portal to see the details and make any changes.</p>
-			</article>
-		</a>
+		<article class="portal">
+			<p><a href="cp">Already have a policy with us?  Go to our Customer Portal to see the details and make changes.</a></p>
+			<h2>Customer login</h2>
+		</article>
 	</section>
 
-	<footer>
+	<footer id="home-footer">
 		<div class="widget" name="common-footer"></div>
 	</footer>
+
+	<audio id="sound" src="widgets/defaultLayout2/switch.wav"></audio>
+
+	<script type="text/javascript">
+		$('#home-content article').hover(function(){document.getElementById('sound').play()});
+	</script>
