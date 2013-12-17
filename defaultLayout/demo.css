@@ -185,3 +185,24 @@ footer p:first-child{
 		position: static;
 	}
 }
+
+.widget-messages ul {
+	margin: 0;
+	padding: 0.5em;
+	list-style: none;
+	border: medium solid #FFF;
+	border-radius: 1em;
+}
+.widget-messages ul:hover {
+	opacity: 1;
+	transition: 1s;
+}
+.widget-messages li {
+	display: none;
+	padding: 0.5em 1em;
+	background: #FFF;
+	border-radius: 0.5em;
+}
+.widget-messages li:first-child {
+	display: list-item;
+}
