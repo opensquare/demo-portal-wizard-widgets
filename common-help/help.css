@@ -31,15 +31,17 @@ div[name='common-help'] aside.on h2:hover {
 }
 div[name='common-help'] aside>ul {
 	float: right;
-	width: 95%;
+	width: 0;
 	height: 0;
 	max-width: 20em;
 	margin-top: 0;
 	padding: 0;
 	background: rgba(0,144,192,0.9);
 	transition: 1s;
+	overflow: hidden;
 }
 div[name='common-help'] aside.on>ul {
+	width: 95%;
 	height: auto;
 	padding: 0.25em 1em 0.25em 2em;
 }
