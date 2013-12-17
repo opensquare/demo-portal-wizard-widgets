@@ -192,6 +192,7 @@ footer p:first-child{
 	list-style: none;
 	border: medium solid #FFF;
 	border-radius: 1em;
+	opacity: 0.25;
 }
 .widget-messages ul:hover {
 	opacity: 1;
