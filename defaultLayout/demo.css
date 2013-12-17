@@ -37,9 +37,10 @@ header .common-header-menu, header .common-language-switcher {
 }
 header .common-language-switcher nav {
 	position: absolute;
-	width: 50px;
+	width: auto;
 	height: auto;
 	margin: -6px 0 0 0;
+	font-size: small;
 	background: transparent;
 	border: thin solid;
 	transition: 1s;

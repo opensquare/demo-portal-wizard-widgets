@@ -23,10 +23,13 @@ div.widget[name='common-header-menu'] a:hover{
 @media screen and (max-width: 1000px) {
 	div.widget[name='common-header-menu'] ul{
 		position: absolute;
-		right: 0;
+		right: 10px;
 		min-width: 20px;
-		background-color: rgba(255,255,255,0.8);
 		border-radius: 4px;
+		z-index: 9999;
+	}
+	div.widget[name='common-header-menu'] ul.open{
+		background-color: rgba(255,255,255,0.8);
 	}
 	div.widget[name='common-header-menu'] ul>a{
 		display: inline-block;
