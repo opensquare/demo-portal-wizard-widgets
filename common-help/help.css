@@ -8,6 +8,7 @@ div[name='common-help'] aside {
 	right: 0;
 	color: #FFF;
 	border-radius: 10em 0 0 10em;
+	z-index: 9999;
 }
 div[name='common-help'] aside>h2 {
 	width: 3.5em;
@@ -24,10 +25,10 @@ div[name='common-help'] aside.on>h2 {
 	width: auto;
 }
 div[name='common-help'] aside h2:hover {
-	width: 3.5em;
+	width: 4em;
 }
 div[name='common-help'] aside.on h2:hover {
-	width: 4em;
+	width: auto;
 }
 div[name='common-help'] aside>ul {
 	float: right;
@@ -37,6 +38,7 @@ div[name='common-help'] aside>ul {
 	margin-top: 0;
 	padding: 0;
 	background: rgba(0,144,192,0.9);
+	border-radius: 0 0 0 1em;
 	transition: 1s;
 	overflow: hidden;
 }
