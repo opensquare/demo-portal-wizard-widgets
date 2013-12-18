@@ -3,38 +3,39 @@
 }
 body {
 	min-width: 275px;
+	min-width: 100vmin;
 	margin: 0;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	background: #F0F0F0;
+	background: url('clairity@flickr.com.jpg') no-repeat center; /* (c)Clairity, flickr.com - licensed under creative commons*/
+	background-size: cover;
 	color: #333;
 }
 #backgroundText text {
 	fill: none;
 	stroke: rgba(0, 0, 0, 0.05);
 }
-header {
-	position: absolute;
-	width: 100%;
-	margin: 0;
+#home-header {
+	height: 6vmin;
+	min-height: 3em;
 	padding: 1em 10%;
 	background: rgba(255,255,255,0.5);
 }
-header h2 {
+#home-header h2 {
 	float: left;
 	margin: 0;
 	font-size: 1em;
-	color: #888;
+	color: #555;
 }
-header h2 span {
+#home-header h2 span {
 	display: inline-block;
 	margin: -1em 0 -1em 0.25em;
 	font-size: 1.25em;
 	color: #92CE56; /* Green */
 }
-header .common-header-menu, header .common-language-switcher {
+#home-header .common-header-menu, header .common-language-switcher {
 	float: right;
 }
-header .common-language-switcher nav {
+#home-header .common-language-switcher nav {
 	position: absolute;
 	width: 50px;
 	height: auto;
@@ -43,19 +44,16 @@ header .common-language-switcher nav {
 	border: thin solid;
 	transition: 1s;
 }
-header .common-language-switcher nav:hover {
+#home-header .common-language-switcher nav:hover {
 	background-color: rgba(255,255,255,0.3);
 }
-header .common-language-switcher #languages a {
+#home-header .common-language-switcher #languages a {
 	width: 26px;
 	margin: 8px auto;
 }
 #home-banner {
-	height: 500px;
-	height: 100vh;
-	padding-top: 5%;
-	background: url('clairity@flickr.com.jpg') no-repeat center; /* (c)Clairity, flickr.com - licensed under creative commons*/
-	background-size: cover;
+	height: 32vmin;
+	min-height: 10em;
 }
 #home-banner>h1 {
 	width: 400px;
@@ -83,12 +81,8 @@ header .common-language-switcher #languages a {
 		display: none;
 	}
 }
-
 #home-content {
-	position: absolute;
-	top: 30%;
-	right: 10%;
-	left: 25%;
+	min-height: 54vmin;
 }
 div.widget>.widget-head {
 	display: none;
@@ -113,9 +107,13 @@ div.widget>.widget-messages>div>a {
 div.widget>.widget-messages>div.error {
 	background-color: #F0A0A0;
 }
+#login-form {
+	width: 80%;
+	margin: auto;
+	text-align: center;
+}
 #login-form form {
-	float: left;
-	width: 46%;
+	width: 45%;
 	min-width: 275px;
 	min-height: 18em;
 	margin: 2%;
@@ -124,6 +122,8 @@ div.widget>.widget-messages>div.error {
 	background: rgba(255,255,255,0.8);
 	border-radius: 0.5em;
 	box-shadow: 0 0 0 0.5em rgba(0,0,0,0.1);
+	display: inline-block;
+	text-align: left;
 }
 #login-form h2 {
 	margin: 0 0 0.5em 0;
@@ -182,9 +182,6 @@ div.widget>.widget-messages>div.error {
 }
 
 footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
 	padding: 1em 10%;
 	background: rgba(60,60,60,0.7);
 	color: #DDD;
