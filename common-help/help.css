@@ -18,20 +18,20 @@ width: 3.5em;
 	background: rgba(0,144,192,0.9);
 	border-radius: 10em 0 0 10em;
 	font-size: 1.25em;
-	text-align: right;
 	cursor: pointer;
 	transition: 1s;
 }
 div[name='common-help'] aside>h2:hover {
 	width: 4em;
-	transition: 0.25s;
 }
 div[name='common-help'] aside.on>h2, div[name='common-help'] aside.on>h2:hover {
 	width: 16em;
+	text-align: right;
 }
 div[name='common-help'] aside.on>h2:before {
 	content: "»";
 	float: left;
+	margin-left: -0.5em;
 }
 div[name='common-help'] aside>ul {
 	width: 19em;
