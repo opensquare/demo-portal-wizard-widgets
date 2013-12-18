@@ -1,4 +1,6 @@
-* {
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 body {
@@ -36,8 +38,7 @@ body {
 	float: right;
 }
 #home-header .common-language-switcher nav {
-	position: absolute;
-	width: 50px;
+	width: 3.5em;
 	height: auto;
 	margin: -6px 0 0 0;
 	background: transparent;
@@ -82,7 +83,7 @@ body {
 	}
 }
 #home-content {
-	min-height: 54vmin;
+	min-height: 52vmin;
 }
 div.widget>.widget-head {
 	display: none;
