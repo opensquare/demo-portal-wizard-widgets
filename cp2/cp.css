@@ -120,11 +120,10 @@ div.widget>.widget-messages>div.error{
 	top: 30%;
 	right: 5em;
 	width: 50em;
+	padding: 0.5em;
 	background: rgba(0,0,0,0.1);
 	border-radius: 1em;
 	border: thick solid white;
-	color: #fff;
-	text-shadow: 0 0 7px rgba(0,0,0,0.9);
 }
 #login-form form {
 	display: inline-block;
@@ -132,6 +131,8 @@ div.widget>.widget-messages>div.error{
 	min-width: 275px;
 	padding: 1%;
 	vertical-align: top;
+	background: rgba(255,255,255,0.95);
+	border-radius: 0.5em;
 }
 #login-form h2 {
 	margin: 0 0 0.5em 0;
@@ -170,9 +171,6 @@ div.widget>.widget-messages>div.error{
 }
 #login-form-enter {
 	margin-bottom: 2em;
-}
-#login-form-enter button {
-	margin-right: 4em;
 }
 #login-form a {
 	float: left;
