@@ -17,7 +17,7 @@ header {
 	width: 100%;
 	margin: 0;
 	padding: 1em 10%;
-	background: rgba(255,255,255,0.8);
+	background: rgba(255,255,255,0.5);
 }
 header h2 {
 	float: left;
@@ -54,7 +54,7 @@ header .common-language-switcher #languages a {
 	height: 500px;
 	height: 100vh;
 	padding-top: 5%;
-	background: url('bertkaufmann@flickr.com.jpg') no-repeat center; /* (c)Bert Kaufmann, flickr.com - licensed under creative commons*/
+	background: url('clairity@flickr.com.jpg') no-repeat center; /* (c)Clairity, flickr.com - licensed under creative commons*/
 	background-size: cover;
 }
 #home-banner>h1 {
@@ -118,17 +118,15 @@ div.widget>.widget-messages>div.error{
 #login-form {
 	position: absolute;
 	top: 30%;
-	right: 5em;
-	width: 50em;
-	padding: 0.5em;
 	background: rgba(0,0,0,0.1);
 	border-radius: 1em;
-	border: thick solid white;
 }
 #login-form form {
-	display: inline-block;
+	float: left;
 	width: 46%;
 	min-width: 275px;
+	min-height: 18em;
+	margin: 1%;
 	padding: 1%;
 	vertical-align: top;
 	background: rgba(255,255,255,0.95);
@@ -141,6 +139,10 @@ div.widget>.widget-messages>div.error{
 #login-form h3 {
 	font-size: 1.1em;
 	margin: 0;
+}
+#login-form p {
+	margin: 0.5em 0;
+	font-size: 0.8em;
 }
 #login-form label {
 	display: inline-block;
