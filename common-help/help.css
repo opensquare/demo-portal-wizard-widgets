@@ -11,41 +11,40 @@ div[name='common-help'] aside {
 	z-index: 9999;
 }
 div[name='common-help'] aside>h2 {
-	width: 3.5em;
+width: 3.5em;
 	margin: 0;
 	padding: 0.25em 0.5em 0.25em 1em;
 	overflow: hidden;
 	background: rgba(0,144,192,0.9);
 	border-radius: 10em 0 0 10em;
 	font-size: 1.25em;
+	text-align: right;
 	cursor: pointer;
-	transition: 0.25s;
+	transition: 1s;
+}
+div[name='common-help'] aside>h2:before {
+	content: "»";
 }
 div[name='common-help'] aside.on>h2 {
-	width: auto;
+	width: 16em;
 }
 div[name='common-help'] aside h2:hover {
 	width: 4em;
 }
 div[name='common-help'] aside.on h2:hover {
-	width: auto;
+	width: 16em;
 }
 div[name='common-help'] aside>ul {
-	float: right;
-	width: 0;
-	height: 0;
-	max-width: 20em;
-	margin-top: 0;
-	padding: 0;
+	width: 19em;
+	margin: 0 -20em 0 5em;
+	padding: 0.25em 1em 0.25em 2em;
+	overflow: hidden;
 	background: rgba(0,144,192,0.9);
 	border-radius: 0 0 0 1em;
 	transition: 1s;
-	overflow: hidden;
 }
 div[name='common-help'] aside.on>ul {
-	width: 95%;
-	height: auto;
-	padding: 0.25em 1em 0.25em 2em;
+	margin: 0 0 0 1em;
 }
 div[name='common-help'] aside>ul>p {
 	margin: 0 0 0.25em -1em;
