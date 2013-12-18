@@ -22,17 +22,16 @@ width: 3.5em;
 	cursor: pointer;
 	transition: 1s;
 }
-div[name='common-help'] aside>h2:before {
-	content: "»";
-}
-div[name='common-help'] aside.on>h2 {
-	width: 16em;
-}
-div[name='common-help'] aside h2:hover {
+div[name='common-help'] aside>h2:hover {
 	width: 4em;
+	transition: 0.25s;
 }
-div[name='common-help'] aside.on h2:hover {
+div[name='common-help'] aside.on>h2, div[name='common-help'] aside.on>h2:hover {
 	width: 16em;
+}
+div[name='common-help'] aside.on>h2:before {
+	content: "»";
+	float: left;
 }
 div[name='common-help'] aside>ul {
 	width: 19em;
