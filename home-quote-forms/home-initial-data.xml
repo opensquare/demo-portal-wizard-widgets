@@ -3,11 +3,11 @@
     <cover>
         <startTime>00:00:00</startTime>
     </cover>
-    <selectedProduct>Brilliant Basics</selectedProduct>
+    <selectedProduct>Bronze</selectedProduct>
     <addon_items>N</addon_items>
     <products>
         <product>
-            <name>Brilliant Basics</name>
+            <name>Bronze</name>
             <included>
                 <buildings>
                     <limit>400,000</limit>
@@ -83,7 +83,7 @@
             </optional>
         </product>
         <product>
-            <name>More Than</name>
+            <name>Silver</name>
             <included>
                 <buildings>
                     <limit>500,000</limit>
@@ -179,7 +179,7 @@
             </optional>
         </product>
         <product>
-            <name>Moreness</name>
+            <name>Gold</name>
             <included>
                 <buildings>
                     <limit>1,000,000</limit>
