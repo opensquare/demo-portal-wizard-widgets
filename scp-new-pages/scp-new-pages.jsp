@@ -90,16 +90,19 @@
 							<a class="new-square" href="http://mis-zabbix.osl-cloud.com/zabbix/" target="zabbix" type="external" subtype="network">Network management</a>
 							<%}%>
 							<%if (user.isPermitted("scp.external-pactdash")) {%>
-							<a class="new-square" href="https://project-pact.osl-cloud.com/" target="pact" type="external" subtype="pactdash">Pact dashboard</a>
+							<a class="new-square" href="https://model-office-pact.osl-cloud.com/" target="pact" type="external" subtype="pactdash">Pact dashboard</a>
 							<%}%>
 							<%if (user.isPermitted("scp.external-napierdash")) {%>
-							<a class="new-square" href="https://project-napier.osl-cloud.com/" target="napier" type="external" subtype="napierdash">Napier dashboard</a>
+							<a class="new-square" href="https://model-office-napier.osl-cloud.com/" target="napier" type="external" subtype="napierdash">Napier dashboard</a>
 							<%}%>
 							<%if (user.isPermitted("scp.external-mmdash")) {%>
 							<a class="new-square" href="https://model-office-mailmerger.osl-cloud.com/" target="mailmerger" type="external" subtype="mmdash">MailMerger dashboard</a>
 							<%}%>
 							<%if (user.isPermitted("scp.external-pwdash")) {%>
-							<a class="new-square" href="http://project-portalwizard.osl-cloud.com/" target="portalwizard" type="external" subtype="pwdash">PortalWizard dashboard</a>
+							<a class="new-square" href="http://model-office-portalwizard.osl-cloud.com/" target="portalwizard" type="external" subtype="pwdash">PortalWizard dashboard</a>
+							<%}%>
+							<%if (user.isPermitted("scp.external-pwdash")) {%>
+							<a class="new-square" href="https://model-office-ice-bus-dashboard.osl-cloud.com/" target="icebus" type="external" subtype="icebusdash">ICE Bus dashboard</a>
 							<%}%>
 						</div>
 						<%}%>
