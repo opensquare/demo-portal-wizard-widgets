@@ -44,7 +44,7 @@
 							},
 							method: "post",
 							postTransform: "xslt/fromNapier.xsl",
-							resultInsertPoint: "/quote/products/product[name='Brilliant Basics']/calc"
+							resultInsertPoint: "/quote/products/product[name='Bronze']/calc"
 						}
 					}
 				]
@@ -64,7 +64,7 @@
 							},
 							method: "post",
 							postTransform: "xslt/fromNapier.xsl",
-							resultInsertPoint: "/quote/products/product[name='More Than']/calc"
+							resultInsertPoint: "/quote/products/product[name='Silver']/calc"
 						}
 					}
 				]
@@ -84,7 +84,7 @@
 							},
 							method: "post",
 							postTransform: "xslt/fromNapier.xsl",
-							resultInsertPoint: "/quote/products/product[name='Moreness']/calc"
+							resultInsertPoint: "/quote/products/product[name='Gold']/calc"
 						}
 					}
 				]
