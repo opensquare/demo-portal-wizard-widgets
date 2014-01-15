@@ -15,67 +15,67 @@ hr{
 	clear: both;
 }
 div.widget[name='home-quote-forms'] input[type='date'] {
-	border: thin solid #0090C0;
+	border: thin solid #67718a;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 1.3em; 
 }
 div.widget[name='home-quote-forms'] input[type="button"] {
 	padding: 0.2em 1em 0.05em 1em;
-	color: #FFF; background-color: #92CE56;
+	color: #FFF; background-color: #67718a;
 	border: none; border-radius: 0.25em;
 	font-size: 1.2em;	
 	cursor: pointer;
 }
 div.widget[name='home-quote-forms'] input[type="button"]:hover {
-	background-color: #82BE46;
+	background-color: #E36F1E;
 }
 div.widget[name='home-quote-forms'] input[type="checkbox"] {
 	padding: 0.45em;
 	background-color: #FFF;
-	border: thin solid #0090C0;
+	border: thin solid #67718a;
 	vertical-align: middle;
 	-webkit-appearance: none;
 }
 div.widget[name='home-quote-forms'] input[type="checkbox"]:checked {
 	padding: 0.2em 0.4em 0.2em 0.4em;
-	background-color: #0090C0; 
+	background-color: #67718a; 
 }
 div.widget[name='home-quote-forms'] input[type="checkbox"]:checked:after {
 	content: '\2714';
-	color: #FFF; background-color: #0090C0; /*blue*/
+	color: #FFF; background-color: #67718a; /*blue*/
 	font-size: 1.3em;   
 }
 div.widget[name='home-quote-forms'] input[type="radio"] {
 	margin: -0.25em 0 0 0;
 	padding: 0.45em;
 	background-color: #FFF;
-	border: thin solid #0090C0;
+	border: thin solid #67718a;
 	vertical-align: middle;
 	-webkit-appearance: none;
 }
 div.widget[name='home-quote-forms'] input[type="radio"]:checked {
 	padding: 0.2em 0.4em 0.2em 0.4em;
-	background-color: #0090C0; 
+	background-color: #67718a; 
 }
 div.widget[name='home-quote-forms'] input[type="radio"]:checked:after {
 	content: '\2714';
-	color: #FFF; background-color: #0090C0; /*blue*/
+	color: #FFF; background-color: #67718a; /*blue*/
     font-size: 1.3em;   
 }
 div.widget[name='home-quote-forms'] input[type="text"],input[type="email"],input[type="password"] {
 	width: 19%;
 	padding: 0.1em 0.25em 0 0.25em;
-	border: thin solid #0090C0;
+	border: thin solid #67718a;
 	font-size: 1.3em;
 }
 div.widget[name='home-quote-forms'] input[type="submit"] {
 	margin:	1em 1em 1em 0; padding: 0.2em 1em;
 	border: none; border-radius: 0.25em;
-	color: #FFF; background-color: #92CE56;
+	color: #FFF; background-color: #67718a;
 	font-size: 2em;	
 	cursor: pointer;
 }
 div.widget[name='home-quote-forms'] input[type="submit"]:hover {
-	background-color: #82BE46;
+	background-color: #E36F1E;
 }
 div.widget[name='home-quote-forms'] label {
 	display: inline-block;
@@ -102,7 +102,7 @@ div.widget[name='home-quote-forms'] p {
 div.widget[name='home-quote-forms'] select {
 	width: 20%;
 	margin-left: 0;
-	border: thin solid #0090C0;
+	border: thin solid #67718a;
 	font-size: 1.3em;
 	color: #AAA;
 }
@@ -120,24 +120,28 @@ div.widget[name='home-quote-forms'] div.field {
 	border-radius: 0.25em;
 }
 div.widget[name='home-quote-forms'] div.field:hover {
- 	background-color: rgba(0,0,0,0.1);
+ 	background-color: rgba(156, 148, 143, 0.4);
  	border-color: #FFF;
  }
 div.widget[name='home-quote-forms'] div.field.on,
 div.widget[name='home-quote-forms'] div.field.on:hover {
-	background-color: rgba(0,0,0,0.2);
+	background-color:#9c948f;
  	border-color: #FFF;
 }
+	div.widget[name='home-quote-forms'] div.field.on label,
+	div.widget[name='home-quote-forms'] div.field.on:hover label {
+		color:#fff;
+	}
 div.widget[name='home-quote-forms'] div.field.on .hint {
 	display: inline-block;
 }
 div.widget[name='home-quote-forms'] div.field a {
 	margin-left: 2em;
-	color: #92CE56;
+	color: #67718a;
 	font-weight: bold;
 }
 div.widget[name='home-quote-forms'] div.field a:hover {
-	color: #82BE46;
+	color: #E36F1E;
 }
 div.widget[name='home-quote-forms'] option:first-child {
 	color: #999;
@@ -147,7 +151,7 @@ div.widget[name='home-quote-forms'] .hint {
 	position: absolute; right: 7em;
 	width: 15em;
 	padding: 0.35em;
-	color: #FFF; background-color: #92CE56;
+	color: #FFF; background-color: #67718a;
 	border-radius: 0.25em;
 	z-index: 999;
 }
@@ -158,7 +162,7 @@ div.widget[name='home-quote-forms'] .hint::before {
 	content: '◄';
 	position: absolute;
 	margin: -0.3em 0 0 -1em;
-	color: #92CE56;
+	color: #67718a;
 	font-size: 2em;
 }
 @media screen and (max-width: 1300px) {
@@ -179,14 +183,14 @@ div.widget[name='home-quote-forms'] .rf-dropdown ul {
 	padding: 0;
 	list-style: none;
 	background-color: #FFF;
-	border: thin solid #0090C0;
+	border: thin solid #67718a;
 	cursor: pointer;
 }
 div.widget[name='home-quote-forms'] .rf-dropdown li {
 	padding: 0.1em 0.5em;
 }
 div.widget[name='home-quote-forms'] .rf-dropdown li:hover {
-	color: #FFF; background-color: #0090C0;
+	color: #FFF; background-color: #67718a;
 }
 
 div.widget[name='home-quote-forms'] .navigation {
@@ -244,7 +248,7 @@ div.widget[name='home-quote-forms'] .disabled a {
 	font-weight: bold;
 	float: right;
 	margin-right: 5%;
-	color: #92CE56;
+	color: #67718a;
 }
 
 div.widget[name='home-quote-forms'] #sectionOne a {
@@ -255,26 +259,28 @@ div.widget[name='home-quote-forms'] #sectionOne a {
 div.widget[name='home-quote-forms'] #crumbTrail li {
 	position: relative;
 	float: left;
-	min-width: 16%; height: 20px;
+	min-width: 16%;
+	height: 20px;
 	margin: 1% 2% 0 0;
 	padding: 10px 12px 10px 30px;
 	list-style: none;
-	color: #FFF; background: #777 no-repeat 6px center;
+	color: #FFF;
+	background: #9c948f no-repeat 6px center;
 	border-radius: 10em 1em 1em 10em;
 	white-space: nowrap;
 }
 div.widget[name='home-quote-forms'] #crumbTrail li:after {
 	content: '♦';
 	position: absolute;
-	top: -20px; right: -17px;
-	color: #777;
+	top: -23px; right: -17px;
+	color: #9c948f;
 	font-size: 64px;
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.on {
 	height: 40px;
 	margin-left: 3%;
 	padding-left: 15px;
-	background-color: #0DB4F2;
+	background-color: #E36F1E;
 	font-size: 1.5em; font-weight: bold;
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.on:before {
@@ -283,10 +289,10 @@ div.widget[name='home-quote-forms'] #crumbTrail li.on:before {
 	width: 75px; height: 75px;
 	margin: -18px 0 0 -50px;
 	border-radius: 10em;
-	background: #0DB4F2 no-repeat center center;
+	background: #E36F1E no-repeat center center;
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.on:after {
-	color: #0DB4F2;
+	color: #E36F1E;
 }
 div.widget[name='home-quote-forms'] #crumbTrail li.about {
 	background-image: url('images/person-light-small.png');
@@ -404,7 +410,7 @@ div.widget[name='home-quote-forms'] table .pcaAutoCompleteSmall>div {
 	zoverflow-x: hidden;
 	zpadding-right: 0.6em !important;
 	zbackground-color: #FFF;
-	border: thin solid #0090C0;
+	border: thin solid #67718a;
 }
 div.widget[name='home-quote-forms'] .pcaAutoCompleteSmall .item,
 div.widget[name='home-quote-forms'] .pcaAutoCompleteSmall .selectedItem {
@@ -416,7 +422,7 @@ div.widget[name='home-quote-forms'] .pcaAutoCompleteSmall .item {
 }
 div.widget[name='home-quote-forms'] .pcaAutoCompleteSmall .item:hover,
 div.widget[name='home-quote-forms'] .pcaAutoCompleteSmall .selectedItem:hover {
-	background-color: #0090C0;
+	background-color: #67718a;
 }
 div.widget[name='home-quote-forms'] .pcaAutoCompleteSmall .item:hover span,
 div.widget[name='home-quote-forms'] .pcaAutoCompleteSmall .selectedItem:hover span {
@@ -463,7 +469,7 @@ div.widget[name='home-quote-forms'] #landingPage .pane, div.widget[name='home-qu
 	position: relative;
 	margin: 2em;
 	vertical-align: top;
-	border: thick solid #0DB4F2; border-radius: 1em;
+	border: thick solid #E36F1E; border-radius: 1em;
 }
 div.widget[name='home-quote-forms'] #landingPage .pane.selected {
 	border-width: 10px;
@@ -473,7 +479,7 @@ div.widget[name='home-quote-forms'] #landingPage .pane.selected {
 div.widget[name='home-quote-forms'] #landingPage .pane h2, div.widget[name='home-quote-forms'] #addons .pane h2 {
 	margin: 0;
 	padding: 0.2em 0.5em;
-	color: #FFF; background: #0DB4F2;
+	color: #FFF; background: #E36F1E;
 }
 div.widget[name='home-quote-forms'] #landingPage .pane input[type="radio"] {
 	visibility: hidden;
@@ -578,10 +584,10 @@ div.widget[name='home-quote-forms'] #addons .pane {
     margin: 1em;
 }
 div.widget[name='home-quote-forms'] #addons .pane.major {
-	border-color: #92CE56;
+	border-color: #67718a;
 }
 div.widget[name='home-quote-forms'] #addons .pane.major h2 {
-	background-color: #92CE56;
+	background-color: #67718a;
 }
 div.widget[name='home-quote-forms'] #addons .pane p {
 	margin-top: 0.5em;
@@ -651,18 +657,18 @@ div.widget[name='home-quote-forms'] #addons .pane .item .delete:hover {
 }
 div.widget[name='home-quote-forms'] #save {
 	margin-bottom: 1em;
-	border: thick solid #92CE56; border-radius: 1em;
+	border: thick solid #67718a; border-radius: 1em;
 }
 div.widget[name='home-quote-forms'] #save:before {
 	content: '';
 	float: right;
 	height: 0; width: 0;
 	margin: -24px 40px 0 0;
-	border-right: 20px dotted transparent; border-bottom: 20px dotted #92CE56; border-left: 20px dotted transparent;
+	border-right: 20px dotted transparent; border-bottom: 20px dotted #67718a; border-left: 20px dotted transparent;
 }
 div.widget[name='home-quote-forms'] #save span {
 	padding: 0.1em 0.25em;
-	color: #FFF; background: #92CE56;
+	color: #FFF; background: #67718a;
 	white-space: nowrap;
 	border-radius: 0.25em;
 	font-weight: bold;
@@ -677,7 +683,7 @@ div.widget[name='home-quote-forms'] #save li {
 div.widget[name='home-quote-forms'] #save li a {
 	padding: 0.5em 0.4em;
 	border-radius: 10em;
-	color: #FFF; background: #0DB4F2;
+	color: #FFF; background: #E36F1E;
 	font-weight: bold;
 }
 

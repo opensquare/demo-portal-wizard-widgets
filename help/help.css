@@ -1,7 +1,7 @@
 div[name='help'] aside{
 	position: fixed;
 	right: 0;
-	background: #0090C0;
+	background: #92CE56;
 	color: #FFF;
 	border-radius: 10em 0 0 10em;
 	z-index: 9999;
@@ -36,6 +36,6 @@ div[name='help'] aside>ul>p{
 	margin: 0 0 0.25em -1em;
 }
 div[name='help'] li>a{
-	color: #92CE56;
+	color: #67718a;
 	font-weight: bold;
 }

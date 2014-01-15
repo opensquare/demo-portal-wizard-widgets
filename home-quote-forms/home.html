@@ -1,12 +1,12 @@
 <ul id="crumbTrail">
-	<li class="about">About you</li>
-	<li class="home on">Your home</li>
-	<li class="cover">Choose a package</li>
-	<li class="quote">Your quote</li>
+    <li class="about">Policyholder</li>
+    <li class="home on">Property</li>
+    <li class="cover">Choose a package</li>
+    <li class="quote">Quote</li>
 </ul>
 <form rhinoforms="true" id="homeDetails">
 	<div class="home section">
-		<h1>Your Home</h1>
+		<h1>Property Details</h1>
 		<div class="field">
 			<label for="input_propertyType">Type of property</label>
 			<select name="propertyType" rf.source="resources/propertyType.csv" rf.validation="required" id="input_propertyStatus" rf.preselectFirstOption="true">
@@ -32,31 +32,30 @@
 			<input type="radio" name="extended" value="N" id="input_extended_n" rf.validation="required"/><label class="forRadio" for="input_extended_n">No</label>
 		</div>
         <div class="field">
-			<label>Do you have a burglar alarm?</label>
+			<label>Burglar Alarm?</label>
 			<input type="radio" name="burglarAlarm" value="Y" id="input_burglarAlarm_y" rf.validation="required"/><label class="forRadio" for="input_burglarAlarm_y">Yes</label>
 			<input type="radio" name="burglarAlarm" value="N" id="input_burglarAlarm_n" rf.validation="required"/><label class="forRadio" for="input_burglarAlarm_n">No</label>
 		</div>
         <div class="field">
-			<label>Do you have smoke alarms?</label>
+			<label>Smoke Alarms?</label>
 			<input type="radio" name="smokeAlarm" value="Y" id="input_smokeAlarm_y" rf.validation="required"/><label class="forRadio" for="input_smokeAlarm_y">Yes</label>
 			<input type="radio" name="smokeAlarm" value="N" id="input_smokeAlarm_n" rf.validation="required"/><label class="forRadio" for="input_smokeAlarm_n">No</label>
 		</div>
         <div class="field">
-			<label>Do you have a pet?</label>
+			<label>Pet?</label>
 			<input type="radio" name="pets" value="Y" id="input_pets_y" rf.validation="required"/><label class="forRadio" for="input_pets_y">Yes</label>
 			<input type="radio" name="pets" value="N" id="input_pets_n" rf.validation="required"/><label class="forRadio" for="input_pets_n">No</label>
 		</div>
 	</div>
     <div class="cover section">
-		<h1>Your Cover</h1>
         
         <div class="field">
-			<label for="input_noClaimsYears">How many years No Claims Discount do you have?</label>
+			<label for="input_noClaimsYears">Years No Claims?</label>
 			<select id="input_noClaimsYears" name="noClaimsYears" rf.validation="required" rf.source="resources/noClaimsYears.csv" rf.preselectFirstOption="true"></select>
 		</div>
         
 		<div class="field">
-			<label for="input_coverStart">When do you want your cover to start?</label>
+			<label for="input_coverStart">Effective Date</label>
 			<input id="input_coverStart" type="date" name="startDateISO" rf.validation="required date({ format: 'YYYY-MM-DD' })" 
 				   rf.initialValue="if('{{startDate}}' !== '') {new moment('{{startDate}}').format('YYYY-MM-DD')}"/>
 			<input type="hidden" name="startDate" rf.validation="required date({ format: 'DD/MM/YYYY' })" rf.calculated="if (fields.startDateISO.value !=='') {new moment(fields.startDateISO.value).format('DD/MM/YYYY');}"/>

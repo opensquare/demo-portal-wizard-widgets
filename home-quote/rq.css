@@ -2,10 +2,11 @@ body{
 	min-width: 275px;
 	margin: 0;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	background: #F0F0F0;
-	color: #333;
+	background: #fff;
+	color: #675C54;
 }
 a{
+	color:#E36F1E;
 	text-decoration: none;
 }
 a:hover{
@@ -26,10 +27,10 @@ header h2{
 	float: left;
 	margin: 0;
 	font-size: 1em;
-	color: #0DB4F2; /* Blue */
+	color: #E36F1E; /* Blue */
 }
 header h2 span{
-	color: #92CE56; /* Green */
+	color: #67718a; /* Green */
 }
 @media screen and (max-width: 1000px) {
 	header{
@@ -38,27 +39,27 @@ header h2 span{
 }
 
 #rq-banner{
-	height: 300px;
-	background: url('ewitch@flickr.com.jpg') no-repeat center; /* (c) ewitch@flickr.com - licensed under Creative Commons */
-	background-size: cover;
+	height: 230px;
+	padding-top:16px;
+	background: url('mga_images/background.png') 0 -34px repeat-x; /* (c) ewitch@flickr.com - licensed under Creative Commons */
 }
 #rq-banner>h1{
-	width: 400px;
-	height: 125px;
+	width: 377px;
+	height: 95px;
 	margin: 0 0 0 1%;
 }
 #rq-banner>h1>a{
 	display: inline-block;
 	width: 100%;
 	height: 100%;
-	background: url('model-insurance.png') no-repeat left bottom;
+	background: url('mga_images/logo.png') no-repeat left bottom;
 }
 #rq-banner h2{
 	display: inline-block;
 	margin: 0;
-	padding: 0 0.5em 0 4em;
-	background: rgba(255,255,255,0.35);
-	color: rgba(0,0,0,0.9);
+	padding: 0 0.5em 0.2em 4em;
+	background:#67718a;
+	color:#fff;
 	font-weight: normal;
 	font-size: 2em;
 	border-radius: 0 0.15em 0.15em 0;
@@ -66,7 +67,7 @@ header h2 span{
 #rq-content{
 	width: 80%;
 	min-height: 400px;
-	margin: -6em auto 0 auto;
+	margin: -5em auto 0 auto;
 	background-color: rgba(255,255,255,0.85);
 	box-shadow: 0 0 10px rgba(0,0,0,0.2);
 	border-radius: 0.25em;
