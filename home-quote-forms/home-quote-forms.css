@@ -132,6 +132,9 @@ div.widget[name='home-quote-forms'] div.field.on:hover {
 	div.widget[name='home-quote-forms'] div.field.on:hover label {
 		color:#fff;
 	}
+	#buildings div.field.on label	{
+		color:#675C54;
+	}
 div.widget[name='home-quote-forms'] div.field.on .hint {
 	display: inline-block;
 }
