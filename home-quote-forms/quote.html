@@ -7,7 +7,6 @@
 <form rhinoforms="true" id="addons">
 	<h1>Quote</h1>
 	<div class="bodyText">
-        <p>Thank you for considering us for your insurance needs.  Here is our price to insure you, as per your stated requirements.</p>
         <p>You selected our <span class="packageName">{{/quote/selectedProduct}} package</span> <input id="coverChange" type="button" rf.action="back" value="Change"/> which provides the following coverage:</p>
         <div class="coverPart"><span class="partName">Cover</span><span class="limit">upto</span></div>
         <div class="coverPart basic"><span class="partName">Basic Buildings</span><span class="limit">&pound;{{//products/product[name=/quote/selectedProduct]//included/buildings/limit}}</span></div>
@@ -19,7 +18,6 @@
             <div class="coverPart addon"><span class="partName">{{addon.name}}</span><span class="limit">&pound;{{addon.limit}}</span></div>
         </rf.forEach>
         <p>Review the add-ons opposite to add valuable cover to your package.</p>
-        <p>When you are ready to purchase this insurance, click the Buy button opposite.  We can accept payment online using a debit or credit card.</p>
     </div>
 
     <div class="pane major">
