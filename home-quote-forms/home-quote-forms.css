@@ -529,7 +529,7 @@ div.widget[name='home-quote-forms'] #landingPage .coverPart:nth-child(4) {
 	font-weight: bold;
 }
 div.widget[name='home-quote-forms'] #landingPage .coverPart:nth-child(odd) {
-	background-color: #efe;
+	background-color: #cdd3e4;
 }
 div.widget[name='home-quote-forms'] #landingPage .coverPart .limit {
 	float: right;
