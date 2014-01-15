@@ -98,9 +98,14 @@
                         <limit>200</limit>
                     </upgrade>
                     <upgrade>
-                        <name>Buildings Upgrade &amp; Windstorm</name>
+                        <name>Buildings Upgrade</name>
                         <rateKey>B-UPGRADE</rateKey>
                         <limit>5,000</limit>
+                    </upgrade>
+                    <upgrade>
+                        <name>Buildings Upgrade includes Windstorm</name>
+                        <rateKey>B-UPGRADE</rateKey>
+                        <limit></limit>
                     </upgrade>
                     <upgrade>
                         <name>Buildings Partial Accidental Damage</name>
@@ -194,9 +199,14 @@
                         <limit>1,000</limit>
                     </upgrade>
                     <upgrade>
-                        <name>Buildings Upgrade &amp; Windstorm</name>
+                        <name>Buildings Upgrade</name>
                         <rateKey>B-UPGRADE</rateKey>
                         <limit>5,000</limit>
+                    </upgrade>
+                    <upgrade>
+                        <name>Buildings Upgrade includes Windstorm</name>
+                        <rateKey>B-UPGRADE</rateKey>
+                        <limit></limit>
                     </upgrade>
                     <upgrade>
                         <name>Buildings Full Accidental Damage</name>
@@ -212,9 +222,14 @@
                         <limit>250</limit>
                     </upgrade>
                     <upgrade>
-                        <name>Contents Upgrade &amp; Flood</name>
+                        <name>Contents Upgrade</name>
                         <rateKey>C-UPGRADE</rateKey>
                         <limit>5,000</limit>
+                    </upgrade>
+                    <upgrade>
+                        <name>Contents Upgrade includes Flood</name>
+                        <rateKey>B-UPGRADE</rateKey>
+                        <limit></limit>
                     </upgrade>
                     <upgrade>
                         <name>Contents Full Accidental Damage</name>
